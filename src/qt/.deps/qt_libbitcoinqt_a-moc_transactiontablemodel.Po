@@ -1,22 +1,22 @@
 qt/qt_libbitcoinqt_a-moc_transactiontablemodel.o: \
- qt/moc_transactiontablemodel.cpp qt/transactiontablemodel.h \
- qt/bitcoinunits.h amount.h serialize.h compat/endian.h \
- config/bitcoin-config.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
- /usr/share/mingw-w64/include/crtdefs.h \
- /usr/share/mingw-w64/include/_mingw.h \
- /usr/share/mingw-w64/include/_mingw_mac.h \
- /usr/share/mingw-w64/include/_mingw_secapi.h \
- /usr/share/mingw-w64/include/vadefs.h \
- /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
- /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h \
- /usr/share/mingw-w64/include/stddef.h compat/byteswap.h \
+ qt/moc_transactiontablemodel.cpp /usr/include/stdc-predef.h \
+ qt/transactiontablemodel.h qt/bitcoinunits.h amount.h serialize.h \
+ compat/endian.h config/bitcoin-config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h compat/byteswap.h \
+ /usr/include/byteswap.h /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
  /usr/include/c++/4.8/bits/stl_relops.h \
  /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
  /usr/include/c++/4.8/bits/concept_check.h \
@@ -31,12 +31,17 @@ qt/qt_libbitcoinqt_a-moc_transactiontablemodel.o: \
  /usr/include/c++/4.8/debug/debug.h \
  /usr/include/c++/4.8/bits/stl_iterator.h \
  /usr/include/c++/4.8/bits/stl_algo.h /usr/include/c++/4.8/cstdlib \
- /usr/share/mingw-w64/include/stdlib.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h \
- /usr/share/mingw-w64/include/limits.h \
- /usr/share/mingw-w64/include/sec_api/stdlib_s.h \
- /usr/share/mingw-w64/include/malloc.h \
+ /usr/include/stdlib.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/xlocale.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/4.8/bits/algorithmfwd.h \
  /usr/include/c++/4.8/bits/stl_heap.h \
  /usr/include/c++/4.8/bits/stl_tempbuf.h \
@@ -45,41 +50,28 @@ qt/qt_libbitcoinqt_a-moc_transactiontablemodel.o: \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
  /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
  /usr/include/c++/4.8/ext/new_allocator.h \
- /usr/include/c++/4.8/bits/memoryfwd.h \
- /usr/share/mingw-w64/include/assert.h /usr/include/c++/4.8/ios \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h /usr/include/assert.h \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/share/mingw-w64/include/wchar.h \
- /usr/share/mingw-w64/include/_mingw_print_push.h \
- /usr/share/mingw-w64/include/_mingw_off_t.h \
- /usr/share/mingw-w64/include/_mingw_stat64.h \
- /usr/i686-w64-mingw32/include/swprintf.inl \
- /usr/share/mingw-w64/include/sec_api/wchar_s.h \
- /usr/share/mingw-w64/include/_mingw_print_pop.h \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
  /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/localefwd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h \
- /usr/include/c++/4.8/clocale /usr/share/mingw-w64/include/locale.h \
- /usr/share/mingw-w64/include/stdio.h \
- /usr/share/mingw-w64/include/sec_api/stdio_s.h \
- /usr/include/c++/4.8/cctype /usr/share/mingw-w64/include/ctype.h \
- /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/ext/atomicity.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h \
- /usr/share/mingw-w64/include/pthread.h \
- /usr/share/mingw-w64/include/errno.h \
- /usr/share/mingw-w64/include/sys/types.h \
- /usr/share/mingw-w64/include/process.h \
- /usr/share/mingw-w64/include/signal.h \
- /usr/share/mingw-w64/include/pthread_signal.h \
- /usr/share/mingw-w64/include/sys/timeb.h \
- /usr/share/mingw-w64/include/sec_api/sys/timeb_s.h \
- /usr/share/mingw-w64/include/pthread_compat.h \
- /usr/share/mingw-w64/include/pthread_unistd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
  /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
  /usr/include/c++/4.8/bits/ostream_insert.h \
  /usr/include/c++/4.8/bits/cxxabi_forced.h \
@@ -92,19 +84,17 @@ qt/qt_libbitcoinqt_a-moc_transactiontablemodel.o: \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
  /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
- /usr/share/mingw-w64/include/wctype.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
  /usr/include/c++/4.8/bits/streambuf_iterator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc /usr/include/c++/4.8/limits \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
  /usr/include/c++/4.8/bits/stl_multimap.h /usr/include/c++/4.8/set \
  /usr/include/c++/4.8/bits/stl_set.h \
- /usr/include/c++/4.8/bits/stl_multiset.h \
- /usr/share/mingw-w64/include/string.h \
- /usr/share/mingw-w64/include/sec_api/string_s.h \
+ /usr/include/c++/4.8/bits/stl_multiset.h /usr/include/string.h \
  /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
@@ -114,64 +104,55 @@ qt/qt_libbitcoinqt_a-moc_transactiontablemodel.o: \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc \
  /usr/include/c++/4.8/bits/stream_iterator.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QAbstractListModel \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qabstractitemmodel.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvariant.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qglobal.h \
- /usr/include/c++/4.8/cstddef \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qconfig.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qfeatures.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qsystemdetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qprocessordetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qcompilerdetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qtypeinfo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qtypetraits.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qsysinfo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qlogging.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qflags.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbasicatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qatomic_x86.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qgenericatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qglobalstatic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qnumeric.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbytearray.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qrefcount.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qnamespace.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qarraydata.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stdarg.h \
- /usr/share/mingw-w64/include/stdarg.h \
- /usr/share/mingw-w64/include/_mingw_stdarg.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qlist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qalgorithms.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qiterator.h \
- /usr/include/c++/4.8/list /usr/include/c++/4.8/bits/stl_list.h \
- /usr/include/c++/4.8/bits/list.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbytearraylist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringlist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qregexp.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstring.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qchar.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringmatcher.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qmetatype.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvarlengtharray.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qcontainerfwd.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qisenum.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobjectdefs.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobjectdefs_impl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qmap.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qpair.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qhash.h \
- /usr/include/c++/4.8/numeric /usr/include/c++/4.8/bits/stl_numeric.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobject.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qscopedpointer.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobject_impl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvector.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QString \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstring.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QAbstractTableModel \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QStringList \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringlist.h
+ /usr/include/qt5/QtCore/QAbstractListModel \
+ /usr/include/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/qt5/QtCore/qvariant.h /usr/include/qt5/QtCore/qatomic.h \
+ /usr/include/qt5/QtCore/qglobal.h /usr/include/qt5/QtCore/qconfig.h \
+ /usr/include/qt5/QtCore/qfeatures.h \
+ /usr/include/qt5/QtCore/qsystemdetection.h \
+ /usr/include/qt5/QtCore/qprocessordetection.h \
+ /usr/include/qt5/QtCore/qcompilerdetection.h \
+ /usr/include/qt5/QtCore/qglobalstatic.h \
+ /usr/include/qt5/QtCore/qbasicatomic.h \
+ /usr/include/qt5/QtCore/qatomic_x86.h \
+ /usr/include/qt5/QtCore/qgenericatomic.h \
+ /usr/include/qt5/QtCore/qlogging.h /usr/include/qt5/QtCore/qflags.h \
+ /usr/include/qt5/QtCore/qtypeinfo.h \
+ /usr/include/qt5/QtCore/qtypetraits.h /usr/include/qt5/QtCore/qsysinfo.h \
+ /usr/include/qt5/QtCore/qbytearray.h /usr/include/qt5/QtCore/qrefcount.h \
+ /usr/include/qt5/QtCore/qnamespace.h \
+ /usr/include/qt5/QtCore/qarraydata.h /usr/include/qt5/QtCore/qlist.h \
+ /usr/include/qt5/QtCore/qalgorithms.h \
+ /usr/include/qt5/QtCore/qiterator.h /usr/include/c++/4.8/list \
+ /usr/include/c++/4.8/bits/stl_list.h /usr/include/c++/4.8/bits/list.tcc \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/qt5/QtCore/qmetatype.h \
+ /usr/include/qt5/QtCore/qvarlengtharray.h \
+ /usr/include/qt5/QtCore/qcontainerfwd.h \
+ /usr/include/qt5/QtCore/qisenum.h /usr/include/qt5/QtCore/qobjectdefs.h \
+ /usr/include/qt5/QtCore/qobjectdefs_impl.h \
+ /usr/include/qt5/QtCore/qmap.h /usr/include/qt5/QtCore/qpair.h \
+ /usr/include/qt5/QtCore/qhash.h /usr/include/qt5/QtCore/qchar.h \
+ /usr/include/qt5/QtCore/qstring.h /usr/include/qt5/QtCore/qstringlist.h \
+ /usr/include/qt5/QtCore/qdatastream.h \
+ /usr/include/qt5/QtCore/qscopedpointer.h \
+ /usr/include/qt5/QtCore/qiodevice.h /usr/include/qt5/QtCore/qobject.h \
+ /usr/include/qt5/QtCore/qobject_impl.h /usr/include/qt5/QtCore/qregexp.h \
+ /usr/include/qt5/QtCore/qstringmatcher.h \
+ /usr/include/qt5/QtCore/qvector.h /usr/include/qt5/QtCore/QString \
+ /usr/include/qt5/QtCore/qstring.h \
+ /usr/include/qt5/QtCore/QAbstractTableModel \
+ /usr/include/qt5/QtCore/QStringList \
+ /usr/include/qt5/QtCore/qstringlist.h
+
+/usr/include/stdc-predef.h:
 
 qt/transactiontablemodel.h:
 
@@ -185,39 +166,47 @@ compat/endian.h:
 
 config/bitcoin-config.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 
-/usr/share/mingw-w64/include/stdint.h:
+/usr/include/stdint.h:
 
-/usr/share/mingw-w64/include/crtdefs.h:
+/usr/include/features.h:
 
-/usr/share/mingw-w64/include/_mingw.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/share/mingw-w64/include/_mingw_mac.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/share/mingw-w64/include/_mingw_secapi.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/share/mingw-w64/include/vadefs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/share/mingw-w64/include/sdks/_mingw_directx.h:
-
-/usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
-
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h:
-
-/usr/share/mingw-w64/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 compat/byteswap.h:
+
+/usr/include/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/c++/4.8/algorithm:
 
 /usr/include/c++/4.8/utility:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h:
 
 /usr/include/c++/4.8/bits/stl_relops.h:
 
@@ -251,17 +240,35 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cstdlib:
 
-/usr/share/mingw-w64/include/stdlib.h:
+/usr/include/stdlib.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/usr/share/mingw-w64/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/share/mingw-w64/include/sec_api/stdlib_s.h:
+/usr/include/xlocale.h:
 
-/usr/share/mingw-w64/include/malloc.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/c++/4.8/bits/algorithmfwd.h:
 
@@ -281,13 +288,13 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/bits/allocator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:
 
 /usr/include/c++/4.8/ext/new_allocator.h:
 
 /usr/include/c++/4.8/bits/memoryfwd.h:
 
-/usr/share/mingw-w64/include/assert.h:
+/usr/include/assert.h:
 
 /usr/include/c++/4.8/ios:
 
@@ -299,67 +306,47 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cwchar:
 
-/usr/share/mingw-w64/include/wchar.h:
+/usr/include/wchar.h:
 
-/usr/share/mingw-w64/include/_mingw_print_push.h:
+/usr/include/stdio.h:
 
-/usr/share/mingw-w64/include/_mingw_off_t.h:
-
-/usr/share/mingw-w64/include/_mingw_stat64.h:
-
-/usr/i686-w64-mingw32/include/swprintf.inl:
-
-/usr/share/mingw-w64/include/sec_api/wchar_s.h:
-
-/usr/share/mingw-w64/include/_mingw_print_pop.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h:
 
 /usr/include/c++/4.8/bits/char_traits.h:
 
 /usr/include/c++/4.8/bits/localefwd.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h:
 
 /usr/include/c++/4.8/clocale:
 
-/usr/share/mingw-w64/include/locale.h:
+/usr/include/locale.h:
 
-/usr/share/mingw-w64/include/stdio.h:
-
-/usr/share/mingw-w64/include/sec_api/stdio_s.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/4.8/cctype:
 
-/usr/share/mingw-w64/include/ctype.h:
+/usr/include/ctype.h:
 
 /usr/include/c++/4.8/bits/ios_base.h:
 
 /usr/include/c++/4.8/ext/atomicity.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:
 
-/usr/share/mingw-w64/include/pthread.h:
+/usr/include/pthread.h:
 
-/usr/share/mingw-w64/include/errno.h:
+/usr/include/sched.h:
 
-/usr/share/mingw-w64/include/sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/share/mingw-w64/include/process.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/share/mingw-w64/include/signal.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/share/mingw-w64/include/pthread_signal.h:
-
-/usr/share/mingw-w64/include/sys/timeb.h:
-
-/usr/share/mingw-w64/include/sec_api/sys/timeb_s.h:
-
-/usr/share/mingw-w64/include/pthread_compat.h:
-
-/usr/share/mingw-w64/include/pthread_unistd.h:
-
-/usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h:
 
 /usr/include/c++/4.8/bits/locale_classes.h:
 
@@ -391,13 +378,13 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cwctype:
 
-/usr/share/mingw-w64/include/wctype.h:
+/usr/include/wctype.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h:
 
 /usr/include/c++/4.8/bits/streambuf_iterator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h:
 
 /usr/include/c++/4.8/bits/locale_facets.tcc:
 
@@ -419,9 +406,7 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/bits/stl_multiset.h:
 
-/usr/share/mingw-w64/include/string.h:
-
-/usr/share/mingw-w64/include/sec_api/string_s.h:
+/usr/include/string.h:
 
 /usr/include/c++/4.8/vector:
 
@@ -447,67 +432,57 @@ prevector.h:
 
 /usr/include/c++/4.8/bits/stream_iterator.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QAbstractListModel:
+/usr/include/qt5/QtCore/QAbstractListModel:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qabstractitemmodel.h:
+/usr/include/qt5/QtCore/qabstractitemmodel.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvariant.h:
+/usr/include/qt5/QtCore/qvariant.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qatomic.h:
+/usr/include/qt5/QtCore/qatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qglobal.h:
+/usr/include/qt5/QtCore/qglobal.h:
 
-/usr/include/c++/4.8/cstddef:
+/usr/include/qt5/QtCore/qconfig.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qconfig.h:
+/usr/include/qt5/QtCore/qfeatures.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qfeatures.h:
+/usr/include/qt5/QtCore/qsystemdetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qsystemdetection.h:
+/usr/include/qt5/QtCore/qprocessordetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qprocessordetection.h:
+/usr/include/qt5/QtCore/qcompilerdetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qcompilerdetection.h:
+/usr/include/qt5/QtCore/qglobalstatic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qtypeinfo.h:
+/usr/include/qt5/QtCore/qbasicatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qtypetraits.h:
+/usr/include/qt5/QtCore/qatomic_x86.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qsysinfo.h:
+/usr/include/qt5/QtCore/qgenericatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qlogging.h:
+/usr/include/qt5/QtCore/qlogging.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qflags.h:
+/usr/include/qt5/QtCore/qflags.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbasicatomic.h:
+/usr/include/qt5/QtCore/qtypeinfo.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qatomic_x86.h:
+/usr/include/qt5/QtCore/qtypetraits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qgenericatomic.h:
+/usr/include/qt5/QtCore/qsysinfo.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qglobalstatic.h:
+/usr/include/qt5/QtCore/qbytearray.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qnumeric.h:
+/usr/include/qt5/QtCore/qrefcount.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbytearray.h:
+/usr/include/qt5/QtCore/qnamespace.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qrefcount.h:
+/usr/include/qt5/QtCore/qarraydata.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qnamespace.h:
+/usr/include/qt5/QtCore/qlist.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qarraydata.h:
+/usr/include/qt5/QtCore/qalgorithms.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stdarg.h:
-
-/usr/share/mingw-w64/include/stdarg.h:
-
-/usr/share/mingw-w64/include/_mingw_stdarg.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qlist.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qalgorithms.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qiterator.h:
+/usr/include/qt5/QtCore/qiterator.h:
 
 /usr/include/c++/4.8/list:
 
@@ -515,54 +490,70 @@ prevector.h:
 
 /usr/include/c++/4.8/bits/list.tcc:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qbytearraylist.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringlist.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qregexp.h:
+/usr/include/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstring.h:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qchar.h:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringmatcher.h:
+/usr/include/linux/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qmetatype.h:
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvarlengtharray.h:
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qcontainerfwd.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qisenum.h:
+/usr/include/qt5/QtCore/qmetatype.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobjectdefs.h:
+/usr/include/qt5/QtCore/qvarlengtharray.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobjectdefs_impl.h:
+/usr/include/qt5/QtCore/qcontainerfwd.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qmap.h:
+/usr/include/qt5/QtCore/qisenum.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qpair.h:
+/usr/include/qt5/QtCore/qobjectdefs.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qhash.h:
+/usr/include/qt5/QtCore/qobjectdefs_impl.h:
 
-/usr/include/c++/4.8/numeric:
+/usr/include/qt5/QtCore/qmap.h:
 
-/usr/include/c++/4.8/bits/stl_numeric.h:
+/usr/include/qt5/QtCore/qpair.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobject.h:
+/usr/include/qt5/QtCore/qhash.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qscopedpointer.h:
+/usr/include/qt5/QtCore/qchar.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qobject_impl.h:
+/usr/include/qt5/QtCore/qstring.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qvector.h:
+/usr/include/qt5/QtCore/qstringlist.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QString:
+/usr/include/qt5/QtCore/qdatastream.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstring.h:
+/usr/include/qt5/QtCore/qscopedpointer.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QAbstractTableModel:
+/usr/include/qt5/QtCore/qiodevice.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/QStringList:
+/usr/include/qt5/QtCore/qobject.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/QtCore/qstringlist.h:
+/usr/include/qt5/QtCore/qobject_impl.h:
+
+/usr/include/qt5/QtCore/qregexp.h:
+
+/usr/include/qt5/QtCore/qstringmatcher.h:
+
+/usr/include/qt5/QtCore/qvector.h:
+
+/usr/include/qt5/QtCore/QString:
+
+/usr/include/qt5/QtCore/qstring.h:
+
+/usr/include/qt5/QtCore/QAbstractTableModel:
+
+/usr/include/qt5/QtCore/QStringList:
+
+/usr/include/qt5/QtCore/qstringlist.h:

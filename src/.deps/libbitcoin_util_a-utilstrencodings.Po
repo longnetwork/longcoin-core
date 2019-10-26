@@ -1,18 +1,14 @@
 libbitcoin_util_a-utilstrencodings.o: utilstrencodings.cpp \
- utilstrencodings.h /usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
- /usr/share/mingw-w64/include/crtdefs.h \
- /usr/share/mingw-w64/include/_mingw.h \
- /usr/share/mingw-w64/include/_mingw_mac.h \
- /usr/share/mingw-w64/include/_mingw_secapi.h \
- /usr/share/mingw-w64/include/vadefs.h \
- /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
- /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h \
- /usr/share/mingw-w64/include/stddef.h /usr/include/c++/4.8/string \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h \
+ /usr/include/stdc-predef.h utilstrencodings.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h /usr/include/c++/4.8/string \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
  /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/memoryfwd.h \
  /usr/include/c++/4.8/bits/char_traits.h \
@@ -29,25 +25,24 @@ libbitcoin_util_a-utilstrencodings.o: utilstrencodings.cpp \
  /usr/include/c++/4.8/debug/debug.h \
  /usr/include/c++/4.8/bits/stl_iterator.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/share/mingw-w64/include/wchar.h \
- /usr/share/mingw-w64/include/_mingw_print_push.h \
- /usr/share/mingw-w64/include/_mingw_off_t.h \
- /usr/share/mingw-w64/include/_mingw_stat64.h \
- /usr/i686-w64-mingw32/include/swprintf.inl \
- /usr/share/mingw-w64/include/sec_api/wchar_s.h \
- /usr/share/mingw-w64/include/_mingw_print_pop.h \
- /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
  /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
  /usr/include/c++/4.8/exception \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/bits/localefwd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h \
- /usr/include/c++/4.8/clocale /usr/share/mingw-w64/include/locale.h \
- /usr/share/mingw-w64/include/stdio.h \
- /usr/share/mingw-w64/include/sec_api/stdio_s.h \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/cctype \
- /usr/share/mingw-w64/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
  /usr/include/c++/4.8/bits/ostream_insert.h \
  /usr/include/c++/4.8/bits/cxxabi_forced.h \
  /usr/include/c++/4.8/bits/stl_function.h \
@@ -55,22 +50,15 @@ libbitcoin_util_a-utilstrencodings.o: utilstrencodings.cpp \
  /usr/include/c++/4.8/bits/range_access.h \
  /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/ext/atomicity.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h \
- /usr/share/mingw-w64/include/pthread.h \
- /usr/share/mingw-w64/include/errno.h \
- /usr/share/mingw-w64/include/sys/types.h \
- /usr/share/mingw-w64/include/process.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h \
- /usr/share/mingw-w64/include/limits.h \
- /usr/share/mingw-w64/include/signal.h \
- /usr/share/mingw-w64/include/pthread_signal.h \
- /usr/share/mingw-w64/include/sys/timeb.h \
- /usr/share/mingw-w64/include/sec_api/sys/timeb_s.h \
- /usr/share/mingw-w64/include/pthread_compat.h \
- /usr/share/mingw-w64/include/pthread_unistd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
  /usr/include/c++/4.8/bits/basic_string.tcc /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_construct.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
@@ -78,63 +66,81 @@ libbitcoin_util_a-utilstrencodings.o: utilstrencodings.cpp \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc tinyformat.h \
- /usr/include/c++/4.8/cassert /usr/share/mingw-w64/include/assert.h \
- /usr/share/mingw-w64/include/stdlib.h \
- /usr/share/mingw-w64/include/sec_api/stdlib_s.h \
- /usr/share/mingw-w64/include/malloc.h /usr/include/c++/4.8/iostream \
- /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
- /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/c++/4.8/cassert /usr/include/assert.h \
+ /usr/include/c++/4.8/iostream /usr/include/c++/4.8/ostream \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
  /usr/include/c++/4.8/bits/locale_classes.tcc \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
  /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
- /usr/share/mingw-w64/include/wctype.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
  /usr/include/c++/4.8/bits/streambuf_iterator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc /usr/include/c++/4.8/sstream \
  /usr/include/c++/4.8/bits/sstream.tcc /usr/include/c++/4.8/stdexcept \
- /usr/include/c++/4.8/cstdlib /usr/include/c++/4.8/cstring \
- /usr/share/mingw-w64/include/string.h \
- /usr/share/mingw-w64/include/sec_api/string_s.h \
+ /usr/include/c++/4.8/cstdlib /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/4.8/cstring /usr/include/string.h /usr/include/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/c++/4.8/limits /usr/include/c++/4.8/cmath \
- /usr/share/mingw-w64/include/math.h /usr/include/c++/4.8/climits
+ /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/huge_val.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
+ /usr/include/x86_64-linux-gnu/bits/huge_vall.h \
+ /usr/include/x86_64-linux-gnu/bits/inf.h \
+ /usr/include/x86_64-linux-gnu/bits/nan.h \
+ /usr/include/x86_64-linux-gnu/bits/mathdef.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/c++/4.8/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h
+
+/usr/include/stdc-predef.h:
 
 utilstrencodings.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 
-/usr/share/mingw-w64/include/stdint.h:
+/usr/include/stdint.h:
 
-/usr/share/mingw-w64/include/crtdefs.h:
+/usr/include/features.h:
 
-/usr/share/mingw-w64/include/_mingw.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/share/mingw-w64/include/_mingw_mac.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/share/mingw-w64/include/_mingw_secapi.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/share/mingw-w64/include/vadefs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/share/mingw-w64/include/sdks/_mingw_directx.h:
-
-/usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
-
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h:
-
-/usr/share/mingw-w64/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/c++/4.8/string:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h:
 
 /usr/include/c++/4.8/bits/stringfwd.h:
 
@@ -172,23 +178,19 @@ utilstrencodings.h:
 
 /usr/include/c++/4.8/cwchar:
 
-/usr/share/mingw-w64/include/wchar.h:
+/usr/include/wchar.h:
 
-/usr/share/mingw-w64/include/_mingw_print_push.h:
+/usr/include/stdio.h:
 
-/usr/share/mingw-w64/include/_mingw_off_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h:
 
-/usr/share/mingw-w64/include/_mingw_stat64.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h:
 
-/usr/i686-w64-mingw32/include/swprintf.inl:
-
-/usr/share/mingw-w64/include/sec_api/wchar_s.h:
-
-/usr/share/mingw-w64/include/_mingw_print_pop.h:
+/usr/include/xlocale.h:
 
 /usr/include/c++/4.8/bits/allocator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:
 
 /usr/include/c++/4.8/ext/new_allocator.h:
 
@@ -200,21 +202,31 @@ utilstrencodings.h:
 
 /usr/include/c++/4.8/bits/localefwd.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h:
 
 /usr/include/c++/4.8/clocale:
 
-/usr/share/mingw-w64/include/locale.h:
+/usr/include/locale.h:
 
-/usr/share/mingw-w64/include/stdio.h:
-
-/usr/share/mingw-w64/include/sec_api/stdio_s.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/4.8/iosfwd:
 
 /usr/include/c++/4.8/cctype:
 
-/usr/share/mingw-w64/include/ctype.h:
+/usr/include/ctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
 /usr/include/c++/4.8/bits/ostream_insert.h:
 
@@ -230,37 +242,27 @@ utilstrencodings.h:
 
 /usr/include/c++/4.8/ext/atomicity.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:
 
-/usr/share/mingw-w64/include/pthread.h:
+/usr/include/pthread.h:
 
-/usr/share/mingw-w64/include/errno.h:
+/usr/include/sched.h:
 
-/usr/share/mingw-w64/include/sys/types.h:
+/usr/include/time.h:
 
-/usr/share/mingw-w64/include/process.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/share/mingw-w64/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/share/mingw-w64/include/signal.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/share/mingw-w64/include/pthread_signal.h:
-
-/usr/share/mingw-w64/include/sys/timeb.h:
-
-/usr/share/mingw-w64/include/sec_api/sys/timeb_s.h:
-
-/usr/share/mingw-w64/include/pthread_compat.h:
-
-/usr/share/mingw-w64/include/pthread_unistd.h:
-
-/usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h:
 
 /usr/include/c++/4.8/bits/basic_string.tcc:
 
@@ -282,13 +284,7 @@ tinyformat.h:
 
 /usr/include/c++/4.8/cassert:
 
-/usr/share/mingw-w64/include/assert.h:
-
-/usr/share/mingw-w64/include/stdlib.h:
-
-/usr/share/mingw-w64/include/sec_api/stdlib_s.h:
-
-/usr/share/mingw-w64/include/malloc.h:
+/usr/include/assert.h:
 
 /usr/include/c++/4.8/iostream:
 
@@ -312,13 +308,13 @@ tinyformat.h:
 
 /usr/include/c++/4.8/cwctype:
 
-/usr/share/mingw-w64/include/wctype.h:
+/usr/include/wctype.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h:
 
 /usr/include/c++/4.8/bits/streambuf_iterator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h:
 
 /usr/include/c++/4.8/bits/locale_facets.tcc:
 
@@ -338,16 +334,78 @@ tinyformat.h:
 
 /usr/include/c++/4.8/cstdlib:
 
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
 /usr/include/c++/4.8/cstring:
 
-/usr/share/mingw-w64/include/string.h:
+/usr/include/string.h:
 
-/usr/share/mingw-w64/include/sec_api/string_s.h:
+/usr/include/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/4.8/limits:
 
 /usr/include/c++/4.8/cmath:
 
-/usr/share/mingw-w64/include/math.h:
+/usr/include/math.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_val.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_valf.h:
+
+/usr/include/x86_64-linux-gnu/bits/huge_vall.h:
+
+/usr/include/x86_64-linux-gnu/bits/inf.h:
+
+/usr/include/x86_64-linux-gnu/bits/nan.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathdef.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/c++/4.8/climits:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:

@@ -80,7 +80,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
-host_triplet = i686-w64-mingw32
+host_triplet = x86_64-unknown-linux-gnu
 noinst_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5)
 am__append_1 = bench_verify bench_sign bench_internal bench_ecmult
@@ -522,7 +522,7 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 TEST_SUITE_LOG = test-suite.log
-TEST_EXTENSIONS = .exe .test
+TEST_EXTENSIONS =  .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -536,7 +536,7 @@ am__set_b = \
       b='$*';; \
   esac
 am__test_logs1 = $(TESTS:=.log)
-am__test_logs2 = $(am__test_logs1:.exe.log=.log)
+am__test_logs2 = $(am__test_logs1:.log=.log)
 TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
@@ -561,7 +561,7 @@ distcleancheck_listfiles = find . -type f -print
 ACLOCAL = ${SHELL} /home/mint/workspace/longcoin/longcoin-src/src/secp256k1/build-aux/missing aclocal-1.14
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/i686-w64-mingw32-ar
+AR = /usr/bin/ar
 AUTOCONF = ${SHELL} /home/mint/workspace/longcoin/longcoin-src/src/secp256k1/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /home/mint/workspace/longcoin/longcoin-src/src/secp256k1/build-aux/missing autoheader
 AUTOMAKE = ${SHELL} /home/mint/workspace/longcoin/longcoin-src/src/secp256k1/build-aux/missing automake-1.14
@@ -569,16 +569,16 @@ AWK = gawk
 BREW = 
 BUILD_EXEEXT = 
 BUILD_OBJEXT = 
-CC = i686-w64-mingw32-gcc
-CCAS = i686-w64-mingw32-gcc
+CC = gcc
+CCAS = gcc
 CCASDEPMODE = depmode=gcc3
-CCASFLAGS = -pipe -O2 
+CCASFLAGS = -g -O2
 CCDEPMODE = depmode=gcc3
 CC_FOR_BUILD = gcc
-CFLAGS = -pipe -O2  -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden -O3
+CFLAGS = -g -O2 -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden -O3
 CFLAGS_FOR_BUILD = -g -O2 $(am__append_9)
-CPP = i686-w64-mingw32-gcc -E
-CPPFLAGS = -I/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/ -I/usr/local/db4.8/include/
+CPP = gcc -E
+CPPFLAGS = -I/usr/local/db4.8/include/
 CPPFLAGS_FOR_BUILD =  $(am__append_8)
 CPP_FOR_BUILD = gcc -E
 CRYPTO_CFLAGS = 
@@ -586,14 +586,14 @@ CRYPTO_LIBS =
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = i686-w64-mingw32-dlltool
+DLLTOOL = false
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
-EXEEXT = .exe
+EXEEXT = 
 FGREP = /bin/grep -F
 GREP = /bin/grep
 INSTALL = /usr/bin/install -c
@@ -602,8 +602,8 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JNI_INCLUDES = 
-LD = /usr/bin/i686-w64-mingw32-ld
-LDFLAGS = -L/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/lib -L/usr/local/db4.8/lib/
+LD = /usr/bin/ld -m elf_x86_64
+LDFLAGS = -L/usr/local/db4.8/lib/
 LDFLAGS_FOR_BUILD = 
 LIBOBJS = 
 LIBS = 
@@ -614,9 +614,9 @@ LTLIBOBJS =
 MAKEINFO = ${SHELL} /home/mint/workspace/longcoin/longcoin-src/src/secp256k1/build-aux/missing makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
-NM = i686-w64-mingw32-nm
+NM = /usr/bin/nm -B
 NMEDIT = 
-OBJDUMP = i686-w64-mingw32-objdump
+OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -628,11 +628,11 @@ PACKAGE_TARNAME = libsecp256k1
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.1
 PATH_SEPARATOR = :
-PKG_CONFIG = /usr/bin/pkg-config --static
-PKG_CONFIG_LIBDIR = /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/lib/pkgconfig
-PKG_CONFIG_PATH = /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/share/pkgconfig
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 PORT = 
-RANLIB = /usr/bin/i686-w64-mingw32-ranlib
+RANLIB = /usr/bin/ranlib
 SECP_INCLUDES = 
 SECP_LIBS = 
 SECP_TEST_INCLUDES = 
@@ -640,15 +640,15 @@ SECP_TEST_LIBS =
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-STRIP = /usr/bin/i686-w64-mingw32-strip
+STRIP = /usr/bin/strip
 VERSION = 0.1
 _ACJNI_JAVAC = 
 abs_builddir = /home/mint/workspace/longcoin/longcoin-src/src/secp256k1
 abs_srcdir = /home/mint/workspace/longcoin/longcoin-src/src/secp256k1
 abs_top_builddir = /home/mint/workspace/longcoin/longcoin-src/src/secp256k1
 abs_top_srcdir = /home/mint/workspace/longcoin/longcoin-src/src/secp256k1
-ac_ct_AR = 
-ac_ct_CC = 
+ac_ct_AR = ar
+ac_ct_CC = gcc
 ac_ct_CC_FOR_BUILD = gcc
 ac_ct_DUMPBIN = 
 am__include = include
@@ -668,11 +668,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = i686-w64-mingw32
-host_alias = i686-w64-mingw32
-host_cpu = i686
-host_os = mingw32
-host_vendor = w64
+host = x86_64-unknown-linux-gnu
+host_alias = 
+host_cpu = x86_64
+host_os = linux-gnu
+host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -685,7 +685,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -1377,13 +1377,13 @@ exhaustive_tests.log: exhaustive_tests$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-.test$(EXEEXT).log:
-	@p='$<'; \
-	$(am__set_b); \
-	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
+#.test$(EXEEXT).log:
+#	@p='$<'; \
+#	$(am__set_b); \
+#	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
+#	--log-file $$b.log --trs-file $$b.trs \
+#	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
+#	"$$tst" $(AM_TESTS_FD_REDIRECT)
 
 distdir: $(DISTFILES)
 	$(am__remove_distdir)

@@ -5062,7 +5062,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //            #warning DEBUG peers
 //            printf("nTime-nSince=%li fGetAddr=%d IsRoutable=%d ",addr.nTime-nSince,pfrom->fGetAddr,addr.IsRoutable());
             
-            if (addr.nTime > nSince && !pfrom->fGetAddr && vAddr.size() <= 10 && addr.IsRoutable() &&  fKnownPort)
+            //if (addr.nTime > nSince && !pfrom->fGetAddr && vAddr.size() <= 10 && addr.IsRoutable() &&  fKnownPort)
+            if (addr.nTime > nSince && !pfrom->fGetAddr && vAddr.size() <= 100 && addr.IsRoutable() &&  fKnownPort)
             {
 //                 #warning DEBUG peers
 //                 printf("+ Relay ");
@@ -5089,7 +5090,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
                         hashKey = Hash(BEGIN(hashKey), END(hashKey));
                         mapMix.insert(make_pair(hashKey, pnode));
                     }
-                    int nRelayNodes = fReachable ? 2 : 1; // limited relaying of addresses outside our network(s)
+                    //int nRelayNodes = fReachable ? 2 : 1; // limited relaying of addresses outside our network(s)
+                    int nRelayNodes = fReachable ? 20 : 10;
                     for (multimap<uint256, CNode*>::iterator mi = mapMix.begin(); mi != mapMix.end() && nRelayNodes-- > 0; ++mi)
                         ((*mi).second)->PushAddress(addr);
                 }

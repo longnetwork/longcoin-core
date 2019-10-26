@@ -1,8 +1,13 @@
 qt/qt_libbitcoinqt_a-paymentrequest.pb.o: qt/paymentrequest.pb.cc \
- qt/paymentrequest.pb.h /usr/include/c++/4.8/string \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h \
+ /usr/include/stdc-predef.h qt/paymentrequest.pb.h \
+ /usr/include/c++/4.8/string \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
  /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/memoryfwd.h \
  /usr/include/c++/4.8/bits/char_traits.h \
@@ -19,32 +24,25 @@ qt/qt_libbitcoinqt_a-paymentrequest.pb.o: qt/paymentrequest.pb.cc \
  /usr/include/c++/4.8/debug/debug.h \
  /usr/include/c++/4.8/bits/stl_iterator.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/share/mingw-w64/include/wchar.h \
- /usr/share/mingw-w64/include/crtdefs.h \
- /usr/share/mingw-w64/include/_mingw.h \
- /usr/share/mingw-w64/include/_mingw_mac.h \
- /usr/share/mingw-w64/include/_mingw_secapi.h \
- /usr/share/mingw-w64/include/vadefs.h \
- /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
- /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /usr/share/mingw-w64/include/_mingw_print_push.h \
- /usr/share/mingw-w64/include/_mingw_off_t.h \
- /usr/share/mingw-w64/include/_mingw_stat64.h \
- /usr/i686-w64-mingw32/include/swprintf.inl \
- /usr/share/mingw-w64/include/sec_api/wchar_s.h \
- /usr/share/mingw-w64/include/_mingw_print_pop.h \
- /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/c++/4.8/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
  /usr/include/c++/4.8/ext/new_allocator.h /usr/include/c++/4.8/new \
  /usr/include/c++/4.8/exception \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/bits/localefwd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h \
- /usr/include/c++/4.8/clocale /usr/share/mingw-w64/include/locale.h \
- /usr/share/mingw-w64/include/stdio.h \
- /usr/share/mingw-w64/include/sec_api/stdio_s.h \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/cctype \
- /usr/share/mingw-w64/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/cctype /usr/include/ctype.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
  /usr/include/c++/4.8/bits/ostream_insert.h \
  /usr/include/c++/4.8/bits/cxxabi_forced.h \
  /usr/include/c++/4.8/bits/stl_function.h \
@@ -52,98 +50,119 @@ qt/qt_libbitcoinqt_a-paymentrequest.pb.o: qt/paymentrequest.pb.cc \
  /usr/include/c++/4.8/bits/range_access.h \
  /usr/include/c++/4.8/bits/basic_string.h \
  /usr/include/c++/4.8/ext/atomicity.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h \
- /usr/share/mingw-w64/include/pthread.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h \
- /usr/share/mingw-w64/include/stddef.h \
- /usr/share/mingw-w64/include/errno.h \
- /usr/share/mingw-w64/include/sys/types.h \
- /usr/share/mingw-w64/include/process.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h \
- /usr/share/mingw-w64/include/limits.h \
- /usr/share/mingw-w64/include/signal.h \
- /usr/share/mingw-w64/include/pthread_signal.h \
- /usr/share/mingw-w64/include/sys/timeb.h \
- /usr/share/mingw-w64/include/sec_api/sys/timeb_s.h \
- /usr/share/mingw-w64/include/pthread_compat.h \
- /usr/share/mingw-w64/include/pthread_unistd.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
  /usr/include/c++/4.8/bits/basic_string.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/common.h \
- /usr/share/mingw-w64/include/assert.h \
- /usr/share/mingw-w64/include/stdlib.h \
- /usr/share/mingw-w64/include/sec_api/stdlib_s.h \
- /usr/share/mingw-w64/include/malloc.h /usr/include/c++/4.8/cstddef \
- /usr/share/mingw-w64/include/string.h \
- /usr/share/mingw-w64/include/sec_api/string_s.h \
- /usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_message_util.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/once.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/atomicops.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/platform_macros.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/message.h \
- /usr/include/c++/4.8/vector /usr/include/c++/4.8/bits/stl_construct.h \
+ /usr/include/google/protobuf/stubs/common.h /usr/include/assert.h \
+ /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/4.8/cstddef /usr/include/string.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/google/protobuf/generated_message_util.h \
+ /usr/include/google/protobuf/message.h /usr/include/c++/4.8/vector \
+ /usr/include/c++/4.8/bits/stl_construct.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
  /usr/include/c++/4.8/bits/stl_bvector.h \
  /usr/include/c++/4.8/bits/vector.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/message_lite.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/descriptor.h \
- /usr/include/c++/4.8/set /usr/include/c++/4.8/bits/stl_tree.h \
- /usr/include/c++/4.8/bits/stl_set.h \
- /usr/include/c++/4.8/bits/stl_multiset.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/repeated_field.h \
- /usr/include/c++/4.8/iterator /usr/include/c++/4.8/ostream \
- /usr/include/c++/4.8/ios /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/google/protobuf/message_lite.h \
+ /usr/include/google/protobuf/descriptor.h \
+ /usr/include/google/protobuf/repeated_field.h \
+ /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
+ /usr/include/c++/4.8/bits/stl_relops.h \
+ /usr/include/c++/4.8/bits/stl_algo.h /usr/include/c++/4.8/cstdlib \
+ /usr/include/c++/4.8/bits/algorithmfwd.h \
+ /usr/include/c++/4.8/bits/stl_heap.h \
+ /usr/include/c++/4.8/bits/stl_tempbuf.h /usr/include/c++/4.8/iterator \
+ /usr/include/c++/4.8/ostream /usr/include/c++/4.8/ios \
+ /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/bits/locale_classes.h \
  /usr/include/c++/4.8/bits/locale_classes.tcc \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
  /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
- /usr/share/mingw-w64/include/wctype.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
  /usr/include/c++/4.8/bits/streambuf_iterator.h \
- /usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc \
  /usr/include/c++/4.8/bits/stream_iterator.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/type_traits.h \
- /usr/include/c++/4.8/utility /usr/include/c++/4.8/bits/stl_relops.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/template_util.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/extension_set.h \
- /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_map.h \
+ /usr/include/google/protobuf/stubs/type_traits.h \
+ /usr/include/google/protobuf/stubs/template_util.h \
+ /usr/include/google/protobuf/extension_set.h /usr/include/c++/4.8/map \
+ /usr/include/c++/4.8/bits/stl_tree.h /usr/include/c++/4.8/bits/stl_map.h \
  /usr/include/c++/4.8/bits/stl_multimap.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/unknown_field_set.h \
- /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/bits/stl_algo.h \
- /usr/include/c++/4.8/cstdlib /usr/include/c++/4.8/bits/algorithmfwd.h \
- /usr/include/c++/4.8/bits/stl_heap.h \
- /usr/include/c++/4.8/bits/stl_tempbuf.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/io/coded_stream.h \
- /usr/share/mingw-w64/include/sys/param.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format_lite_inl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format_lite.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_message_reflection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_enum_reflection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/reflection_ops.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/descriptor.pb.h
+ /usr/include/google/protobuf/unknown_field_set.h \
+ /usr/include/google/protobuf/stubs/once.h \
+ /usr/include/google/protobuf/stubs/atomicops.h \
+ /usr/include/google/protobuf/stubs/platform_macros.h \
+ /usr/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h \
+ /usr/include/google/protobuf/io/coded_stream.h \
+ /usr/include/x86_64-linux-gnu/sys/param.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/param.h /usr/include/linux/param.h \
+ /usr/include/x86_64-linux-gnu/asm/param.h \
+ /usr/include/asm-generic/param.h \
+ /usr/include/google/protobuf/wire_format_lite_inl.h \
+ /usr/include/google/protobuf/wire_format_lite.h \
+ /usr/include/google/protobuf/generated_message_reflection.h \
+ /usr/include/google/protobuf/generated_enum_reflection.h \
+ /usr/include/google/protobuf/reflection_ops.h \
+ /usr/include/google/protobuf/wire_format.h \
+ /usr/include/google/protobuf/descriptor.pb.h
+
+/usr/include/stdc-predef.h:
 
 qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/string:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/cpu_defines.h:
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h:
 
 /usr/include/c++/4.8/bits/stringfwd.h:
 
@@ -181,37 +200,21 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/cwchar:
 
-/usr/share/mingw-w64/include/wchar.h:
+/usr/include/wchar.h:
 
-/usr/share/mingw-w64/include/crtdefs.h:
+/usr/include/stdio.h:
 
-/usr/share/mingw-w64/include/_mingw.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h:
 
-/usr/share/mingw-w64/include/_mingw_mac.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/share/mingw-w64/include/_mingw_secapi.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h:
 
-/usr/share/mingw-w64/include/vadefs.h:
-
-/usr/share/mingw-w64/include/sdks/_mingw_directx.h:
-
-/usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
-
-/usr/share/mingw-w64/include/_mingw_print_push.h:
-
-/usr/share/mingw-w64/include/_mingw_off_t.h:
-
-/usr/share/mingw-w64/include/_mingw_stat64.h:
-
-/usr/i686-w64-mingw32/include/swprintf.inl:
-
-/usr/share/mingw-w64/include/sec_api/wchar_s.h:
-
-/usr/share/mingw-w64/include/_mingw_print_pop.h:
+/usr/include/xlocale.h:
 
 /usr/include/c++/4.8/bits/allocator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++allocator.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:
 
 /usr/include/c++/4.8/ext/new_allocator.h:
 
@@ -223,21 +226,31 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/bits/localefwd.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/c++locale.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h:
 
 /usr/include/c++/4.8/clocale:
 
-/usr/share/mingw-w64/include/locale.h:
+/usr/include/locale.h:
 
-/usr/share/mingw-w64/include/stdio.h:
-
-/usr/share/mingw-w64/include/sec_api/stdio_s.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/4.8/iosfwd:
 
 /usr/include/c++/4.8/cctype:
 
-/usr/share/mingw-w64/include/ctype.h:
+/usr/include/ctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
 
 /usr/include/c++/4.8/bits/ostream_insert.h:
 
@@ -253,75 +266,65 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/ext/atomicity.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:
 
-/usr/share/mingw-w64/include/pthread.h:
+/usr/include/pthread.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stddef.h:
+/usr/include/sched.h:
 
-/usr/share/mingw-w64/include/stddef.h:
+/usr/include/time.h:
 
-/usr/share/mingw-w64/include/errno.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/share/mingw-w64/include/sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/share/mingw-w64/include/process.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/limits.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include-fixed/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/share/mingw-w64/include/limits.h:
-
-/usr/share/mingw-w64/include/signal.h:
-
-/usr/share/mingw-w64/include/pthread_signal.h:
-
-/usr/share/mingw-w64/include/sys/timeb.h:
-
-/usr/share/mingw-w64/include/sec_api/sys/timeb_s.h:
-
-/usr/share/mingw-w64/include/pthread_compat.h:
-
-/usr/share/mingw-w64/include/pthread_unistd.h:
-
-/usr/include/c++/4.8/i686-w64-mingw32/bits/atomic_word.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h:
 
 /usr/include/c++/4.8/bits/basic_string.tcc:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/common.h:
+/usr/include/google/protobuf/stubs/common.h:
 
-/usr/share/mingw-w64/include/assert.h:
+/usr/include/assert.h:
 
-/usr/share/mingw-w64/include/stdlib.h:
+/usr/include/stdlib.h:
 
-/usr/share/mingw-w64/include/sec_api/stdlib_s.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/usr/share/mingw-w64/include/malloc.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/c++/4.8/cstddef:
 
-/usr/share/mingw-w64/include/string.h:
+/usr/include/string.h:
 
-/usr/share/mingw-w64/include/sec_api/string_s.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 
-/usr/lib/gcc/i686-w64-mingw32/4.8/include/stdint.h:
+/usr/include/stdint.h:
 
-/usr/share/mingw-w64/include/stdint.h:
+/usr/include/google/protobuf/generated_message_util.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_message_util.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/once.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/atomicops.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/platform_macros.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/message.h:
+/usr/include/google/protobuf/message.h:
 
 /usr/include/c++/4.8/vector:
 
@@ -337,19 +340,27 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/bits/vector.tcc:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/message_lite.h:
+/usr/include/google/protobuf/message_lite.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/descriptor.h:
+/usr/include/google/protobuf/descriptor.h:
 
-/usr/include/c++/4.8/set:
+/usr/include/google/protobuf/repeated_field.h:
 
-/usr/include/c++/4.8/bits/stl_tree.h:
+/usr/include/c++/4.8/algorithm:
 
-/usr/include/c++/4.8/bits/stl_set.h:
+/usr/include/c++/4.8/utility:
 
-/usr/include/c++/4.8/bits/stl_multiset.h:
+/usr/include/c++/4.8/bits/stl_relops.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/repeated_field.h:
+/usr/include/c++/4.8/bits/stl_algo.h:
+
+/usr/include/c++/4.8/cstdlib:
+
+/usr/include/c++/4.8/bits/algorithmfwd.h:
+
+/usr/include/c++/4.8/bits/stl_heap.h:
+
+/usr/include/c++/4.8/bits/stl_tempbuf.h:
 
 /usr/include/c++/4.8/iterator:
 
@@ -373,13 +384,13 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/cwctype:
 
-/usr/share/mingw-w64/include/wctype.h:
+/usr/include/wctype.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_base.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h:
 
 /usr/include/c++/4.8/bits/streambuf_iterator.h:
 
-/usr/include/c++/4.8/i686-w64-mingw32/bits/ctype_inline.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h:
 
 /usr/include/c++/4.8/bits/locale_facets.tcc:
 
@@ -393,50 +404,86 @@ qt/paymentrequest.pb.h:
 
 /usr/include/c++/4.8/bits/stream_iterator.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/type_traits.h:
+/usr/include/google/protobuf/stubs/type_traits.h:
 
-/usr/include/c++/4.8/utility:
+/usr/include/google/protobuf/stubs/template_util.h:
 
-/usr/include/c++/4.8/bits/stl_relops.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/stubs/template_util.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/extension_set.h:
+/usr/include/google/protobuf/extension_set.h:
 
 /usr/include/c++/4.8/map:
+
+/usr/include/c++/4.8/bits/stl_tree.h:
 
 /usr/include/c++/4.8/bits/stl_map.h:
 
 /usr/include/c++/4.8/bits/stl_multimap.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/unknown_field_set.h:
+/usr/include/google/protobuf/unknown_field_set.h:
 
-/usr/include/c++/4.8/algorithm:
+/usr/include/google/protobuf/stubs/once.h:
 
-/usr/include/c++/4.8/bits/stl_algo.h:
+/usr/include/google/protobuf/stubs/atomicops.h:
 
-/usr/include/c++/4.8/cstdlib:
+/usr/include/google/protobuf/stubs/platform_macros.h:
 
-/usr/include/c++/4.8/bits/algorithmfwd.h:
+/usr/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h:
 
-/usr/include/c++/4.8/bits/stl_heap.h:
+/usr/include/google/protobuf/io/coded_stream.h:
 
-/usr/include/c++/4.8/bits/stl_tempbuf.h:
+/usr/include/x86_64-linux-gnu/sys/param.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/io/coded_stream.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
-/usr/share/mingw-w64/include/sys/param.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format_lite_inl.h:
+/usr/include/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format_lite.h:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_message_reflection.h:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/generated_enum_reflection.h:
+/usr/include/linux/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/reflection_ops.h:
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/wire_format.h:
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/i686-w64-mingw32/include/google/protobuf/descriptor.pb.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/signal.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/x86_64-linux-gnu/bits/param.h:
+
+/usr/include/linux/param.h:
+
+/usr/include/x86_64-linux-gnu/asm/param.h:
+
+/usr/include/asm-generic/param.h:
+
+/usr/include/google/protobuf/wire_format_lite_inl.h:
+
+/usr/include/google/protobuf/wire_format_lite.h:
+
+/usr/include/google/protobuf/generated_message_reflection.h:
+
+/usr/include/google/protobuf/generated_enum_reflection.h:
+
+/usr/include/google/protobuf/reflection_ops.h:
+
+/usr/include/google/protobuf/wire_format.h:
+
+/usr/include/google/protobuf/descriptor.pb.h:
