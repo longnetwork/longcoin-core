@@ -111,18 +111,23 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 210000000; // 210000
-        consensus.nMajorityEnforceBlockUpgrade = 750; // 750
-        consensus.nMajorityRejectBlockOutdated = 950; // 950
-        consensus.nMajorityWindow = 1000; // 1000
+        consensus.nMajorityEnforceBlockUpgrade = 60; // 750
+        consensus.nMajorityRejectBlockOutdated = 90; // 950
+        
+        consensus.nMajorityWindow = 120; //1000; // 1000
+        
         consensus.BIP34Height = 1; // 227931
         //consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.powLimit = uint256S("0000007fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-		consensus.nPowTargetTimespan = 24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
-        consensus.nPowTargetSpacing = 2 * 60; // 10 * 60;
+        
+		consensus.nPowTargetTimespan =   60 * 60; //24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
+        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;     // 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 741; //684; // 1916 95% of 2016
-        consensus.nMinerConfirmationWindow = 780; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
+
+        consensus.nRuleChangeActivationThreshold = 50; //741; //684; // 1916 95% of 2016
+        consensus.nMinerConfirmationWindow = 80; //780; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
+        
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1558007865; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1558007865; // December 31, 2008
@@ -146,9 +151,9 @@ public:
         
         //vAlertPubKey = ParseHex("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284");
         //nDefaultPort = 8333;
-        nDefaultPort = 8777;
-		nMaxTipAge = 24 * 60 * 60;
-        nPruneAfterHeight = 100000;
+        nDefaultPort = 8778;
+		nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 240; //100000;
 
         genesis = CreateGenesisBlock(1558007865, 15080228, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -221,18 +226,22 @@ public:
     CTestNetParams() {
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 210000000; // 210000
-        consensus.nMajorityEnforceBlockUpgrade = 750; // 750
-        consensus.nMajorityRejectBlockOutdated = 950; // 950
-        consensus.nMajorityWindow = 1000; // 1000
+        consensus.nMajorityEnforceBlockUpgrade = 60; //750; // 750
+        consensus.nMajorityRejectBlockOutdated = 90; //950; // 950
+        
+        consensus.nMajorityWindow = 120; //1000; // 1000
+        
         consensus.BIP34Height = 1;
         consensus.powLimit = uint256S("0000007fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-        consensus.nPowTargetTimespan = 24 *60 * 60; // two weeks 14 * 24 * 60 * 60;
-        consensus.nPowTargetSpacing = 2 * 60; // 10 * 60;
+        consensus.nPowTargetTimespan = 60 * 60; //24 *60 * 60; // two weeks 14 * 24 * 60 * 60;
+        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;     // 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 540; // 1512 75% for testchains
-        consensus.nMinerConfirmationWindow = 720; // 2016 nPowTargetTimespan / nPowTargetSpacing
+        
+        consensus.nRuleChangeActivationThreshold = 50; //540; // 1512 75% for testchains
+        consensus.nMinerConfirmationWindow = 80; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
+        
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1559070662; // 1199145601 January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1559070662; // 1230767999 December 31, 2008
@@ -248,9 +257,9 @@ public:
         pchMessageStart[3] = 0x07;
         //vAlertPubKey = ParseHex("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a");
         //nDefaultPort = 18333;
-        nDefaultPort = 18777;
-        nMaxTipAge = 24 * 60 * 60;
-        nPruneAfterHeight = 1000;
+        nDefaultPort = 18778;
+        nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 240;
 
         genesis = CreateGenesisBlock(1559070662, 17163064, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -298,18 +307,23 @@ public:
     CRegTestParams() {
         strNetworkID = "regtest";
         consensus.nSubsidyHalvingInterval = 210000000;
-        consensus.nMajorityEnforceBlockUpgrade = 750; // 750
-        consensus.nMajorityRejectBlockOutdated = 950; // 950
-        consensus.nMajorityWindow = 1000; // 1000
+        consensus.nMajorityEnforceBlockUpgrade = 60; // 750
+        consensus.nMajorityRejectBlockOutdated = 90; // 950
+        
+        consensus.nMajorityWindow = 120; // 1000
+        
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 2 * 60;
+        
+        consensus.nPowTargetTimespan = 60 * 60; //24 * 60 * 60; // two weeks
+        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        consensus.nRuleChangeActivationThreshold = 540; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 720; // Faster than normal for regtest (144 instead of 2016)
+        
+        consensus.nRuleChangeActivationThreshold = 50; //540; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 80; //720; // Faster than normal for regtest (144 instead of 2016)
+        
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;
@@ -322,9 +336,9 @@ public:
         pchMessageStart[2] = 0xb5;
         pchMessageStart[3] = 0xda;
 
-        nDefaultPort = 18778;
-        nMaxTipAge = 24 * 60 * 60;
-        nPruneAfterHeight = 1000;
+        nDefaultPort = 18777;
+        nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 240;
 
         genesis = CreateGenesisBlock(1558007865, 15080228, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();

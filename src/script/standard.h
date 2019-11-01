@@ -28,7 +28,7 @@ public:
     CScriptID(const uint160& in) : uint160(in) {}
 };
 // (+1 for OP_RETURN, +3 for the pushdata opcodes, +5 for long Bytes, +4 to/from + 66 for 2x pubkey, +2 datatype, +2 encryption type, + 256 bytes for body )
-// ( 1 +3 +5 +4 +66 +2 +2 +3 +256 = 342
+// ( 1 +3 +5 +4 +66 +2 +2 +3 +256 = 342   FixMe: 64*1024 для данных см. также MAX_SCRIPT_ELEMENT_SIZE
 static const unsigned int MAX_OP_RETURN_RELAY = 344; //! bytes (+1 for OP_RETURN, +2 for the pushdata opcodes) //! байты (+1 для OP_RETURN, +2 для кодов операций pushdata)
 extern bool fAcceptDatacarrier;
 extern unsigned nMaxDatacarrierBytes;

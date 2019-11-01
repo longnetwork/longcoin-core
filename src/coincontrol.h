@@ -30,7 +30,7 @@ public:
         fAllowOtherInputs = false;
         fAllowWatchOnly = false;
         setSelected.clear();
-        nMinimumTotalFee = 1000000; // 0
+        nMinimumTotalFee = 1000000; // 0 FixMe: Наверно можно 1 вставить, что логично
     }
 
     bool HasSelected() const

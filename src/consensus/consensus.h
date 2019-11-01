@@ -18,7 +18,7 @@ static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
 /** Выходы транзакции Coinbase могут быть потрачены только после этого количества новых блоков (правила сети) */
 //static const int COINBASE_MATURITY = 100; Bitcoin Default
-static const int COINBASE_MATURITY = 60; //60
+static const int COINBASE_MATURITY = 30; //60
 
 /** Flags for nSequence and nLockTime locks */
 /** Флаги для nSequence и блокировки nLockTime */
@@ -29,7 +29,7 @@ enum {
 
     /* Use GetMedianTimePast() instead of nTime for end point timestamp. */
     /* Используйте GetMedianTimePast() вместо nTime для временной метки конечной точки. */
-    LOCKTIME_MEDIAN_TIME_PAST = (1 << 0),
+    LOCKTIME_MEDIAN_TIME_PAST = (1 << 0), // FixMe: Это явно ошибка (этот флаг тот же что и  LOCKTIME_VERIFY_SEQUENCE )
 };
 
 #endif // BITCOIN_CONSENSUS_CONSENSUS_H

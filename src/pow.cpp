@@ -20,8 +20,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return nProofOfWorkLimit;
 
     // Only change once per difficulty adjustment interval
+    // FixMe: Нужно по времени простоя динамически сокращать DifficultyAdjustmentInterval и пропускать в это условие
     if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval() != 0)
-    {
+    { 
         if (params.fPowAllowMinDifficultyBlocks)
         {
             // Special difficulty rule for testnet:
@@ -38,6 +39,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
                 return pindex->nBits;
             }
         }
+
+        // Вот сюда при простое вводить снижение сложности
+        
         return pindexLast->nBits;
     }
 

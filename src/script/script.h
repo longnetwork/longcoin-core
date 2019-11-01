@@ -21,7 +21,7 @@
 
 // Maximum number of bytes pushable to the stack
 // Максимальное количество байт, которые можно сместить в стек
-static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 520;
+static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 520; // FixMe: 64*1024 см. также MAX_OP_RETURN_RELAY
 
 // Maximum number of non-push operations per script
 // Максимальное количество операций без нажатия на скрипт
