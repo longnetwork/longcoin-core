@@ -120,11 +120,15 @@ public:
         //consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.powLimit = uint256S("0000007fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
-		consensus.nPowTargetTimespan =   60 * 60; //24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
-        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;     // 10 * 60;
+		consensus.nPowTargetTimespan0 = 24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
+        consensus.nPowTargetSpacing0 = 2 * 60;     // 10 * 60;
+
+consensus.nHeight1 = 90900-1;
+		consensus.nPowTargetTimespan1 =   60 * 60;
+        consensus.nPowTargetSpacing1 = 1 * 60;
+
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-
         consensus.nRuleChangeActivationThreshold = 50; //741; //684; // 1916 95% of 2016
         consensus.nMinerConfirmationWindow = 80; //780; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
         
@@ -234,11 +238,15 @@ public:
         consensus.BIP34Height = 1;
         consensus.powLimit = uint256S("0000007fffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
 
-        consensus.nPowTargetTimespan = 60 * 60; //24 *60 * 60; // two weeks 14 * 24 * 60 * 60;
-        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;     // 10 * 60;
+		consensus.nPowTargetTimespan0 = 24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
+        consensus.nPowTargetSpacing0 = 2 * 60;     // 10 * 60;
+
+consensus.nHeight1 = 90900-1;
+		consensus.nPowTargetTimespan1 =   60 * 60;
+        consensus.nPowTargetSpacing1 = 1 * 60;
+        
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        
         consensus.nRuleChangeActivationThreshold = 50; //540; // 1512 75% for testchains
         consensus.nMinerConfirmationWindow = 80; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
         
@@ -316,11 +324,15 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         
-        consensus.nPowTargetTimespan = 60 * 60; //24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 1 * 60; //2 * 60;
+		consensus.nPowTargetTimespan0 = 24 * 60 * 60; // 86400 two weeks 14 * 24 * 60 * 60;
+        consensus.nPowTargetSpacing0 = 2 * 60;     // 10 * 60;
+
+consensus.nHeight1 = 90900-1;
+		consensus.nPowTargetTimespan1 =   60 * 60;
+        consensus.nPowTargetSpacing1 = 1 * 60;
+        
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
-        
         consensus.nRuleChangeActivationThreshold = 50; //540; // 75% for testchains
         consensus.nMinerConfirmationWindow = 80; //720; // Faster than normal for regtest (144 instead of 2016)
         

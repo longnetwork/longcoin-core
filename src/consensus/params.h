@@ -55,13 +55,34 @@ struct Params {
     uint32_t nRuleChangeActivationThreshold;
     uint32_t nMinerConfirmationWindow;
     BIP9Deployment vDeployments[MAX_VERSION_BITS_DEPLOYMENTS];
+    
     /** Proof of work parameters */
     uint256 powLimit;
     bool fPowAllowMinDifficultyBlocks;
     bool fPowNoRetargeting;
-    int64_t nPowTargetSpacing;
-    int64_t nPowTargetTimespan;
-    int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
+    
+    int64_t nPowTargetSpacing0;
+    int64_t nPowTargetTimespan0;
+
+int nHeight1;
+    int64_t nPowTargetSpacing1;
+    int64_t nPowTargetTimespan1;
+    
+    int64_t DifficultyAdjustmentInterval (int block) const {
+         if (block >= nHeight1 ) return nPowTargetTimespan1 / nPowTargetSpacing1;
+         if (block >= 0 ) return nPowTargetTimespan0 / nPowTargetSpacing0;
+         return nPowTargetTimespan1 / nPowTargetSpacing1; // default - last rules
+    }
+    int64_t PowTargetSpacing(int block) const {
+        if (block >= nHeight1 ) return nPowTargetSpacing1;
+        if( block >= 0) return nPowTargetSpacing0;
+        return nPowTargetSpacing1; // default - last rules
+    }
+    int64_t PowTargetTimespan(int block) const {
+        if (block >= nHeight1 ) return nPowTargetTimespan1;
+        if( block >= 0) return nPowTargetTimespan0;
+        return nPowTargetTimespan1; // default - last rules
+    } 
 };
 } // namespace Consensus
 
