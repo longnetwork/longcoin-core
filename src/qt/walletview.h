@@ -59,13 +59,13 @@ private:
     WalletModel *walletModel;
 
     OverviewPage *overviewPage;
-    QWidget *transactionsPage1; QWidget *transactionsPage2; QWidget *transactionsPage3; QWidget *transactionsPage4;
+    QWidget *transactionsPage1; QWidget *transactionsPage2; /*QWidget *transactionsPage3; QWidget *transactionsPage4;*/
     ReceiveCoinsDialog *receiveCoinsPage;
     SendCoinsDialog *sendCoinsPage;
     AddressBookPage *usedSendingAddressesPage;
     AddressBookPage *usedReceivingAddressesPage;
 
-    TransactionView *transactionView1; TransactionView *transactionView2; TransactionView *transactionView3; TransactionView *transactionView4;
+    TransactionView *transactionView1; TransactionView *transactionView2; /*TransactionView *transactionView3; TransactionView *transactionView4;*/
 
     QProgressDialog *progressDialog;
     const PlatformStyle *platformStyle;
@@ -76,7 +76,7 @@ public Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
-    void gotoHistoryPage1(); void gotoHistoryPage2(); void gotoHistoryPage3(); void gotoHistoryPage4();
+    void gotoHistoryPage1(); void gotoHistoryPage2(); /*void gotoHistoryPage3(); void gotoHistoryPage4();*/
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

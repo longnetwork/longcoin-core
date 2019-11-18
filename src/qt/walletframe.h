@@ -54,7 +54,7 @@ public Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
-    void gotoHistoryPage1(); void gotoHistoryPage2(); void gotoHistoryPage3(); void gotoHistoryPage4();
+    void gotoHistoryPage1(); void gotoHistoryPage2(); /*void gotoHistoryPage3(); void gotoHistoryPage4();*/
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

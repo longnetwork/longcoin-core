@@ -67,21 +67,27 @@ struct Params {
 int nHeight1;
     int64_t nPowTargetSpacing1;
     int64_t nPowTargetTimespan1;
+int nHeight2;
+    int64_t nPowTargetSpacing2;
+    int64_t nPowTargetTimespan2;    
     
     int64_t DifficultyAdjustmentInterval (int block) const {
+         if (block >= nHeight2 ) return nPowTargetTimespan2 / nPowTargetSpacing2;
          if (block >= nHeight1 ) return nPowTargetTimespan1 / nPowTargetSpacing1;
          if (block >= 0 ) return nPowTargetTimespan0 / nPowTargetSpacing0;
-         return nPowTargetTimespan1 / nPowTargetSpacing1; // default - last rules
+         return nPowTargetTimespan2 / nPowTargetSpacing2; // default - last rules
     }
     int64_t PowTargetSpacing(int block) const {
+        if (block >= nHeight2 ) return nPowTargetSpacing2;
         if (block >= nHeight1 ) return nPowTargetSpacing1;
         if( block >= 0) return nPowTargetSpacing0;
-        return nPowTargetSpacing1; // default - last rules
+        return nPowTargetSpacing2; // default - last rules
     }
     int64_t PowTargetTimespan(int block) const {
+        if (block >= nHeight2 ) return nPowTargetTimespan2;
         if (block >= nHeight1 ) return nPowTargetTimespan1;
         if( block >= 0) return nPowTargetTimespan0;
-        return nPowTargetTimespan1; // default - last rules
+        return nPowTargetTimespan2; // default - last rules
     } 
 };
 } // namespace Consensus

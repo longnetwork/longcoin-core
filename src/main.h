@@ -44,14 +44,14 @@ struct CNodeStateStats;
 struct LockPoints;
 
 /** Default for accepting alerts from the P2P network. */
-static const bool DEFAULT_ALERTS = false;
+static const bool DEFAULT_ALERTS = true; //false;
 /** Default for DEFAULT_WHITELISTRELAY. */
 static const bool DEFAULT_WHITELISTRELAY = true;
 /** Default for DEFAULT_WHITELISTFORCERELAY. */
 static const bool DEFAULT_WHITELISTFORCERELAY = true;
 /** Default for -minrelaytxfee, minimum relay fee for transactions */
 /** По умолчанию для -minrelaytxfee, минимальная плата за транзакцию для транзакций */
-static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 1000000;
+static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 1; //1000000; // FixMe: Тариф (в LONG / кБ), меньшие, чем это, считаются нулевым за ретрансляцию, майнинг и создание транзакций (типа равноприоритетные)
 /** Default for -maxorphantx, maximum number of orphan transactions kept in memory */
 /** По умолчанию для -maxorphantx, максимальное количество сиротских транзакций, хранящихся в памяти */
 static const unsigned int DEFAULT_MAX_ORPHAN_TRANSACTIONS = 100;
@@ -77,7 +77,7 @@ static const int MAX_SCRIPTCHECK_THREADS = 16;
 /** -par default (number of script-checking threads, 0 = auto) */
 static const int DEFAULT_SCRIPTCHECK_THREADS = 0;
 /** Number of blocks that can be requested at any given time from a single peer. */
-static const int MAX_BLOCKS_IN_TRANSIT_PER_PEER = 30; //16;
+static const int MAX_BLOCKS_IN_TRANSIT_PER_PEER = 20; //16;
 /** Timeout in seconds during which a peer must stall block download progress before being disconnected. */
 static const unsigned int BLOCK_STALLING_TIMEOUT = 4; //2;
 /** Number of headers sent in one getheaders result. We rely on the assumption that if a peer sends

@@ -127,6 +127,10 @@ consensus.nHeight1 = 90900-1;
 		consensus.nPowTargetTimespan1 =   60 * 60;
         consensus.nPowTargetSpacing1 = 1 * 60;
 
+consensus.nHeight2 = 115000-1;
+		consensus.nPowTargetTimespan2 =   60 * 60;
+        consensus.nPowTargetSpacing2 = 2 * 60;
+
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 50; //741; //684; // 1916 95% of 2016
@@ -153,7 +157,7 @@ consensus.nHeight1 = 90900-1;
         pchMessageStart[2] = 0xb4;
         pchMessageStart[3] = 0xd9;
         
-        //vAlertPubKey = ParseHex("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284");
+        vAlertPubKey = ParseHex("042ec9613a8b5b27c766a1bfce3e1434c9bdf87e53c4aa1e28db8d70b8f3a31128dfddf0953b86ff6fe255781a8c95826c30a382ace2d9df833609cba493025d6b"); 
         //nDefaultPort = 8333;
         nDefaultPort = 8778;
 		nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
@@ -244,6 +248,10 @@ public:
 consensus.nHeight1 = 90900-1;
 		consensus.nPowTargetTimespan1 =   60 * 60;
         consensus.nPowTargetSpacing1 = 1 * 60;
+
+consensus.nHeight2 = 115000-1;
+		consensus.nPowTargetTimespan2 =   60 * 60;
+        consensus.nPowTargetSpacing2 = 2 * 60;
         
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
@@ -263,7 +271,7 @@ consensus.nHeight1 = 90900-1;
         pchMessageStart[1] = 0x11;
         pchMessageStart[2] = 0x09;
         pchMessageStart[3] = 0x07;
-        //vAlertPubKey = ParseHex("04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a");
+        vAlertPubKey = ParseHex("042ec9613a8b5b27c766a1bfce3e1434c9bdf87e53c4aa1e28db8d70b8f3a31128dfddf0953b86ff6fe255781a8c95826c30a382ace2d9df833609cba493025d6b");
         //nDefaultPort = 18333;
         nDefaultPort = 18778;
         nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
@@ -330,6 +338,10 @@ public:
 consensus.nHeight1 = 90900-1;
 		consensus.nPowTargetTimespan1 =   60 * 60;
         consensus.nPowTargetSpacing1 = 1 * 60;
+
+consensus.nHeight2 = 115000-1;
+		consensus.nPowTargetTimespan2 =   60 * 60;
+        consensus.nPowTargetSpacing2 = 2 * 60;
         
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;

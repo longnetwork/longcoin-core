@@ -405,7 +405,7 @@ bool SendCoinsEntry::validate()
     // Sending a zero amount is invalid
     // Отправка отрицательной суммы недействительна.
     //if (ui->payAmount->value(0) <= 0)
-    if (ui->payAmount->value(0) < 0)
+    if (ui->payAmount->value(0) < 0)  // FixMe: Это зделали чтобы передача текста проходила с 0 amount
     {
         ui->payAmount->setValid(false);
         retval = false;
@@ -413,10 +413,10 @@ bool SendCoinsEntry::validate()
 
     // Reject dust outputs:
     // Отклонить выходы пыли:
-    //if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) {
-    //    ui->payAmount->setValid(false);
-    //    retval = false;
-    //}
+    if (retval && GUIUtil::isDust(ui->payTo->text(), ui->payAmount->value())) { // у нас ее нет - код не достижим
+        ui->payAmount->setValid(false);
+        retval = false;
+    }
 
     if (ui->encryptionTypeComboBox->currentIndex() == 1) { // шифрование на публчный ключ
         if (!model->validatePubKeyHex(ui->payFromPubKeyHex->text()))

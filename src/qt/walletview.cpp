@@ -40,56 +40,78 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     transactionsPage1 = new QWidget(this);
         transactionsPage2 = new QWidget(this);
+/*
         transactionsPage3 = new QWidget(this);
         transactionsPage4 = new QWidget(this);
-    
+*/    
     QVBoxLayout *vbox1 = new QVBoxLayout();
         QVBoxLayout *vbox2 = new QVBoxLayout();
+/*
         QVBoxLayout *vbox3 = new QVBoxLayout();
         QVBoxLayout *vbox4 = new QVBoxLayout();
+*/
     QHBoxLayout *hbox_buttons1 = new QHBoxLayout();
         QHBoxLayout *hbox_buttons2 = new QHBoxLayout();
+/*
         QHBoxLayout *hbox_buttons3 = new QHBoxLayout();
         QHBoxLayout *hbox_buttons4 = new QHBoxLayout();
+*/
     transactionView1 = new TransactionView(platformStyle, this);
         transactionView2 = new TransactionView(platformStyle, this);
+/*
         transactionView3 = new TransactionView(platformStyle, this);
         transactionView4 = new TransactionView(platformStyle, this);
+*/
     vbox1->addWidget(transactionView1);
         vbox2->addWidget(transactionView2);
+/*
         vbox3->addWidget(transactionView3);
         vbox4->addWidget(transactionView4);
+*/
     QPushButton *exportButton1 = new QPushButton(tr("&Export"), this);
         QPushButton *exportButton2 = new QPushButton(tr("&Export"), this);
+/*
         QPushButton *exportButton3 = new QPushButton(tr("&Export"), this);
         QPushButton *exportButton4 = new QPushButton(tr("&Export"), this);
+*/
     exportButton1->setToolTip(tr("Export the data in the current tab to a file"));
         exportButton2->setToolTip(tr("Export the data in the current tab to a file"));
+/*
         exportButton3->setToolTip(tr("Export the data in the current tab to a file"));
         exportButton4->setToolTip(tr("Export the data in the current tab to a file"));
-        
+*/        
     if (platformStyle->getImagesOnButtons()) {
         exportButton1->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
             exportButton2->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
+/*
             exportButton3->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
             exportButton4->setIcon(platformStyle->SingleColorIcon(":/icons/export"));
+*/
     }
     hbox_buttons1->addStretch();
         hbox_buttons2->addStretch();
+/*
         hbox_buttons3->addStretch();
         hbox_buttons4->addStretch();
+*/
     hbox_buttons1->addWidget(exportButton1);
         hbox_buttons2->addWidget(exportButton2);
+/*
         hbox_buttons3->addWidget(exportButton3);
         hbox_buttons4->addWidget(exportButton4);
+*/
     vbox1->addLayout(hbox_buttons1);
         vbox2->addLayout(hbox_buttons2);
+/*
         vbox3->addLayout(hbox_buttons3);
         vbox4->addLayout(hbox_buttons4);
+*/
     transactionsPage1->setLayout(vbox1);
         transactionsPage2->setLayout(vbox2);
+/*
         transactionsPage3->setLayout(vbox3);
         transactionsPage4->setLayout(vbox4);
+*/
 
     receiveCoinsPage = new ReceiveCoinsDialog(platformStyle);
     sendCoinsPage = new SendCoinsDialog(platformStyle);
@@ -98,41 +120,47 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     usedReceivingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
 
     addWidget(overviewPage);
-    addWidget(transactionsPage1); addWidget(transactionsPage2); addWidget(transactionsPage3); addWidget(transactionsPage4);
+    addWidget(transactionsPage1); addWidget(transactionsPage2); /*addWidget(transactionsPage3); addWidget(transactionsPage4);*/
     addWidget(receiveCoinsPage);
     addWidget(sendCoinsPage);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView1, SLOT(focusTransaction(QModelIndex)));
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView2, SLOT(focusTransaction(QModelIndex)));
+/*
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView3, SLOT(focusTransaction(QModelIndex)));
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView4, SLOT(focusTransaction(QModelIndex)));
-
+*/
     // Double-clicking on a transaction on the transaction history page shows details
     connect(transactionView1, SIGNAL(doubleClicked(QModelIndex)), transactionView1, SLOT(showDetails()));
     connect(transactionView2, SIGNAL(doubleClicked(QModelIndex)), transactionView2, SLOT(showDetails()));
+/*
     connect(transactionView3, SIGNAL(doubleClicked(QModelIndex)), transactionView3, SLOT(showDetails()));
     connect(transactionView4, SIGNAL(doubleClicked(QModelIndex)), transactionView4, SLOT(showDetails()));
-
+*/
     // Clicking on "Export" allows to export the transaction list
     connect(exportButton1, SIGNAL(clicked()), transactionView1, SLOT(exportClicked()));
     connect(exportButton2, SIGNAL(clicked()), transactionView2, SLOT(exportClicked()));
+/*
     connect(exportButton3, SIGNAL(clicked()), transactionView3, SLOT(exportClicked()));
     connect(exportButton4, SIGNAL(clicked()), transactionView4, SLOT(exportClicked()));     
-
+*/
     // Pass through messages from sendCoinsPage
     connect(sendCoinsPage, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
     // Pass through messages from transactionView
     connect(transactionView1, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
     connect(transactionView2, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+/*
     connect(transactionView3, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
     connect(transactionView4, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
-
+*/
 
     connect(transactionView1, SIGNAL(replyToPushButtonClicked(QString)), this, SLOT(onReplyToPushButtonClicked(QString)));
     connect(transactionView2, SIGNAL(replyToPushButtonClicked(QString)), this, SLOT(onReplyToPushButtonClicked(QString)));
+/*
     connect(transactionView3, SIGNAL(replyToPushButtonClicked(QString)), this, SLOT(onReplyToPushButtonClicked(QString)));
     connect(transactionView4, SIGNAL(replyToPushButtonClicked(QString)), this, SLOT(onReplyToPushButtonClicked(QString)));
+*/
 }
 
 WalletView::~WalletView()
@@ -147,6 +175,9 @@ void WalletView::setBitcoinGUI(BitcoinGUI *gui)
 //        connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage4()));
 //        connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage3()));
 //        connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage2()));
+
+
+
         connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), gui, SLOT(gotoHistoryPage1()));
         // Наверно пролистает подряд....
 
@@ -176,8 +207,10 @@ void WalletView::setWalletModel(WalletModel *walletModel)
     // Put transaction list in tabs
     transactionView1->setModel(walletModel);
         transactionView2->setModel(walletModel);
+/*
         transactionView3->setModel(walletModel);
         transactionView4->setModel(walletModel);
+*/
     overviewPage->setWalletModel(walletModel);
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
@@ -219,8 +252,8 @@ void WalletView::processNewTransaction(const QModelIndex& parent, int start, int
     qint64 amount = ttm->index(start, TransactionTableModel::Amount, parent).data(Qt::EditRole).toULongLong();
     QString type = ttm->index(start, TransactionTableModel::Type, parent).data().toString();
     QModelIndex index = ttm->index(start, 0, parent);
-    QString address = ttm->data(index, TransactionTableModel::AddressRole).toString();
-    QString label = ttm->data(index, TransactionTableModel::LabelRole).toString();
+    QString address = ttm->data(index, TransactionTableModel::AddressRoleTo).toString(); // FixMe for AddressRoleFrom
+    QString label = ttm->data(index, TransactionTableModel::LabelRoleTo).toString(); // FixMe for LabelRoleFrom
     QString pubKeyHex = ttm->data(index, TransactionTableModel::PubKeyHexRole).toString();
 
 
@@ -240,6 +273,7 @@ void WalletView::gotoHistoryPage2()
 {
     setCurrentWidget(transactionsPage2);
 }
+/*
 void WalletView::gotoHistoryPage3()
 {
     setCurrentWidget(transactionsPage3);
@@ -248,7 +282,7 @@ void WalletView::gotoHistoryPage4()
 {
     setCurrentWidget(transactionsPage4);
 }
-
+*/
 void WalletView::gotoReceiveCoinsPage()
 {
     setCurrentWidget(receiveCoinsPage);

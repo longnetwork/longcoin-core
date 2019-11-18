@@ -183,11 +183,12 @@ bool CWallet::LoadCScript(const CScript& redeemScript)
     /* A sanity check was added in pull #3843 to avoid adding redeemScripts
      * that never can be redeemed. However, old wallets may still contain
      * these. Do not add them to the wallet and warn. */
-    if (redeemScript.size() > MAX_SCRIPT_ELEMENT_SIZE)
+    // if (redeemScript.size() > MAX_SCRIPT_ELEMENT_SIZE)
+    if (redeemScript.size() > MAX_SCRIPT_REDEEM_SIZE)
     {
         std::string strAddr = CBitcoinAddress(CScriptID(redeemScript)).ToString();
         LogPrintf("%s: Warning: This wallet contains a redeemScript of size %i which exceeds maximum size %i thus can never be redeemed. Do not use address %s.\n",
-            __func__, redeemScript.size(), MAX_SCRIPT_ELEMENT_SIZE, strAddr);
+            __func__, redeemScript.size(), MAX_SCRIPT_REDEEM_SIZE, strAddr); // __func__, redeemScript.size(), MAX_SCRIPT_ELEMENT_SIZE, strAddr);
         return true;
     }
 
@@ -2110,7 +2111,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
 
                         
 
-
+//                        Все после обработки сдачи как положено, эти хард-код-мутки стали не нужны!
 //                        scriptChange = GetScriptForDestination(vchDefaultKey.GetID()); // FixMe: Так здача идет на дефаулт адресс (вообще это палевно когда на один адрес все транзакции здачю возвращают)
 //
 //                        // и так в кошельке будет еще одна транзакция для здачи на default

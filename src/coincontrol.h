@@ -30,7 +30,7 @@ public:
         fAllowOtherInputs = false;
         fAllowWatchOnly = false;
         setSelected.clear();
-        nMinimumTotalFee = 1000000; // 0 FixMe: Наверно можно 1 вставить, что логично
+        nMinimumTotalFee = 1; //1000000; // 0 FixMe: Наверно можно 1 вставить, что логично (см. также DEFAULT_MIN_RELAY_TX_FEE)
     }
 
     bool HasSelected() const

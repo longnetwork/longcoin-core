@@ -342,8 +342,8 @@ void TransactionView::exportClicked()
         writer.addColumn(tr("Watch-only"), TransactionTableModel::Watchonly);
     writer.addColumn(tr("Date"), 0, TransactionTableModel::DateRole);
     writer.addColumn(tr("Type"), TransactionTableModel::Type, Qt::EditRole);
-    writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRole);
-    writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRole);
+    writer.addColumn(tr("Label"), 0, TransactionTableModel::LabelRoleTo); // FixMe for LabelRoleFrom
+    writer.addColumn(tr("Address"), 0, TransactionTableModel::AddressRoleTo); // FixMe for AddressRoleFrom
     writer.addColumn(BitcoinUnits::getAmountColumnTitle(model->getOptionsModel()->getDisplayUnit()), 0, TransactionTableModel::FormattedAmountRole);
     writer.addColumn(tr("ID"), 0, TransactionTableModel::TxIDRole);
 
@@ -368,12 +368,12 @@ void TransactionView::contextualMenu(const QPoint &point)
 
 void TransactionView::copyAddress()
 {
-    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::AddressRole);
+    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::AddressRoleTo); // FixMe for AddressRoleFrom
 }
 
 void TransactionView::copyLabel()
 {
-    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::LabelRole);
+    GUIUtil::copyEntryData(transactionView, 0, TransactionTableModel::LabelRoleTo); // FixMe for LabelRoleFrom
 }
 
 void TransactionView::copyAmount()
@@ -401,7 +401,7 @@ void TransactionView::editLabel()
         AddressTableModel *addressBook = model->getAddressTableModel();
         if(!addressBook)
             return;
-        QString address = selection.at(0).data(TransactionTableModel::AddressRole).toString();
+        QString address = selection.at(0).data(TransactionTableModel::AddressRoleTo).toString(); // FixMe for AddressRoleFrom
         if(address.isEmpty())
         {
             // If this transaction has no associated address, exit

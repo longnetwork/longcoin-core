@@ -428,7 +428,8 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord *wtx, b
     case TransactionRecord::RecvFromOther:
         return QString::fromStdString(wtx->address) + watchAddress;
     case TransactionRecord::RecvWithAddress: // Вход в мой адрес
-        return lookupAddress(wtx->address, tooltip) + watchAddress;
+        if (wtx->address.empty()) return lookupAddress(wtx->addressFrom, tooltip) + watchAddress;
+        else                      return lookupAddress(wtx->address, tooltip) + watchAddress;
     case TransactionRecord::SendToAddress:   // Выход с моего адреса
         if (wtx->addressFrom.empty()) return lookupAddress(wtx->address, tooltip) + watchAddress;
         else                          return lookupAddress(wtx->addressFrom, tooltip) + watchAddress;
@@ -620,14 +621,22 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         return txWatchonlyDecoration(rec);
     case LongDescriptionRole:
         return priv->describe(rec, walletModel->getOptionsModel()->getDisplayUnit());
-    case AddressRole:
+    case AddressRoleTo:
         return QString::fromStdString(rec->address);
-    case LabelRole:
+    case AddressRoleFrom:
+        return QString::fromStdString(rec->addressFrom);
+    case LabelRoleTo:
     {
         QString label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
         if(label.isEmpty()) label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->addressFrom));        
         return label;
     }
+    case LabelRoleFrom:
+    {
+        QString label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->addressFrom));
+        if(label.isEmpty()) label = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));        
+        return label;
+    }    
     case toHexRole:
         return QVariant(QString::fromStdString(rec->pubKeyHexTo));
     case fromHexRole:

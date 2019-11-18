@@ -88,8 +88,10 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
 
     // init transaction fee section
     QSettings settings;
-	settings.setValue("nTransactionFee", (qint64)DEFAULT_TRANSACTION_FEE);
-    settings.setValue("nCustomFeeRadio", 1);
+    
+
+/*  Игнорим настройки в файле
+
     if (!settings.contains("fFeeSectionMinimized"))
         settings.setValue("fFeeSectionMinimized", true);
     if (!settings.contains("nFeeRadio") && settings.contains("nTransactionFee") && settings.value("nTransactionFee").toLongLong() > 0) // compatibility
@@ -109,28 +111,31 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
         settings.setValue("fPayOnlyMinFee", false);
     if (!settings.contains("fSendFreeTransactions"))
         settings.setValue("fSendFreeTransactions", false);
-    
+ */   
+
 
     ui->groupFee->setId(ui->radioSmartFee, 0);
     ui->groupFee->setId(ui->radioCustomFee, 1);
-    ui->groupFee->button((int)std::max(0, std::min(1, settings.value("nFeeRadio").toInt())))->setChecked(true);
+    //ui->groupFee->button((int)std::max(0, std::min(1, settings.value("nFeeRadio").toInt())))->setChecked(true);
+
+    
     ui->groupCustomFee->setId(ui->radioCustomPerKilobyte, 0);
     ui->groupCustomFee->setId(ui->radioCustomAtLeast, 1);
-    ui->groupCustomFee->button((int)std::max(0, std::min(1, settings.value("nCustomFeeRadio").toInt())))->setChecked(true);
-    ui->sliderSmartFee->setValue(settings.value("nSmartFeeSliderPosition").toInt());
-    ui->customFee->setValue((qint64)DEFAULT_TRANSACTION_FEE);
-    ui->radioCustomAtLeast->setChecked(true);
-    
-    //ui->checkBoxMinimumFee->setChecked(settings.value("fPayOnlyMinFee").toBool());
-	ui->checkBoxMinimumFee->setChecked(false);
-    //ui->checkBoxFreeTx->setChecked(settings.value("fSendFreeTransactions").toBool());
-	ui->checkBoxFreeTx->setChecked(false);
-    //minimizeFeeSection(settings.value("fFeeSectionMinimized").toBool());
-	minimizeFeeSection(true);
-    
-    ui->addButton->setEnabled(false);
-    ui->addButton->setVisible(false);
+    //ui->groupCustomFee->button((int)std::max(0, std::min(1, settings.value("nCustomFeeRadio").toInt())))->setChecked(true);
 
+    // Принудительные параметры
+    ui->checkBoxMinimumFee->setChecked(false);
+    ui->checkBoxFreeTx->setChecked(false);
+    ui->sliderSmartFee->setValue(0);
+    ui->customFee->setValue((qint64)DEFAULT_TRANSACTION_FEE);
+    //ui->radioCustomAtLeast->setChecked(true);
+
+    ui->groupFee->button(1)->setChecked(false);
+    ui->groupCustomFee->button(0)->setChecked(false);
+    
+    ui->addButton->setEnabled(true); ui->addButton->setVisible(true); // FixMe: Это кнопка добавить получателя (включил после исправления многоадресных транзакций sendmany)
+
+    minimizeFeeSection(true); // Шоб не смущать людей
 }
 
 void SendCoinsDialog::setClientModel(ClientModel *clientModel)
@@ -186,9 +191,10 @@ void SendCoinsDialog::setModel(WalletModel *model)
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
         connect(ui->checkBoxFreeTx, SIGNAL(stateChanged(int)), this, SLOT(updateGlobalFeeVariables()));
         connect(ui->checkBoxFreeTx, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
-        //ui->customFee->setSingleStep(CWallet::GetRequiredFee(1000));
-		ui->customFee->setSingleStep((qint64)DEFAULT_TRANSACTION_FEE);
-        ui->customFee->setValue((qint64)DEFAULT_TRANSACTION_FEE);
+
+        ui->customFee->setSingleStep(CWallet::GetRequiredFee(1000));
+		//ui->customFee->setSingleStep((qint64)DEFAULT_TRANSACTION_FEE);
+        // ui->customFee->setValue((qint64)DEFAULT_TRANSACTION_FEE);
         updateFeeSectionControls();
         updateMinFeeLabel();
         updateSmartFeeLabel();
@@ -199,6 +205,7 @@ void SendCoinsDialog::setModel(WalletModel *model)
 SendCoinsDialog::~SendCoinsDialog()
 {
     QSettings settings;
+/*
     settings.setValue("fFeeSectionMinimized", fFeeMinimized);
     settings.setValue("nFeeRadio", ui->groupFee->checkedId());
     settings.setValue("nCustomFeeRadio", ui->groupCustomFee->checkedId());
@@ -206,7 +213,7 @@ SendCoinsDialog::~SendCoinsDialog()
     settings.setValue("nTransactionFee", (qint64)ui->customFee->value());
     settings.setValue("fPayOnlyMinFee", ui->checkBoxMinimumFee->isChecked());
     settings.setValue("fSendFreeTransactions", ui->checkBoxFreeTx->isChecked());
-
+*/
     delete ui;
 }
 
@@ -587,8 +594,10 @@ void SendCoinsDialog::processSendCoinsReturn(const WalletModel::SendCoinsReturn 
 void SendCoinsDialog::minimizeFeeSection(bool fMinimize)
 {
     ui->labelFeeMinimized->setVisible(fMinimize);
+
     //ui->buttonChooseFee  ->setVisible(fMinimize);
-	 ui->buttonChooseFee  ->setVisible(false);
+	ui->buttonChooseFee  ->setVisible(false);
+    
     ui->buttonMinimizeFee->setVisible(!fMinimize);
     ui->frameFeeSelection->setVisible(!fMinimize);
     ui->horizontalLayoutSmartFee->setContentsMargins(0, (fMinimize ? 0 : 6), 0, 0);
@@ -609,58 +618,53 @@ void SendCoinsDialog::on_buttonMinimizeFee_clicked()
 void SendCoinsDialog::setMinimumFee()
 {
     ui->radioCustomAtLeast->setChecked(true);
-    //ui->customFee->setValue(CWallet::GetRequiredFee(1000));
-	ui->customFee->setValue(1000000);
+    
+    ui->customFee->setValue(CWallet::GetRequiredFee(1000));
+	//ui->customFee->setValue(1000000);
 }
 
 void SendCoinsDialog::updateFeeSectionControls()
 {
-    //ui->sliderSmartFee          ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->sliderSmartFee          ->setEnabled(false);
-    //ui->labelSmartFee           ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelSmartFee           ->setEnabled(false);
-    //ui->labelSmartFee2          ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelSmartFee2          ->setEnabled(false);
-    //ui->labelSmartFee3          ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelSmartFee3          ->setEnabled(false);
-    //ui->labelFeeEstimation      ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelFeeEstimation      ->setEnabled(false);
-    //ui->labelSmartFeeNormal     ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelSmartFeeNormal     ->setEnabled(false);
-    //ui->labelSmartFeeFast       ->setEnabled(ui->radioSmartFee->isChecked());
-	ui->labelSmartFeeFast       ->setEnabled(false);
-    //ui->checkBoxMinimumFee      ->setEnabled(ui->radioCustomFee->isChecked());
-	ui->checkBoxMinimumFee      ->setEnabled(false);
-    //ui->labelMinFeeWarning      ->setEnabled(ui->radioCustomFee->isChecked());
-	ui->labelMinFeeWarning      ->setEnabled(false);
-    //ui->radioCustomPerKilobyte  ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked());
-	ui->radioCustomPerKilobyte  ->setEnabled(false);
-    //ui->radioCustomAtLeast      ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked() && CoinControlDialog::coinControl->HasSelected());
-	ui->radioCustomAtLeast      ->setEnabled(false);
-    //ui->customFee               ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked());
-	ui->customFee               ->setEnabled(false);
+    ui->sliderSmartFee          ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelSmartFee           ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelSmartFee2          ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelSmartFee3          ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelFeeEstimation      ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelSmartFeeNormal     ->setEnabled(ui->radioSmartFee->isChecked());
+    ui->labelSmartFeeFast       ->setEnabled(ui->radioSmartFee->isChecked());
+    
+    ui->checkBoxMinimumFee      ->setEnabled(ui->radioCustomFee->isChecked());
+
+    ui->labelMinFeeWarning      ->setEnabled(ui->radioCustomFee->isChecked());
+
+    ui->radioCustomPerKilobyte  ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked());
+
+    ui->radioCustomAtLeast      ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked() && CoinControlDialog::coinControl->HasSelected());
+    ui->customFee               ->setEnabled(ui->radioCustomFee->isChecked() && !ui->checkBoxMinimumFee->isChecked());
 }
 
 void SendCoinsDialog::updateGlobalFeeVariables()
 {
-    //if (ui->radioSmartFee->isChecked())
-    //{
-    //    nTxConfirmTarget = defaultConfirmTarget - ui->sliderSmartFee->value();
-    //    payTxFee = CFeeRate(0);
-    //}
-    //else
-    //{
+    if (ui->radioSmartFee->isChecked())
+    {
+        nTxConfirmTarget = defaultConfirmTarget - ui->sliderSmartFee->value();
+        payTxFee = CFeeRate(0);
+    }
+    else
+    {
         nTxConfirmTarget = defaultConfirmTarget;
-        //payTxFee = CFeeRate(ui->customFee->value());
-        payTxFee = CFeeRate((qint64)DEFAULT_TRANSACTION_FEE);
+        payTxFee = CFeeRate(ui->customFee->value());
+        //payTxFee = CFeeRate((qint64)DEFAULT_TRANSACTION_FEE);
         // if user has selected to set a minimum absolute fee, pass the value to coincontrol
         // set nMinimumTotalFee to 0 in case of user has selected that the fee is per KB
-        //CoinControlDialog::coinControl->nMinimumTotalFee = ui->radioCustomAtLeast->isChecked() ? ui->customFee->value() : 0;
-        CoinControlDialog::coinControl->nMinimumTotalFee = (qint64)DEFAULT_TRANSACTION_FEE;
-    //}
+        CoinControlDialog::coinControl->nMinimumTotalFee = ui->radioCustomAtLeast->isChecked() ? ui->customFee->value() : (qint64)DEFAULT_TRANSACTION_FEE;
 
-    //fSendFreeTransactions = ui->checkBoxFreeTx->isChecked();
-    fSendFreeTransactions = false;
+        //CoinControlDialog::coinControl->nMinimumTotalFee = (qint64)DEFAULT_TRANSACTION_FEE;
+    }
+
+
+    fSendFreeTransactions = ui->checkBoxFreeTx->isChecked();
+    //fSendFreeTransactions = false;
 }
 
 void SendCoinsDialog::updateFeeMinimizedLabel()
@@ -672,7 +676,7 @@ void SendCoinsDialog::updateFeeMinimizedLabel()
         ui->labelFeeMinimized->setText(ui->labelSmartFee->text());
     else {
         ui->labelFeeMinimized->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), ui->customFee->value()) +
-            ((ui->radioCustomPerKilobyte->isChecked()) ? "/kB" : ""));
+            "/kB"); //((ui->radioCustomPerKilobyte->isChecked()) ? "/kB" : ""));
     }
 }
 
@@ -854,8 +858,8 @@ void SendCoinsDialog::coinControlUpdateLabels()
     else
     {
         // in case coin control is disabled (=default), hide minimum absolute fee UI controls
-        //ui->radioCustomAtLeast->setVisible(false);
-		ui->radioCustomAtLeast->setVisible(true);
+        ui->radioCustomAtLeast->setVisible(false);
+		//ui->radioCustomAtLeast->setVisible(true);
         return;
     }
 

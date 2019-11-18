@@ -950,10 +950,12 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state)
         return state.DoS(100, false, REJECT_INVALID, "bad-txns-oversize");
 
 
+    //#warning Это какоето блятское дерьмо!!!
     // Check size vout
-    if (tx.vout.size() > 2) {
-        return state.DoS(100, false, REJECT_INVALID, "bad-txns-vout-sizelarge");
-    }
+//    if (tx.vout.size() > 2) {
+//        return state.DoS(100, false, REJECT_INVALID, "bad-txns-vout-sizelarge");
+//    }
+    
     // Check for negative or overflow output values
     CAmount nValueOut = 0;
     BOOST_FOREACH(const CTxOut& txout, tx.vout)
@@ -1208,7 +1210,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState &state, const C
             LOCK(csFreeLimiter);
 
             // Use an exponentially decaying ~10-minute window:
-            dFreeCount *= pow(1.0 - 1.0/600.0, (double)(nNow - nLastTime));
+            dFreeCount *= pow(1.0 - 1.0/120.0 /*600.0*/, (double)(nNow - nLastTime));
             nLastTime = nNow;
             // -limitfreerelay unit is thousand-bytes-per-minute
             // At default rate it would take over a month to fill 1GB
@@ -1220,11 +1222,11 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState &state, const C
             dFreeCount += nSize;
         }
 
-		//if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 10000)
-        //if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 10000)
-            //return state.Invalid(false,
-            //    REJECT_HIGHFEE, "absurdly-high-fee",
-            //    strprintf("%d > %d", nFees, ::minRelayTxFee.GetFee(nSize) * 10000));
+		if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ) // FixMe: наверно можно уменьшить до 100 (при 1 за килобайт цена макс транзакции около 100 LONG)
+        if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ) // тогда 100*100 = награда
+            return state.Invalid(false,
+                REJECT_HIGHFEE, "absurdly-high-fee",
+                strprintf("%d > %d", nFees, ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ));
 
         // Calculate in-mempool ancestors, up to a limit.
         CTxMemPool::setEntries setAncestors;
@@ -5774,7 +5776,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 
         // Nodes must NEVER send a data item > 520 bytes (the max size for a script data object,
         // and thus, the maximum size any matched object can have) in a filteradd message
-        if (vData.size() > MAX_SCRIPT_ELEMENT_SIZE)
+        //if (vData.size() > MAX_SCRIPT_ELEMENT_SIZE)
+        if (vData.size() > MAX_SCRIPT_SIZE)
         {
             Misbehaving(pfrom->GetId(), 100);
         } else {

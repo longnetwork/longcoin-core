@@ -38,8 +38,10 @@ class CFeeRate
 private:
     CAmount nSatoshisPerK; // unit is satoshis-per-1,000-bytes
 public:
-    CFeeRate() : nSatoshisPerK(0) { }
-    explicit CFeeRate(const CAmount& _nSatoshisPerK): nSatoshisPerK(_nSatoshisPerK) { }
+    //CFeeRate() : nSatoshisPerK(0) { }
+    CFeeRate() : nSatoshisPerK(1) { }
+    //explicit CFeeRate(const CAmount& _nSatoshisPerK): nSatoshisPerK(_nSatoshisPerK) { }
+    explicit CFeeRate(const CAmount& _nSatoshisPerK) {  nSatoshisPerK = ( _nSatoshisPerK >= 1 ? _nSatoshisPerK : 1 ); }
     CFeeRate(const CAmount& nFeePaid, size_t nSize);
     CFeeRate(const CFeeRate& other) { nSatoshisPerK = other.nSatoshisPerK; }
 
@@ -51,7 +53,7 @@ public:
     friend bool operator==(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK == b.nSatoshisPerK; }
     friend bool operator<=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK <= b.nSatoshisPerK; }
     friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK >= b.nSatoshisPerK; }
-    CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; }
+    CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; } // FixMe: Убедится, что в коде всегда nSatoshisPerK > 0
     std::string ToString() const;
 
     ADD_SERIALIZE_METHODS;

@@ -84,7 +84,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     progressDialog(0),
     appMenuBar(0),
     overviewAction(0),
-    historyAction1(0),  historyAction2(0),  historyAction3(0), historyAction4(0),
+    historyAction1(0),  historyAction2(0),  /*historyAction3(0), historyAction4(0),*/
     quitAction(0),
     sendCoinsAction(0),
     sendCoinsMenuAction(0),
@@ -298,7 +298,7 @@ void BitcoinGUI::createActions()
     historyAction2->setCheckable(true);
     historyAction2->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
     tabGroup->addAction(historyAction2);
-    
+/*    
     historyAction3 = new QAction(platformStyle->SingleColorIcon(":/icons/history"), tr("&Transactions"), this);
     historyAction3->setStatusTip(tr("Browse transaction history"));
     historyAction3->setToolTip(historyAction3->statusTip());
@@ -312,7 +312,7 @@ void BitcoinGUI::createActions()
     historyAction4->setCheckable(true);
     historyAction4->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
     tabGroup->addAction(historyAction4);    
-
+*/
 
 #ifdef ENABLE_WALLET
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
@@ -332,10 +332,12 @@ void BitcoinGUI::createActions()
     connect(historyAction1, SIGNAL(triggered()), this, SLOT(gotoHistoryPage1()));
         connect(historyAction2, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
         connect(historyAction2, SIGNAL(triggered()), this, SLOT(gotoHistoryPage2()));
+/*
         connect(historyAction3, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
         connect(historyAction3, SIGNAL(triggered()), this, SLOT(gotoHistoryPage3()));
         connect(historyAction4, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
         connect(historyAction4, SIGNAL(triggered()), this, SLOT(gotoHistoryPage4()));
+*/
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(platformStyle->TextColorIcon(":/icons/quit"), tr("E&xit"), this);
@@ -474,8 +476,10 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(receiveCoinsAction);
         toolbar->addAction(historyAction1);
             toolbar->addAction(historyAction2);
+/*
             toolbar->addAction(historyAction3);
             toolbar->addAction(historyAction4);
+*/
         overviewAction->setChecked(true);
     }
 }
@@ -555,8 +559,10 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction1->setEnabled(enabled);
         historyAction2->setEnabled(enabled);
+/*
         historyAction3->setEnabled(enabled);
         historyAction4->setEnabled(enabled);
+*/
     encryptWalletAction->setEnabled(enabled);
     backupWalletAction->setEnabled(enabled);
     changePassphraseAction->setEnabled(enabled);
@@ -742,6 +748,7 @@ void BitcoinGUI::gotoHistoryPage2()
     historyAction2->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage2();
 }
+/*
 void BitcoinGUI::gotoHistoryPage3()
 {
     historyAction3->setChecked(true);
@@ -752,7 +759,7 @@ void BitcoinGUI::gotoHistoryPage4()
     historyAction4->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage4();
 }
-
+*/
 void BitcoinGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);

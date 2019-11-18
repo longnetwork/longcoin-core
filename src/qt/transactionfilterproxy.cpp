@@ -36,8 +36,10 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
     int type = index.data(TransactionTableModel::TypeRole).toInt();
     QDateTime datetime = index.data(TransactionTableModel::DateRole).toDateTime();
     bool involvesWatchAddress = index.data(TransactionTableModel::WatchonlyRole).toBool();
-    QString address = index.data(TransactionTableModel::AddressRole).toString();
-    QString label = index.data(TransactionTableModel::LabelRole).toString();
+    QString addressTo = index.data(TransactionTableModel::AddressRoleTo).toString();
+    QString addressFrom = index.data(TransactionTableModel::AddressRoleFrom).toString();
+    QString labelTo = index.data(TransactionTableModel::LabelRoleTo).toString();
+    QString labelFrom = index.data(TransactionTableModel::LabelRoleFrom).toString();
     qint64 amount = llabs(index.data(TransactionTableModel::AmountRole).toLongLong());
     int status = index.data(TransactionTableModel::StatusRole).toInt();
 
@@ -51,7 +53,7 @@ bool TransactionFilterProxy::filterAcceptsRow(int sourceRow, const QModelIndex &
         return false;
     if(datetime < dateFrom || datetime > dateTo)
         return false;
-    if (!address.contains(addrPrefix, Qt::CaseInsensitive) && !label.contains(addrPrefix, Qt::CaseInsensitive))
+    if (!addressTo.contains(addrPrefix, Qt::CaseInsensitive) && !addressFrom.contains(addrPrefix, Qt::CaseInsensitive) && !labelTo.contains(addrPrefix, Qt::CaseInsensitive) && !labelFrom.contains(addrPrefix, Qt::CaseInsensitive))
         return false;
     if(amount < minAmount)
         return false;

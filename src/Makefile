@@ -265,6 +265,7 @@ libbitcoin_common_a_OBJECTS = $(am_libbitcoin_common_a_OBJECTS)
 libbitcoin_server_a_AR = $(AR) $(ARFLAGS)
 libbitcoin_server_a_LIBADD =
 am_libbitcoin_server_a_OBJECTS =  \
+	libbitcoin_server_a-sendalert.$(OBJEXT) \
 	libbitcoin_server_a-addrman.$(OBJEXT) \
 	libbitcoin_server_a-alert.$(OBJEXT) \
 	libbitcoin_server_a-bloom.$(OBJEXT) \
@@ -1643,6 +1644,7 @@ BITCOIN_CORE_H = \
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
+  sendalert.cpp \
   addrman.cpp \
   alert.cpp \
   bloom.cpp \
@@ -3052,6 +3054,7 @@ include ./$(DEPDIR)/libbitcoin_server_a-rpcmisc.Po
 include ./$(DEPDIR)/libbitcoin_server_a-rpcnet.Po
 include ./$(DEPDIR)/libbitcoin_server_a-rpcrawtransaction.Po
 include ./$(DEPDIR)/libbitcoin_server_a-rpcserver.Po
+include ./$(DEPDIR)/libbitcoin_server_a-sendalert.Po
 include ./$(DEPDIR)/libbitcoin_server_a-timedata.Po
 include ./$(DEPDIR)/libbitcoin_server_a-torcontrol.Po
 include ./$(DEPDIR)/libbitcoin_server_a-txdb.Po
@@ -3724,6 +3727,20 @@ script/libbitcoin_common_a-standard.obj: script/standard.cpp
 #	$(AM_V_CXX)source='script/standard.cpp' object='script/libbitcoin_common_a-standard.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_common_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_common_a_CXXFLAGS) $(CXXFLAGS) -c -o script/libbitcoin_common_a-standard.obj `if test -f 'script/standard.cpp'; then $(CYGPATH_W) 'script/standard.cpp'; else $(CYGPATH_W) '$(srcdir)/script/standard.cpp'; fi`
+
+libbitcoin_server_a-sendalert.o: sendalert.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_server_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_server_a_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_server_a-sendalert.o -MD -MP -MF $(DEPDIR)/libbitcoin_server_a-sendalert.Tpo -c -o libbitcoin_server_a-sendalert.o `test -f 'sendalert.cpp' || echo '$(srcdir)/'`sendalert.cpp
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_server_a-sendalert.Tpo $(DEPDIR)/libbitcoin_server_a-sendalert.Po
+#	$(AM_V_CXX)source='sendalert.cpp' object='libbitcoin_server_a-sendalert.o' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_server_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_server_a_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_server_a-sendalert.o `test -f 'sendalert.cpp' || echo '$(srcdir)/'`sendalert.cpp
+
+libbitcoin_server_a-sendalert.obj: sendalert.cpp
+	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_server_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_server_a_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_server_a-sendalert.obj -MD -MP -MF $(DEPDIR)/libbitcoin_server_a-sendalert.Tpo -c -o libbitcoin_server_a-sendalert.obj `if test -f 'sendalert.cpp'; then $(CYGPATH_W) 'sendalert.cpp'; else $(CYGPATH_W) '$(srcdir)/sendalert.cpp'; fi`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoin_server_a-sendalert.Tpo $(DEPDIR)/libbitcoin_server_a-sendalert.Po
+#	$(AM_V_CXX)source='sendalert.cpp' object='libbitcoin_server_a-sendalert.obj' libtool=no \
+#	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
+#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_server_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_server_a_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoin_server_a-sendalert.obj `if test -f 'sendalert.cpp'; then $(CYGPATH_W) 'sendalert.cpp'; else $(CYGPATH_W) '$(srcdir)/sendalert.cpp'; fi`
 
 libbitcoin_server_a-addrman.o: addrman.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoin_server_a_CPPFLAGS) $(CPPFLAGS) $(libbitcoin_server_a_CXXFLAGS) $(CXXFLAGS) -MT libbitcoin_server_a-addrman.o -MD -MP -MF $(DEPDIR)/libbitcoin_server_a-addrman.Tpo -c -o libbitcoin_server_a-addrman.o `test -f 'addrman.cpp' || echo '$(srcdir)/'`addrman.cpp

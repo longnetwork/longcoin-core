@@ -90,7 +90,7 @@ private:
 
     QMenuBar *appMenuBar;
     QAction *overviewAction;
-    QAction *historyAction1; QAction *historyAction2; QAction *historyAction3; QAction *historyAction4;
+    QAction *historyAction1; QAction *historyAction2; /*QAction *historyAction3; QAction *historyAction4;*/
     QAction *quitAction;
     QAction *sendCoinsAction;
     QAction *sendCoinsMenuAction;
@@ -179,7 +179,7 @@ private Q_SLOTS:
     /** Switch to overview (home) page */
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
-    void gotoHistoryPage1(); void gotoHistoryPage2(); void gotoHistoryPage3(); void gotoHistoryPage4();
+    void gotoHistoryPage1(); void gotoHistoryPage2(); /*void gotoHistoryPage3(); void gotoHistoryPage4();*/
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

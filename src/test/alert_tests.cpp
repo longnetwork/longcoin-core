@@ -23,6 +23,36 @@
 #include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>
 
+
+/*
+ * If the alert key pairs have changed, the test suite will fail as the
+ * test data is now invalid.  To create valid test data, signed with a
+ * new alert private key, follow these steps:
+ *
+ * 1. Copy your private key into alertkeys.h.  Don't commit this file!
+ *    See sendalert.cpp for more info.
+ *
+ * 2. Set the GENERATE_ALERTS_FLAG to true.
+ *
+ * 3. Build and run:
+ *    test_bitcoin -t Generate_Alert_Test_Data
+ *
+ * 4. Test data is saved in your current directory as alertTests.raw.NEW
+ *    Copy this file to: src/test/data/alertTests.raw
+ *
+ *    For debugging purposes, terminal output can be copied into:
+ *    src/test/data/alertTests.raw.h
+ *
+ * 5. Clean up...
+ *    - Set GENERATE_ALERTS_FLAG back to false.
+ *    - Remove your private key from alertkeys.h
+ *
+ * 6. Build and verify the new test data:
+ *    test_bitcoin -t Alert_tests
+ *
+ */
+
+
 #if 0
 //
 // alertTests contains 7 alerts, generated with this code:
@@ -42,12 +72,12 @@
 
     SignAndSave(alert, "test/alertTests");
 
-    alert.setSubVer.insert(std::string("/Satoshi:0.1.0/"));
-    alert.strStatusBar  = "Alert 1 for Satoshi 0.1.0";
+    alert.setSubVer.insert(std::string("/Satoshi:0.12.1(LONGCORE)/"));
+    alert.strStatusBar  = "Alert 1 for Satoshi:0.12.1(LONGCORE)";
     SignAndSave(alert, "test/alertTests");
 
-    alert.setSubVer.insert(std::string("/Satoshi:0.2.0/"));
-    alert.strStatusBar  = "Alert 1 for Satoshi 0.1.0, 0.2.0";
+    alert.setSubVer.insert(std::string("/Satoshi:0.12.1(LONGCORE)/"));
+    alert.strStatusBar  = "Alert 1 for Satoshi:0.12.1(LONGCORE), Satoshi:0.12.1(LONGCORE)";
     SignAndSave(alert, "test/alertTests");
 
     alert.setSubVer.clear();
@@ -62,13 +92,13 @@
     SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
-    alert.nMinVer = 11;
-    alert.nMaxVer = 22;
+    alert.nMinVer = 70012; //11;
+    alert.nMaxVer = 70012; //22;
     SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
-    alert.strStatusBar  = "Alert 2 for Satoshi 0.1.0";
-    alert.setSubVer.insert(std::string("/Satoshi:0.1.0/"));
+    alert.strStatusBar  = "Alert 2 for Satoshi:0.12.1(LONGCORE)";
+    alert.setSubVer.insert(std::string("/Satoshi:0.12.1(LONGCORE)/"));
     SignAndSave(alert, "test/alertTests");
 
     ++alert.nID;
@@ -131,27 +161,27 @@ BOOST_AUTO_TEST_CASE(AlertApplies)
     // Matches:
     BOOST_CHECK(alerts[0].AppliesTo(1, ""));
     BOOST_CHECK(alerts[0].AppliesTo(999001, ""));
-    BOOST_CHECK(alerts[0].AppliesTo(1, "/Satoshi:11.11.11/"));
+    BOOST_CHECK(alerts[0].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
 
-    BOOST_CHECK(alerts[1].AppliesTo(1, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(alerts[1].AppliesTo(999001, "/Satoshi:0.1.0/"));
+    BOOST_CHECK(alerts[1].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
+    BOOST_CHECK(alerts[1].AppliesTo(999001, "/Satoshi:0.12.1(LONGCORE)/"));
 
-    BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.2.0/"));
+    BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
+    BOOST_CHECK(alerts[2].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
 
     // Don't match:
     BOOST_CHECK(!alerts[0].AppliesTo(-1, ""));
     BOOST_CHECK(!alerts[0].AppliesTo(999002, ""));
 
     BOOST_CHECK(!alerts[1].AppliesTo(1, ""));
-    BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.1.0"));
-    BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.1.0"));
-    BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.1.0/"));
-    BOOST_CHECK(!alerts[1].AppliesTo(-1, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(!alerts[1].AppliesTo(999002, "/Satoshi:0.1.0/"));
-    BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.2.0/"));
+    BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.12.1(LONGCORE)"));
+    BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)"));
+    BOOST_CHECK(!alerts[1].AppliesTo(1, "Satoshi:0.12.1(LONGCORE)/"));
+    BOOST_CHECK(!alerts[1].AppliesTo(-1, "/Satoshi:0.12.1(LONGCORE)/"));
+    BOOST_CHECK(!alerts[1].AppliesTo(999002, "/Satoshi:0.12.1(LONGCORE)/"));
+    BOOST_CHECK(!alerts[1].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
 
-    BOOST_CHECK(!alerts[2].AppliesTo(1, "/Satoshi:0.3.0/"));
+    BOOST_CHECK(!alerts[2].AppliesTo(1, "/Satoshi:0.12.1(LONGCORE)/"));
 
     SetMockTime(0);
 }
@@ -200,7 +230,7 @@ BOOST_AUTO_TEST_CASE(PartitionAlert)
     CCriticalSection csDummy;
     CBlockIndex indexDummy[100];
     CChainParams& params = Params(CBaseChainParams::MAIN);
-    int64_t nPowTargetSpacing = params.GetConsensus().nPowTargetSpacing;
+    int64_t nPowTargetSpacing = params.GetConsensus().PowTargetSpacing(-1);
 
     // Generate fake blockchain timestamps relative to
     // an arbitrary time:

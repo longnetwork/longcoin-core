@@ -52,9 +52,11 @@ public:
         /** Long description (HTML format) */
         LongDescriptionRole,
         /** Address of transaction */
-        AddressRole,
+        AddressRoleTo,
+        AddressRoleFrom,
         /** Label of address related to transaction */
-        LabelRole,
+        LabelRoleTo,
+        LabelRoleFrom,
 		/** PubKeyHexRole */
 		PubKeyHexRole,
         /** Net amount of transaction */

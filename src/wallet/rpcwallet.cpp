@@ -1166,7 +1166,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
         
     // Предвариельная коррекция с учетом того что здача возвращается на default аккаунт
-    // Херовый вариант прыгать от всего баланса - будем мутить в CreateTransaction от входов                                
+    // Херовый вариант прыгать от всего баланса - будем мутить в CreateTransaction от входов - там все теперь корректно, а это оставим для истории                            
 /*    if( strAccount != "default" ) { // Ага - делаем компансацию значений на аккаунте и збс
         CAmount curBalance = pwalletMain->GetBalance();
         CWalletDB walletdb(pwalletMain->strWalletFile);
@@ -1264,7 +1264,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         subtractFeeFromAmount = params[4].get_array();
 
     set<CBitcoinAddress> setAddress;
-    vector<CRecipient> vecSend; vector<CWalletTx> vecWtx;
+    vector<CRecipient> vecSend; //vector<CWalletTx> vecWtx;
 
     CAmount totalAmount = 0;
     vector<string> keys = sendTo.getKeys();
@@ -1292,7 +1292,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         }
 
         CRecipient recipient = {scriptPubKey, nAmount, fSubtractFeeFromAmount};
-        vecSend.push_back(recipient); vecWtx.push_back(wtx); // Копии wtx
+        vecSend.push_back(recipient); //vecWtx.push_back(wtx); // Копии wtx
     }
 
     EnsureWalletIsUnlocked();
@@ -1303,21 +1303,23 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
 
     // Send
-for(int i=0; i<vecSend.size(); i++) {    
+//for(int i=0; i<vecSend.size(); i++) {    
     CReserveKey keyChange(pwalletMain);
     CAmount nFeeRequired = 0; // FixMe: Потом проверить что багует всеже в мультиадресных транзакциях. мож и по фее
     int nChangePosRet = -1;
     string strFailReason;
-    bool fCreated = pwalletMain->CreateTransaction(vector<CRecipient>(1,vecSend.at(i)), vecWtx.at(i), keyChange, nFeeRequired, nChangePosRet, strFailReason); // по одной
+        //bool fCreated = pwalletMain->CreateTransaction(vector<CRecipient>(1,vecSend.at(i)), vecWtx.at(i), keyChange, nFeeRequired, nChangePosRet, strFailReason); // по одной
+    bool fCreated = pwalletMain->CreateTransaction(vecSend, wtx, keyChange, nFeeRequired, nChangePosRet, strFailReason);
     if (!fCreated)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, strFailReason);
-    if (!pwalletMain->CommitTransaction(vecWtx.at(i), keyChange))
+        //if (!pwalletMain->CommitTransaction(vecWtx.at(i), keyChange))
+    if (!pwalletMain->CommitTransaction(wtx, keyChange))
         throw JSONRPCError(RPC_WALLET_ERROR, "Transaction commit failed");
 
-    vecWtx.at(i).GetHash().GetHex();    
-}
+    //vecWtx.at(i).GetHash().GetHex();    
+//}
 
-    return true; //return wtx.GetHash().GetHex();
+    return wtx.GetHash().GetHex(); //return true;
 }
 
 // Defined in rpcmisc.cpp

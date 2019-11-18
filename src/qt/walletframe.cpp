@@ -125,6 +125,7 @@ void WalletFrame::gotoHistoryPage2()
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->gotoHistoryPage2();
 }
+/*
 void WalletFrame::gotoHistoryPage3()
 {
     QMap<QString, WalletView*>::const_iterator i;
@@ -137,7 +138,7 @@ void WalletFrame::gotoHistoryPage4()
     for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
         i.value()->gotoHistoryPage4();
 }
-
+*/
 void WalletFrame::gotoReceiveCoinsPage()
 {
     QMap<QString, WalletView*>::const_iterator i;

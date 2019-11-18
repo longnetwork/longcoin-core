@@ -582,7 +582,7 @@ bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out)
     res*=pow(10,decimals);			  // FixMe: Нужно убедится что резульат степени точняковый
     if(!isfinite(res)) return false;
     if(isnan(res)) return false;
-    res+=0.0; // Усечение (округление 0.5)
+    res+=0.0; // Усечение (округление это +=0.5)
     if(!isfinite(res)) return false;
     if(isnan(res)) return false;
     

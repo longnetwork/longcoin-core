@@ -160,7 +160,7 @@ public:
 
     uint256 GetHash() const;
 
-    CAmount GetDustThreshold(const CFeeRate &minRelayTxFee) const
+    CAmount GetDustThreshold(const CFeeRate &minRelayTxFee) const // У нас пыли нет ( qt/coincontroldialog.cpp#577 - вызов не достижим, wallet/wallet.cpp#2169 - используется взаимо-компенсация при любых значениях GetDustThreshold
     {
         // "Dust" is defined in terms of CTransaction::minRelayTxFee,
         // which has units satoshis-per-kilobyte.
@@ -170,11 +170,14 @@ public:
         // need a CTxIn of at least 148 bytes to spend:
         // so dust is a spendable txout less than
         // 546*minRelayTxFee/1000 (in satoshis)
+        /*
         if (scriptPubKey.IsUnspendable())
             return 0;
 
         size_t nSize = GetSerializeSize(SER_DISK,0)+148u;
         return 3*minRelayTxFee.GetFee(nSize);
+        */
+        return 0;
     }
 
     bool IsDust(const CFeeRate &minRelayTxFee) const
