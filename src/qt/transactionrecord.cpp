@@ -75,6 +75,11 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 sub.credit = txout.nValue;
                 sub.involvesWatchAddress = mine & ISMINE_WATCH_ONLY;
                 if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address)) {
+
+//                    #warning DEBUG Data List
+//                    printf("if (ExtractDestination(txout.scriptPubKey, address) && IsMine(*wallet, address))...\n");
+
+                    
                     // Received by Bitcoin Address
                     sub.type = TransactionRecord::RecvWithAddress;
                     sub.address = CBitcoinAddress(address).ToString();
@@ -202,21 +207,23 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
         }
 
         if (fAllFromMe && fAllToMe) {
-            //LONG отображение, когда отправил себе
-            CAmount nChange = wtx.GetChange();
+
+//            #warning DEBUG Data List
+//            printf("if (fAllFromMe && fAllToMe)...\n");
             
-            TransactionRecord sub(hash, nTime, TransactionRecord::SendToSelf, "",
-                            -(nDebit - nChange), nCredit - nChange);
+            //LONG отображение, когда отправил себе
+            CAmount nTxFee = nDebit - wtx.GetValueOut();
+                      
             for (unsigned int nOut = 0; nOut < wtx.vout.size(); nOut++) {
                 const CTxOut& txout = wtx.vout[nOut];
                 isminetype isMine = wallet->IsMine(txout);
 
-                //TransactionRecord sub(hash, nTime, TransactionRecord::SendToSelf, "", 0, 0); // nNet
+                TransactionRecord sub(hash, nTime, TransactionRecord::SendToSelf, "", 0, 0); // nNet
                 
                 if (isLong(txout.scriptPubKey) && isMine) {
                     //SendToSelf -> SendToAddress
                     sub.type = TransactionRecord::SendToAddress;
-                    sub.idx = nOut;
+                    sub.idx = parts.size(); //sub.idx = nOut;
                     sub.isLongTx = true;
                     sub.isCoinTx = false;
                     sub.isDataTx = true;
@@ -306,17 +313,45 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                         sub.dataBodyText = QString::fromUtf8(qba);
                         //parts.append(sub);
                     }
-                } else {
+
+                        CAmount nValue = txout.nValue;
+                        /* Add fee to first output */
+                        if (nTxFee > 0) {
+                            nValue += nTxFee;
+                            nTxFee = 0;
+                        }
+                        sub.debit = -nValue;
+
+                        parts.append(sub);                   
+                    
+                } else if (isMine) {
                     // Payment to self
-                    //CAmount nChange = wtx.GetChange();
-                    //parts.append(TransactionRecord(hash, nTime, TransactionRecord::SendToSelf, "",
-                    //                -(nDebit - nChange), nCredit - nChange));
+//                    CAmount nChange = wtx.GetChange();
+//                    TransactionRecord sub(hash, nTime, TransactionRecord::SendToSelf, "",
+//                            -(nDebit - nChange), nCredit - nChange);
+//                    CTxDestination address;
+//                    if (ExtractDestination(txout.scriptPubKey, address)) {
+//                        sub.address = CBitcoinAddress(address).ToString();
+//                    }
+//                    parts.append(sub);
                 }
             } 
             
-            parts.append(sub);
+            if (parts.size() == 0) {
+                            // Payment to self
+                    CAmount nChange = wtx.GetChange();
+                    TransactionRecord sub(hash, nTime, TransactionRecord::SendToSelf, "",
+                            -(nDebit - nChange), nCredit - nChange);
+                    parts.append(sub);
+            }
+            
             parts.last().involvesWatchAddress = involvesWatchAddress;   // maybe pass to TransactionRecord as constructor argument
+            
         } else if (fAllFromMe) {
+
+//            #warning DEBUG Data List
+//            printf("if (fAllFromMe)...\n");
+            
             //
             // Debit
             //
@@ -326,7 +361,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 const CTxOut& txout = wtx.vout[nOut];
 
                 TransactionRecord sub(hash, nTime);
-                sub.idx = nOut;
+                sub.idx = parts.size(); //sub.idx = nOut;  
                 sub.involvesWatchAddress = involvesWatchAddress;
 
                 if(wallet->IsMine(txout)) { //LONG отображение, когда отправил себе
@@ -424,8 +459,9 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                     } else {
                         // Ignore parts sent to self, as this is usually the change from a transaction sent back to our own address.
                         // Игнорировать части, отправленные на себя, так как обычно это изменение от транзакции, отправленной обратно на наш собственный адрес.
-                        continue;
+                        //continue;
                     }
+                    continue;
                 }
 
                 CTxDestination address;
@@ -518,7 +554,6 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                             QByteArray qba;
                             convertVectorToByteArray(vchDecryptedDataBody, qba);
                             sub.dataBodyText = QString::fromUtf8(qba);
-
                             CAmount nValue = txout.nValue;
                             /* Add fee to first output */
                             /* Добавить плату за первый выпуск */
@@ -534,7 +569,6 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                             QByteArray qba;
                             convertVectorToByteArray(vchDataBody, qba);
                             sub.dataBodyText = QString::fromUtf8(qba);
-
                             CAmount nValue = txout.nValue;
                             /* Add fee to first output */
                             /* Добавить плату за первый выпуск */
@@ -567,6 +601,10 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 parts.append(sub);
             }
         } else {
+
+//            #warning DEBUG Data List
+//            printf("if (fAllFromMe)...\n");
+            
             // Mixed debit transaction, can't break down payees
             // Смешанная дебетовая транзакция, не может разбить получателей
             // LONG отображение когда получил от неизвестного адреса в смешанной транзакции
@@ -575,7 +613,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 isminetype isMine = wallet->IsMine(txout);
 
                 TransactionRecord sub(hash, nTime, TransactionRecord::RecvWithAddress, "", 0, 0); // nNet
-                sub.idx = nOut;
+                sub.idx = parts.size(); //sub.idx = nOut;
                 sub.type = TransactionRecord::RecvWithAddress;
                 if (isLong(txout.scriptPubKey) && isMine) {
                     sub.isLongTx = true;
@@ -684,6 +722,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 } 
             }
 
+        
             if (parts.size() == 0) {
                 // Все исходящие не на адреса из wallet.dat 
                 TransactionRecord sub(hash, nTime, TransactionRecord::SendToOther, "", nNet, 0); // nNet
@@ -701,7 +740,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const CWallet *
                 parts.append(sub);
                 parts.last().involvesWatchAddress = involvesWatchAddress;
             }
-            
+
             //parts.last().involvesWatchAddress = involvesWatchAddress;
             
         }

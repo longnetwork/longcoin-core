@@ -793,7 +793,7 @@ configure: failed program was:
 configure:19361: result: no
 configure:19259: checking whether pthreads work without any flags
 configure:19352: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ conftest.c   >&5
-/tmp/ccJZ7rit.o: In function `main':
+/tmp/ccGyijCH.o: In function `main':
 /home/mint/workspace/longcoin/longcoin-src/conftest.c:28: undefined reference to `pthread_create'
 /home/mint/workspace/longcoin/longcoin-src/conftest.c:29: undefined reference to `pthread_join'
 /home/mint/workspace/longcoin/longcoin-src/conftest.c:31: undefined reference to `__pthread_register_cancel'
@@ -1347,7 +1347,7 @@ configure:20695: checking for sys/prctl.h
 configure:20695: result: yes
 configure:20705: checking for library containing getaddrinfo_a
 configure:20736: g++ -o conftest --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ conftest.cpp  >&5
-/tmp/ccxwUqUn.o: In function `main':
+/tmp/cc7Js6FA.o: In function `main':
 conftest.cpp:(.text+0x5): undefined reference to `getaddrinfo_a'
 collect2: error: ld returned 1 exit status
 configure:20736: $? = 1
