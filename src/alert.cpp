@@ -151,8 +151,17 @@ bool CAlert::Sign()
     CDataStream sMsg(SER_NETWORK, CLIENT_VERSION);
     sMsg << *(CUnsignedAlert*)this;
     vchMsg = std::vector<unsigned char>(sMsg.begin(), sMsg.end());
+    
+//    #warning Debug Alert еще затестить с true
+//    printf("key=%s\n",GetArg("-alertkey", "").c_str());
+    
     CBitcoinSecret vchSecret;
-    if (!vchSecret.SetString(GetArg("-alertkey", "")))
+
+    //if (!vchSecret.SetString(GetArg("-alertkey", "")))
+    std::vector<unsigned char> vch(ParseHex(GetArg("-alertkey", ""))); // Потому что генерил ключи с дуру через openssl (выхлоп в hex), а можно через dumpprivkey/dumppubkey на выделеном адресе
+    CKey vchKey; vchKey.Set(vch.begin(),vch.end(),true); //CKey vchKey; vchKey.Set(vch.begin(),vch.end(),false);
+    vchSecret.SetKey(vchKey);
+    if (!vchSecret.IsValid()) 
     {
         printf("CAlert::SignAlert() : vchSecret.SetString failed\n");
         return false;
