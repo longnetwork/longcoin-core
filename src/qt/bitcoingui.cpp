@@ -690,6 +690,7 @@ The release of a unique social network on the LONG NETWORK blockchain with photo
  OFF HANDS FROM FREEDOM! Our core is already working and tested. If you do not remain indifferent,\
  then the first version of the social network will be released very soon. Support us.<br>\
 Bitcoin:  <b>1NbmV7xzXWvnPkYDfx4Vh7hk3LW5237RKR</b><br>\
+Litecoin: <b>LR1rNDCgKz5wwWsbyazJ4cddCae8D158B7</b><br>\
 Longcoin: <b>162tLYabHPCcqQHgpZ3c89nkMPhZhCkCvR</b><br>\
 "); 
 
