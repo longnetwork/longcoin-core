@@ -32,7 +32,7 @@ make
 
 sudo make install
 
-#sudo checkinstall --pkgname=longcoin --pkgversion=0.12.1.0-from-sources --default --requires="build-essential,libtool,autotools-dev,automake,pkg-config,libssl1.0-dev,libevent-dev,bsdmainutils,libboost-system-dev,libboost-filesystem-dev,libboost-chrono-dev,libboost-program-options-dev,libboost-test-dev,libboost-thread-dev,libboost-all-dev,libminiupnpc-dev,libzmq3-dev,libqt5gui5,libqt5core5a,libqt5dbus5,qttools5-dev,qttools5-dev-tools,libprotobuf-dev,protobuf-compiler,libqrencode-dev"
+#sudo checkinstall --pkgname=longcoin --pkgversion=0.12.1.0-from-sources --default --requires="build-essential,libtool,autotools-dev,automake,pkg-config,libssl1.0-dev,libevent-dev,bsdmainutils,libboost-system-dev,libboost-filesystem-dev,libboost-chrono-dev,libboost-program-options-dev,libboost-test-dev,libboost-thread-dev,libboost-all-dev,libminiupnpc-dev,libzmq3-dev,libqt5gui5,libqt5core5a,libqt5dbus5,qttools5-dev,qttools5-dev-tools,libprotobuf-dev,protobuf-compiler,libqrencode-dev,libdb4.8-dev,libdb4.8++-dev"
 
 
 
