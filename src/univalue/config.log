@@ -37,9 +37,9 @@ PATH: /bin
 PATH: /usr/games
 PATH: /usr/local/games
 PATH: /snap/bin
-PATH: /usr/lib/jvm/java-8-openjdk-amd64/bin
-PATH: /usr/lib/jvm/java-8-openjdk-amd64/db/bin
-PATH: /usr/lib/jvm/java-8-openjdk-amd64/jre/bin
+PATH: /usr/lib/jvm/bellsoft-java8-amd64/bin
+PATH: /usr/lib/jvm/bellsoft-java8-amd64/db/bin
+PATH: /usr/lib/jvm/bellsoft-java8-amd64/jre/bin
 
 
 ## ----------- ##
@@ -500,6 +500,7 @@ config.status:1150: creating Makefile
 config.status:1150: creating pc/libunivalue.pc
 config.status:1150: creating pc/libunivalue-uninstalled.pc
 config.status:1150: creating univalue-config.h
+config.status:1331: univalue-config.h is unchanged
 config.status:1379: executing depfiles commands
 config.status:1379: executing libtool commands
 

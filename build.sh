@@ -19,7 +19,7 @@ sudo apt-get update && apt-get install -y libdb4.8-dev libdb4.8++-dev
 
 ./autogen.sh
 
-#./configure LDFLAGS="-L/usr/local/db4.8/lib/" CPPFLAGS="-I/usr/local/db4.8/include/" CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768" --enable-tests=no --#disable-shared --enable-static --enable-module-ecdh --enable-experimental --disable-tests --disable-gui-tests --with-miniupnpc --enable-upnp-default --disable-bench --with-#gui=qt5
+#./configure LDFLAGS="-L/usr/local/db4.8/lib/" CPPFLAGS="-I/usr/local/db4.8/include/" CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768" --enable-tests=no --disable-shared --enable-static --enable-module-ecdh --enable-experimental --disable-tests --disable-gui-tests --with-miniupnpc --enable-upnp-default --disable-bench --with-gui=qt5
 #make clean
 
 #witch db4.8 binaries

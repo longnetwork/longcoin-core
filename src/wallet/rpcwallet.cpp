@@ -2086,7 +2086,8 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             "      \"to\"   : \"accountname\",           (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"toaddress\"   : \"bitcoinaddress\", (string) The bitcoin address involved in the transaction\n"
             "      \"topubkey\"    : \"pubKey\",         (string) The pubKey corresponding to 'toaddress' in HEX format.\n"
-            "      \"hexdata\" : \"hexstring\"           (string) The serialized, hex-encoded data (\"48656c6c6f\" is \"Hello\" string)\n"
+            "      \"hexdata\" : \"hexstring\",          (string) The serialized, hex-encoded data (\"48656c6c6f\" is \"Hello\" string)\n"
+            "      \"encryption\" : 0/1                  (numeric) The hex-data encryption status flag\n"
             "    }\n"
             "    ,...\n"
             "  ],\n"
@@ -2150,6 +2151,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 
    UniValue voutentry(UniValue::VARR);
 
+    int index=0;    // Судя по CWalletTx::GetAmounts просто индекс в массиве wtx.vout в порядке следования
     BOOST_FOREACH(const CTxOut& txout, wtx.vout) // Вроде вся инфа здесь. исключения не бросать - просто пустые поля
     {
 //        #warning DEBUG gethexdata
@@ -2269,11 +2271,16 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             obj.push_back(Pair("to",strTo));
             obj.push_back(Pair("toaddress",addressTo.ToString()));
             obj.push_back(Pair("topubkey",pubKeyHexTo));
+
+            obj.push_back(Pair("vout",index));
+            
             obj.push_back(Pair("hexdata",HexStr(vchDataBody.begin(),vchDataBody.end())));
             obj.push_back(Pair("encryption",(int)encryptionType));
 
             voutentry.push_back(obj);
         }
+        
+        index++;
     }
 
     entry.push_back(Pair("details", voutentry));
