@@ -130,7 +130,7 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
     {
         pwalletMain->MarkDirty();
 		
-        pwalletMain->SetAddressBook(vchAddress, strLabel, pubKeyHex, "receive"); //pubKeyHex
+        pwalletMain->SetAddressBook(vchAddress, strLabel, pubKeyHex, "receive"); // Запишит в адресную книгу свой пукей, так как совпадут адрес и пукей
 
         // Don't throw error in case a key is already there
         if (pwalletMain->HaveKey(vchAddress))
@@ -152,7 +152,7 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-void ImportAddress(const CBitcoinAddress& address, const string& strLabel);
+void ImportAddress(const CBitcoinAddress& address, const string& strLabel, const string& pubKeyHex);
 void ImportScript(const CScript& script, const string& strLabel, bool isRedeemScript)
 {
     if (!isRedeemScript && ::IsMine(*pwalletMain, script) == ISMINE_SPENDABLE)
@@ -166,17 +166,17 @@ void ImportScript(const CScript& script, const string& strLabel, bool isRedeemSc
     if (isRedeemScript) {
         if (!pwalletMain->HaveCScript(script) && !pwalletMain->AddCScript(script))
             throw JSONRPCError(RPC_WALLET_ERROR, "Error adding p2sh redeemScript to wallet");
-        ImportAddress(CBitcoinAddress(CScriptID(script)), strLabel);
+        ImportAddress(CBitcoinAddress(CScriptID(script)), strLabel, ""); // Fixme: pubKeyHex
     }
 }
 
-void ImportAddress(const CBitcoinAddress& address, const string& strLabel)
+void ImportAddress(const CBitcoinAddress& address, const string& strLabel, const string& pubKeyHex)
 {
     CScript script = GetScriptForDestination(address.Get());
     ImportScript(script, strLabel, false);
     // add to address book or update label
     if (address.IsValid())
-        pwalletMain->SetAddressBook(address.Get(), strLabel, "", "receive"); // pubKeyHex
+        pwalletMain->SetAddressBook(address.Get(), strLabel, pubKeyHex, "receive"); 
 }
 
 UniValue importaddress(const UniValue& params, bool fHelp)
@@ -228,7 +228,7 @@ UniValue importaddress(const UniValue& params, bool fHelp)
     if (address.IsValid()) {
         if (fP2SH)
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot use the p2sh flag with an address - use a script instead");
-        ImportAddress(address, strLabel);
+        ImportAddress(address, strLabel, "");  // Адрес не содержит пукей (наоборот пукей дает адрес), но в случае если SetAddressBook найдет его то теперь пропишет
     } else if (IsHex(params[0].get_str())) {
         std::vector<unsigned char> data(ParseHex(params[0].get_str()));
         ImportScript(CScript(data.begin(), data.end()), strLabel, fP2SH);
@@ -257,15 +257,15 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
             "\nArguments:\n"
             "1. \"pubkey\"           (string, required) The hex-encoded public key\n"
             "2. \"label\"            (string, optional, default=\"\") An optional label\n"
-            "3. rescan               (boolean, optional, default=false) Rescan the wallet for transactions\n"
+            "3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions\n"
             "\nNote: This call can take minutes to complete if rescan is true.\n"
             "\nExamples:\n"
-            "\nImport a public key without rescan\n"
+            "\nImport a public key with rescan\n"
             + HelpExampleCli("importpubkey", "\"pubkey\"") +
-            "\nImport using a label without rescan\n"
-            + HelpExampleCli("importpubkey", "\"pubkey\" \"testing\" ") +
+            "\nImport using a label and without rescan\n"
+            + HelpExampleCli("importpubkey", "\"pubkey\" \"testing\" false") +
             "\nAs a JSON-RPC call\n"
-            + HelpExampleRpc("importpubkey", "\"pubkey\", \"testing\", ")
+            + HelpExampleRpc("importpubkey", "\"pubkey\", \"testing\", false")
         );
 
 
@@ -274,7 +274,7 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
         strLabel = params[1].get_str();
 
     // Whether to perform rescan after import
-    bool fRescan = false; //true; - default
+    bool fRescan = true; //default
     if (params.size() > 2)
         fRescan = params[2].get_bool();
 
@@ -288,16 +288,15 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
     if (!pubKey.IsFullyValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey is not a valid public key");
 
+
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    ImportAddress(CBitcoinAddress(pubKey.GetID()), strLabel);     
+    ImportAddress(CBitcoinAddress(pubKey.GetID()), strLabel, params[0].get_str());
     ImportScript(GetScriptForRawPubKey(pubKey), strLabel, false);
-        // Пока сюда добавил, чтобы не плодить еще одну команду для добавления pubKey получателя данных
-        // Без нее работало, но в ГУИ не были видны публичные ключи (еще одно поле зделано в SetAddressBook)
-        // А также публичные ключи из ГУИ не обнаруживются средствами wallet.cpp (нужно тупо лезть в это поле)
-        // Тогда как импортированные обнаруживаются (потом вникнем, щас не до суг)
-        //pwalletMain->SetAddressBook(pubKey.GetID(), strLabel, params[0].get_str(), "send"); // mapAddressBook[address].purpose - заменится на send после вызовов вверху Import...
-        // Не лучше добавлю отдельную команду для сохранения ключа в поле адресной книге (потому что импортированные ключи в наблюдение попадают и кошелек сканит их транзакции все время)
+        // FixMe: добавит пукей через SetAddressBook НО! в категорию received!!
+        // Для категории "send" - отдельная команда storeaddress ! (импортированные ключи в наблюдение попадают и кошелек сканит их транзакции все время)
+        // FixMe: Публичные ключи из QT-ГУИ не обнаруживются средствами wallet.cpp без просмотра поля .pubkeyhex
+        // Тогда как импортированные ( + ImportScript) обнаруживаются
 
     if (fRescan)
     {
@@ -308,23 +307,23 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
     return NullUniValue;
 }
 
-UniValue storepubkey(const UniValue& params, bool fHelp)
+UniValue storeaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
 
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "storepubkey \"pubkey\" ( \"label\" )\n"
-            "\nAdds not your public key (in hex) to the address book that can be used to encrypt data transfer.\n"
+            "storeaddress \"another\" ( \"label\" )\n"
+            "\nLONG Specific: Adds not your address or public key (in hex) to the address book that can be used to encrypt data transfer.\n"
             "\nArguments:\n"
-            "1. \"pubkey\"           (string, required) The hex-encoded public key\n"
+            "1. \"another\"          (string, required) The address or hex-encoded public key\n"
             "2. \"label\"            (string, optional, default=\"\") An optional label\n"
             "\nResult:\n"
             "\"bitcoinaddress\"      (string) The bitcoin address associated with the public key\n"            
             "\nExamples:\n"
-            + HelpExampleCli("storepubkey", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
-            + HelpExampleRpc("storepubkey", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
+            + HelpExampleCli("storeaddress", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
+            + HelpExampleRpc("storeaddress", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
         );
 
 
@@ -332,23 +331,39 @@ UniValue storepubkey(const UniValue& params, bool fHelp)
     if (params.size() > 1)
         strLabel = params[1].get_str();
 
-    if (!IsHex(params[0].get_str()))
+    bool anotherIsAdress=false;
+    string strAnother=params[0].get_str();
+    CBitcoinAddress anotherAddress(strAnother);
+    if (anotherAddress.IsValid()) anotherIsAdress=true;
+
+    if ( !anotherIsAdress && !IsHex(strAnother) )
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey must be a hex string");
+
+    if(!anotherIsAdress) {
+        std::vector<unsigned char> vch(ParseHex(strAnother));
+        CPubKey pubKey(vch.begin(), vch.end());
+        if (!pubKey.IsFullyValid())
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey is not a valid public key");
+
+        CBitcoinAddress address(pubKey.GetID());
+
+        LOCK2(cs_main, pwalletMain->cs_wallet);
+
+        // нужно проверить что это не свой ключ (категория send)
+        if (!IsMine(*pwalletMain, address.Get())) pwalletMain->SetAddressBook(pubKey.GetID(), strLabel, strAnother, "send"); // Пукей уже содержит адрес
+        else throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own key");
+
+        return address.ToString();
+    }
+    else{
+
+        LOCK2(cs_main, pwalletMain->cs_wallet);
         
-    std::vector<unsigned char> data(ParseHex(params[0].get_str()));
-    CPubKey pubKey(data.begin(), data.end());
-    if (!pubKey.IsFullyValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey is not a valid public key");
+        if (!IsMine(*pwalletMain, anotherAddress.Get())) pwalletMain->SetAddressBook(anotherAddress.Get(), strLabel, "", "send"); // Пукей пустой
+        else throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own address");
 
-    LOCK2(cs_main, pwalletMain->cs_wallet);
-
-    CBitcoinAddress address(pubKey.GetID());
-
-    // нужно проверить что это не свой ключ
-    if (!IsMine(*pwalletMain, address.Get())) pwalletMain->SetAddressBook(pubKey.GetID(), strLabel, params[0].get_str(), "send");
-    else throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own key");
-
-    return address.ToString();
+        return strAnother;
+    }
 }
 
 

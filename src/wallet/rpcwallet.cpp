@@ -143,7 +143,7 @@ UniValue getnewaddress(const UniValue& params, bool fHelp)
     CKeyID keyID = newKey.GetID();
     string strPubKeyHex = HexStr(newKey.begin(), newKey.end());
 
-    pwalletMain->SetAddressBook(keyID, strAccount, strPubKeyHex, "receive");
+    pwalletMain->SetAddressBook(keyID, strAccount, strPubKeyHex, "receive"); // Запишит в адресную книгу свой пукей, так как совпадут адрес и пукей
 
     return CBitcoinAddress(keyID).ToString();
 }
@@ -180,7 +180,7 @@ CBitcoinAddress GetAccountAddress(string strAccount, bool bForceNew=false)
             throw JSONRPCError(RPC_WALLET_KEYPOOL_RAN_OUT, "Error: Keypool ran out, please call keypoolrefill first");
         string strPubKeyHex = HexStr(account.vchPubKey.begin(), account.vchPubKey.end());
 
-        pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, strPubKeyHex, "receive");
+        pwalletMain->SetAddressBook(account.vchPubKey.GetID(), strAccount, strPubKeyHex, "receive"); // Запишит в адресную книгу свой пукей, так как совпадут адрес и пукей
         walletdb.WriteAccount(strAccount, account);
     }
 
@@ -292,7 +292,8 @@ UniValue setaccount(const UniValue& params, bool fHelp)
             if (address == GetAccountAddress(strOldAccount))
                 GetAccountAddress(strOldAccount, true);
 
-            strPubKeyHex = pwalletMain->mapAddressBook[address.Get()].pubkeyhex;
+            strPubKeyHex = pwalletMain->mapAddressBook[address.Get()].pubkeyhex; // Если окажется пустой, то (хотя не должен, так как команды генерации адресов его прописывают)
+                                                                                 // но если окажется пустой то теперь SetAddressBook его найдет по адресу и пропишит
         }
         
         pwalletMain->SetAddressBook(address.Get(), strAccount, strPubKeyHex, "receive");
@@ -465,7 +466,6 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 
 UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vRPCConvertParams в rcpclient.cpp добавляются индексы не строковых параметров (для корректного парсинга в JSON)
 {
-    // FixMe: можно еще юзать isHex() для проверки что на входе hex-string
     
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
@@ -473,9 +473,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     if (fHelp || params.size() < 3 || params.size() > 4)
         throw runtime_error(
             "sendhexdata \"from\" \"to\" \"hexstring\" ( \"comment\" )\n"
-            "\nData transfer from address or account to address or pubKey.\n"
+            "\nLONG Specific: Data transfer from address or account to address or pubKey.\n"
             "\nNote: Encryption is enabled automatically if the public key of the recipient is known.\n"
-            "        storepubkey can be used to add to the address book public key of the recipient \n"   
+            "        storeaddress can be used to add to the address book public key of the recipient \n"   
             "\nArguments:\n"
             "1. \"from\"          (string, required) The account or bitcoin address to send from.\n"
             "2. \"to\"            (string, required) The bitcoin address or hex-encoded pubKey to send to.\n"
@@ -490,6 +490,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             + HelpExampleRpc("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"48656c6c6f\"")
             + HelpExampleRpc("sendhexdata", "\"PUBLIC\" \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\" \"48656c6c6f\" \"This is Hello string\"")
         );
+
+    if (!IsHex(params[2].get_str()))
+    throw JSONRPCError(RPC_TYPE_ERROR, "Data must be a hex string");
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
@@ -1369,7 +1372,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
     CScriptID innerID(inner);
     pwalletMain->AddCScript(inner);
 
-    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // Этот адрес типа включает уже публичные ключи других адресов
+    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // FixMe: Этот адрес типа включает уже публичные ключи других адресов (но если у него есть пукей то SetAddressBook его пропишит теперь)
     return CBitcoinAddress(innerID).ToString();
 }
 
@@ -2068,7 +2071,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 1)
         throw runtime_error(
             "gethexdata \"txid\" \n"
-            "\nGet decripting data transmitted with a transaction <txid> \n"           
+            "\nLONG Specific: Get decripting data transmitted with a transaction <txid> \n"
             "\nArguments:\n"
             "1. \"txid\"    (string, required) The transaction id\n"
             "\nResult:\n"
@@ -2078,7 +2081,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             "  \"confirmations\" : n,              (numeric) The number of confirmations\n"
             "  \"time\" : ttt,                     (numeric) The transaction time in seconds since epoch (1 Jan 1970 GMT)\n"
             "  \"timereceived\"  : ttt,            (numeric) The time received in seconds since epoch (1 Jan 1970 GMT)\n"
-            "  \"details\" : [\n                   //A json array of objects"
+            "  \"details\" : [                     //A json array of objects\n"
             "    {\n"
             "      \"from\" : \"accountname\",           (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"fromaddress\" : \"bitcoinaddress\", (string) The bitcoin address involved in the transaction\n"
@@ -2086,8 +2089,9 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             "      \"to\"   : \"accountname\",           (string) The account name involved in the transaction, can be \"\" for the default account.\n"
             "      \"toaddress\"   : \"bitcoinaddress\", (string) The bitcoin address involved in the transaction\n"
             "      \"topubkey\"    : \"pubKey\",         (string) The pubKey corresponding to 'toaddress' in HEX format.\n"
+            "      \"vout\" : n,                         (numeric) The vout value\n"
             "      \"hexdata\" : \"hexstring\",          (string) The serialized, hex-encoded data (\"48656c6c6f\" is \"Hello\" string)\n"
-            "      \"encryption\" : 0/1                  (numeric) The hex-data encryption status flag\n"
+            "      \"encryption\" : 0/1                  (numeric) The hex-data transfer encryption status flag\n"
             "    }\n"
             "    ,...\n"
             "  ],\n"

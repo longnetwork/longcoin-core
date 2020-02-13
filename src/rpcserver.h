@@ -277,7 +277,7 @@ extern UniValue getspentinfo(const UniValue& params, bool fHelp);
 
 extern UniValue sendhexdata(const UniValue& params, bool fHelp);
 extern UniValue gethexdata(const UniValue& params, bool fHelp);
-extern UniValue storepubkey(const UniValue& params, bool fHelp);
+extern UniValue storeaddress(const UniValue& params, bool fHelp);
 
 
 bool StartRPC();

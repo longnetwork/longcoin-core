@@ -394,9 +394,10 @@ static const CRPCCommand vRPCCommands[] =
     { "wallet",             "walletlock",             &walletlock,             true  },
     { "wallet",             "walletpassphrasechange", &walletpassphrasechange, true  },
     { "wallet",             "walletpassphrase",       &walletpassphrase,       true  },
-    { "wallet",             "sendhexdata",            &sendhexdata,            false },
-    { "wallet",             "gethexdata",             &gethexdata,             false },
-    { "wallet",             "storepubkey",            &storepubkey,            true  },
+    
+    { "wallet",             "sendhexdata",            &sendhexdata,            false }, //LONG Specific
+    { "wallet",             "gethexdata",             &gethexdata,             false }, //LONG Specific
+    { "wallet",             "storeaddress",           &storeaddress,           true  }, //LONG Specific
 #endif // ENABLE_WALLET
 };
 

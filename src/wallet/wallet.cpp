@@ -2434,6 +2434,7 @@ DBErrors CWallet::ZapWalletTx(std::vector<CWalletTx>& vWtx)
 bool CWallet::SetAddressBook(const CTxDestination& address, const string& strName, const string& pubKeyHex, const string& strPurpose)
 {
     bool fUpdated = false;
+                bool fWritePubKey=false;
     {
         LOCK(cs_wallet); // mapAddressBook
         std::map<CTxDestination, CAddressBookData>::iterator mi = mapAddressBook.find(address);
@@ -2444,19 +2445,28 @@ bool CWallet::SetAddressBook(const CTxDestination& address, const string& strNam
             CBitcoinAddress(address).GetKeyID(payToPubKeyID);
             std::vector<unsigned char> toPubKeyHex = ParseHex(pubKeyHex);
             CPubKey payToPubKey(toPubKeyHex);
-            if (payToPubKeyID == payToPubKey.GetID()) { // одинаковы
-                CWalletDB(strWalletFile).WriteName(CBitcoinAddress(address).ToString(), strName);
-                CWalletDB(strWalletFile).WritePubKeyHex(CBitcoinAddress(address).ToString(), pubKeyHex);
+            if (payToPubKeyID == payToPubKey.GetID()) { // одинаковы, То есть в вызов подставили адрес и именно его родной публичный ключ
+                //CWalletDB(strWalletFile).WriteName(CBitcoinAddress(address).ToString(), strName); // Нах этому 2 раза записываться?
+                //CWalletDB(strWalletFile).WritePubKeyHex(CBitcoinAddress(address).ToString(), pubKeyHex);
+                
                 mapAddressBook[address].pubkeyhex = pubKeyHex;
+                // Есть адрес, есть его публичный ключ и пофиг, - наш адрес это или нет - нужно сохранить для дальнейшего использования при шифрации если потребуется
+                fWritePubKey=true;
             }
             
-        } else { // пубкей пуст, ищем в кошельке, если это наш ключ
+        } else { // пубкей пуст, ищем в кошельке, если это наш ключ (это может быть и просто WatchKeys после importpubkey)
             CKeyID payToPubKeyID;
             CPubKey payToPubKey;
             CBitcoinAddress(address).GetKeyID(payToPubKeyID); // WritePubKeyHex
             if (GetPubKey(payToPubKeyID, payToPubKey)) { // публичный ключ получателя в кошельке есть
                 string payToPubKeyHex = HexStr(payToPubKey.begin(), payToPubKey.end());
-                mapAddressBook[address].pubkeyhex = payToPubKeyHex;
+                
+                mapAddressBook[address].pubkeyhex = payToPubKeyHex; // FixMe: Вроде типа кеширования в объекте в памяти (так как на свой адрес GetPubKey вроде и так даст пукей)
+                                                                   
+
+                fWritePubKey=true;  // FixMe: Если проходит GetPubKey то он априори известен (для своих адресов) и вроде доп. сохранять его в базе кошелька нет смысла
+                                    // Но для Watch-адресов он-же известен - поэтому сохраняем! (все равно для левых пукей вроде GetPubKey не должно прокатить)
+
             }
         }
         if (!strPurpose.empty()) /* update purpose only if requested */
@@ -2466,8 +2476,13 @@ bool CWallet::SetAddressBook(const CTxDestination& address, const string& strNam
                              strPurpose, (fUpdated ? CT_UPDATED : CT_NEW) );
     if (!fFileBacked)
         return false;
+                
+    if (fWritePubKey && !CWalletDB(strWalletFile).WritePubKeyHex(CBitcoinAddress(address).ToString(), pubKeyHex))
+        return false;
+
     if (!strPurpose.empty() && !CWalletDB(strWalletFile).WritePurpose(CBitcoinAddress(address).ToString(), strPurpose))
         return false;
+    
     return CWalletDB(strWalletFile).WriteName(CBitcoinAddress(address).ToString(), strName);
 }
 
