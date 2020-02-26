@@ -487,8 +487,8 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             "\nExamples:\n"
             + HelpExampleCli("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"48656c6c6f\"")
             + HelpExampleCli("sendhexdata", "\"PUBLIC\" \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\" \"48656c6c6f\" \"This is Hello string\"")
-            + HelpExampleRpc("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"48656c6c6f\"")
-            + HelpExampleRpc("sendhexdata", "\"PUBLIC\" \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\" \"48656c6c6f\" \"This is Hello string\"")
+            + HelpExampleRpc("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\", \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\", \"48656c6c6f\"")
+            + HelpExampleRpc("sendhexdata", "\"PUBLIC\", \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\", \"48656c6c6f\", \"This is Hello string\"")
         );
 
     if (!IsHex(params[2].get_str()))
@@ -510,7 +510,8 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             {
                 const CBitcoinAddress& address = item.first;
                 const string& strName = item.second.name;
-                if (strName == strFrom) { // Первый найденный адрес
+                if ( strName == strFrom && IsMine(*pwalletMain, address.Get()) ) { // Первый найденный свой адрес на аккаунте. FixMe: Новые адреса и не в конце и не в начале
+                                                                                   // FixMe: Проверка своего наверно быстрее по send, receive, но так надежней
                     addressFrom.Set(address.Get());
                     fFromAccount=true;
                     break;
@@ -2181,7 +2182,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                 }
             } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                 toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
-                toPubKeyID=toPubKey.GetID();                    // Пока предполагаю что ID публичного ключа жоско зависит от адреса (а сам ключ нет - может быть любой)
+                toPubKeyID=toPubKey.GetID();                    // ID публичного ключа жоско зависит от адреса ( это и есть адрес в бинарной форме)
             }
             if (pwalletMain->HaveKey(toPubKeyID)) {
                 pwalletMain->GetKey(toPubKeyID, toPrivKey);       // Мы приемная сторона - наш шаредсекрет скачет от toPrivKey

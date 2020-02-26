@@ -1973,7 +1973,7 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
 
     wtxNew.fTimeReceivedIsTxTime = true;
     wtxNew.BindWallet(this);
-    CMutableTransaction txNew; // FixMe: Выяснить потом - может сюда нужно залить wtxNew.strFromAccount и может этого и не хватало??
+    CMutableTransaction txNew;
 
     // Discourage fee sniping.
     //
