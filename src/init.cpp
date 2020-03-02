@@ -1582,7 +1582,7 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 // LONG PUBLIC KEY 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
                 std::string strKeyHex = "0697918a26af3c26369be60866b5fbf9f3c723293c4ca74755e5df14bd4209ce"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
                 std::string strPubKeyHex = "035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
-                bool fCompressed = false;   // FixMe: При первом вызове (нулячем кошельке) getprivkey отображает один ключь, а при последующих - другой ( не сжатый и сжатый вариант )
+                bool fCompressed = true; //false;   // FixMe: При первом вызове (нулячем кошельке) getprivkey отображает один ключь, а при последующих - другой ( не сжатый и сжатый вариант )
                 std::vector<unsigned char> vchKey = ParseHex(strKeyHex);
                 std::vector<unsigned char> vchPubKey = ParseHex(strPubKeyHex);
                 CKey key;
