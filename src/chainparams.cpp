@@ -160,8 +160,8 @@ consensus.nHeight2 = 115000-1;
         vAlertPubKey = ParseHex("042ec9613a8b5b27c766a1bfce3e1434c9bdf87e53c4aa1e28db8d70b8f3a31128dfddf0953b86ff6fe255781a8c95826c30a382ace2d9df833609cba493025d6b"); 
         //nDefaultPort = 8333;
         nDefaultPort = 8778;
-		nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
-        nPruneAfterHeight = 240; //100000;
+		nMaxTipAge = 13 * 24 * 60 * 60; //4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 200000; //100000;
 
         genesis = CreateGenesisBlock(1558007865, 15080228, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -274,8 +274,8 @@ consensus.nHeight2 = 115000-1;
         vAlertPubKey = ParseHex("042ec9613a8b5b27c766a1bfce3e1434c9bdf87e53c4aa1e28db8d70b8f3a31128dfddf0953b86ff6fe255781a8c95826c30a382ace2d9df833609cba493025d6b");
         //nDefaultPort = 18333;
         nDefaultPort = 18778;
-        nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
-        nPruneAfterHeight = 240;
+        nMaxTipAge = 13 * 24 * 60 * 60; //4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 200000;
 
         genesis = CreateGenesisBlock(1559070662, 17163064, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -361,8 +361,8 @@ consensus.nHeight2 = 115000-1;
         pchMessageStart[3] = 0xda;
 
         nDefaultPort = 18777;
-        nMaxTipAge = 4 * 60 * 60; //24 * 60 * 60;
-        nPruneAfterHeight = 240;
+        nMaxTipAge = 13 * 24 * 60 * 60; //4 * 60 * 60; //24 * 60 * 60;
+        nPruneAfterHeight = 200000;
 
         genesis = CreateGenesisBlock(1558007865, 15080228, 0x1d7fffff, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();

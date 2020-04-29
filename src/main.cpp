@@ -1661,8 +1661,13 @@ bool IsInitialBlockDownload()
     static bool lockIBDState = false;
     if (lockIBDState)
         return false;
-    bool state = (chainActive.Height() < pindexBestHeader->nHeight - 24 * 6 ||
+    bool state = (chainActive.Height() < pindexBestHeader->nHeight - 8*6 /* 24*6 */  ||
             pindexBestHeader->GetBlockTime() < GetTime() - chainParams.MaxTipAge());
+
+//   #warning DEBUG Sync
+//   printf("DEBUG Sync: %d %d %ld %ld %d\n",chainActive.Height(), pindexBestHeader->nHeight- 24*6, pindexBestHeader->GetBlockTime(), GetTime() - chainParams.MaxTipAge(), state);     
+
+            
     if (!state)
         lockIBDState = true;
     return state;
@@ -1682,7 +1687,7 @@ void CheckForkWarningConditions()
 
     // If our best fork is no longer within 72 blocks (+/- 12 hours if no one mines it)
     // of our head, drop it
-    if (pindexBestForkTip && chainActive.Height() - pindexBestForkTip->nHeight >= 72)
+    if (pindexBestForkTip && chainActive.Height() - pindexBestForkTip->nHeight >= 22 /*72*/)
         pindexBestForkTip = NULL;
 
     if (pindexBestForkTip || (pindexBestInvalid && pindexBestInvalid->nChainWork > chainActive.Tip()->nChainWork + (GetBlockProof(*chainActive.Tip()) * 6)))
@@ -1737,7 +1742,7 @@ void CheckForkWarningConditionsOnNewFork(CBlockIndex* pindexNewForkTip)
     // the 7-block condition and from this always have the most-likely-to-cause-warning fork
     if (pfork && (!pindexBestForkTip || (pindexBestForkTip && pindexNewForkTip->nHeight > pindexBestForkTip->nHeight)) &&
             pindexNewForkTip->nChainWork - pfork->nChainWork > (GetBlockProof(*pfork) * 7) &&
-            chainActive.Height() - pindexNewForkTip->nHeight < 72)
+            chainActive.Height() - pindexNewForkTip->nHeight < 22 /*72*/)
     {
         pindexBestForkTip = pindexNewForkTip;
         pindexBestForkBase = pfork;

@@ -398,6 +398,12 @@ void static BitcoinMiner(const CChainParams& chainparams)
 
         while (true) {
             if (chainparams.MiningRequiresPeers()) {
+
+//                #warning DEBUG miner
+//                printf("DEBUG miner: %s\n","chainparams.MiningRequiresPeers()");
+
+
+                
                 // Busy-wait for the network to come online so we don't waste time mining
                 // on an obsolete chain. In regtest mode we expect to fly solo.
                 do {
@@ -409,6 +415,11 @@ void static BitcoinMiner(const CChainParams& chainparams)
                     if (!fvNodesEmpty && !IsInitialBlockDownload())
                         break;
                     MilliSleep(1000);
+
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %d %d\n",fvNodesEmpty,IsInitialBlockDownload());
+                        
+                    
                 } while (true);
             }
 
@@ -465,19 +476,33 @@ void static BitcoinMiner(const CChainParams& chainparams)
                 // Check for stop or if block needs to be rebuilt
                 boost::this_thread::interruption_point();
                 // Regtest mode doesn't require peers
-                if (vNodes.empty() && chainparams.MiningRequiresPeers())
+                if (vNodes.empty() && chainparams.MiningRequiresPeers()) {
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %s\n","(vNodes.empty() && chainparams.MiningRequiresPeers())");
                     break;
-                if (nNonce >= 0xffff0000)
+                }
+                if (nNonce >= 0xffff0000) {
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %s\n","(nNonce >= 0xffff0000)");                   
                     break;
-                if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60)
+                }
+                if (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60) {
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %s\n","(mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60)");                     
                     break;
-                if (pindexPrev != chainActive.Tip())
+                }
+                if (pindexPrev != chainActive.Tip()) {
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %s\n","(pindexPrev != chainActive.Tip())");                           
                     break;
-
+                }
                 // Update nTime every few seconds
-                if (UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev) < 0)
+                if (UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev) < 0) {
+//                    #warning DEBUG miner
+//                    printf("DEBUG miner: %s\n","(UpdateTime(pblock, chainparams.GetConsensus(), pindexPrev) < 0)");      
                     break; // Recreate the block if the clock has run backwards,
                            // so that we can use the correct time.
+                }
                 if (chainparams.GetConsensus().fPowAllowMinDifficultyBlocks)
                 {
                     // Changing pblock->nTime can change work required on testnet:
