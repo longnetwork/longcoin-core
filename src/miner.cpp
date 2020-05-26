@@ -364,7 +364,7 @@ static bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainpar
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("BitcoinMiner: generated block is stale");
+            return error("LongcoinMiner: generated block is stale");
     }
 
     // Inform about the new block
@@ -373,14 +373,14 @@ static bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainpar
     // Process this block the same as if we had received it from another node
     CValidationState state;
     if (!ProcessNewBlock(state, chainparams, NULL, pblock, true, NULL))
-        return error("BitcoinMiner: ProcessNewBlock, block not accepted");
+        return error("LongcoinMiner: ProcessNewBlock, block not accepted");
 
     return true;
 }
 
 void static BitcoinMiner(const CChainParams& chainparams)
 {
-    LogPrintf("BitcoinMiner started\n");
+    LogPrintf("LongcoinMiner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("longcoin-miner");
 
@@ -432,13 +432,13 @@ void static BitcoinMiner(const CChainParams& chainparams)
             auto_ptr<CBlockTemplate> pblocktemplate(CreateNewBlock(chainparams, coinbaseScript->reserveScript));
             if (!pblocktemplate.get())
             {
-                LogPrintf("Error in BitcoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
+                LogPrintf("Error in LongcoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
                 return;
             }
             CBlock *pblock = &pblocktemplate->block;
             IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-            LogPrintf("Running BitcoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
+            LogPrintf("Running LongcoinMiner with %u transactions in block (%u bytes)\n", pblock->vtx.size(),
                 ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
             //
@@ -459,7 +459,7 @@ void static BitcoinMiner(const CChainParams& chainparams)
                         assert(hash == pblock->GetHash());
 
                         SetThreadPriority(THREAD_PRIORITY_NORMAL);
-                        LogPrintf("BitcoinMiner:\n");
+                        LogPrintf("LongcoinMiner:\n");
                         LogPrintf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, chainparams);
                         SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -513,12 +513,12 @@ void static BitcoinMiner(const CChainParams& chainparams)
     }
     catch (const boost::thread_interrupted&)
     {
-        LogPrintf("BitcoinMiner terminated\n");
+        LogPrintf("LongcoinMiner terminated\n");
         throw;
     }
     catch (const std::runtime_error &e)
     {
-        LogPrintf("BitcoinMiner runtime error: %s\n", e.what());
+        LogPrintf("LongcoinMiner runtime error: %s\n", e.what());
         return;
     }
 }

@@ -1,21 +1,22 @@
 qt/qt_libbitcoinqt_a-moc_receivecoinsdialog.o: \
- qt/moc_receivecoinsdialog.cpp qt/receivecoinsdialog.h qt/guiutil.h \
- amount.h serialize.h compat/endian.h config/bitcoin-config.h \
- /usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stdint.h \
- /usr/share/mingw-w64/include/stdint.h \
- /usr/share/mingw-w64/include/crtdefs.h \
- /usr/share/mingw-w64/include/_mingw.h \
- /usr/share/mingw-w64/include/_mingw_mac.h \
- /usr/share/mingw-w64/include/_mingw_secapi.h \
- /usr/share/mingw-w64/include/vadefs.h \
- /usr/share/mingw-w64/include/sdks/_mingw_directx.h \
- /usr/share/mingw-w64/include/sdks/_mingw_ddk.h \
- /usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stddef.h \
- /usr/share/mingw-w64/include/stddef.h compat/byteswap.h \
+ qt/moc_receivecoinsdialog.cpp /usr/include/stdc-predef.h \
+ qt/receivecoinsdialog.h qt/guiutil.h amount.h serialize.h \
+ compat/endian.h config/bitcoin-config.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h compat/byteswap.h \
+ /usr/include/byteswap.h /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/c++/4.8/algorithm /usr/include/c++/4.8/utility \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++config.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/os_defines.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/cpu_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
  /usr/include/c++/4.8/bits/stl_relops.h \
  /usr/include/c++/4.8/bits/stl_pair.h /usr/include/c++/4.8/bits/move.h \
  /usr/include/c++/4.8/bits/concept_check.h \
@@ -30,12 +31,17 @@ qt/qt_libbitcoinqt_a-moc_receivecoinsdialog.o: \
  /usr/include/c++/4.8/debug/debug.h \
  /usr/include/c++/4.8/bits/stl_iterator.h \
  /usr/include/c++/4.8/bits/stl_algo.h /usr/include/c++/4.8/cstdlib \
- /usr/share/mingw-w64/include/stdlib.h \
- /usr/lib/gcc/x86_64-w64-mingw32/4.8/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-w64-mingw32/4.8/include-fixed/syslimits.h \
- /usr/share/mingw-w64/include/limits.h \
- /usr/share/mingw-w64/include/sec_api/stdlib_s.h \
- /usr/share/mingw-w64/include/malloc.h \
+ /usr/include/stdlib.h /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/xlocale.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/4.8/bits/algorithmfwd.h \
  /usr/include/c++/4.8/bits/stl_heap.h \
  /usr/include/c++/4.8/bits/stl_tempbuf.h \
@@ -44,41 +50,28 @@ qt/qt_libbitcoinqt_a-moc_receivecoinsdialog.o: \
  /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
  /usr/include/c++/4.8/ext/alloc_traits.h \
  /usr/include/c++/4.8/bits/allocator.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
  /usr/include/c++/4.8/ext/new_allocator.h \
- /usr/include/c++/4.8/bits/memoryfwd.h \
- /usr/share/mingw-w64/include/assert.h /usr/include/c++/4.8/ios \
- /usr/include/c++/4.8/iosfwd /usr/include/c++/4.8/bits/stringfwd.h \
+ /usr/include/c++/4.8/bits/memoryfwd.h /usr/include/assert.h \
+ /usr/include/c++/4.8/ios /usr/include/c++/4.8/iosfwd \
+ /usr/include/c++/4.8/bits/stringfwd.h \
  /usr/include/c++/4.8/bits/postypes.h /usr/include/c++/4.8/cwchar \
- /usr/share/mingw-w64/include/wchar.h \
- /usr/share/mingw-w64/include/_mingw_print_push.h \
- /usr/share/mingw-w64/include/_mingw_off_t.h \
- /usr/share/mingw-w64/include/_mingw_stat64.h \
- /usr/x86_64-w64-mingw32/include/swprintf.inl \
- /usr/share/mingw-w64/include/sec_api/wchar_s.h \
- /usr/share/mingw-w64/include/_mingw_print_pop.h \
+ /usr/include/wchar.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h \
  /usr/include/c++/4.8/bits/char_traits.h \
  /usr/include/c++/4.8/bits/localefwd.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++locale.h \
- /usr/include/c++/4.8/clocale /usr/share/mingw-w64/include/locale.h \
- /usr/share/mingw-w64/include/stdio.h \
- /usr/share/mingw-w64/include/sec_api/stdio_s.h \
- /usr/include/c++/4.8/cctype /usr/share/mingw-w64/include/ctype.h \
- /usr/include/c++/4.8/bits/ios_base.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
+ /usr/include/c++/4.8/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/4.8/cctype \
+ /usr/include/ctype.h /usr/include/c++/4.8/bits/ios_base.h \
  /usr/include/c++/4.8/ext/atomicity.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/gthr.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/gthr-default.h \
- /usr/share/mingw-w64/include/pthread.h \
- /usr/share/mingw-w64/include/errno.h \
- /usr/share/mingw-w64/include/sys/types.h \
- /usr/share/mingw-w64/include/process.h \
- /usr/share/mingw-w64/include/signal.h \
- /usr/share/mingw-w64/include/pthread_signal.h \
- /usr/share/mingw-w64/include/sys/timeb.h \
- /usr/share/mingw-w64/include/sec_api/sys/timeb_s.h \
- /usr/share/mingw-w64/include/pthread_compat.h \
- /usr/share/mingw-w64/include/pthread_unistd.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/atomic_word.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h \
  /usr/include/c++/4.8/bits/locale_classes.h /usr/include/c++/4.8/string \
  /usr/include/c++/4.8/bits/ostream_insert.h \
  /usr/include/c++/4.8/bits/cxxabi_forced.h \
@@ -91,19 +84,17 @@ qt/qt_libbitcoinqt_a-moc_receivecoinsdialog.o: \
  /usr/include/c++/4.8/streambuf /usr/include/c++/4.8/bits/streambuf.tcc \
  /usr/include/c++/4.8/bits/basic_ios.h \
  /usr/include/c++/4.8/bits/locale_facets.h /usr/include/c++/4.8/cwctype \
- /usr/share/mingw-w64/include/wctype.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/ctype_base.h \
+ /usr/include/wctype.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h \
  /usr/include/c++/4.8/bits/streambuf_iterator.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/ctype_inline.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h \
  /usr/include/c++/4.8/bits/locale_facets.tcc \
  /usr/include/c++/4.8/bits/basic_ios.tcc /usr/include/c++/4.8/limits \
  /usr/include/c++/4.8/map /usr/include/c++/4.8/bits/stl_tree.h \
  /usr/include/c++/4.8/bits/stl_map.h \
  /usr/include/c++/4.8/bits/stl_multimap.h /usr/include/c++/4.8/set \
  /usr/include/c++/4.8/bits/stl_set.h \
- /usr/include/c++/4.8/bits/stl_multiset.h \
- /usr/share/mingw-w64/include/string.h \
- /usr/share/mingw-w64/include/sec_api/string_s.h \
+ /usr/include/c++/4.8/bits/stl_multiset.h /usr/include/string.h \
  /usr/include/c++/4.8/vector \
  /usr/include/c++/4.8/bits/stl_uninitialized.h \
  /usr/include/c++/4.8/bits/stl_vector.h \
@@ -113,566 +104,380 @@ qt/qt_libbitcoinqt_a-moc_receivecoinsdialog.o: \
  /usr/include/c++/4.8/bits/ostream.tcc /usr/include/c++/4.8/istream \
  /usr/include/c++/4.8/bits/istream.tcc \
  /usr/include/c++/4.8/bits/stream_iterator.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QEvent \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcoreevent.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qnamespace.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qglobal.h \
+ /usr/include/qt5/QtCore/QEvent /usr/include/qt5/QtCore/qcoreevent.h \
+ /usr/include/qt5/QtCore/qnamespace.h /usr/include/qt5/QtCore/qglobal.h \
+ /usr/include/qt5/QtCore/qconfig.h /usr/include/qt5/QtCore/qfeatures.h \
+ /usr/include/qt5/QtCore/qsystemdetection.h \
+ /usr/include/qt5/QtCore/qprocessordetection.h \
+ /usr/include/qt5/QtCore/qcompilerdetection.h \
+ /usr/include/qt5/QtCore/qglobalstatic.h \
+ /usr/include/qt5/QtCore/qatomic.h /usr/include/qt5/QtCore/qbasicatomic.h \
+ /usr/include/qt5/QtCore/qatomic_x86.h \
+ /usr/include/qt5/QtCore/qgenericatomic.h \
+ /usr/include/qt5/QtCore/qlogging.h /usr/include/qt5/QtCore/qflags.h \
+ /usr/include/qt5/QtCore/qtypeinfo.h \
+ /usr/include/qt5/QtCore/qtypetraits.h /usr/include/qt5/QtCore/qsysinfo.h \
+ /usr/include/qt5/QtCore/qbytearray.h /usr/include/qt5/QtCore/qrefcount.h \
+ /usr/include/qt5/QtCore/qarraydata.h \
+ /usr/include/qt5/QtCore/qobjectdefs.h \
+ /usr/include/qt5/QtCore/qobjectdefs_impl.h \
+ /usr/include/qt5/QtWidgets/QHeaderView \
+ /usr/include/qt5/QtWidgets/qheaderview.h \
+ /usr/include/qt5/QtWidgets/qabstractitemview.h \
+ /usr/include/qt5/QtWidgets/qabstractscrollarea.h \
+ /usr/include/qt5/QtWidgets/qframe.h /usr/include/qt5/QtWidgets/qwidget.h \
+ /usr/include/qt5/QtGui/qwindowdefs.h /usr/include/qt5/QtCore/qobject.h \
+ /usr/include/qt5/QtCore/qstring.h /usr/include/qt5/QtCore/qchar.h \
+ /usr/include/qt5/QtCore/qlist.h /usr/include/qt5/QtCore/qalgorithms.h \
+ /usr/include/qt5/QtCore/qiterator.h /usr/include/c++/4.8/list \
+ /usr/include/c++/4.8/bits/stl_list.h /usr/include/c++/4.8/bits/list.tcc \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/qt5/QtCore/qscopedpointer.h \
+ /usr/include/qt5/QtCore/qmetatype.h \
+ /usr/include/qt5/QtCore/qvarlengtharray.h \
+ /usr/include/qt5/QtCore/qcontainerfwd.h \
+ /usr/include/qt5/QtCore/qisenum.h /usr/include/qt5/QtCore/qobject_impl.h \
+ /usr/include/qt5/QtCore/qmargins.h /usr/include/qt5/QtCore/qrect.h \
+ /usr/include/qt5/QtCore/qsize.h /usr/include/qt5/QtCore/qpoint.h \
+ /usr/include/qt5/QtGui/qpaintdevice.h /usr/include/qt5/QtGui/qpalette.h \
+ /usr/include/qt5/QtGui/qcolor.h /usr/include/qt5/QtGui/qrgb.h \
+ /usr/include/qt5/QtCore/qstringlist.h \
+ /usr/include/qt5/QtCore/qdatastream.h \
+ /usr/include/qt5/QtCore/qiodevice.h /usr/include/qt5/QtCore/qpair.h \
+ /usr/include/qt5/QtCore/qregexp.h \
+ /usr/include/qt5/QtCore/qstringmatcher.h /usr/include/qt5/QtGui/qbrush.h \
+ /usr/include/qt5/QtCore/qvector.h /usr/include/qt5/QtGui/qmatrix.h \
+ /usr/include/qt5/QtGui/qpolygon.h /usr/include/qt5/QtGui/qregion.h \
+ /usr/include/qt5/QtCore/qline.h /usr/include/qt5/QtGui/qtransform.h \
+ /usr/include/qt5/QtGui/qpainterpath.h /usr/include/qt5/QtGui/qimage.h \
+ /usr/include/qt5/QtGui/qpixmap.h \
+ /usr/include/qt5/QtCore/qsharedpointer.h \
+ /usr/include/qt5/QtCore/qshareddata.h \
+ /usr/include/qt5/QtCore/qsharedpointer_impl.h \
+ /usr/include/qt5/QtCore/qhash.h /usr/include/qt5/QtGui/qfont.h \
+ /usr/include/qt5/QtGui/qfontmetrics.h /usr/include/qt5/QtGui/qfontinfo.h \
+ /usr/include/qt5/QtWidgets/qsizepolicy.h \
+ /usr/include/qt5/QtGui/qcursor.h /usr/include/qt5/QtGui/qkeysequence.h \
+ /usr/include/qt5/QtCore/qabstractitemmodel.h \
+ /usr/include/qt5/QtCore/qvariant.h /usr/include/qt5/QtCore/qmap.h \
+ /usr/include/qt5/QtCore/qitemselectionmodel.h \
+ /usr/include/qt5/QtCore/qset.h \
+ /usr/include/qt5/QtWidgets/qabstractitemdelegate.h \
+ /usr/include/qt5/QtWidgets/qstyleoption.h \
+ /usr/include/qt5/QtWidgets/qabstractspinbox.h \
+ /usr/include/qt5/QtGui/qvalidator.h \
+ /usr/include/qt5/QtCore/qregularexpression.h \
+ /usr/include/qt5/QtCore/qlocale.h /usr/include/qt5/QtGui/qicon.h \
+ /usr/include/qt5/QtWidgets/qslider.h \
+ /usr/include/qt5/QtWidgets/qabstractslider.h \
+ /usr/include/qt5/QtWidgets/qstyle.h /usr/include/qt5/QtWidgets/qtabbar.h \
+ /usr/include/qt5/QtWidgets/qtabwidget.h \
+ /usr/include/qt5/QtWidgets/qrubberband.h \
+ /usr/include/qt5/QtWidgets/QMessageBox \
+ /usr/include/qt5/QtWidgets/qmessagebox.h \
+ /usr/include/qt5/QtWidgets/qdialog.h /usr/include/qt5/QtCore/QObject \
+ /usr/include/qt5/QtCore/qobject.h \
+ /usr/include/qt5/QtWidgets/QProgressBar \
+ /usr/include/qt5/QtWidgets/qprogressbar.h \
+ /usr/include/qt5/QtCore/QString /usr/include/qt5/QtCore/qstring.h \
+ /usr/include/qt5/QtWidgets/QTableView \
+ /usr/include/qt5/QtWidgets/qtableview.h \
+ /usr/include/boost/filesystem.hpp \
+ /usr/include/boost/filesystem/config.hpp /usr/include/boost/config.hpp \
+ /usr/include/boost/config/user.hpp \
+ /usr/include/boost/config/select_compiler_config.hpp \
+ /usr/include/boost/config/compiler/gcc.hpp \
+ /usr/include/boost/config/select_stdlib_config.hpp \
  /usr/include/c++/4.8/cstddef \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qconfig.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfeatures.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsystemdetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qprocessordetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcompilerdetection.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qtypeinfo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qtypetraits.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsysinfo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlogging.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qflags.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbasicatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qatomic_x86.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qgenericatomic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qglobalstatic.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qnumeric.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbytearray.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qrefcount.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qarraydata.h \
- /usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stdarg.h \
- /usr/share/mingw-w64/include/stdarg.h \
- /usr/share/mingw-w64/include/_mingw_stdarg.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobjectdefs.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobjectdefs_impl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QHeaderView \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qheaderview.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractitemview.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractscrollarea.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qframe.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qwidget.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qwindowdefs.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qwindowdefs_win.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstring.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qchar.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qalgorithms.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qiterator.h \
- /usr/include/c++/4.8/list /usr/include/c++/4.8/bits/stl_list.h \
- /usr/include/c++/4.8/bits/list.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbytearraylist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstringlist.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qregexp.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstringmatcher.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qscopedpointer.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmetatype.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvarlengtharray.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcontainerfwd.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qisenum.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject_impl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmargins.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpaintdevice.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qrect.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsize.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpoint.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpalette.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qcolor.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qrgb.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qbrush.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpair.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvector.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qmatrix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpolygon.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qregion.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qdatastream.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qiodevice.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qline.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qtransform.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpainterpath.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qimage.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpixelformat.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpixmap.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsharedpointer.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qshareddata.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qhash.h \
- /usr/include/c++/4.8/numeric /usr/include/c++/4.8/bits/stl_numeric.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsharedpointer_impl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfont.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfontmetrics.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfontinfo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qsizepolicy.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qcursor.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qkeysequence.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qabstractitemmodel.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvariant.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmap.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qitemselectionmodel.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qset.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractitemdelegate.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qstyleoption.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractspinbox.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qvalidator.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qregularexpression.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlocale.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qicon.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qslider.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractslider.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qstyle.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtabbar.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtabwidget.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qrubberband.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QMessageBox \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qmessagebox.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qdialog.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QObject \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QProgressBar \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qprogressbar.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QString \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstring.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QTableView \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtableview.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/user.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_compiler_config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/compiler/gcc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_stdlib_config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/stdlib/libstdcpp3.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_platform_config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/platform/win32.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/suffix.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/api_config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/workaround.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/auto_link.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/enable_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/enable_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_array.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_def.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/template_arity_spec.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/int.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/int_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/adl_barrier.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/adl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/msvc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/intel.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/gcc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/workaround.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/nttp_decl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/nttp.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/integral_wrapper.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_tag.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/static_constant.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/static_cast.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/cat.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/config/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/template_arity_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/params.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/preprocessor.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/comma_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/punctuation/comma_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/iif.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/bool.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/empty.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/punctuation/comma.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repeat.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/repeat.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/debug/error.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/auto_rec.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/eat.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/inc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/inc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/lambda.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/ttp.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/ctps.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/overload_resolution.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_constant.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bool.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bool_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/lambda_support.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_undef.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_function.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/ice.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/yes_no_type.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_or.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_and.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_not.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_eq.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/false_result.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_def.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_undef.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_pointer.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/eval_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/value_wknd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/integral.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/eti.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_spec.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/lambda_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/void_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/lambda_arity_param.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/dtp.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/enum.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/limits/arity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/and.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/bitand.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/identity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/identity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/empty.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/add.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/dec.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/while.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/fold_left.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/detail/fold_left.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/expr_iif.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/adt.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/is_binary.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/check.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/compl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/fold_right.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/detail/fold_right.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/reverse.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/detail/while.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/elem.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/expand.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/overload.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/variadic/size.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/rem.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/detail/is_single_return.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/variadic/elem.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/sub.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/error_code.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/mingw.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version_number.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/make.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/test.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/platform_detected.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_desktop.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/windows.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/os_detected.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_store.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_phone.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_runtime.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/cstdint.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/assert.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/noncopyable.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/noncopyable.hpp \
+ /usr/include/boost/config/no_tr1/utility.hpp \
+ /usr/include/boost/config/stdlib/libstdcpp3.hpp /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/boost/config/select_platform_config.hpp \
+ /usr/include/boost/config/platform/linux.hpp \
+ /usr/include/boost/config/posix_features.hpp \
+ /usr/include/boost/config/suffix.hpp \
+ /usr/include/boost/system/api_config.hpp \
+ /usr/include/boost/detail/workaround.hpp \
+ /usr/include/boost/config/auto_link.hpp \
+ /usr/include/boost/filesystem/path.hpp \
+ /usr/include/boost/filesystem/path_traits.hpp \
+ /usr/include/boost/utility/enable_if.hpp \
+ /usr/include/boost/type_traits/is_array.hpp \
+ /usr/include/boost/type_traits/config.hpp \
+ /usr/include/boost/type_traits/detail/bool_trait_def.hpp \
+ /usr/include/boost/type_traits/detail/template_arity_spec.hpp \
+ /usr/include/boost/mpl/int.hpp /usr/include/boost/mpl/int_fwd.hpp \
+ /usr/include/boost/mpl/aux_/adl_barrier.hpp \
+ /usr/include/boost/mpl/aux_/config/adl.hpp \
+ /usr/include/boost/mpl/aux_/config/msvc.hpp \
+ /usr/include/boost/mpl/aux_/config/intel.hpp \
+ /usr/include/boost/mpl/aux_/config/gcc.hpp \
+ /usr/include/boost/mpl/aux_/config/workaround.hpp \
+ /usr/include/boost/mpl/aux_/nttp_decl.hpp \
+ /usr/include/boost/mpl/aux_/config/nttp.hpp \
+ /usr/include/boost/mpl/aux_/integral_wrapper.hpp \
+ /usr/include/boost/mpl/integral_c_tag.hpp \
+ /usr/include/boost/mpl/aux_/config/static_constant.hpp \
+ /usr/include/boost/mpl/aux_/static_cast.hpp \
+ /usr/include/boost/preprocessor/cat.hpp \
+ /usr/include/boost/preprocessor/config/config.hpp \
+ /usr/include/boost/mpl/aux_/template_arity_fwd.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/params.hpp \
+ /usr/include/boost/mpl/aux_/config/preprocessor.hpp \
+ /usr/include/boost/preprocessor/comma_if.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma_if.hpp \
+ /usr/include/boost/preprocessor/control/if.hpp \
+ /usr/include/boost/preprocessor/control/iif.hpp \
+ /usr/include/boost/preprocessor/logical/bool.hpp \
+ /usr/include/boost/preprocessor/facilities/empty.hpp \
+ /usr/include/boost/preprocessor/punctuation/comma.hpp \
+ /usr/include/boost/preprocessor/repeat.hpp \
+ /usr/include/boost/preprocessor/repetition/repeat.hpp \
+ /usr/include/boost/preprocessor/debug/error.hpp \
+ /usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /usr/include/boost/preprocessor/tuple/eat.hpp \
+ /usr/include/boost/preprocessor/inc.hpp \
+ /usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /usr/include/boost/mpl/aux_/config/lambda.hpp \
+ /usr/include/boost/mpl/aux_/config/ttp.hpp \
+ /usr/include/boost/mpl/aux_/config/ctps.hpp \
+ /usr/include/boost/mpl/aux_/config/overload_resolution.hpp \
+ /usr/include/boost/type_traits/integral_constant.hpp \
+ /usr/include/boost/mpl/bool.hpp /usr/include/boost/mpl/bool_fwd.hpp \
+ /usr/include/boost/mpl/integral_c.hpp \
+ /usr/include/boost/mpl/integral_c_fwd.hpp \
+ /usr/include/boost/mpl/aux_/lambda_support.hpp \
+ /usr/include/boost/type_traits/detail/bool_trait_undef.hpp \
+ /usr/include/boost/type_traits/decay.hpp \
+ /usr/include/boost/type_traits/is_function.hpp \
+ /usr/include/boost/type_traits/is_reference.hpp \
+ /usr/include/boost/type_traits/is_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/is_rvalue_reference.hpp \
+ /usr/include/boost/type_traits/ice.hpp \
+ /usr/include/boost/type_traits/detail/yes_no_type.hpp \
+ /usr/include/boost/type_traits/detail/ice_or.hpp \
+ /usr/include/boost/type_traits/detail/ice_and.hpp \
+ /usr/include/boost/type_traits/detail/ice_not.hpp \
+ /usr/include/boost/type_traits/detail/ice_eq.hpp \
+ /usr/include/boost/type_traits/detail/false_result.hpp \
+ /usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
+ /usr/include/boost/type_traits/remove_bounds.hpp \
+ /usr/include/boost/type_traits/detail/type_trait_def.hpp \
+ /usr/include/boost/type_traits/detail/type_trait_undef.hpp \
+ /usr/include/boost/type_traits/add_pointer.hpp \
+ /usr/include/boost/type_traits/remove_reference.hpp \
+ /usr/include/boost/type_traits/broken_compiler_spec.hpp \
+ /usr/include/boost/mpl/eval_if.hpp /usr/include/boost/mpl/if.hpp \
+ /usr/include/boost/mpl/aux_/value_wknd.hpp \
+ /usr/include/boost/mpl/aux_/config/integral.hpp \
+ /usr/include/boost/mpl/aux_/config/eti.hpp \
+ /usr/include/boost/mpl/aux_/na_spec.hpp \
+ /usr/include/boost/mpl/lambda_fwd.hpp \
+ /usr/include/boost/mpl/void_fwd.hpp /usr/include/boost/mpl/aux_/na.hpp \
+ /usr/include/boost/mpl/aux_/na_fwd.hpp \
+ /usr/include/boost/mpl/aux_/lambda_arity_param.hpp \
+ /usr/include/boost/mpl/aux_/arity.hpp \
+ /usr/include/boost/mpl/aux_/config/dtp.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/enum.hpp \
+ /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
+ /usr/include/boost/mpl/limits/arity.hpp \
+ /usr/include/boost/preprocessor/logical/and.hpp \
+ /usr/include/boost/preprocessor/logical/bitand.hpp \
+ /usr/include/boost/preprocessor/identity.hpp \
+ /usr/include/boost/preprocessor/facilities/identity.hpp \
+ /usr/include/boost/preprocessor/empty.hpp \
+ /usr/include/boost/preprocessor/arithmetic/add.hpp \
+ /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/control/while.hpp \
+ /usr/include/boost/preprocessor/list/fold_left.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_left.hpp \
+ /usr/include/boost/preprocessor/control/expr_iif.hpp \
+ /usr/include/boost/preprocessor/list/adt.hpp \
+ /usr/include/boost/preprocessor/detail/is_binary.hpp \
+ /usr/include/boost/preprocessor/detail/check.hpp \
+ /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/list/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/detail/fold_right.hpp \
+ /usr/include/boost/preprocessor/list/reverse.hpp \
+ /usr/include/boost/preprocessor/control/detail/while.hpp \
+ /usr/include/boost/preprocessor/tuple/elem.hpp \
+ /usr/include/boost/preprocessor/facilities/overload.hpp \
+ /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/tuple/rem.hpp \
+ /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/arithmetic/sub.hpp \
+ /usr/include/boost/mpl/identity.hpp \
+ /usr/include/boost/system/error_code.hpp \
+ /usr/include/boost/system/config.hpp /usr/include/boost/cstdint.hpp \
+ /usr/include/boost/assert.hpp /usr/include/c++/4.8/iostream \
+ /usr/include/boost/current_function.hpp /usr/include/boost/operators.hpp \
+ /usr/include/boost/iterator.hpp /usr/include/boost/noncopyable.hpp \
  /usr/include/c++/4.8/stdexcept /usr/include/c++/4.8/functional \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/cerrno.hpp \
- /usr/include/c++/4.8/cerrno \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/abi_prefix.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/abi_suffix.hpp \
- /usr/include/c++/4.8/locale \
+ /usr/include/boost/cerrno.hpp /usr/include/c++/4.8/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/boost/config/abi_prefix.hpp \
+ /usr/include/boost/config/abi_suffix.hpp /usr/include/c++/4.8/locale \
  /usr/include/c++/4.8/bits/locale_facets_nonio.h \
- /usr/include/c++/4.8/ctime /usr/share/mingw-w64/include/time.h \
- /usr/share/mingw-w64/include/_timeval.h \
- /usr/share/mingw-w64/include/sec_api/time_s.h \
- /usr/share/mingw-w64/include/pthread_time.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/time_members.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/messages_members.h \
- /usr/include/c++/4.8/bits/codecvt.h \
+ /usr/include/c++/4.8/ctime \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/4.8/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/4.8/bits/codecvt.h \
  /usr/include/c++/4.8/bits/locale_facets_nonio.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/system_error.hpp \
- /usr/include/c++/4.8/cassert \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_facade.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/interoperable.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/or.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/use_preprocessed.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/nested_type_wknd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/include_preprocessed.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/compiler.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/stringize.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_convertible.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/intrinsics.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_same.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/cv_traits_impl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_arithmetic.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_integral.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_float.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_void.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_abstract.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_lvalue_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_rvalue_reference.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_def.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_undef.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_traits.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/iterator.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_categories.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/placeholders.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_assert.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/assert.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/not.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/yes_no.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/arrays.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/gpu.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/pp_counter.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arity_spec.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arg_typedef.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/static_assert.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/facade_iterator_category.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/and.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/and.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_const.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/indirect_traits.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pointer.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_cv.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_class.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_pointer.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/enable_if.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/addressof.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/addressof.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_const.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_const.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pod.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_scalar.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_enum.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/always.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/default_params.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply_wrap.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/has_apply.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/has_xxx.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/type_wrapper.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/has_xxx.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/msvc_typename.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/elem.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/data.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/size.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_params.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/has_apply.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/msvc_never_true.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/lambda.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bind.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bind_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/bind.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/next.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/next_prior.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/common_name_wknd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/protect.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/full_lambda.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/quote.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/void.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/has_type.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/bcc.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/template_arity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp \
- /usr/include/c++/4.8/memory \
+ /usr/include/boost/system/system_error.hpp /usr/include/c++/4.8/cassert \
+ /usr/include/boost/iterator/iterator_facade.hpp \
+ /usr/include/boost/iterator/interoperable.hpp \
+ /usr/include/boost/mpl/or.hpp \
+ /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp \
+ /usr/include/boost/mpl/aux_/nested_type_wknd.hpp \
+ /usr/include/boost/mpl/aux_/include_preprocessed.hpp \
+ /usr/include/boost/mpl/aux_/config/compiler.hpp \
+ /usr/include/boost/preprocessor/stringize.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp \
+ /usr/include/boost/type_traits/is_convertible.hpp \
+ /usr/include/boost/type_traits/intrinsics.hpp \
+ /usr/include/boost/type_traits/is_same.hpp \
+ /usr/include/boost/type_traits/is_volatile.hpp \
+ /usr/include/boost/type_traits/detail/cv_traits_impl.hpp \
+ /usr/include/boost/type_traits/is_arithmetic.hpp \
+ /usr/include/boost/type_traits/is_integral.hpp \
+ /usr/include/boost/type_traits/is_float.hpp \
+ /usr/include/boost/type_traits/is_void.hpp \
+ /usr/include/boost/type_traits/is_abstract.hpp \
+ /usr/include/boost/type_traits/add_lvalue_reference.hpp \
+ /usr/include/boost/type_traits/add_reference.hpp \
+ /usr/include/boost/type_traits/add_rvalue_reference.hpp \
+ /usr/include/boost/iterator/detail/config_def.hpp \
+ /usr/include/boost/iterator/detail/config_undef.hpp \
+ /usr/include/boost/iterator/iterator_traits.hpp \
+ /usr/include/boost/detail/iterator.hpp \
+ /usr/include/boost/iterator/detail/facade_iterator_category.hpp \
+ /usr/include/boost/iterator/iterator_categories.hpp \
+ /usr/include/boost/mpl/placeholders.hpp /usr/include/boost/mpl/arg.hpp \
+ /usr/include/boost/mpl/arg_fwd.hpp \
+ /usr/include/boost/mpl/aux_/na_assert.hpp \
+ /usr/include/boost/mpl/assert.hpp /usr/include/boost/mpl/not.hpp \
+ /usr/include/boost/mpl/aux_/yes_no.hpp \
+ /usr/include/boost/mpl/aux_/config/arrays.hpp \
+ /usr/include/boost/mpl/aux_/config/pp_counter.hpp \
+ /usr/include/boost/mpl/aux_/arity_spec.hpp \
+ /usr/include/boost/mpl/aux_/arg_typedef.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp \
+ /usr/include/boost/static_assert.hpp /usr/include/boost/mpl/and.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp \
+ /usr/include/boost/type_traits/is_const.hpp \
+ /usr/include/boost/detail/indirect_traits.hpp \
+ /usr/include/boost/type_traits/is_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_pointer.hpp \
+ /usr/include/boost/type_traits/is_member_function_pointer.hpp \
+ /usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+ /usr/include/boost/type_traits/remove_cv.hpp \
+ /usr/include/boost/type_traits/is_class.hpp \
+ /usr/include/boost/type_traits/remove_pointer.hpp \
+ /usr/include/boost/iterator/detail/enable_if.hpp \
+ /usr/include/boost/utility/addressof.hpp \
+ /usr/include/boost/type_traits/add_const.hpp \
+ /usr/include/boost/type_traits/remove_const.hpp \
+ /usr/include/boost/type_traits/is_pod.hpp \
+ /usr/include/boost/type_traits/is_scalar.hpp \
+ /usr/include/boost/type_traits/is_enum.hpp \
+ /usr/include/boost/mpl/always.hpp /usr/include/boost/mpl/apply.hpp \
+ /usr/include/boost/mpl/apply_fwd.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp \
+ /usr/include/boost/mpl/apply_wrap.hpp \
+ /usr/include/boost/mpl/aux_/has_apply.hpp \
+ /usr/include/boost/mpl/has_xxx.hpp \
+ /usr/include/boost/mpl/aux_/type_wrapper.hpp \
+ /usr/include/boost/mpl/aux_/config/has_xxx.hpp \
+ /usr/include/boost/mpl/aux_/config/msvc_typename.hpp \
+ /usr/include/boost/preprocessor/array/elem.hpp \
+ /usr/include/boost/preprocessor/array/data.hpp \
+ /usr/include/boost/preprocessor/array/size.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_params.hpp \
+ /usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
+ /usr/include/boost/mpl/aux_/config/has_apply.hpp \
+ /usr/include/boost/mpl/aux_/msvc_never_true.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp \
+ /usr/include/boost/mpl/lambda.hpp /usr/include/boost/mpl/bind.hpp \
+ /usr/include/boost/mpl/bind_fwd.hpp \
+ /usr/include/boost/mpl/aux_/config/bind.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp \
+ /usr/include/boost/mpl/next.hpp /usr/include/boost/mpl/next_prior.hpp \
+ /usr/include/boost/mpl/aux_/common_name_wknd.hpp \
+ /usr/include/boost/mpl/protect.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp \
+ /usr/include/boost/mpl/aux_/full_lambda.hpp \
+ /usr/include/boost/mpl/quote.hpp /usr/include/boost/mpl/void.hpp \
+ /usr/include/boost/mpl/aux_/has_type.hpp \
+ /usr/include/boost/mpl/aux_/config/bcc.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp \
+ /usr/include/boost/mpl/aux_/template_arity.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp \
+ /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp \
+ /usr/include/boost/shared_ptr.hpp \
+ /usr/include/boost/smart_ptr/shared_ptr.hpp \
+ /usr/include/boost/config/no_tr1/memory.hpp /usr/include/c++/4.8/memory \
  /usr/include/c++/4.8/bits/stl_raw_storage_iter.h \
  /usr/include/c++/4.8/backward/auto_ptr.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/checked_delete.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/checked_delete.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/throw_exception.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/exception/exception.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/current_function.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/bad_weak_ptr.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_has_sync.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/sp_typeinfo.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/typeinfo.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/demangle.hpp \
- /usr/include/c++/4.8/cxxabi.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/cxxabi_tweaks.h \
- /usr/include/c++/4.8/typeinfo \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_convertible.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_pool.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_sync.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/yield_k.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/stdc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/stdcpp.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/objc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/alpha.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/arm.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/blackfin.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/convex.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/ia64.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/m68k.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/mips.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/parisc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/ppc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/pyramid.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/rs6k.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sparc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/superh.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sys370.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sys390.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86/32.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86/64.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/z.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/borland.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/clang.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/comeau.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/compaq.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/diab.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/digitalmars.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/dignus.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/edg.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/ekopath.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/gcc_xml.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/gcc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/comp_detected.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/greenhills.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/hp_acc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/iar.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/ibm.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/intel.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/kai.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/llvm.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/metaware.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/metrowerks.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/microtec.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/mpw.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/palm.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/pgi.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/sgi_mipspro.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/sunpro.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/tendra.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/visualc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/watcom.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/_prefix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/_cassert.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/gnu.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/uc.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/vms.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/zos.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/_prefix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/_exception.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/cxx.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/dinkumware.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/libcomo.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/modena.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/msl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/roguewave.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/sgi.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/stdcpp3.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/stlport.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/vacpp.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/aix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/amigaos.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/android.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/beos.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/macos.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/ios.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/bsdi.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/dragonfly.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/free.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/open.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/net.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/cygwin.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/haiku.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/hpux.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/irix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/linux.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/os400.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/qnxnto.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/solaris.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/unix.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/vms.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other/endian.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/operator_bool.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io/detail/quoted_manip.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io/ios_state.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/functional/hash_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/functional/hash/hash_fwd.hpp \
+ /usr/include/boost/checked_delete.hpp \
+ /usr/include/boost/throw_exception.hpp \
+ /usr/include/boost/exception/detail/attribute_noreturn.hpp \
+ /usr/include/boost/exception/exception.hpp \
+ /usr/include/boost/smart_ptr/detail/shared_count.hpp \
+ /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
+ /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
+ /usr/include/boost/smart_ptr/detail/sp_has_sync.hpp \
+ /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
+ /usr/include/boost/detail/sp_typeinfo.hpp /usr/include/c++/4.8/typeinfo \
+ /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+ /usr/include/boost/smart_ptr/detail/sp_convertible.hpp \
+ /usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
+ /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp \
+ /usr/include/boost/smart_ptr/detail/spinlock.hpp \
+ /usr/include/boost/smart_ptr/detail/spinlock_sync.hpp \
+ /usr/include/boost/smart_ptr/detail/yield_k.hpp \
+ /usr/include/boost/memory_order.hpp \
+ /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
+ /usr/include/boost/io/detail/quoted_manip.hpp \
+ /usr/include/boost/io/ios_state.hpp /usr/include/boost/io_fwd.hpp \
+ /usr/include/boost/functional/hash_fwd.hpp \
+ /usr/include/boost/functional/hash/hash_fwd.hpp \
  /usr/include/c++/4.8/cstring \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/operations.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/scoped_enum_emulation.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/scoped_enum.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/bitmask.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/mutable_iterator.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/config.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/range_fwd.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/extract_optional_type.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/const_iterator.hpp \
- /usr/include/c++/4.8/stack /usr/include/c++/4.8/deque \
- /usr/include/c++/4.8/bits/stl_deque.h \
+ /usr/include/boost/filesystem/operations.hpp \
+ /usr/include/boost/detail/scoped_enum_emulation.hpp \
+ /usr/include/boost/detail/bitmask.hpp /usr/include/c++/4.8/stack \
+ /usr/include/c++/4.8/deque /usr/include/c++/4.8/bits/stl_deque.h \
  /usr/include/c++/4.8/bits/deque.tcc \
- /usr/include/c++/4.8/bits/stl_stack.h /usr/include/c++/4.8/fstream \
- /usr/include/c++/4.8/cstdio \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/basic_file.h \
- /usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++io.h \
- /usr/include/c++/4.8/bits/fstream.tcc \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/convenience.hpp \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QDialog \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qdialog.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QItemSelection \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qitemselectionmodel.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/QKeyEvent \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qevent.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcoreevent.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qurl.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfile.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfiledevice.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qvector2d.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qtouchdevice.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QMenu \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qmenu.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qaction.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qactiongroup.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QPoint \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpoint.h \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QVariant \
- /home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvariant.h
+ /usr/include/c++/4.8/bits/stl_stack.h \
+ /usr/include/boost/filesystem/convenience.hpp \
+ /usr/include/qt5/QtWidgets/QDialog /usr/include/qt5/QtWidgets/qdialog.h \
+ /usr/include/qt5/QtCore/QItemSelection \
+ /usr/include/qt5/QtCore/qitemselectionmodel.h \
+ /usr/include/qt5/QtGui/QKeyEvent /usr/include/qt5/QtGui/qevent.h \
+ /usr/include/qt5/QtCore/qcoreevent.h /usr/include/qt5/QtCore/qurl.h \
+ /usr/include/qt5/QtCore/qfile.h /usr/include/qt5/QtCore/qfiledevice.h \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/qt5/QtGui/qvector2d.h /usr/include/qt5/QtGui/qtouchdevice.h \
+ /usr/include/qt5/QtWidgets/QMenu /usr/include/qt5/QtWidgets/qmenu.h \
+ /usr/include/qt5/QtWidgets/qaction.h \
+ /usr/include/qt5/QtWidgets/qactiongroup.h /usr/include/qt5/QtCore/QPoint \
+ /usr/include/qt5/QtCore/qpoint.h /usr/include/qt5/QtCore/QVariant \
+ /usr/include/qt5/QtCore/qvariant.h
+
+/usr/include/stdc-predef.h:
 
 qt/receivecoinsdialog.h:
 
@@ -686,39 +491,47 @@ compat/endian.h:
 
 config/bitcoin-config.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
 
-/usr/share/mingw-w64/include/stdint.h:
+/usr/include/stdint.h:
 
-/usr/share/mingw-w64/include/crtdefs.h:
+/usr/include/features.h:
 
-/usr/share/mingw-w64/include/_mingw.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/share/mingw-w64/include/_mingw_mac.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/share/mingw-w64/include/_mingw_secapi.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/share/mingw-w64/include/vadefs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/share/mingw-w64/include/sdks/_mingw_directx.h:
-
-/usr/share/mingw-w64/include/sdks/_mingw_ddk.h:
-
-/usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stddef.h:
-
-/usr/share/mingw-w64/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 compat/byteswap.h:
+
+/usr/include/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/c++/4.8/algorithm:
 
 /usr/include/c++/4.8/utility:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h:
 
 /usr/include/c++/4.8/bits/stl_relops.h:
 
@@ -752,17 +565,35 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cstdlib:
 
-/usr/share/mingw-w64/include/stdlib.h:
+/usr/include/stdlib.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/4.8/include-fixed/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/4.8/include-fixed/syslimits.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/usr/share/mingw-w64/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/share/mingw-w64/include/sec_api/stdlib_s.h:
+/usr/include/xlocale.h:
 
-/usr/share/mingw-w64/include/malloc.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
 /usr/include/c++/4.8/bits/algorithmfwd.h:
 
@@ -782,13 +613,13 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/bits/allocator.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++allocator.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:
 
 /usr/include/c++/4.8/ext/new_allocator.h:
 
 /usr/include/c++/4.8/bits/memoryfwd.h:
 
-/usr/share/mingw-w64/include/assert.h:
+/usr/include/assert.h:
 
 /usr/include/c++/4.8/ios:
 
@@ -800,67 +631,47 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cwchar:
 
-/usr/share/mingw-w64/include/wchar.h:
+/usr/include/wchar.h:
 
-/usr/share/mingw-w64/include/_mingw_print_push.h:
+/usr/include/stdio.h:
 
-/usr/share/mingw-w64/include/_mingw_off_t.h:
-
-/usr/share/mingw-w64/include/_mingw_stat64.h:
-
-/usr/x86_64-w64-mingw32/include/swprintf.inl:
-
-/usr/share/mingw-w64/include/sec_api/wchar_s.h:
-
-/usr/share/mingw-w64/include/_mingw_print_pop.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h:
 
 /usr/include/c++/4.8/bits/char_traits.h:
 
 /usr/include/c++/4.8/bits/localefwd.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++locale.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h:
 
 /usr/include/c++/4.8/clocale:
 
-/usr/share/mingw-w64/include/locale.h:
+/usr/include/locale.h:
 
-/usr/share/mingw-w64/include/stdio.h:
-
-/usr/share/mingw-w64/include/sec_api/stdio_s.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/c++/4.8/cctype:
 
-/usr/share/mingw-w64/include/ctype.h:
+/usr/include/ctype.h:
 
 /usr/include/c++/4.8/bits/ios_base.h:
 
 /usr/include/c++/4.8/ext/atomicity.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/gthr-default.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:
 
-/usr/share/mingw-w64/include/pthread.h:
+/usr/include/pthread.h:
 
-/usr/share/mingw-w64/include/errno.h:
+/usr/include/sched.h:
 
-/usr/share/mingw-w64/include/sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/share/mingw-w64/include/process.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/share/mingw-w64/include/signal.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-/usr/share/mingw-w64/include/pthread_signal.h:
-
-/usr/share/mingw-w64/include/sys/timeb.h:
-
-/usr/share/mingw-w64/include/sec_api/sys/timeb_s.h:
-
-/usr/share/mingw-w64/include/pthread_compat.h:
-
-/usr/share/mingw-w64/include/pthread_unistd.h:
-
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/atomic_word.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h:
 
 /usr/include/c++/4.8/bits/locale_classes.h:
 
@@ -892,13 +703,13 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/cwctype:
 
-/usr/share/mingw-w64/include/wctype.h:
+/usr/include/wctype.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/ctype_base.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h:
 
 /usr/include/c++/4.8/bits/streambuf_iterator.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/ctype_inline.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h:
 
 /usr/include/c++/4.8/bits/locale_facets.tcc:
 
@@ -920,9 +731,7 @@ compat/byteswap.h:
 
 /usr/include/c++/4.8/bits/stl_multiset.h:
 
-/usr/share/mingw-w64/include/string.h:
-
-/usr/share/mingw-w64/include/sec_api/string_s.h:
+/usr/include/string.h:
 
 /usr/include/c++/4.8/vector:
 
@@ -948,91 +757,79 @@ prevector.h:
 
 /usr/include/c++/4.8/bits/stream_iterator.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QEvent:
+/usr/include/qt5/QtCore/QEvent:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcoreevent.h:
+/usr/include/qt5/QtCore/qcoreevent.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qnamespace.h:
+/usr/include/qt5/QtCore/qnamespace.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qglobal.h:
+/usr/include/qt5/QtCore/qglobal.h:
 
-/usr/include/c++/4.8/cstddef:
+/usr/include/qt5/QtCore/qconfig.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qconfig.h:
+/usr/include/qt5/QtCore/qfeatures.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfeatures.h:
+/usr/include/qt5/QtCore/qsystemdetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsystemdetection.h:
+/usr/include/qt5/QtCore/qprocessordetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qprocessordetection.h:
+/usr/include/qt5/QtCore/qcompilerdetection.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcompilerdetection.h:
+/usr/include/qt5/QtCore/qglobalstatic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qtypeinfo.h:
+/usr/include/qt5/QtCore/qatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qtypetraits.h:
+/usr/include/qt5/QtCore/qbasicatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsysinfo.h:
+/usr/include/qt5/QtCore/qatomic_x86.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlogging.h:
+/usr/include/qt5/QtCore/qgenericatomic.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qflags.h:
+/usr/include/qt5/QtCore/qlogging.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qatomic.h:
+/usr/include/qt5/QtCore/qflags.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbasicatomic.h:
+/usr/include/qt5/QtCore/qtypeinfo.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qatomic_x86.h:
+/usr/include/qt5/QtCore/qtypetraits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qgenericatomic.h:
+/usr/include/qt5/QtCore/qsysinfo.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qglobalstatic.h:
+/usr/include/qt5/QtCore/qbytearray.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qnumeric.h:
+/usr/include/qt5/QtCore/qrefcount.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbytearray.h:
+/usr/include/qt5/QtCore/qarraydata.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qrefcount.h:
+/usr/include/qt5/QtCore/qobjectdefs.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qarraydata.h:
+/usr/include/qt5/QtCore/qobjectdefs_impl.h:
 
-/usr/lib/gcc/x86_64-w64-mingw32/4.8/include/stdarg.h:
+/usr/include/qt5/QtWidgets/QHeaderView:
 
-/usr/share/mingw-w64/include/stdarg.h:
+/usr/include/qt5/QtWidgets/qheaderview.h:
 
-/usr/share/mingw-w64/include/_mingw_stdarg.h:
+/usr/include/qt5/QtWidgets/qabstractitemview.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobjectdefs.h:
+/usr/include/qt5/QtWidgets/qabstractscrollarea.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobjectdefs_impl.h:
+/usr/include/qt5/QtWidgets/qframe.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QHeaderView:
+/usr/include/qt5/QtWidgets/qwidget.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qheaderview.h:
+/usr/include/qt5/QtGui/qwindowdefs.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractitemview.h:
+/usr/include/qt5/QtCore/qobject.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractscrollarea.h:
+/usr/include/qt5/QtCore/qstring.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qframe.h:
+/usr/include/qt5/QtCore/qchar.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qwidget.h:
+/usr/include/qt5/QtCore/qlist.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qwindowdefs.h:
+/usr/include/qt5/QtCore/qalgorithms.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qwindowdefs_win.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstring.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qchar.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlist.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qalgorithms.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qiterator.h:
+/usr/include/qt5/QtCore/qiterator.h:
 
 /usr/include/c++/4.8/list:
 
@@ -1040,455 +837,471 @@ prevector.h:
 
 /usr/include/c++/4.8/bits/list.tcc:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qbytearraylist.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstringlist.h:
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qregexp.h:
+/usr/include/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstringmatcher.h:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qscopedpointer.h:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmetatype.h:
+/usr/include/linux/limits.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvarlengtharray.h:
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcontainerfwd.h:
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qisenum.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject_impl.h:
+/usr/include/qt5/QtCore/qscopedpointer.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmargins.h:
+/usr/include/qt5/QtCore/qmetatype.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpaintdevice.h:
+/usr/include/qt5/QtCore/qvarlengtharray.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qrect.h:
+/usr/include/qt5/QtCore/qcontainerfwd.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsize.h:
+/usr/include/qt5/QtCore/qisenum.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpoint.h:
+/usr/include/qt5/QtCore/qobject_impl.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpalette.h:
+/usr/include/qt5/QtCore/qmargins.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qcolor.h:
+/usr/include/qt5/QtCore/qrect.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qrgb.h:
+/usr/include/qt5/QtCore/qsize.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qbrush.h:
+/usr/include/qt5/QtCore/qpoint.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpair.h:
+/usr/include/qt5/QtGui/qpaintdevice.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvector.h:
+/usr/include/qt5/QtGui/qpalette.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qmatrix.h:
+/usr/include/qt5/QtGui/qcolor.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpolygon.h:
+/usr/include/qt5/QtGui/qrgb.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qregion.h:
+/usr/include/qt5/QtCore/qstringlist.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qdatastream.h:
+/usr/include/qt5/QtCore/qdatastream.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qiodevice.h:
+/usr/include/qt5/QtCore/qiodevice.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qline.h:
+/usr/include/qt5/QtCore/qpair.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qtransform.h:
+/usr/include/qt5/QtCore/qregexp.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpainterpath.h:
+/usr/include/qt5/QtCore/qstringmatcher.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qimage.h:
+/usr/include/qt5/QtGui/qbrush.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpixelformat.h:
+/usr/include/qt5/QtCore/qvector.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qpixmap.h:
+/usr/include/qt5/QtGui/qmatrix.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsharedpointer.h:
+/usr/include/qt5/QtGui/qpolygon.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qshareddata.h:
+/usr/include/qt5/QtGui/qregion.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qhash.h:
+/usr/include/qt5/QtCore/qline.h:
 
-/usr/include/c++/4.8/numeric:
+/usr/include/qt5/QtGui/qtransform.h:
 
-/usr/include/c++/4.8/bits/stl_numeric.h:
+/usr/include/qt5/QtGui/qpainterpath.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qsharedpointer_impl.h:
+/usr/include/qt5/QtGui/qimage.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfont.h:
+/usr/include/qt5/QtGui/qpixmap.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfontmetrics.h:
+/usr/include/qt5/QtCore/qsharedpointer.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qfontinfo.h:
+/usr/include/qt5/QtCore/qshareddata.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qsizepolicy.h:
+/usr/include/qt5/QtCore/qsharedpointer_impl.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qcursor.h:
+/usr/include/qt5/QtCore/qhash.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qkeysequence.h:
+/usr/include/qt5/QtGui/qfont.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qabstractitemmodel.h:
+/usr/include/qt5/QtGui/qfontmetrics.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvariant.h:
+/usr/include/qt5/QtGui/qfontinfo.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qmap.h:
+/usr/include/qt5/QtWidgets/qsizepolicy.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qitemselectionmodel.h:
+/usr/include/qt5/QtGui/qcursor.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qset.h:
+/usr/include/qt5/QtGui/qkeysequence.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractitemdelegate.h:
+/usr/include/qt5/QtCore/qabstractitemmodel.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qstyleoption.h:
+/usr/include/qt5/QtCore/qvariant.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractspinbox.h:
+/usr/include/qt5/QtCore/qmap.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qvalidator.h:
+/usr/include/qt5/QtCore/qitemselectionmodel.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qregularexpression.h:
+/usr/include/qt5/QtCore/qset.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qlocale.h:
+/usr/include/qt5/QtWidgets/qabstractitemdelegate.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qicon.h:
+/usr/include/qt5/QtWidgets/qstyleoption.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qslider.h:
+/usr/include/qt5/QtWidgets/qabstractspinbox.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qabstractslider.h:
+/usr/include/qt5/QtGui/qvalidator.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qstyle.h:
+/usr/include/qt5/QtCore/qregularexpression.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtabbar.h:
+/usr/include/qt5/QtCore/qlocale.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtabwidget.h:
+/usr/include/qt5/QtGui/qicon.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qrubberband.h:
+/usr/include/qt5/QtWidgets/qslider.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QMessageBox:
+/usr/include/qt5/QtWidgets/qabstractslider.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qmessagebox.h:
+/usr/include/qt5/QtWidgets/qstyle.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qdialog.h:
+/usr/include/qt5/QtWidgets/qtabbar.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QObject:
+/usr/include/qt5/QtWidgets/qtabwidget.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qobject.h:
+/usr/include/qt5/QtWidgets/qrubberband.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QProgressBar:
+/usr/include/qt5/QtWidgets/QMessageBox:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qprogressbar.h:
+/usr/include/qt5/QtWidgets/qmessagebox.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QString:
+/usr/include/qt5/QtWidgets/qdialog.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qstring.h:
+/usr/include/qt5/QtCore/QObject:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QTableView:
+/usr/include/qt5/QtCore/qobject.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qtableview.h:
+/usr/include/qt5/QtWidgets/QProgressBar:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem.hpp:
+/usr/include/qt5/QtWidgets/qprogressbar.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/config.hpp:
+/usr/include/qt5/QtCore/QString:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config.hpp:
+/usr/include/qt5/QtCore/qstring.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/user.hpp:
+/usr/include/qt5/QtWidgets/QTableView:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_compiler_config.hpp:
+/usr/include/qt5/QtWidgets/qtableview.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/compiler/gcc.hpp:
+/usr/include/boost/filesystem.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_stdlib_config.hpp:
+/usr/include/boost/filesystem/config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/stdlib/libstdcpp3.hpp:
+/usr/include/boost/config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/select_platform_config.hpp:
+/usr/include/boost/config/user.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/platform/win32.hpp:
+/usr/include/boost/config/select_compiler_config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/suffix.hpp:
+/usr/include/boost/config/compiler/gcc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/api_config.hpp:
+/usr/include/boost/config/select_stdlib_config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/workaround.hpp:
+/usr/include/c++/4.8/cstddef:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/auto_link.hpp:
+/usr/include/boost/config/no_tr1/utility.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:
+/usr/include/unistd.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/enable_if.hpp:
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/enable_if.hpp:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_array.hpp:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/config.hpp:
+/usr/include/getopt.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_def.hpp:
+/usr/include/boost/config/select_platform_config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/template_arity_spec.hpp:
+/usr/include/boost/config/platform/linux.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/int.hpp:
+/usr/include/boost/config/posix_features.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/int_fwd.hpp:
+/usr/include/boost/config/suffix.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/adl_barrier.hpp:
+/usr/include/boost/system/api_config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/adl.hpp:
+/usr/include/boost/detail/workaround.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/msvc.hpp:
+/usr/include/boost/config/auto_link.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/intel.hpp:
+/usr/include/boost/filesystem/path.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/gcc.hpp:
+/usr/include/boost/filesystem/path_traits.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/workaround.hpp:
+/usr/include/boost/utility/enable_if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/nttp_decl.hpp:
+/usr/include/boost/type_traits/is_array.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/nttp.hpp:
+/usr/include/boost/type_traits/config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/integral_wrapper.hpp:
+/usr/include/boost/type_traits/detail/bool_trait_def.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_tag.hpp:
+/usr/include/boost/type_traits/detail/template_arity_spec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/static_constant.hpp:
+/usr/include/boost/mpl/int.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/static_cast.hpp:
+/usr/include/boost/mpl/int_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/cat.hpp:
+/usr/include/boost/mpl/aux_/adl_barrier.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/config/config.hpp:
+/usr/include/boost/mpl/aux_/config/adl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/template_arity_fwd.hpp:
+/usr/include/boost/mpl/aux_/config/msvc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/params.hpp:
+/usr/include/boost/mpl/aux_/config/intel.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/preprocessor.hpp:
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/comma_if.hpp:
+/usr/include/boost/mpl/aux_/config/workaround.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/punctuation/comma_if.hpp:
+/usr/include/boost/mpl/aux_/nttp_decl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/if.hpp:
+/usr/include/boost/mpl/aux_/config/nttp.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/iif.hpp:
+/usr/include/boost/mpl/aux_/integral_wrapper.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/bool.hpp:
+/usr/include/boost/mpl/integral_c_tag.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/empty.hpp:
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/punctuation/comma.hpp:
+/usr/include/boost/mpl/aux_/static_cast.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repeat.hpp:
+/usr/include/boost/preprocessor/cat.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/repeat.hpp:
+/usr/include/boost/preprocessor/config/config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/debug/error.hpp:
+/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/auto_rec.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/eat.hpp:
+/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/inc.hpp:
+/usr/include/boost/preprocessor/comma_if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/inc.hpp:
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/lambda.hpp:
+/usr/include/boost/preprocessor/control/if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/ttp.hpp:
+/usr/include/boost/preprocessor/control/iif.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/ctps.hpp:
+/usr/include/boost/preprocessor/logical/bool.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/overload_resolution.hpp:
+/usr/include/boost/preprocessor/facilities/empty.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_constant.hpp:
+/usr/include/boost/preprocessor/punctuation/comma.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bool.hpp:
+/usr/include/boost/preprocessor/repeat.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bool_fwd.hpp:
+/usr/include/boost/preprocessor/repetition/repeat.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp:
+/usr/include/boost/preprocessor/debug/error.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp:
+/usr/include/boost/preprocessor/detail/auto_rec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/lambda_support.hpp:
+/usr/include/boost/preprocessor/tuple/eat.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_undef.hpp:
+/usr/include/boost/preprocessor/inc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp:
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_function.hpp:
+/usr/include/boost/mpl/aux_/config/lambda.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp:
+/usr/include/boost/mpl/aux_/config/ttp.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp:
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp:
+/usr/include/boost/mpl/aux_/config/overload_resolution.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/ice.hpp:
+/usr/include/boost/type_traits/integral_constant.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/yes_no_type.hpp:
+/usr/include/boost/mpl/bool.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_or.hpp:
+/usr/include/boost/mpl/bool_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_and.hpp:
+/usr/include/boost/mpl/integral_c.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_not.hpp:
+/usr/include/boost/mpl/integral_c_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_eq.hpp:
+/usr/include/boost/mpl/aux_/lambda_support.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/false_result.hpp:
+/usr/include/boost/type_traits/detail/bool_trait_undef.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
+/usr/include/boost/type_traits/decay.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp:
+/usr/include/boost/type_traits/is_function.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_def.hpp:
+/usr/include/boost/type_traits/is_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_undef.hpp:
+/usr/include/boost/type_traits/is_lvalue_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_pointer.hpp:
+/usr/include/boost/type_traits/is_rvalue_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_reference.hpp:
+/usr/include/boost/type_traits/ice.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/eval_if.hpp:
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/if.hpp:
+/usr/include/boost/type_traits/detail/ice_or.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/value_wknd.hpp:
+/usr/include/boost/type_traits/detail/ice_and.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/integral.hpp:
+/usr/include/boost/type_traits/detail/ice_not.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/eti.hpp:
+/usr/include/boost/type_traits/detail/ice_eq.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_spec.hpp:
+/usr/include/boost/type_traits/detail/false_result.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/lambda_fwd.hpp:
+/usr/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/void_fwd.hpp:
+/usr/include/boost/type_traits/remove_bounds.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na.hpp:
+/usr/include/boost/type_traits/detail/type_trait_def.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_fwd.hpp:
+/usr/include/boost/type_traits/detail/type_trait_undef.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/lambda_arity_param.hpp:
+/usr/include/boost/type_traits/add_pointer.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arity.hpp:
+/usr/include/boost/type_traits/remove_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/dtp.hpp:
+/usr/include/boost/type_traits/broken_compiler_spec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/enum.hpp:
+/usr/include/boost/mpl/eval_if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+/usr/include/boost/mpl/if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/limits/arity.hpp:
+/usr/include/boost/mpl/aux_/value_wknd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/and.hpp:
+/usr/include/boost/mpl/aux_/config/integral.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/bitand.hpp:
+/usr/include/boost/mpl/aux_/config/eti.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/identity.hpp:
+/usr/include/boost/mpl/aux_/na_spec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/identity.hpp:
+/usr/include/boost/mpl/lambda_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/empty.hpp:
+/usr/include/boost/mpl/void_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/add.hpp:
+/usr/include/boost/mpl/aux_/na.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/dec.hpp:
+/usr/include/boost/mpl/aux_/na_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/while.hpp:
+/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/fold_left.hpp:
+/usr/include/boost/mpl/aux_/arity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/detail/fold_left.hpp:
+/usr/include/boost/mpl/aux_/config/dtp.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/expr_iif.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/adt.hpp:
+/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/is_binary.hpp:
+/usr/include/boost/mpl/limits/arity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/detail/check.hpp:
+/usr/include/boost/preprocessor/logical/and.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/logical/compl.hpp:
+/usr/include/boost/preprocessor/logical/bitand.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/fold_right.hpp:
+/usr/include/boost/preprocessor/identity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/detail/fold_right.hpp:
+/usr/include/boost/preprocessor/facilities/identity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/reverse.hpp:
+/usr/include/boost/preprocessor/empty.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/control/detail/while.hpp:
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/elem.hpp:
+/usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/expand.hpp:
+/usr/include/boost/preprocessor/control/while.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/facilities/overload.hpp:
+/usr/include/boost/preprocessor/list/fold_left.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/variadic/size.hpp:
+/usr/include/boost/preprocessor/list/detail/fold_left.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/rem.hpp:
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
+/usr/include/boost/preprocessor/list/adt.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/variadic/elem.hpp:
+/usr/include/boost/preprocessor/detail/is_binary.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/arithmetic/sub.hpp:
+/usr/include/boost/preprocessor/detail/check.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp:
+/usr/include/boost/preprocessor/logical/compl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/error_code.hpp:
+/usr/include/boost/preprocessor/list/fold_right.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/config.hpp:
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform.h:
+/usr/include/boost/preprocessor/list/reverse.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/mingw.h:
+/usr/include/boost/preprocessor/control/detail/while.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version_number.h:
+/usr/include/boost/preprocessor/tuple/elem.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/make.h:
+/usr/include/boost/preprocessor/facilities/overload.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/test.h:
+/usr/include/boost/preprocessor/variadic/size.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/platform_detected.h:
+/usr/include/boost/preprocessor/tuple/rem.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_desktop.h:
+/usr/include/boost/preprocessor/variadic/elem.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/windows.h:
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/os_detected.h:
+/usr/include/boost/mpl/identity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_store.h:
+/usr/include/boost/system/error_code.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_phone.h:
+/usr/include/boost/system/config.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/platform/windows_runtime.h:
+/usr/include/boost/cstdint.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/cstdint.hpp:
+/usr/include/boost/assert.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/assert.hpp:
+/usr/include/c++/4.8/iostream:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/noncopyable.hpp:
+/usr/include/boost/current_function.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/noncopyable.hpp:
+/usr/include/boost/operators.hpp:
+
+/usr/include/boost/iterator.hpp:
+
+/usr/include/boost/noncopyable.hpp:
 
 /usr/include/c++/4.8/stdexcept:
 
 /usr/include/c++/4.8/functional:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/cerrno.hpp:
+/usr/include/boost/cerrno.hpp:
 
 /usr/include/c++/4.8/cerrno:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/abi_prefix.hpp:
+/usr/include/errno.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/abi_suffix.hpp:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/boost/config/abi_prefix.hpp:
+
+/usr/include/boost/config/abi_suffix.hpp:
 
 /usr/include/c++/4.8/locale:
 
@@ -1496,235 +1309,221 @@ prevector.h:
 
 /usr/include/c++/4.8/ctime:
 
-/usr/share/mingw-w64/include/time.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/time_members.h:
 
-/usr/share/mingw-w64/include/_timeval.h:
+/usr/include/x86_64-linux-gnu/c++/4.8/bits/messages_members.h:
 
-/usr/share/mingw-w64/include/sec_api/time_s.h:
-
-/usr/share/mingw-w64/include/pthread_time.h:
-
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/time_members.h:
-
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/messages_members.h:
+/usr/include/libintl.h:
 
 /usr/include/c++/4.8/bits/codecvt.h:
 
 /usr/include/c++/4.8/bits/locale_facets_nonio.tcc:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/system/system_error.hpp:
+/usr/include/boost/system/system_error.hpp:
 
 /usr/include/c++/4.8/cassert:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_facade.hpp:
+/usr/include/boost/iterator/iterator_facade.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator.hpp:
+/usr/include/boost/iterator/interoperable.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/interoperable.hpp:
+/usr/include/boost/mpl/or.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/or.hpp:
+/usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/use_preprocessed.hpp:
+/usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/nested_type_wknd.hpp:
+/usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/include_preprocessed.hpp:
+/usr/include/boost/mpl/aux_/config/compiler.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/compiler.hpp:
+/usr/include/boost/preprocessor/stringize.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/stringize.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+/usr/include/boost/type_traits/is_convertible.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_convertible.hpp:
+/usr/include/boost/type_traits/intrinsics.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/intrinsics.hpp:
+/usr/include/boost/type_traits/is_same.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_same.hpp:
+/usr/include/boost/type_traits/is_volatile.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp:
+/usr/include/boost/type_traits/detail/cv_traits_impl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/cv_traits_impl.hpp:
+/usr/include/boost/type_traits/is_arithmetic.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_arithmetic.hpp:
+/usr/include/boost/type_traits/is_integral.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_integral.hpp:
+/usr/include/boost/type_traits/is_float.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_float.hpp:
+/usr/include/boost/type_traits/is_void.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_void.hpp:
+/usr/include/boost/type_traits/is_abstract.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_abstract.hpp:
+/usr/include/boost/type_traits/add_lvalue_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_lvalue_reference.hpp:
+/usr/include/boost/type_traits/add_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_reference.hpp:
+/usr/include/boost/type_traits/add_rvalue_reference.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_rvalue_reference.hpp:
+/usr/include/boost/iterator/detail/config_def.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_def.hpp:
+/usr/include/boost/iterator/detail/config_undef.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_undef.hpp:
+/usr/include/boost/iterator/iterator_traits.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_traits.hpp:
+/usr/include/boost/detail/iterator.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/iterator.hpp:
+/usr/include/boost/iterator/detail/facade_iterator_category.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_categories.hpp:
+/usr/include/boost/iterator/iterator_categories.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/placeholders.hpp:
+/usr/include/boost/mpl/placeholders.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg.hpp:
+/usr/include/boost/mpl/arg.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg_fwd.hpp:
+/usr/include/boost/mpl/arg_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/na_assert.hpp:
+/usr/include/boost/mpl/aux_/na_assert.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/assert.hpp:
+/usr/include/boost/mpl/assert.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/not.hpp:
+/usr/include/boost/mpl/not.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/yes_no.hpp:
+/usr/include/boost/mpl/aux_/yes_no.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/arrays.hpp:
+/usr/include/boost/mpl/aux_/config/arrays.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/gpu.hpp:
+/usr/include/boost/mpl/aux_/config/pp_counter.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/pp_counter.hpp:
+/usr/include/boost/mpl/aux_/arity_spec.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arity_spec.hpp:
+/usr/include/boost/mpl/aux_/arg_typedef.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/arg_typedef.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
+/usr/include/boost/static_assert.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/static_assert.hpp:
+/usr/include/boost/mpl/and.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/facade_iterator_category.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/and.hpp:
+/usr/include/boost/type_traits/is_const.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
+/usr/include/boost/detail/indirect_traits.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_const.hpp:
+/usr/include/boost/type_traits/is_pointer.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/indirect_traits.hpp:
+/usr/include/boost/type_traits/is_member_pointer.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pointer.hpp:
+/usr/include/boost/type_traits/is_member_function_pointer.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp:
+/usr/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp:
+/usr/include/boost/type_traits/remove_cv.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
+/usr/include/boost/type_traits/is_class.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_cv.hpp:
+/usr/include/boost/type_traits/remove_pointer.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_class.hpp:
+/usr/include/boost/iterator/detail/enable_if.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_pointer.hpp:
+/usr/include/boost/utility/addressof.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/enable_if.hpp:
+/usr/include/boost/type_traits/add_const.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/addressof.hpp:
+/usr/include/boost/type_traits/remove_const.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/addressof.hpp:
+/usr/include/boost/type_traits/is_pod.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_const.hpp:
+/usr/include/boost/type_traits/is_scalar.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_const.hpp:
+/usr/include/boost/type_traits/is_enum.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pod.hpp:
+/usr/include/boost/mpl/always.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_scalar.hpp:
+/usr/include/boost/mpl/apply.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_enum.hpp:
+/usr/include/boost/mpl/apply_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/always.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessor/default_params.hpp:
+/usr/include/boost/mpl/apply_wrap.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply.hpp:
+/usr/include/boost/mpl/aux_/has_apply.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply_fwd.hpp:
+/usr/include/boost/mpl/has_xxx.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply_fwd.hpp:
+/usr/include/boost/mpl/aux_/type_wrapper.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/apply_wrap.hpp:
+/usr/include/boost/mpl/aux_/config/has_xxx.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/has_apply.hpp:
+/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/has_xxx.hpp:
+/usr/include/boost/preprocessor/array/elem.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/type_wrapper.hpp:
+/usr/include/boost/preprocessor/array/data.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/has_xxx.hpp:
+/usr/include/boost/preprocessor/array/size.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/msvc_typename.hpp:
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/elem.hpp:
+/usr/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/data.hpp:
+/usr/include/boost/mpl/aux_/config/has_apply.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/array/size.hpp:
+/usr/include/boost/mpl/aux_/msvc_never_true.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_params.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_trailing_params.hpp:
+/usr/include/boost/mpl/lambda.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/has_apply.hpp:
+/usr/include/boost/mpl/bind.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/msvc_never_true.hpp:
+/usr/include/boost/mpl/bind_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
+/usr/include/boost/mpl/aux_/config/bind.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/lambda.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bind.hpp:
+/usr/include/boost/mpl/next.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/bind_fwd.hpp:
+/usr/include/boost/mpl/next_prior.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/bind.hpp:
+/usr/include/boost/mpl/aux_/common_name_wknd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
+/usr/include/boost/mpl/protect.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/next.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/next_prior.hpp:
+/usr/include/boost/mpl/aux_/full_lambda.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/common_name_wknd.hpp:
+/usr/include/boost/mpl/quote.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/protect.hpp:
+/usr/include/boost/mpl/void.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
+/usr/include/boost/mpl/aux_/has_type.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/full_lambda.hpp:
+/usr/include/boost/mpl/aux_/config/bcc.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/quote.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/void.hpp:
+/usr/include/boost/mpl/aux_/template_arity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/has_type.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/config/bcc.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/template_arity.hpp:
+/usr/include/boost/shared_ptr.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
+/usr/include/boost/smart_ptr/shared_ptr.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:
+/usr/include/boost/config/no_tr1/memory.hpp:
 
 /usr/include/c++/4.8/memory:
 
@@ -1732,291 +1531,63 @@ prevector.h:
 
 /usr/include/c++/4.8/backward/auto_ptr.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/checked_delete.hpp:
+/usr/include/boost/checked_delete.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/checked_delete.hpp:
+/usr/include/boost/throw_exception.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/throw_exception.hpp:
+/usr/include/boost/exception/detail/attribute_noreturn.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/exception/exception.hpp:
+/usr/include/boost/exception/exception.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/current_function.hpp:
+/usr/include/boost/smart_ptr/detail/shared_count.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp:
+/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/bad_weak_ptr.hpp:
+/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base.hpp:
+/usr/include/boost/smart_ptr/detail/sp_has_sync.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_has_sync.hpp:
+/usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/sp_typeinfo.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/typeinfo.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/demangle.hpp:
-
-/usr/include/c++/4.8/cxxabi.h:
-
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/cxxabi_tweaks.h:
+/usr/include/boost/detail/sp_typeinfo.hpp:
 
 /usr/include/c++/4.8/typeinfo:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+/usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_convertible.hpp:
+/usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
+/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_pool.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_sync.hpp:
+/usr/include/boost/smart_ptr/detail/spinlock_sync.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/yield_k.hpp:
+/usr/include/boost/smart_ptr/detail/yield_k.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef.h:
+/usr/include/boost/memory_order.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language.h:
+/usr/include/boost/smart_ptr/detail/operator_bool.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/stdc.h:
+/usr/include/boost/io/detail/quoted_manip.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/stdcpp.h:
+/usr/include/boost/io/ios_state.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language/objc.h:
+/usr/include/boost/io_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture.h:
+/usr/include/boost/functional/hash_fwd.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/alpha.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/arm.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/blackfin.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/convex.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/ia64.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/m68k.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/mips.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/parisc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/ppc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/pyramid.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/rs6k.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sparc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/superh.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sys370.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/sys390.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86/32.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/x86/64.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/architecture/z.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/borland.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/clang.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/comeau.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/compaq.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/diab.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/digitalmars.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/dignus.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/edg.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/ekopath.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/gcc_xml.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/gcc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/comp_detected.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/greenhills.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/hp_acc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/iar.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/ibm.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/intel.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/kai.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/llvm.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/metaware.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/metrowerks.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/microtec.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/mpw.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/palm.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/pgi.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/sgi_mipspro.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/sunpro.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/tendra.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/visualc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/compiler/watcom.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/_prefix.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/_cassert.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/gnu.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/uc.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/vms.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/c/zos.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/_prefix.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/detail/_exception.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/cxx.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/dinkumware.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/libcomo.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/modena.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/msl.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/roguewave.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/sgi.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/stdcpp3.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/stlport.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/library/std/vacpp.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/aix.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/amigaos.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/android.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/beos.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/macos.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/ios.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/bsdi.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/dragonfly.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/free.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/open.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/bsd/net.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/cygwin.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/haiku.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/hpux.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/irix.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/linux.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/os400.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/qnxnto.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/solaris.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/unix.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/vms.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other/endian.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/operator_bool.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io/detail/quoted_manip.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io/ios_state.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/io_fwd.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/functional/hash_fwd.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/functional/hash/hash_fwd.hpp:
+/usr/include/boost/functional/hash/hash_fwd.hpp:
 
 /usr/include/c++/4.8/cstring:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/operations.hpp:
+/usr/include/boost/filesystem/operations.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/scoped_enum_emulation.hpp:
+/usr/include/boost/detail/scoped_enum_emulation.hpp:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/scoped_enum.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/bitmask.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/mutable_iterator.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/config.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/range_fwd.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/extract_optional_type.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/msvc_has_iterator_workaround.hpp:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/const_iterator.hpp:
+/usr/include/boost/detail/bitmask.hpp:
 
 /usr/include/c++/4.8/stack:
 
@@ -2028,54 +1599,50 @@ prevector.h:
 
 /usr/include/c++/4.8/bits/stl_stack.h:
 
-/usr/include/c++/4.8/fstream:
+/usr/include/boost/filesystem/convenience.hpp:
 
-/usr/include/c++/4.8/cstdio:
+/usr/include/qt5/QtWidgets/QDialog:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/basic_file.h:
+/usr/include/qt5/QtWidgets/qdialog.h:
 
-/usr/include/c++/4.8/x86_64-w64-mingw32/bits/c++io.h:
+/usr/include/qt5/QtCore/QItemSelection:
 
-/usr/include/c++/4.8/bits/fstream.tcc:
+/usr/include/qt5/QtCore/qitemselectionmodel.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/convenience.hpp:
+/usr/include/qt5/QtGui/QKeyEvent:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QDialog:
+/usr/include/qt5/QtGui/qevent.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qdialog.h:
+/usr/include/qt5/QtCore/qcoreevent.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QItemSelection:
+/usr/include/qt5/QtCore/qurl.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qitemselectionmodel.h:
+/usr/include/qt5/QtCore/qfile.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/QKeyEvent:
+/usr/include/qt5/QtCore/qfiledevice.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qevent.h:
+/usr/include/libio.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qcoreevent.h:
+/usr/include/_G_config.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qurl.h:
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfile.h:
+/usr/include/qt5/QtGui/qvector2d.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qfiledevice.h:
+/usr/include/qt5/QtGui/qtouchdevice.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qvector2d.h:
+/usr/include/qt5/QtWidgets/QMenu:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtGui/qtouchdevice.h:
+/usr/include/qt5/QtWidgets/qmenu.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/QMenu:
+/usr/include/qt5/QtWidgets/qaction.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qmenu.h:
+/usr/include/qt5/QtWidgets/qactiongroup.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qaction.h:
+/usr/include/qt5/QtCore/QPoint:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtWidgets/qactiongroup.h:
+/usr/include/qt5/QtCore/qpoint.h:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QPoint:
+/usr/include/qt5/QtCore/QVariant:
 
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qpoint.h:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/QVariant:
-
-/home/mint/workspace/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/QtCore/qvariant.h:
+/usr/include/qt5/QtCore/qvariant.h:
