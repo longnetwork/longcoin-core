@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Longcoin"
-#define QAPP_ORG_DOMAIN "longcoin.online"
+#define QAPP_ORG_DOMAIN "longnetwork.github.io"
 #define QAPP_APP_NAME_DEFAULT "Longcoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Longcoin-Qt-testnet"
 

@@ -608,9 +608,14 @@ UniValue getblock(const UniValue& params, bool fHelp)
     std::string strHash = params[0].get_str();
     uint256 hash(uint256S(strHash));
 
-    bool fVerbose = true;
-    if (params.size() > 1)
-        fVerbose = params[1].get_bool();
+    bool fVerbose = true; bool txDetails=false;
+    if (params.size() > 1) {
+        if (params[1].isBool()) fVerbose = params[1].get_bool();
+        else {
+            fVerbose = (params[1].get_int() > 0);
+            txDetails = (params[1].get_int() > 1);
+        }
+    }
 
     if (mapBlockIndex.count(hash) == 0)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found");
@@ -632,7 +637,7 @@ UniValue getblock(const UniValue& params, bool fHelp)
         return strHex;
     }
 
-    return blockToJSON(block, pblockindex);
+    return blockToJSON(block, pblockindex, txDetails);
 }
 
 UniValue gettxoutsetinfo(const UniValue& params, bool fHelp)

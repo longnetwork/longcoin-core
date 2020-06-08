@@ -79,7 +79,7 @@ void ThreadSendAlert()
     //  Higher numbers mean higher priority
     alert.nPriority     = 5000;
     alert.strComment    = "";
-    //alert.strStatusBar  = "URGENT: Upgrade required: see http://longcoin.online";
+    //alert.strStatusBar  = "URGENT: Upgrade required: see longnetwork.github.io";
     alert.strStatusBar  = "URGENT: CRYPTON Гибнееееет!!!";
 
     // Set specific client version/versions here. If setSubVer is empty, no filtering on subver is done:

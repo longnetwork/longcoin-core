@@ -4900,7 +4900,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             //pfrom->PushMessage(NetMsgType::REJECT, strCommand, REJECT_MALFORMED,
             //                   strprintf("SubVersion should start at: %s",strBeginSubVersion.c_str()));
             pfrom->PushMessage(NetMsgType::REJECT, strCommand, REJECT_MALFORMED,
-                               strprintf("LONG NETWORK %s","http://longcoin.online/"));
+                               strprintf("LONG NETWORK %s","https://longnetwork.github.io"));
             pfrom->fDisconnect = true;
             return false;
         }
