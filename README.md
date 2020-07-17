@@ -39,7 +39,7 @@ and also a video tutorial https://youtu.be/H5FkmPRJiEo
 Startup Notes
 ===========================================================================================================================================
 
-The longcoin-daemon and GUI-wallet by default looks for the longcoin.conf configuration file in the current launch directory 
+The longcoin-daemon and GUI-wallet by default looks for the `longcoin.conf` configuration file in the current launch directory 
 (not in system default directory). If you need a specific location for the configuration and / or data directory with the wallet.dat and blocks, 
 then specify the full paths at startup: 
 ```bash
@@ -56,7 +56,7 @@ The current recommended configuration is here: https://github.com/longnetwork/LO
 
 ## Attention!
 For mining-pools, exchanges, explorers and other network services using longcoin, you can disable the creation of a PUBLIC account when you first start the wallet:
-`-disablepublic` in command line or `disablepublic=1` in longcoin.conf
+`-disablepublic` in command line or `disablepublic=1` in `longcoin.conf`
 This reduces the use of VDS memory and prevents the processing of spam of PUBLIC messages that is unnecessary for mining-pools or others.
 PUBLIC does not contain money transactions and if you do not need to read the public correspondence - it can be disabled.
 In the future, you can always connect to the PUBLIC by importing the official private key of the PUBLIC address 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8 :
