@@ -807,7 +807,6 @@ on mint-pc
 config.status:1139: creating Makefile
 config.status:1139: creating libsecp256k1.pc
 config.status:1139: creating src/libsecp256k1-config.h
-config.status:1320: src/libsecp256k1-config.h is unchanged
 config.status:1368: executing depfiles commands
 config.status:1368: executing libtool commands
 

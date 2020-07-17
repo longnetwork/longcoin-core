@@ -402,6 +402,7 @@ std::string HelpMessage(HelpMessageMode mode)
 #ifdef ENABLE_WALLET
     strUsage += HelpMessageGroup(_("Wallet options:"));
     strUsage += HelpMessageOpt("-disablewallet", _("Do not load the wallet and disable wallet RPC calls"));
+    strUsage += HelpMessageOpt("-disablepublic", _("Disable on first start automatic creation of a PUBLIC account"));
     strUsage += HelpMessageOpt("-keypool=<n>", strprintf(_("Set key pool size to <n> (default: %u)"), DEFAULT_KEYPOOL_SIZE));
     strUsage += HelpMessageOpt("-fallbackfee=<amt>", strprintf(_("A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)"),
         CURRENCY_UNIT, FormatMoney(DEFAULT_FALLBACK_FEE)));
@@ -1579,19 +1580,21 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
                 if (!pwalletMain->SetAddressBook(pwalletMain->vchDefaultKey.GetID(), "default", pubKeyHex, "receive"))
                     strErrors << _("Cannot write default address") << "\n";
 
-                // LONG PUBLIC KEY 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
-                std::string strKeyHex = "0697918a26af3c26369be60866b5fbf9f3c723293c4ca74755e5df14bd4209ce"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
-                std::string strPubKeyHex = "035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
-                bool fCompressed = true; //false;   // FixMe: При первом вызове (нулячем кошельке) getprivkey отображает один ключь, а при последующих - другой ( не сжатый и сжатый вариант )
-                std::vector<unsigned char> vchKey = ParseHex(strKeyHex);
-                std::vector<unsigned char> vchPubKey = ParseHex(strPubKeyHex);
-                CKey key;
-                key.Set(vchKey.begin(), vchKey.end(), fCompressed);
-                CPubKey pubkey;
-                pubkey.Set(vchPubKey.begin(), vchPubKey.end());
-                pwalletMain->AddKeyPubKey(key, pubkey);
-                if (!pwalletMain->SetAddressBook(pubkey.GetID(), "PUBLIC", strPubKeyHex, "send"))
-                    strErrors << _("Cannot write PUBLIC address") << "\n";
+                if ( ! GetBoolArg("-disablepublic", false) ) {
+                    // LONG PUBLIC KEY 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
+                    std::string strKeyHex = "0697918a26af3c26369be60866b5fbf9f3c723293c4ca74755e5df14bd4209ce"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
+                    std::string strPubKeyHex = "035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94"; // 1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8
+                    bool fCompressed = true; //false;   // FixMe: При первом вызове (нулячем кошельке) getprivkey отображает один ключь, а при последующих - другой ( не сжатый и сжатый вариант )
+                    std::vector<unsigned char> vchKey = ParseHex(strKeyHex);
+                    std::vector<unsigned char> vchPubKey = ParseHex(strPubKeyHex);
+                    CKey key;
+                    key.Set(vchKey.begin(), vchKey.end(), fCompressed);
+                    CPubKey pubkey;
+                    pubkey.Set(vchPubKey.begin(), vchPubKey.end());
+                    pwalletMain->AddKeyPubKey(key, pubkey);
+                    if (!pwalletMain->SetAddressBook(pubkey.GetID(), "PUBLIC", strPubKeyHex, "send"))
+                        strErrors << _("Cannot write PUBLIC address") << "\n";
+                }
             }
 
             pwalletMain->SetBestChain(chainActive.GetLocator());
