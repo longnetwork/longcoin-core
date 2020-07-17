@@ -1,4 +1,5 @@
-#LONG NETWORK Core — Cryptographic decentralized network on an open source blockchain (based on bitcoin-core-0.12.1)
+# LONG NETWORK Core — Cryptographic decentralized network on an open source blockchain (based on bitcoin-core-0.12.1)
+
 LONG NETWORK works on the principle of encryption of all outgoing messages. All messages automatically fall into a single blockchain,
 accessible to all network members, and the fact that messages appear on the blockchain is “seen” by everyone. But! Even the sender
 cannot determine which computer will ultimately “read” the message, since only the addressee who owns the secret private key associated
@@ -64,6 +65,6 @@ longcoin-cli importprivkey KwSXQL9F9ohW6TmZYWiNmx3z9Bz8x6vbZ6rVvWAPHS4wtcwSoo8W 
 ```
 
 
-#The dragon is coming...  https://longnetwork.github.io/community.html
+# The dragon is coming...  https://longnetwork.github.io/community.html
 
 
