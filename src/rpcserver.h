@@ -275,9 +275,11 @@ extern UniValue invalidateblock(const UniValue& params, bool fHelp);
 extern UniValue reconsiderblock(const UniValue& params, bool fHelp);
 extern UniValue getspentinfo(const UniValue& params, bool fHelp);
 
+// LONG Specific
 extern UniValue sendhexdata(const UniValue& params, bool fHelp);
 extern UniValue gethexdata(const UniValue& params, bool fHelp);
 extern UniValue storeaddress(const UniValue& params, bool fHelp);
+extern UniValue createrawdata(const UniValue& params, bool fHelp);
 
 
 bool StartRPC();

@@ -545,8 +545,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     // TO
     CKeyID toPubKeyID;
     if (!addressTo.GetKeyID(toPubKeyID))
-        throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to key"); // Этого не может быть
-
+        throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to key"); // Этого не может быть KeyID ( Это вроде тот же адрес только в виде числа RIPEMD-160 бит)
     CPubKey toPubKey;
     // ищем пубкей получателя
     if (!fToPubKey && pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // Это поиск среди импортированых ключей
@@ -608,7 +607,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
 
     if (!fEncrypt) { // пубкей получателя НЕ найден, тогда Shared Secret не из чего вычислять (шифрование отключено)
-        // ENCRYPTION
+        // NO ENCRYPTION
         dataNewTX.push_back(0xf3); // OP_ENCRYPTION
         dataNewTX.push_back(0x00); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
         
@@ -2182,7 +2181,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                 }
             } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                 toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
-                toPubKeyID=toPubKey.GetID();                    // ID публичного ключа жоско зависит от адреса ( это и есть адрес в бинарной форме)
+                toPubKeyID=toPubKey.GetID();                    // ID публичного ключа жоско зависит от адреса ( это и есть адрес в бинарной форме RIPEMD-160)
             }
             if (pwalletMain->HaveKey(toPubKeyID)) {
                 pwalletMain->GetKey(toPubKeyID, toPrivKey);       // Мы приемная сторона - наш шаредсекрет скачет от toPrivKey
@@ -2206,13 +2205,13 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                 }
             } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                 fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
-                fromPubKeyID=fromPubKey.GetID(); // Прверить потом по деструктрам (это переброс ссылки а старая? че там? в стеке, надеюсь, внутренние данные? иначе деструктор не подчистет аллокации при декларации)
+                fromPubKeyID=fromPubKey.GetID(); // В С++ по умолчанию - побитовое копирование объекта
             }
             if (pwalletMain->HaveKey(fromPubKeyID)) {
                 pwalletMain->GetKey(fromPubKeyID, fromPrivKey);
             }                            
             CBitcoinAddress addressFrom(fromPubKeyID);             // Адреса по строке и по ID должны быть идентичны
-            string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());       
+            string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());   // Если отправитель засунул только свой адрес и здесь нет его публичного ключа, то данные не зашифрованы
 
             // DATA Type 
             unsigned int dataType; // OP_DATA_TYPE_TEXT | 000   | 0x00 | Тип данных - текст

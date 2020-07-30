@@ -265,6 +265,9 @@ UniValue stop(const UniValue& params, bool fHelp)
 static const CRPCCommand vRPCCommands[] =
 { //  category              name                      actor (function)         okSafeMode
   //  --------------------- ------------------------  -----------------------  ----------
+    /* okSafeMode - функции которые не отключаются и продолжают исполняться, если с сетью что-то не так:
+                    самая длинная цепочка недействительна (недопустимая транзакция, создание слишком большого количества денег и т. д.);
+                    когда большая вилка (действительная или недействительная) рискует обогнать текущую цепь и т. д.; */
     /* Overall control/query calls */
     { "control",            "getinfo",                &getinfo,                true  }, /* uses wallet if enabled */
     { "control",            "help",                   &help,                   true  },
@@ -316,6 +319,8 @@ static const CRPCCommand vRPCCommands[] =
     { "generating",         "generate",               &generate,               true  },
 
     /* Raw transactions */
+    { "rawtransactions",    "createrawdata",          &createrawdata,          true  }, //LONG Specific
+    
     { "rawtransactions",    "createrawtransaction",   &createrawtransaction,   true  },
     { "rawtransactions",    "decoderawtransaction",   &decoderawtransaction,   true  },
     { "rawtransactions",    "decodescript",           &decodescript,           true  },
