@@ -535,7 +535,17 @@ UniValue dumppubkey(const UniValue& params, bool fHelp)
     CKeyID keyID;
     if (!address.GetKeyID(keyID))
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");
+
+    // Могут быть чужие публичные ключи, сохраненные storeaddress
+    map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(keyID);
+    if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.pubkeyhex.empty()) {
+        string strPubKeyHex = (*mi).second.pubkeyhex; // на всякий случай через конструктор копирования
+        return strPubKeyHex;
+    }
+
+    // Ищем среди своих адресов        
     CPubKey vchPubKeyOut;
+    
     if (!pwalletMain->GetPubKey(keyID, vchPubKeyOut))
         throw JSONRPCError(RPC_WALLET_ERROR, "PubKey for address " + strAddress + " is not known");
     return HexStr(vchPubKeyOut.begin(), vchPubKeyOut.end());
