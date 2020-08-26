@@ -1,2 +1,1 @@
-#define BUILD_SUFFIX 8038b73-dirty
-#define BUILD_DATE "2020-07-30 20:05:06 +0300"
+// No build information available

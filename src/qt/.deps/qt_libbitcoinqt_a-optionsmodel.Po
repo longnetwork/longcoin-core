@@ -964,9 +964,8 @@ qt/qt_libbitcoinqt_a-optionsmodel.o: qt/optionsmodel.cpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp support/allocators/secure.h \
  wallet/wallet_ismine.h script/standard.h wallet/walletdb.h wallet/db.h \
- clientversion.h sync.h version.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h \
- /usr/include/qt5/QtNetwork/QNetworkProxy \
+ clientversion.h sync.h version.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h key.h /usr/include/qt5/QtNetwork/QNetworkProxy \
  /usr/include/qt5/QtNetwork/qnetworkproxy.h \
  /usr/include/qt5/QtNetwork/qhostaddress.h \
  /usr/include/qt5/QtNetwork/qabstractsocket.h \
@@ -3309,9 +3308,9 @@ sync.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

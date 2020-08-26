@@ -1189,9 +1189,8 @@ qt/qt_libbitcoinqt_a-coincontroldialog.o: qt/coincontroldialog.cpp \
  tinyformat.h ui_interface.h /usr/include/boost/signals2/last_value.hpp \
  utilstrencodings.h validationinterface.h wallet/crypter.h keystore.h \
  wallet/wallet_ismine.h script/standard.h wallet/walletdb.h wallet/db.h \
- clientversion.h sync.h version.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h \
- /usr/include/boost/assign/list_of.hpp \
+ clientversion.h sync.h version.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h key.h /usr/include/boost/assign/list_of.hpp \
  /usr/include/boost/assign/assignment_exception.hpp \
  /usr/include/boost/range/iterator_range.hpp \
  /usr/include/boost/range/iterator_range_core.hpp \
@@ -4080,9 +4079,9 @@ sync.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

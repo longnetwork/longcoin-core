@@ -933,10 +933,9 @@ qt/qt_libbitcoinqt_a-addresstablemodel.o: qt/addresstablemodel.cpp \
  /usr/include/boost/thread/recursive_mutex.hpp \
  /usr/include/boost/thread/pthread/recursive_mutex.hpp \
  wallet/wallet_ismine.h script/standard.h wallet/walletdb.h wallet/db.h \
- clientversion.h sync.h version.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h \
- /usr/include/boost/foreach.hpp /usr/include/boost/range/end.hpp \
- /usr/include/boost/range/config.hpp \
+ clientversion.h sync.h version.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h key.h /usr/include/boost/foreach.hpp \
+ /usr/include/boost/range/end.hpp /usr/include/boost/range/config.hpp \
  /usr/include/boost/range/detail/implementation_help.hpp \
  /usr/include/boost/range/detail/common.hpp \
  /usr/include/boost/range/detail/sfinae.hpp \
@@ -3200,9 +3199,9 @@ sync.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

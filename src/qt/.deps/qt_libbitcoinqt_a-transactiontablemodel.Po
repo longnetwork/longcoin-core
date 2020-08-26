@@ -995,12 +995,11 @@ qt/qt_libbitcoinqt_a-transactiontablemodel.o: \
  /usr/include/boost/signals2/last_value.hpp utilstrencodings.h \
  validationinterface.h wallet/crypter.h keystore.h wallet/wallet_ismine.h \
  script/standard.h wallet/walletdb.h wallet/db.h clientversion.h \
- version.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h \
- /usr/include/qt5/QtGui/QColor /usr/include/qt5/QtGui/qcolor.h \
- /usr/include/qt5/QtCore/QDateTime /usr/include/qt5/QtCore/qdatetime.h \
- /usr/include/qt5/QtCore/QDebug /usr/include/qt5/QtCore/qdebug.h \
- /usr/include/qt5/QtCore/qtextstream.h \
+ version.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h key.h /usr/include/qt5/QtGui/QColor \
+ /usr/include/qt5/QtGui/qcolor.h /usr/include/qt5/QtCore/QDateTime \
+ /usr/include/qt5/QtCore/qdatetime.h /usr/include/qt5/QtCore/QDebug \
+ /usr/include/qt5/QtCore/qdebug.h /usr/include/qt5/QtCore/qtextstream.h \
  /usr/include/qt5/QtCore/qcontiguouscache.h
 
 /usr/include/stdc-predef.h:
@@ -3429,9 +3428,9 @@ clientversion.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

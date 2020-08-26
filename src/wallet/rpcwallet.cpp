@@ -2118,12 +2118,29 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     const CWalletTx& wtx = pwalletMain->mapWallet[hash]; // вся инфа в wtx есть
 
     // Служебка, Если receive то TO - я, FROM - Чужак; Если Send то FROM - я, TO - Чужак
-    bool fSend=false;
+    bool fDebit=false;
     entry.push_back(Pair("txid", hash.GetHex()));
-    if(wtx.GetDebit(filter)>0) // так в wtx.GetAmounts() проверяют направление транзакции
+
+    /*#warning DEBUG gethexdata
+    printf("GetDebit = %lu\n", wtx.GetDebit(filter) );
+    printf("GetCredit = %lu\n", wtx.GetCredit(filter) );
+    printf(" CWallet::IsMine(const CTransaction& tx) = %i\n",  pwalletMain->IsMine(wtx) & filter );
+    BOOST_FOREACH(const CTxIn& txin, wtx.vin)
     {
-        entry.push_back(Pair("category", "send"));
-        fSend=true;
+            isminetype mine = pwalletMain->IsMine(txin);
+            printf(" pwalletMain->IsMine(txin) = %i\n", mine & filter );
+    }*/
+    
+    if(wtx.GetDebit(filter)>0) // так в wtx.GetAmounts() проверяют направление транзакции == wtx.IsFromMe()
+    {
+        entry.push_back(Pair("category", "send")); // Это означает только списание комиссии, а сами отправитель и получатель в полях может быть любой
+                                                   /* Если списание есть а отправитель чужой, то это списали с импортированного ключа из вне и фактически
+                                                      нужно поменять send на receive для дешифровки (слали на PUBLIC)
+                                                      В общем при дешефровке условие смены направления данных:
+                                                      - если по списанию send а адрес from чужой то смена направления дешифровки;
+                                                      - если нет списания (receive) а адрес to чужой то смена направления дешифровки; ( FIXME: протестить и подумать над ISMINE_WATCH_ONLY )
+                                                   */
+        fDebit=true;
     }
     else
     {
@@ -2226,12 +2243,27 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 
             getBodyLongData(txout.scriptPubKey, vchDataBody);
             
-            if (encryptionType == 1 &&( (!fSend && toPrivKey.IsValid() && fromPubKey.IsFullyValid()) || (fSend && fromPrivKey.IsValid() && toPubKey.IsFullyValid()) ) ) {
+            if ( encryptionType == 1 ) {
                 std::vector<unsigned char> vchSharedSecret;
 
-                if(fSend) fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret); // Shared Secret - общий секретный ключ ECDH 
-                else toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret); // Shared Secret - общий секретный ключ ECDH 
-                
+                bool decrypt=true;
+
+                if(fDebit) { // Списание from (send), filter отберет только адрес у которого есть приватный ключ, то есть полностью свой
+                    if( (IsMine(*pwalletMain, addressFrom.Get()) & filter) && fromPrivKey.IsValid() && toPubKey.IsFullyValid() )
+                        fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret); // Shared Secret - общий секретный ключ ECDH
+                    else if( toPrivKey.IsValid() && fromPubKey.IsFullyValid() )
+                        toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret);
+                    else decrypt=false;
+                }
+                else { // Получение to (receive)
+                    if( (IsMine(*pwalletMain, addressTo.Get()) & filter) && toPrivKey.IsValid() && fromPubKey.IsFullyValid() )
+                        toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret); // Shared Secret - общий секретный ключ ECDH
+                    else if( fromPrivKey.IsValid() && toPubKey.IsFullyValid() )
+                        fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
+                    else decrypt=false;
+                }
+
+                if(decrypt)
                 { // Шифрование aes_256_cbc на Shared Secret
                     CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end()); // std::vector<unsigned char> -> CKeyingMaterial
                     
@@ -2248,9 +2280,9 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                     CKeyingMaterial ckmPlaintext;
                     crypter.Decrypt(vchDataBody, *((CKeyingMaterial*)&ckmPlaintext));
                     vchDecryptedDataBody.insert(vchDecryptedDataBody.end(), ckmPlaintext.begin(), ckmPlaintext.end());
-                }
                 
-                vchDataBody=vchDecryptedDataBody; // В случае всяких херей, проверку которых игнорю, расчитываю на пустые строки (хотя зря)
+                    vchDataBody=vchDecryptedDataBody; // В случае всяких херей, проверку которых игнорю, расчитываю на пустые строки (хотя зря)
+                }
             }
 
     //        #warning DEBUG gethexdata

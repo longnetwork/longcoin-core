@@ -989,13 +989,13 @@ qt/qt_libbitcoinqt_a-rpcconsole.o: qt/rpcconsole.cpp \
  /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
  /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
  /usr/include/openssl/opensslv.h /usr/include/openssl/ossl_typ.h \
- /usr/include/openssl/symhacks.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h \
- /usr/include/qt5/QtGui/QKeyEvent /usr/include/qt5/QtGui/qevent.h \
- /usr/include/qt5/QtCore/qurl.h /usr/include/qt5/QtCore/qfile.h \
- /usr/include/qt5/QtCore/qfiledevice.h /usr/include/qt5/QtGui/qvector2d.h \
- /usr/include/qt5/QtGui/qtouchdevice.h /usr/include/qt5/QtWidgets/QMenu \
- /usr/include/qt5/QtWidgets/qmenu.h /usr/include/qt5/QtWidgets/QScrollBar \
+ /usr/include/openssl/symhacks.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h /usr/include/qt5/QtGui/QKeyEvent \
+ /usr/include/qt5/QtGui/qevent.h /usr/include/qt5/QtCore/qurl.h \
+ /usr/include/qt5/QtCore/qfile.h /usr/include/qt5/QtCore/qfiledevice.h \
+ /usr/include/qt5/QtGui/qvector2d.h /usr/include/qt5/QtGui/qtouchdevice.h \
+ /usr/include/qt5/QtWidgets/QMenu /usr/include/qt5/QtWidgets/qmenu.h \
+ /usr/include/qt5/QtWidgets/QScrollBar \
  /usr/include/qt5/QtWidgets/qscrollbar.h \
  /usr/include/qt5/QtCore/QSignalMapper \
  /usr/include/qt5/QtCore/qsignalmapper.h /usr/include/qt5/QtCore/QThread \
@@ -3375,9 +3375,9 @@ utiltime.h:
 
 /usr/include/openssl/symhacks.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

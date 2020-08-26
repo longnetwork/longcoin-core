@@ -872,8 +872,7 @@ qt/qt_libbitcoinqt_a-walletmodeltransaction.o: \
  /usr/include/c++/4.8/bits/locale_facets_nonio.tcc \
  /usr/include/boost/io/detail/quoted_manip.hpp \
  /usr/include/boost/io/ios_state.hpp /usr/include/boost/io_fwd.hpp \
- /usr/local/db4.8/include/db_cxx.h /usr/local/db4.8/include/db.h \
- /usr/include/inttypes.h key.h
+ /usr/include/db_cxx.h /usr/include/db.h /usr/include/inttypes.h key.h
 
 /usr/include/stdc-predef.h:
 
@@ -2955,9 +2954,9 @@ version.h:
 
 /usr/include/boost/io_fwd.hpp:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

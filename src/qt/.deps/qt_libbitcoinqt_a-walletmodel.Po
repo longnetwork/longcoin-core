@@ -989,9 +989,9 @@ qt/qt_libbitcoinqt_a-walletmodel.o: qt/walletmodel.cpp \
  /usr/include/boost/signals2/last_value.hpp wallet/wallet.h streams.h \
  tinyformat.h utilstrencodings.h validationinterface.h wallet/crypter.h \
  wallet/wallet_ismine.h script/standard.h wallet/walletdb.h wallet/db.h \
- clientversion.h version.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h key.cpp \
- crypto/hmac_sha512.h crypto/sha512.h secp256k1/include/secp256k1.h \
+ clientversion.h version.h /usr/include/db_cxx.h /usr/include/db.h \
+ /usr/include/inttypes.h key.h key.cpp crypto/hmac_sha512.h \
+ crypto/sha512.h secp256k1/include/secp256k1.h \
  secp256k1/include/secp256k1_recovery.h secp256k1/include/secp256k1.h \
  secp256k1/include/secp256k1_ecdh.h utilstrencodings.h \
  /usr/include/qt5/QtCore/QDebug /usr/include/qt5/QtCore/qdebug.h \
@@ -3412,9 +3412,9 @@ clientversion.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

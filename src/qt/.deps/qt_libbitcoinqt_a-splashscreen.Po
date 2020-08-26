@@ -871,8 +871,8 @@ qt/qt_libbitcoinqt_a-splashscreen.o: qt/splashscreen.cpp \
  /usr/include/boost/thread/recursive_mutex.hpp \
  /usr/include/boost/thread/pthread/recursive_mutex.hpp \
  support/allocators/secure.h wallet/wallet_ismine.h script/standard.h \
- wallet/walletdb.h wallet/db.h sync.h /usr/local/db4.8/include/db_cxx.h \
- /usr/local/db4.8/include/db.h /usr/include/inttypes.h key.h \
+ wallet/walletdb.h wallet/db.h sync.h /usr/include/db_cxx.h \
+ /usr/include/db.h /usr/include/inttypes.h key.h \
  /usr/include/qt5/QtWidgets/QApplication \
  /usr/include/qt5/QtWidgets/qapplication.h \
  /usr/include/qt5/QtCore/qcoreapplication.h \
@@ -2963,9 +2963,9 @@ wallet/db.h:
 
 sync.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 

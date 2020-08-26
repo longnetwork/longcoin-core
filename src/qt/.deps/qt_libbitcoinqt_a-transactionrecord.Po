@@ -893,11 +893,10 @@ qt/qt_libbitcoinqt_a-transactionrecord.o: qt/transactionrecord.cpp \
  validationinterface.h wallet/crypter.h keystore.h \
  support/allocators/secure.h wallet/wallet_ismine.h script/standard.h \
  wallet/walletdb.h wallet/db.h clientversion.h sync.h version.h \
- /usr/local/db4.8/include/db_cxx.h /usr/local/db4.8/include/db.h \
- /usr/include/inttypes.h key.h rpcrawtransaction.cpp base58.h \
- consensus/validation.h core_io.h init.h keystore.h main.h merkleblock.h \
- policy/policy.h rpcserver.h rpcprotocol.h \
- /usr/include/boost/filesystem.hpp \
+ /usr/include/db_cxx.h /usr/include/db.h /usr/include/inttypes.h key.h \
+ rpcrawtransaction.cpp base58.h consensus/validation.h core_io.h init.h \
+ keystore.h main.h merkleblock.h policy/policy.h rpcserver.h \
+ rpcprotocol.h /usr/include/boost/filesystem.hpp \
  /usr/include/boost/filesystem/operations.hpp \
  /usr/include/boost/detail/bitmask.hpp /usr/include/c++/4.8/stack \
  /usr/include/c++/4.8/bits/stl_stack.h \
@@ -3213,9 +3212,9 @@ sync.h:
 
 version.h:
 
-/usr/local/db4.8/include/db_cxx.h:
+/usr/include/db_cxx.h:
 
-/usr/local/db4.8/include/db.h:
+/usr/include/db.h:
 
 /usr/include/inttypes.h:
 
