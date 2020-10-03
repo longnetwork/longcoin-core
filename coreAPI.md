@@ -2,14 +2,14 @@
 
 ### Complete list of commands:
 
-####== Addressindex ==  
+**== Addressindex ==**  
 getaddressbalance  
 getaddressdeltas  
 getaddressmempool  
 getaddresstxids  
 getaddressutxos  
 
-####== Blockchain ==  
+**== Blockchain ==**  
 getbestblockhash  
 getblock "hash" ( verbose )  
 getblockchaininfo  
@@ -29,24 +29,24 @@ gettxoutsetinfo
 verifychain ( checklevel numblocks )  
 verifytxoutproof "proof"  
 
-####== Control ==  
+**== Control ==**  
 getinfo  
 help ( "command" )  
 stop  
 
-####== Generating ==  
+**== Generating ==**  
 generate numblocks  
 getgenerate  
 setgenerate generate ( genproclimit )  
 
-####== Mining ==  
+**== Mining ==**  
 getblocktemplate ( "jsonrequestobject" )  
 getmininginfo  
 getnetworkhashps ( blocks height )  
 prioritisetransaction <txid> <priority delta> <fee delta>  
 submitblock "hexdata" ( "jsonparametersobject" )  
 
-####== Network ==  
+**== Network ==**  
 addnode "node" "add|remove|onetry"  
 clearbanned  
 disconnectnode "node"  
@@ -59,7 +59,7 @@ listbanned
 ping  
 setban "ip(/netmask)" "add|remove" (bantime) (absolute)  
 
-####== Rawtransactions ==  
+**== Rawtransactions ==**  
 createrawdata "from" "to" "hexstring"  
 createrawtransaction [{"txid":"id","vout":n},...] {"address":amount,"data":"hex",...} ( locktime )  
 decoderawtransaction "hexstring"  
@@ -69,7 +69,7 @@ getrawtransaction "txid" ( verbose )
 sendrawtransaction "hexstring" ( allowhighfees )  
 signrawtransaction "hexstring" ( [{"txid":"id","vout":n,"scriptPubKey":"hex","redeemScript":"hex"},...] ["privatekey1",...] sighashtype )  
 
-####== Util ==  
+**== Util ==**  
 createmultisig nrequired ["key",...]  
 estimatefee nblocks  
 estimatepriority nblocks  
@@ -78,7 +78,7 @@ estimatesmartpriority nblocks
 validateaddress "bitcoinaddress"  
 verifymessage "bitcoinaddress" "signature" "message"  
 
-####== Wallet ==  
+**== Wallet ==**  
 abandontransaction "txid"  
 addmultisigaddress nrequired ["key",...] ( "account" )  
 backupwallet "destination"  
@@ -122,20 +122,19 @@ settxfee amount
 signmessage "bitcoinaddress" "message"  
 storeaddress "another" ( "label" )  
 
-Documentation for each command with examples built into the kernel.
-To view the documentation for a specific command, you must use the `help` command
--Or poll the running kernel daemon:
+Documentation for each command with examples built into the kernel. To view the documentation for a specific command, you must use the `help` command  
+-Or poll the running kernel daemon:  
 ```bash
 longcoin-cli -conf=<path to longcoin.conf> help <command>
 ```
--Or in the debug console of the running wallet (ctrl+shift+c):
+-Or in the debug console of the running wallet (ctrl+shift+c):  
 ```bash
 help <command>
 ```
 
-**Example:
+**Example:**  
 `help getwalletinfo`
-**Output:
+**Output:**  
 ```javascript
 getwalletinfo
 Returns an object containing various wallet state info.
