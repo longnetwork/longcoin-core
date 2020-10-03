@@ -122,7 +122,7 @@ settxfee amount
 signmessage "bitcoinaddress" "message"  
 storeaddress "another" ( "label" )  
 
-Documentation for each command with examples built into the kernel. To view the documentation for a specific command, you must use the `help` command  
+_**Documentation for each command with examples built into the kernel. To view the documentation for a specific command, you must use the `help` command:**_  
 -Or poll the running kernel daemon:  
 ```bash
 longcoin-cli -conf=<path to longcoin.conf> help <command>
@@ -133,7 +133,7 @@ help <command>
 ```
 
 **Example:**  
-`help getwalletinfo`
+`help getwalletinfo`  
 **Output:**  
 ```javascript
 getwalletinfo
