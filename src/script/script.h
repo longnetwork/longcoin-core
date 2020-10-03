@@ -23,7 +23,7 @@
 // Максимальное количество байт, которые можно сместить в стек
 //static const unsigned int MAX_SCRIPT_ELEMENT_SIZE = 520;
 static const unsigned int MAX_SCRIPT_REDEEM_SIZE = 520; // Это только юзается для финансовых транзакций
-static const unsigned int MAX_SCRIPT_SIZE = 65535; // Это на весь скрипт
+static const unsigned int MAX_SCRIPT_SIZE = 64*1024*4/3+1; //65535; // Это на весь скрипт
 static const unsigned int MAX_SCRIPT_PUSH_SIZE = MAX_SCRIPT_SIZE-(344-256)-2; // см.  MAX_OP_RETURN_RELAY
 
 // Maximum number of non-push operations per script

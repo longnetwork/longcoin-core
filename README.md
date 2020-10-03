@@ -63,8 +63,10 @@ In the future, you can always connect to the PUBLIC by importing the official pr
 ```bash
 longcoin-cli importprivkey KwSXQL9F9ohW6TmZYWiNmx3z9Bz8x6vbZ6rVvWAPHS4wtcwSoo8W "PUBLIC"
 ```
+Core API
+===========================================================================================================================================
+https://github.com/longnetwork/LONGNETWORK/blob/master/coreAPI.md
 
-
-# The dragon is coming...  https://longnetwork.github.io/community.html
+## The dragon is coming...  https://longnetwork.github.io/community.html
 
 
