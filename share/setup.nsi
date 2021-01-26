@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://bitcoincore.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/mnt/workspace/longcoin/longcoin-src/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/mnt/workspace/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/mnt/workspace/longcoin/longcoin-src/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Bitcoin Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\bitcoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/mnt/workspace/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /mnt/workspace/longcoin/longcoin-src/bitcoin-${VERSION}-win-setup.exe
+OutFile /home/mint/Work/longcoin/longcoin-src/bitcoin-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Bitcoin
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /mnt/workspace/longcoin/longcoin-src/release/bitcoin-qt.exe
-    File /oname=COPYING.txt /mnt/workspace/longcoin/longcoin-src/COPYING
-    File /oname=readme.txt /mnt/workspace/longcoin/longcoin-src/doc/README_windows.txt
+    File /home/mint/Work/longcoin/longcoin-src/release/bitcoin-qt.exe
+    File /oname=COPYING.txt /home/mint/Work/longcoin/longcoin-src/COPYING
+    File /oname=readme.txt /home/mint/Work/longcoin/longcoin-src/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /mnt/workspace/longcoin/longcoin-src/release/bitcoind.exe
-    File /mnt/workspace/longcoin/longcoin-src/release/bitcoin-cli.exe
+    File /home/mint/Work/longcoin/longcoin-src/release/bitcoind.exe
+    File /home/mint/Work/longcoin/longcoin-src/release/bitcoin-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /mnt/workspace/longcoin/longcoin-src/doc\*.*
+    File /r /home/mint/Work/longcoin/longcoin-src/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
