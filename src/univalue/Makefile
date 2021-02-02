@@ -454,11 +454,11 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/db4.8/include/
+CPPFLAGS = -I/usr/local/db4.8/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = --param ggc-min-expand=1 --param ggc-min-heapsize=32768
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -478,9 +478,9 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = -L/usr/local/db4.8/lib/
+LDFLAGS = -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/
 LIBOBJS = 
-LIBS = 
+LIBS = -lssl -lcrypto -ldl
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
 LIBUNIVALUE_AGE = 100

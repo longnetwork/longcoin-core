@@ -66,12 +66,15 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
  /usr/include/c++/9/bits/std_abs.h /usr/include/c++/9/bits/algorithmfwd.h \
  /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_tempbuf.h \
  /usr/include/c++/9/bits/stl_construct.h /usr/include/c++/9/new \
@@ -113,7 +116,10 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/9/stdlib.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/c++/9/stdlib.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/c++/9/string /usr/include/c++/9/bits/stringfwd.h \
  /usr/include/c++/9/bits/char_traits.h /usr/include/c++/9/bits/postypes.h \
@@ -123,7 +129,8 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/c++/9/cstdint /usr/include/c++/9/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/c++/9/cstdint \
+ /usr/include/c++/9/bits/allocator.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++allocator.h \
  /usr/include/c++/9/ext/new_allocator.h \
  /usr/include/c++/9/bits/localefwd.h \
@@ -157,9 +164,10 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/c++/9/cerrno /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/9/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/functional_hash.h \
@@ -341,6 +349,7 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/boost/config/detail/select_platform_config.hpp \
  /usr/include/boost/config/platform/linux.hpp \
@@ -669,6 +678,7 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
  /usr/include/x86_64-linux-gnu/sys/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman.h \
  /usr/include/x86_64-linux-gnu/bits/mman-map-flags-generic.h \
@@ -689,13 +699,14 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/net/if.h /usr/include/netinet/in.h \
- /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/tcp.h \
- /usr/include/arpa/inet.h /usr/include/ifaddrs.h /usr/include/netdb.h \
- /usr/include/rpc/netdb.h /usr/include/x86_64-linux-gnu/bits/netdb.h \
- uint256.h version.h key.h pubkey.h hash.h crypto/ripemd160.h \
- crypto/sha256.h support/allocators/secure.h support/pagelocker.h \
- support/cleanse.h /usr/include/boost/thread/mutex.hpp \
+ /usr/include/x86_64-linux-gnu/bits/socket2.h /usr/include/net/if.h \
+ /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
+ /usr/include/netinet/tcp.h /usr/include/arpa/inet.h \
+ /usr/include/ifaddrs.h /usr/include/netdb.h /usr/include/rpc/netdb.h \
+ /usr/include/x86_64-linux-gnu/bits/netdb.h uint256.h version.h key.h \
+ pubkey.h hash.h crypto/ripemd160.h crypto/sha256.h \
+ support/allocators/secure.h support/pagelocker.h support/cleanse.h \
+ /usr/include/boost/thread/mutex.hpp \
  /usr/include/boost/thread/detail/platform.hpp \
  /usr/include/boost/config/requires_threads.hpp \
  /usr/include/boost/thread/pthread/mutex.hpp \
@@ -769,6 +780,7 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/x86_64-linux-gnu/bits/mathinline.h \
  /usr/include/boost/date_time/time_duration.hpp \
  /usr/include/boost/date_time/special_defs.hpp \
  /usr/include/boost/date_time/time_defs.hpp \
@@ -1266,21 +1278,33 @@ qt/libbitcoinqt_a-openuridialog.o: qt/openuridialog.cpp \
  /usr/include/boost/variant/detail/element_index.hpp \
  /usr/include/boost/variant/visitor_ptr.hpp \
  /usr/include/boost/variant/bad_visit.hpp \
- support/allocators/zeroafterfree.h /usr/include/openssl/x509.h \
- /usr/include/openssl/e_os2.h \
- /usr/include/x86_64-linux-gnu/openssl/opensslconf.h \
- /usr/include/openssl/symhacks.h /usr/include/openssl/buffer.h \
- /usr/include/openssl/ossl_typ.h /usr/include/openssl/evp.h \
- /usr/include/openssl/bio.h /usr/include/openssl/crypto.h \
- /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
- /usr/include/openssl/opensslv.h /usr/include/openssl/objects.h \
- /usr/include/openssl/obj_mac.h /usr/include/openssl/asn1.h \
- /usr/include/openssl/bn.h /usr/include/openssl/ec.h \
- /usr/include/openssl/ecdsa.h /usr/include/openssl/ecdh.h \
- /usr/include/openssl/rsa.h /usr/include/openssl/dsa.h \
- /usr/include/openssl/dh.h /usr/include/openssl/sha.h \
- /usr/include/openssl/x509_vfy.h /usr/include/openssl/lhash.h \
- /usr/include/openssl/pkcs7.h \
+ support/allocators/zeroafterfree.h \
+ /usr/local/openssl1.0/include/openssl/x509.h \
+ /usr/local/openssl1.0/include/openssl/e_os2.h \
+ /usr/local/openssl1.0/include/openssl/opensslconf.h \
+ /usr/local/openssl1.0/include/openssl/symhacks.h \
+ /usr/local/openssl1.0/include/openssl/buffer.h \
+ /usr/local/openssl1.0/include/openssl/ossl_typ.h \
+ /usr/local/openssl1.0/include/openssl/evp.h \
+ /usr/local/openssl1.0/include/openssl/bio.h \
+ /usr/local/openssl1.0/include/openssl/crypto.h \
+ /usr/local/openssl1.0/include/openssl/stack.h \
+ /usr/local/openssl1.0/include/openssl/safestack.h \
+ /usr/local/openssl1.0/include/openssl/opensslv.h \
+ /usr/local/openssl1.0/include/openssl/objects.h \
+ /usr/local/openssl1.0/include/openssl/obj_mac.h \
+ /usr/local/openssl1.0/include/openssl/asn1.h \
+ /usr/local/openssl1.0/include/openssl/bn.h \
+ /usr/local/openssl1.0/include/openssl/ec.h \
+ /usr/local/openssl1.0/include/openssl/ecdsa.h \
+ /usr/local/openssl1.0/include/openssl/ecdh.h \
+ /usr/local/openssl1.0/include/openssl/rsa.h \
+ /usr/local/openssl1.0/include/openssl/dsa.h \
+ /usr/local/openssl1.0/include/openssl/dh.h \
+ /usr/local/openssl1.0/include/openssl/sha.h \
+ /usr/local/openssl1.0/include/openssl/x509_vfy.h \
+ /usr/local/openssl1.0/include/openssl/lhash.h \
+ /usr/local/openssl1.0/include/openssl/pkcs7.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QByteArray \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QList \
@@ -1446,6 +1470,8 @@ qt/openuridialog.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
@@ -1458,7 +1484,11 @@ qt/openuridialog.h:
 
 /usr/include/alloca.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/c++/9/bits/std_abs.h:
 
@@ -1562,6 +1592,10 @@ qt/openuridialog.h:
 
 /usr/include/strings.h:
 
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
+
 /usr/include/c++/9/stdlib.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
@@ -1587,6 +1621,8 @@ qt/openuridialog.h:
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
 /usr/include/c++/9/cstdint:
 
@@ -1671,6 +1707,10 @@ qt/openuridialog.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 /usr/include/c++/9/cerrno:
 
@@ -2103,6 +2143,8 @@ prevector.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
@@ -2852,6 +2894,8 @@ compat.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 
+/usr/include/x86_64-linux-gnu/bits/fcntl2.h:
+
 /usr/include/x86_64-linux-gnu/sys/mman.h:
 
 /usr/include/x86_64-linux-gnu/bits/mman.h:
@@ -2893,6 +2937,8 @@ compat.h:
 /usr/include/asm-generic/sockios.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket2.h:
 
 /usr/include/net/if.h:
 
@@ -3085,6 +3131,8 @@ support/cleanse.h:
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathinline.h:
 
 /usr/include/boost/date_time/time_duration.hpp:
 
@@ -4148,57 +4196,57 @@ script/script_error.h:
 
 support/allocators/zeroafterfree.h:
 
-/usr/include/openssl/x509.h:
+/usr/local/openssl1.0/include/openssl/x509.h:
 
-/usr/include/openssl/e_os2.h:
+/usr/local/openssl1.0/include/openssl/e_os2.h:
 
-/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
+/usr/local/openssl1.0/include/openssl/opensslconf.h:
 
-/usr/include/openssl/symhacks.h:
+/usr/local/openssl1.0/include/openssl/symhacks.h:
 
-/usr/include/openssl/buffer.h:
+/usr/local/openssl1.0/include/openssl/buffer.h:
 
-/usr/include/openssl/ossl_typ.h:
+/usr/local/openssl1.0/include/openssl/ossl_typ.h:
 
-/usr/include/openssl/evp.h:
+/usr/local/openssl1.0/include/openssl/evp.h:
 
-/usr/include/openssl/bio.h:
+/usr/local/openssl1.0/include/openssl/bio.h:
 
-/usr/include/openssl/crypto.h:
+/usr/local/openssl1.0/include/openssl/crypto.h:
 
-/usr/include/openssl/stack.h:
+/usr/local/openssl1.0/include/openssl/stack.h:
 
-/usr/include/openssl/safestack.h:
+/usr/local/openssl1.0/include/openssl/safestack.h:
 
-/usr/include/openssl/opensslv.h:
+/usr/local/openssl1.0/include/openssl/opensslv.h:
 
-/usr/include/openssl/objects.h:
+/usr/local/openssl1.0/include/openssl/objects.h:
 
-/usr/include/openssl/obj_mac.h:
+/usr/local/openssl1.0/include/openssl/obj_mac.h:
 
-/usr/include/openssl/asn1.h:
+/usr/local/openssl1.0/include/openssl/asn1.h:
 
-/usr/include/openssl/bn.h:
+/usr/local/openssl1.0/include/openssl/bn.h:
 
-/usr/include/openssl/ec.h:
+/usr/local/openssl1.0/include/openssl/ec.h:
 
-/usr/include/openssl/ecdsa.h:
+/usr/local/openssl1.0/include/openssl/ecdsa.h:
 
-/usr/include/openssl/ecdh.h:
+/usr/local/openssl1.0/include/openssl/ecdh.h:
 
-/usr/include/openssl/rsa.h:
+/usr/local/openssl1.0/include/openssl/rsa.h:
 
-/usr/include/openssl/dsa.h:
+/usr/local/openssl1.0/include/openssl/dsa.h:
 
-/usr/include/openssl/dh.h:
+/usr/local/openssl1.0/include/openssl/dh.h:
 
-/usr/include/openssl/sha.h:
+/usr/local/openssl1.0/include/openssl/sha.h:
 
-/usr/include/openssl/x509_vfy.h:
+/usr/local/openssl1.0/include/openssl/x509_vfy.h:
 
-/usr/include/openssl/lhash.h:
+/usr/local/openssl1.0/include/openssl/lhash.h:
 
-/usr/include/openssl/pkcs7.h:
+/usr/local/openssl1.0/include/openssl/pkcs7.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QByteArray:
 

@@ -38,15 +38,19 @@ support/libbitcoin_util_a-cleanse.o: support/cleanse.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/9/bits/std_abs.h /usr/include/openssl/crypto.h \
- /usr/include/openssl/e_os2.h \
- /usr/include/x86_64-linux-gnu/openssl/opensslconf.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/c++/9/bits/std_abs.h \
+ /usr/local/openssl1.0/include/openssl/crypto.h \
+ /usr/local/openssl1.0/include/openssl/e_os2.h \
+ /usr/local/openssl1.0/include/openssl/opensslconf.h /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
@@ -57,9 +61,13 @@ support/libbitcoin_util_a-cleanse.o: support/cleanse.cpp \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/openssl/stack.h /usr/include/openssl/safestack.h \
- /usr/include/openssl/opensslv.h /usr/include/openssl/ossl_typ.h \
- /usr/include/openssl/symhacks.h
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/local/openssl1.0/include/openssl/stack.h \
+ /usr/local/openssl1.0/include/openssl/safestack.h \
+ /usr/local/openssl1.0/include/openssl/opensslv.h \
+ /usr/local/openssl1.0/include/openssl/ossl_typ.h \
+ /usr/local/openssl1.0/include/openssl/symhacks.h
 
 /usr/include/stdc-predef.h:
 
@@ -147,6 +155,8 @@ support/cleanse.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
@@ -159,15 +169,19 @@ support/cleanse.h:
 
 /usr/include/alloca.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/c++/9/bits/std_abs.h:
 
-/usr/include/openssl/crypto.h:
+/usr/local/openssl1.0/include/openssl/crypto.h:
 
-/usr/include/openssl/e_os2.h:
+/usr/local/openssl1.0/include/openssl/e_os2.h:
 
-/usr/include/x86_64-linux-gnu/openssl/opensslconf.h:
+/usr/local/openssl1.0/include/openssl/opensslconf.h:
 
 /usr/include/stdio.h:
 
@@ -191,12 +205,16 @@ support/cleanse.h:
 
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
-/usr/include/openssl/stack.h:
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
 
-/usr/include/openssl/safestack.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
-/usr/include/openssl/opensslv.h:
+/usr/local/openssl1.0/include/openssl/stack.h:
 
-/usr/include/openssl/ossl_typ.h:
+/usr/local/openssl1.0/include/openssl/safestack.h:
 
-/usr/include/openssl/symhacks.h:
+/usr/local/openssl1.0/include/openssl/opensslv.h:
+
+/usr/local/openssl1.0/include/openssl/ossl_typ.h:
+
+/usr/local/openssl1.0/include/openssl/symhacks.h:

@@ -600,11 +600,11 @@ CC_FOR_BUILD = gcc
 CFLAGS = -g -O2 -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden -O3
 CFLAGS_FOR_BUILD = -g -O2 $(am__append_9)
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/db4.8/include/
+CPPFLAGS = -I/usr/local/db4.8/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
 CPPFLAGS_FOR_BUILD =  $(am__append_8)
 CPP_FOR_BUILD = gcc -E
-CRYPTO_CFLAGS = 
-CRYPTO_LIBS = 
+CRYPTO_CFLAGS = -I/usr/local/openssl1.0/include/openssl/
+CRYPTO_LIBS = -L/usr/local/openssl1.0/lib/
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -625,10 +625,10 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JNI_INCLUDES = 
 LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = -L/usr/local/db4.8/lib/
+LDFLAGS = -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/
 LDFLAGS_FOR_BUILD = 
 LIBOBJS = 
-LIBS = 
+LIBS = -lssl -lcrypto -ldl
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
