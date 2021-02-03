@@ -530,8 +530,15 @@ void ClearDatadirCache()
     pathCachedNetSpecific = boost::filesystem::path();
 }
 
+static boost::filesystem::path confCached;
+static CCriticalSection csConfCached;
+
 boost::filesystem::path GetConfigFile()
 {
+
+    LOCK(csConfCached);
+    if(!confCached.empty()) return confCached;
+
     
     //boost::filesystem::path pathConfigFile(GetArg("-conf", BITCOIN_CONF_FILENAME)); - BITCOIN_CONF_FILENAME - это дефаут строка если нет опции
     boost::filesystem::path pathConfigFile(GetArg("-conf", ""));
@@ -546,12 +553,14 @@ boost::filesystem::path GetConfigFile()
        pathConfigFile=BITCOIN_CONF_FILENAME; // по умолчанию в текущей дерриктории
        if (!pathDataDir.empty())
             pathConfigFile = GetDataDir(false) / pathConfigFile;
-       else if(!boost::filesystem::exists(pathConfigFile)) { // Если в текущей нет - то последний шанс найти конфиг в дата-дирректории
-            pathConfigFile = GetDataDir(false) / pathConfigFile;
+       else if(!boost::filesystem::exists(pathConfigFile)) { // Если в текущей нет - то последний шанс найти конфиг в системной директории
+            pathConfigFile = GetDefaultDataDir() / pathConfigFile;
        }
     }
+
+
         
-    return pathConfigFile;
+    return confCached=pathConfigFile;
 }
 
 void ReadConfigFile(map<string, string>& mapSettingsRet,

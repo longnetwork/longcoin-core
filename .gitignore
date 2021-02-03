@@ -1,7 +1,10 @@
 
 src/**/*.a
+src/**/*.tar.gz
 
 openssl-1.0.0s/**/*.a
+openssl-1.0.0s/**/*.tar.gz
 
 db-4.8.30.NC-src/**/*.a
+db-4.8.30.NC-src/**/*.tar.gz
 
