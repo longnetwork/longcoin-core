@@ -454,7 +454,7 @@ CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/db4.8/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
+CPPFLAGS = -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=gcc3

@@ -600,7 +600,7 @@ CC_FOR_BUILD = gcc
 CFLAGS = -g -O2 -W -std=c89 -pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-unused-function -Wno-long-long -Wno-overlength-strings -fvisibility=hidden -O3
 CFLAGS_FOR_BUILD = -g -O2 $(am__append_9)
 CPP = gcc -E
-CPPFLAGS = -I/usr/local/db4.8/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
+CPPFLAGS = -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768
 CPPFLAGS_FOR_BUILD =  $(am__append_8)
 CPP_FOR_BUILD = gcc -E
 CRYPTO_CFLAGS = -I/usr/local/openssl1.0/include/openssl/

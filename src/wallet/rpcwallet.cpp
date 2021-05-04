@@ -1595,6 +1595,8 @@ static void MaybePushAddress(UniValue & entry, const CTxDestination &dest)
 
 void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDepth, bool fLong, UniValue& ret, const isminefilter& filter)
 {
+    // Вызывается везде после LOCK2(cs_main, pwalletMain->cs_wallet);
+    
     CAmount nFee;
     string strSentAccount;
     list<COutputEntry> listReceived;
@@ -1624,6 +1626,70 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
             if (fLong)
                 WalletTxToJSON(wtx, entry);
             entry.push_back(Pair("abandoned", wtx.isAbandoned()));
+
+            /////////////////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
+            if (wtx.vout.size()>s.vout && isLong(wtx.vout[s.vout].scriptPubKey)) { // Long-specific info
+                const CTxOut& txout=wtx.vout[s.vout];
+
+                // TO
+                std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
+                getLongToPubKey(txout.scriptPubKey, vchToPubKey);
+                if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
+                    toPubKeyID=uint160(vchToPubKey);
+                    if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
+                        if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
+                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
+                            toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                        }
+                    }
+                } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
+                    toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
+                    toPubKeyID=toPubKey.GetID();                    // ID публичного ключа = адрес в бинарной форме RIPEMD-160
+                }
+                                         
+                CBitcoinAddress addressTo(toPubKeyID);
+                string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
+
+                 // FROM
+                std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; 
+                getLongFromPubKey(txout.scriptPubKey, vchFromPubKey);
+                if (vchFromPubKey.size() == 20) {
+                    fromPubKeyID=uint160(vchFromPubKey);
+                    if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
+                         if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
+                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
+                            fromPubKey.Set(vch.begin(),vch.end());
+                        }                   
+                    }
+                } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
+                    fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
+                    fromPubKeyID=fromPubKey.GetID();
+                }
+                                          
+                CBitcoinAddress addressFrom(fromPubKeyID);
+                string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
+
+                string strTo; {
+                    map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
+                    if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
+                        strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                }
+                string strFrom; {
+                    map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
+                    if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
+                        strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                }
+                
+                entry.push_back(Pair("from",strFrom));
+                entry.push_back(Pair("fromaddress",addressFrom.ToString()));
+                entry.push_back(Pair("frompubkey",pubKeyHexFrom));
+                entry.push_back(Pair("to",strTo));
+                entry.push_back(Pair("toaddress",addressTo.ToString()));
+                entry.push_back(Pair("topubkey",pubKeyHexTo));
+                
+            }
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             ret.push_back(entry);
         }
     }
@@ -1662,6 +1728,70 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 entry.push_back(Pair("vout", r.vout));
                 if (fLong)
                     WalletTxToJSON(wtx, entry);
+
+                /////////////////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
+                if (wtx.vout.size()>r.vout && isLong(wtx.vout[r.vout].scriptPubKey)) { // Long-specific info
+                    const CTxOut& txout=wtx.vout[r.vout];
+
+                    // TO
+                    std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
+                    getLongToPubKey(txout.scriptPubKey, vchToPubKey);
+                    if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
+                        toPubKeyID=uint160(vchToPubKey);
+                        if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
+                            if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
+                                std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
+                                toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                            }
+                        }
+                    } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
+                        toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
+                        toPubKeyID=toPubKey.GetID();                    // ID публичного ключа = адрес в бинарной форме RIPEMD-160
+                    }
+                                             
+                    CBitcoinAddress addressTo(toPubKeyID);
+                    string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
+
+                     // FROM
+                    std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; 
+                    getLongFromPubKey(txout.scriptPubKey, vchFromPubKey);
+                    if (vchFromPubKey.size() == 20) {
+                        fromPubKeyID=uint160(vchFromPubKey);
+                        if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
+                             if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
+                                std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
+                                fromPubKey.Set(vch.begin(),vch.end());
+                            }                   
+                        }
+                    } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
+                        fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
+                        fromPubKeyID=fromPubKey.GetID();
+                    }
+                                              
+                    CBitcoinAddress addressFrom(fromPubKeyID);
+                    string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
+
+                    string strTo; {
+                        map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
+                        if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
+                            strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                    }
+                    string strFrom; {
+                        map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
+                        if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
+                            strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                    }
+                    
+                    entry.push_back(Pair("from",strFrom));
+                    entry.push_back(Pair("fromaddress",addressFrom.ToString()));
+                    entry.push_back(Pair("frompubkey",pubKeyHexFrom));
+                    entry.push_back(Pair("to",strTo));
+                    entry.push_back(Pair("toaddress",addressTo.ToString()));
+                    entry.push_back(Pair("topubkey",pubKeyHexTo));
+                    
+                }
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                 ret.push_back(entry);
             }
         }
