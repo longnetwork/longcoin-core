@@ -254,54 +254,90 @@ UniValue getrawchangeaddress(const UniValue& params, bool fHelp)
 }
 
 
-UniValue setaccount(const UniValue& params, bool fHelp)
-{
+UniValue setaccount(const UniValue& params, bool fHelp) // FIXME: Лучше не повторят для своих адресов в техже аккаунтах из-за форсированой генерации новых адресов
+{                                                       // в штатной работе ядра, а делать предварительные проверки, на счет присутсвия адреса в данном аккаунте
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
     
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount \"bitcoinaddress\" \"account\"\n"
-            "\nDEPRECATED. Sets the account associated with the given address.\n"
+            "setaccount \"addressID\" \"label\"\n"
+            "\nLONG Adaptation: Sets the account associated with the given address or public key.\n"
+            "                   any address and foreign public key can be assigned an account label.\n"
             "\nArguments:\n"
-            "1. \"bitcoinaddress\"  (string, required) The bitcoin address to be associated with an account.\n"
-            "2. \"account\"         (string, required) The account to assign the address to.\n"
+            "1. \"addressID\"       (string, required) The address or hex-encoded public key\n"
+            "2. \"label\"           (string, required, default=\"\") The label to assign the address to.\n"
+            "\nResult:\n"
+            "\"bitcoinaddress\"     (string) The bitcoin address associated with the public key\n"    
             "\nExamples:\n"
             + HelpExampleCli("setaccount", "\"1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ\" \"tabby\"")
+            + HelpExampleCli("setaccount", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
             + HelpExampleRpc("setaccount", "\"1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ\", \"tabby\"")
+            + HelpExampleRpc("setaccount", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
         );
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    CBitcoinAddress address(params[0].get_str());
-    if (!address.IsValid())
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bitcoin address");
 
-    string strAccount;
+    bool isAddress=false;
+    string strID=params[0].get_str();
+    CBitcoinAddress address(strID);
+    if (address.IsValid()) isAddress=true;
+
+    if ( !isAddress && !IsHex(strID) )
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "First param must be a valid PubKey or Bitcoin address");
+
+
+    string strAccount="";
     if (params.size() > 1)
         strAccount = AccountFromValue(params[1]);
 
-    // Only add the account if the address is yours.
-    if (IsMine(*pwalletMain, address.Get()))
-    {
-        // Detect when changing the account of an address that is the 'unused current key' of another account:
-        string strPubKeyHex;
-        if (pwalletMain->mapAddressBook.count(address.Get()))
+
+    if(isAddress) {
+
+        if (IsMine(*pwalletMain, address.Get())) // Штатная работа для своего адреса
         {
-            string strOldAccount = pwalletMain->mapAddressBook[address.Get()].name;
-            if (address == GetAccountAddress(strOldAccount))
-                GetAccountAddress(strOldAccount, true);
+            // Detect when changing the account of an address that is the 'unused current key' of another account:
+            string strPubKeyHex;
+            if (pwalletMain->mapAddressBook.count(address.Get()))
+            {
+                string strOldAccount = pwalletMain->mapAddressBook[address.Get()].name;
+                if (address == GetAccountAddress(strOldAccount)) GetAccountAddress(strOldAccount, true);
+                // Замещает перекинутый адрес с другого аккаунта новым адресом (а для того-же генерится новый)
 
-            strPubKeyHex = pwalletMain->mapAddressBook[address.Get()].pubkeyhex; // Если окажется пустой, то (хотя не должен, так как команды генерации адресов его прописывают)
-                                                                                 // но если окажется пустой то теперь SetAddressBook его найдет по адресу и пропишит
+                strPubKeyHex = pwalletMain->mapAddressBook[address.Get()].pubkeyhex; // Если окажется пустой, то (хотя не должен, так как команды генерации адресов его прописывают)
+                                                                                     // но если окажется пустой то теперь SetAddressBook его найдет по адресу и пропишит
+            }
+            
+            pwalletMain->SetAddressBook(address.Get(), strAccount, strPubKeyHex, "receive");
         }
-        
-        pwalletMain->SetAddressBook(address.Get(), strAccount, strPubKeyHex, "receive");
-    }
-    else
-        throw JSONRPCError(RPC_MISC_ERROR, "setaccount can only be used with own address");
+        else { //LONG-specific Сохранение чужого адреса с label для адресной книги
+            pwalletMain->SetAddressBook(address.Get(), strAccount, "", "send"); // Пукей пустой
+        }
 
-    return NullUniValue;
+        
+        return address.ToString();
+    }
+    else { // Если параметр это пукей то берем от него адресс
+        
+        std::vector<unsigned char> vch(ParseHex(strID));
+        CPubKey pubKey(vch.begin(), vch.end());
+        if (!pubKey.IsFullyValid())
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey is not a valid public key");
+
+        CBitcoinAddress address(pubKey.GetID());
+
+        if (IsMine(*pwalletMain, address.Get())) // по публичному ключу допустимо сохранение только чужих адресов (так более логично в практике применения команды)
+        {
+           throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own key");
+        }
+        else { //LONG-specific Сохранение чужого пукей с label для адресной книги
+            pwalletMain->SetAddressBook(pubKey.GetID(), strAccount, strID, "send"); // Пукей уже содержит адрес
+        }
+
+
+        return address.ToString();
+    }
 }
 
 
@@ -475,7 +511,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             "sendhexdata \"from\" \"to\" \"hexstring\" ( \"comment\" )\n"
             "\nLONG Specific: Data transfer from address or account to address or pubKey.\n"
             "\nNote: Encryption is enabled automatically if the public key of the recipient is known.\n"
-            "        storeaddress can be used to add to the address book public key of the recipient \n"   
+            "        setaccount command can be used to add to the address book public key of the recipient \n"   
             "\nArguments:\n"
             "1. \"from\"          (string, required) The account or bitcoin address to send from.\n"
             "2. \"to\"            (string, required) The bitcoin address or hex-encoded pubKey to send to.\n"
@@ -1627,7 +1663,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 WalletTxToJSON(wtx, entry);
             entry.push_back(Pair("abandoned", wtx.isAbandoned()));
 
-            /////////////////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
+            /////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
             if (wtx.vout.size()>s.vout && isLong(wtx.vout[s.vout].scriptPubKey)) { // Long-specific info
                 const CTxOut& txout=wtx.vout[s.vout];
 
@@ -1669,15 +1705,24 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 CBitcoinAddress addressFrom(fromPubKeyID);
                 string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
-                string strTo; {
-                    map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
+                string strTo; {                    
+                    /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
                     if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                        strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                        //strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                        strTo = (*mi).second.name;
+                    */
+                    if(pwalletMain->mapAddressBook.count(addressTo.Get()) && !pwalletMain->mapAddressBook[addressTo.Get()].name.empty())
+                        strTo = pwalletMain->mapAddressBook[addressTo.Get()].name;
+                    
                 }
                 string strFrom; {
-                    map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
+                   /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
                     if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                        strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                        //strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                        strFrom = (*mi).second.name;
+                    */
+                    if(pwalletMain->mapAddressBook.count(addressFrom.Get()) && !pwalletMain->mapAddressBook[addressFrom.Get()].name.empty())
+                        strFrom = pwalletMain->mapAddressBook[addressFrom.Get()].name;
                 }
                 
                 entry.push_back(Pair("from",strFrom));
@@ -1688,7 +1733,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 entry.push_back(Pair("topubkey",pubKeyHexTo));
                 
             }
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
             
             ret.push_back(entry);
         }
@@ -1729,7 +1774,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 if (fLong)
                     WalletTxToJSON(wtx, entry);
 
-                /////////////////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
+                /////////////////////////// FIXME Назрело эту хрень вынести в отдельную процедуру (см. также rpcrawtransaction) ////////////////////////////
                 if (wtx.vout.size()>r.vout && isLong(wtx.vout[r.vout].scriptPubKey)) { // Long-specific info
                     const CTxOut& txout=wtx.vout[r.vout];
 
@@ -1772,14 +1817,22 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                     string strTo; {
-                        map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
+                        /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
                         if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                            strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                            //strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
+                            strTo = (*mi).second.name;
+                        */
+                        if(pwalletMain->mapAddressBook.count(addressTo.Get()) && !pwalletMain->mapAddressBook[addressTo.Get()].name.empty())
+                            strTo = pwalletMain->mapAddressBook[addressTo.Get()].name;
                     }
                     string strFrom; {
-                        map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
+                       /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
                         if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                            strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                            //strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
+                            strFrom = (*mi).second.name;
+                        */
+                        if(pwalletMain->mapAddressBook.count(addressFrom.Get()) && !pwalletMain->mapAddressBook[addressFrom.Get()].name.empty())
+                            strFrom = pwalletMain->mapAddressBook[addressFrom.Get()].name;
                     }
                     
                     entry.push_back(Pair("from",strFrom));
@@ -1790,7 +1843,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     entry.push_back(Pair("topubkey",pubKeyHexTo));
                     
                 }
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
 
                 ret.push_back(entry);
             }
@@ -1948,11 +2001,12 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
     
     if (fHelp || params.size() > 2)
         throw runtime_error(
-            "listaccounts ( minconf includeWatchonly)\n"
-            "\nDEPRECATED. Returns Object that has account names as keys, account balances as values.\n"
+            "listaccounts ( minconf includeLevel)\n"
+            "\nLONG Adaptation: Returns Object that has account names as keys, account balances as values.\n"
             "\nArguments:\n"
             "1. minconf          (numeric, optional, default=1) Only include transactions with at least this many confirmations\n"
-            "2. includeWatchonly (bool, optional, default=false) Include balances in watchonly addresses (see 'importaddress')\n"
+            "2. includeLevel     (numeric, optional, default=0) Include balances in watchonly addresses when Level=1 (see 'importaddress')\n"
+            "                                                   and Include Labels of foreign addresses when Level=2 (see 'setaccount')\n"
             "\nResult:\n"
             "{                      (json object where keys are account names, and values are numeric balances\n"
             "  \"account\": x.xxx,  (numeric) The property name is the account name, and the value is the total balance for the account.\n"
@@ -1972,16 +2026,31 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     int nMinDepth = 1;
+    
     if (params.size() > 0)
         nMinDepth = params[0].get_int();
     isminefilter includeWatchonly = ISMINE_SPENDABLE;
-    if(params.size() > 1)
-        if(params[1].get_bool())
-            includeWatchonly = includeWatchonly | ISMINE_WATCH_ONLY;
+
+    bool includeAll=false;
+    
+    if(params.size() > 1) {
+        
+        if (params[1].isBool()) {
+            if(params[1].get_bool())
+                includeWatchonly = includeWatchonly | ISMINE_WATCH_ONLY;
+        }
+        else {
+            if (params[1].get_int() > 0)
+                includeWatchonly = includeWatchonly | ISMINE_WATCH_ONLY;
+            if (params[1].get_int() > 1)
+                includeAll=true;
+        }
+            
+    }
 
     map<string, CAmount> mapAccountBalances;
     BOOST_FOREACH(const PAIRTYPE(CTxDestination, CAddressBookData)& entry, pwalletMain->mapAddressBook) {
-        if (IsMine(*pwalletMain, entry.first) & includeWatchonly) // This address belongs to me
+        if ( includeAll || (IsMine(*pwalletMain, entry.first) & includeWatchonly) ) // This address belongs to me
             mapAccountBalances[entry.second.name] = 0;
     }
 
@@ -2007,7 +2076,9 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
                 else
                     mapAccountBalances[""] += r.amount;
         }
-    }
+    } // Вроде цепляются балансы даже для label чужих адресов и при includeAll=false если была команда move c этими label
+      // FIXME: includeAll=true нужно только для выяснения всех меток чужих адресов
+      
 
     const list<CAccountingEntry> & acentries = pwalletMain->laccentries;
     BOOST_FOREACH(const CAccountingEntry& entry, acentries)

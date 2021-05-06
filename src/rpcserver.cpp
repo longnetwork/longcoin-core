@@ -402,7 +402,6 @@ static const CRPCCommand vRPCCommands[] =
     
     { "wallet",             "sendhexdata",            &sendhexdata,            false }, //LONG Specific
     { "wallet",             "gethexdata",             &gethexdata,             false }, //LONG Specific
-    { "wallet",             "storeaddress",           &storeaddress,           true  }, //LONG Specific
 #endif // ENABLE_WALLET
 };
 

@@ -294,7 +294,7 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
     ImportAddress(CBitcoinAddress(pubKey.GetID()), strLabel, params[0].get_str());
     ImportScript(GetScriptForRawPubKey(pubKey), strLabel, false);
         // FixMe: добавит пукей через SetAddressBook НО! в категорию received!!
-        // Для категории "send" - отдельная команда storeaddress ! (импортированные ключи в наблюдение попадают и кошелек сканит их транзакции все время)
+        // Для категории "send" - отдельная ветка в setaccount ! (импортированные ключи в наблюдение попадают и кошелек сканит их транзакции все время)
         // FixMe: Публичные ключи из QT-ГУИ не обнаруживются средствами wallet.cpp без просмотра поля .pubkeyhex
         // Тогда как импортированные ( + ImportScript) обнаруживаются
 
@@ -306,66 +306,6 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
 
     return NullUniValue;
 }
-
-UniValue storeaddress(const UniValue& params, bool fHelp)
-{
-    if (!EnsureWalletIsAvailable(fHelp))
-        return NullUniValue;
-
-    if (fHelp || params.size() < 1 || params.size() > 2)
-        throw runtime_error(
-            "storeaddress \"another\" ( \"label\" )\n"
-            "\nLONG Specific: Adds not your address or public key (in hex) to the address book that can be used to encrypt data transfer.\n"
-            "\nArguments:\n"
-            "1. \"another\"          (string, required) The address or hex-encoded public key\n"
-            "2. \"label\"            (string, optional, default=\"\") An optional label\n"
-            "\nResult:\n"
-            "\"bitcoinaddress\"      (string) The bitcoin address associated with the public key\n"            
-            "\nExamples:\n"
-            + HelpExampleCli("storeaddress", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
-            + HelpExampleRpc("storeaddress", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
-        );
-
-
-    string strLabel = "";
-    if (params.size() > 1)
-        strLabel = params[1].get_str();
-
-    bool anotherIsAdress=false;
-    string strAnother=params[0].get_str();
-    CBitcoinAddress anotherAddress(strAnother);
-    if (anotherAddress.IsValid()) anotherIsAdress=true;
-
-    if ( !anotherIsAdress && !IsHex(strAnother) )
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey must be a hex string");
-
-    if(!anotherIsAdress) {
-        std::vector<unsigned char> vch(ParseHex(strAnother));
-        CPubKey pubKey(vch.begin(), vch.end());
-        if (!pubKey.IsFullyValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Pubkey is not a valid public key");
-
-        CBitcoinAddress address(pubKey.GetID());
-
-        LOCK2(cs_main, pwalletMain->cs_wallet);
-
-        // нужно проверить что это не свой ключ (категория send)
-        if (!IsMine(*pwalletMain, address.Get())) pwalletMain->SetAddressBook(pubKey.GetID(), strLabel, strAnother, "send"); // Пукей уже содержит адрес
-        else throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own key");
-
-        return address.ToString();
-    }
-    else{
-
-        LOCK2(cs_main, pwalletMain->cs_wallet);
-        
-        if (!IsMine(*pwalletMain, anotherAddress.Get())) pwalletMain->SetAddressBook(anotherAddress.Get(), strLabel, "", "send"); // Пукей пустой
-        else throw JSONRPCError(RPC_MISC_ERROR, "Just cannot store your own address");
-
-        return strAnother;
-    }
-}
-
 
 UniValue importwallet(const UniValue& params, bool fHelp)
 {
@@ -536,7 +476,7 @@ UniValue dumppubkey(const UniValue& params, bool fHelp)
     if (!address.GetKeyID(keyID))
         throw JSONRPCError(RPC_TYPE_ERROR, "Address does not refer to a key");
 
-    // Могут быть чужие публичные ключи, сохраненные storeaddress
+    // Могут быть чужие публичные ключи, сохраненные setaccount
     map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(keyID);
     if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.pubkeyhex.empty()) {
         string strPubKeyHex = (*mi).second.pubkeyhex; // на всякий случай через конструктор копирования

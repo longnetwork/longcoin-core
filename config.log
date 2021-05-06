@@ -124,11 +124,8 @@ configure:4062: checking whether g++ accepts -g
 configure:4082: g++ -c -g -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
 configure:4082: $? = 0
 configure:4123: result: yes
-configure:4149: checking whether make supports the include directive
-configure:4164: make -f confmf.GNU && cat confinc.out
-this is the am__doit target
-configure:4167: $? = 0
-configure:4186: result: yes (GNU style)
+configure:4157: checking for style of include used by make
+configure:4185: result: GNU
 configure:4211: checking dependency style of g++
 configure:4322: result: gcc3
 configure:4391: checking for g++
@@ -355,9 +352,11 @@ configure:7016: result: ar
 configure:7053: checking for archiver @FILE support
 configure:7070: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
 configure:7070: $? = 0
-configure:7073: ar cr libconftest.a @conftest.lst >&5
+configure:7073: ar cru libconftest.a @conftest.lst >&5
+ar: `u' modifier ignored since `D' is the default (see `U')
 configure:7076: $? = 0
-configure:7081: ar cr libconftest.a @conftest.lst >&5
+configure:7081: ar cru libconftest.a @conftest.lst >&5
+ar: `u' modifier ignored since `D' is the default (see `U')
 ar: conftest.o: No such file or directory
 configure:7084: $? = 1
 configure:7083: result: @
@@ -370,33 +369,34 @@ configure:7267: result: ranlib
 configure:7369: checking command to parse /usr/bin/nm -B output from gcc object
 configure:7522: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
 configure:7525: $? = 0
-configure:7529: /usr/bin/nm -B conftest.o | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' > conftest.nm
-configure:7595: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c conftstm.o >&5
-configure:7598: $? = 0
-configure:7636: result: ok
-configure:7683: checking for sysroot
-configure:7713: result: no
-configure:7720: checking for a working dd
-configure:7758: result: /usr/bin/dd
-configure:7762: checking how to truncate binary pipes
-configure:7777: result: /usr/bin/dd bs=4096 count=1
-configure:7913: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7916: $? = 0
-configure:8106: checking for mt
-configure:8122: found /usr/bin/mt
-configure:8133: result: mt
-configure:8156: checking if mt is a manifest tool
-configure:8162: mt '-?'
-configure:8170: result: no
-configure:8847: checking how to run the C preprocessor
-configure:8878: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
-configure:8878: $? = 0
-configure:8892: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:7529: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
+configure:7532: $? = 0
+configure:7598: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c conftstm.o >&5
+configure:7601: $? = 0
+configure:7639: result: ok
+configure:7686: checking for sysroot
+configure:7716: result: no
+configure:7723: checking for a working dd
+configure:7761: result: /usr/bin/dd
+configure:7765: checking how to truncate binary pipes
+configure:7780: result: /usr/bin/dd bs=4096 count=1
+configure:7916: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7919: $? = 0
+configure:8109: checking for mt
+configure:8125: found /usr/bin/mt
+configure:8136: result: mt
+configure:8159: checking if mt is a manifest tool
+configure:8165: mt '-?'
+configure:8173: result: no
+configure:8850: checking how to run the C preprocessor
+configure:8881: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:8881: $? = 0
+configure:8895: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
 conftest.c:9:10: fatal error: ac_nonexistent.h: No such file or directory
     9 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:8892: $? = 1
+configure:8895: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -407,15 +407,15 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:8917: result: gcc -E
-configure:8937: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
-configure:8937: $? = 0
-configure:8951: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:8920: result: gcc -E
+configure:8940: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:8940: $? = 0
+configure:8954: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
 conftest.c:9:10: fatal error: ac_nonexistent.h: No such file or directory
     9 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:8951: $? = 1
+configure:8954: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -426,100 +426,100 @@ configure: failed program was:
 | #define PACKAGE_URL ""
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:8980: checking for ANSI C header files
-configure:9000: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9000: $? = 0
-configure:9073: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lssl -lcrypto -ldl >&5
-configure:9073: $? = 0
-configure:9073: ./conftest
-configure:9073: $? = 0
-configure:9084: result: yes
-configure:9097: checking for sys/types.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for sys/stat.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for stdlib.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for string.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for memory.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for strings.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for inttypes.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for stdint.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9097: checking for unistd.h
-configure:9097: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9097: $? = 0
-configure:9097: result: yes
-configure:9111: checking for dlfcn.h
-configure:9111: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:9111: $? = 0
-configure:9111: result: yes
-configure:9377: checking for objdir
-configure:9392: result: .libs
-configure:9656: checking if gcc supports -fno-rtti -fno-exceptions
-configure:9674: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fno-rtti -fno-exceptions conftest.c >&5
+configure:8983: checking for ANSI C header files
+configure:9003: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9003: $? = 0
+configure:9076: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lssl -lcrypto -ldl >&5
+configure:9076: $? = 0
+configure:9076: ./conftest
+configure:9076: $? = 0
+configure:9087: result: yes
+configure:9100: checking for sys/types.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for sys/stat.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for stdlib.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for string.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for memory.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for strings.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for inttypes.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for stdint.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9100: checking for unistd.h
+configure:9100: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9100: $? = 0
+configure:9100: result: yes
+configure:9114: checking for dlfcn.h
+configure:9114: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:9114: $? = 0
+configure:9114: result: yes
+configure:9380: checking for objdir
+configure:9395: result: .libs
+configure:9659: checking if gcc supports -fno-rtti -fno-exceptions
+configure:9677: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option '-fno-rtti' is valid for C++/D/ObjC++ but not for C
-configure:9678: $? = 0
-configure:9691: result: no
-configure:10055: checking for gcc option to produce PIC
-configure:10062: result: -fPIC -DPIC
-configure:10070: checking if gcc PIC flag -fPIC -DPIC works
-configure:10088: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.c >&5
-configure:10092: $? = 0
-configure:10105: result: yes
-configure:10134: checking if gcc static flag -static works
-configure:10162: result: yes
-configure:10177: checking if gcc supports -c -o file.o
-configure:10198: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.c >&5
-configure:10202: $? = 0
-configure:10224: result: yes
-configure:10232: checking if gcc supports -c -o file.o
-configure:10279: result: yes
-configure:10312: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:11575: result: yes
-configure:11815: checking dynamic linker characteristics
-configure:12396: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -Wl,-rpath -Wl,/foo conftest.c -lssl -lcrypto -ldl >&5
-configure:12396: $? = 0
-configure:12645: result: GNU/Linux ld.so
-configure:12767: checking how to hardcode library paths into programs
-configure:12792: result: immediate
-configure:13340: checking whether stripping libraries is possible
-configure:13345: result: yes
-configure:13380: checking if libtool supports shared libraries
-configure:13382: result: yes
-configure:13385: checking whether to build shared libraries
-configure:13410: result: no
-configure:13413: checking whether to build static libraries
-configure:13417: result: yes
-configure:10216: checking how to run the C++ preprocessor
-configure:10243: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
-configure:10243: $? = 0
-configure:10257: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:9681: $? = 0
+configure:9694: result: no
+configure:10052: checking for gcc option to produce PIC
+configure:10059: result: -fPIC -DPIC
+configure:10067: checking if gcc PIC flag -fPIC -DPIC works
+configure:10085: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.c >&5
+configure:10089: $? = 0
+configure:10102: result: yes
+configure:10131: checking if gcc static flag -static works
+configure:10159: result: yes
+configure:10174: checking if gcc supports -c -o file.o
+configure:10195: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.c >&5
+configure:10199: $? = 0
+configure:10221: result: yes
+configure:10229: checking if gcc supports -c -o file.o
+configure:10276: result: yes
+configure:10309: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:11572: result: yes
+configure:11812: checking dynamic linker characteristics
+configure:12393: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -Wl,-rpath -Wl,/foo conftest.c -lssl -lcrypto -ldl >&5
+configure:12393: $? = 0
+configure:12642: result: GNU/Linux ld.so
+configure:12764: checking how to hardcode library paths into programs
+configure:12789: result: immediate
+configure:13337: checking whether stripping libraries is possible
+configure:13342: result: yes
+configure:13377: checking if libtool supports shared libraries
+configure:13379: result: yes
+configure:13382: checking whether to build shared libraries
+configure:13407: result: no
+configure:13410: checking whether to build static libraries
+configure:13414: result: yes
+configure:10213: checking how to run the C++ preprocessor
+configure:10240: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:10240: $? = 0
+configure:10254: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
 conftest.cpp:21:10: fatal error: ac_nonexistent.h: No such file or directory
    21 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:10257: $? = 1
+configure:10254: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -542,15 +542,15 @@ configure: failed program was:
 | #define LT_OBJDIR ".libs/"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:10282: result: g++ -E
-configure:10302: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
-configure:10302: $? = 0
-configure:10316: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:10279: result: g++ -E
+configure:10299: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:10299: $? = 0
+configure:10313: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
 conftest.cpp:21:10: fatal error: ac_nonexistent.h: No such file or directory
    21 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:10316: $? = 1
+configure:10313: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -573,84 +573,84 @@ configure: failed program was:
 | #define LT_OBJDIR ".libs/"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:10478: checking for ld used by g++
-configure:10545: result: /usr/bin/ld -m elf_x86_64
-configure:10552: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld
-configure:10567: result: yes
-configure:10622: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:11695: result: yes
-configure:11731: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
-configure:11734: $? = 0
-configure:12215: checking for g++ option to produce PIC
-configure:12222: result: -fPIC -DPIC
-configure:12230: checking if g++ PIC flag -fPIC -DPIC works
-configure:12248: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.cpp >&5
-configure:12252: $? = 0
-configure:12265: result: yes
-configure:12288: checking if g++ static flag -static works
-configure:12316: result: yes
-configure:12328: checking if g++ supports -c -o file.o
-configure:12349: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.cpp >&5
-configure:12353: $? = 0
-configure:12375: result: yes
-configure:12380: checking if g++ supports -c -o file.o
-configure:12427: result: yes
-configure:12457: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:12500: result: yes
-configure:12641: checking dynamic linker characteristics
-configure:13398: result: GNU/Linux ld.so
-configure:13463: checking how to hardcode library paths into programs
-configure:13488: result: immediate
-configure:12427: checking for ar
-configure:12445: found /usr/bin/ar
-configure:12457: result: /usr/bin/ar
-configure:12525: checking for ranlib
-configure:12543: found /usr/bin/ranlib
-configure:12555: result: /usr/bin/ranlib
-configure:12623: checking for strip
-configure:12641: found /usr/bin/strip
-configure:12653: result: /usr/bin/strip
-configure:12721: checking for gcov
-configure:12739: found /usr/bin/gcov
-configure:12751: result: /usr/bin/gcov
-configure:12775: checking for lcov
-configure:12808: result: no
-configure:12815: checking for java
-configure:12833: found /usr/bin/java
-configure:12845: result: /usr/bin/java
-configure:12855: checking for python
-configure:12888: result: no
-configure:12895: checking for genhtml
-configure:12928: result: no
-configure:12935: checking for git
-configure:12953: found /usr/bin/git
-configure:12965: result: /usr/bin/git
-configure:12975: checking for ccache
-configure:13008: result: no
-configure:13015: checking for xgettext
-configure:13033: found /usr/bin/xgettext
-configure:13045: result: /usr/bin/xgettext
-configure:13055: checking for hexdump
-configure:13073: found /usr/bin/hexdump
-configure:13085: result: /usr/bin/hexdump
-configure:13139: checking for readelf
-configure:13157: found /usr/bin/readelf
-configure:13169: result: /usr/bin/readelf
-configure:13237: checking for c++filt
-configure:13255: found /usr/bin/c++filt
-configure:13267: result: /usr/bin/c++filt
-configure:13344: checking for pkg-config
-configure:13362: found /usr/bin/pkg-config
-configure:13374: result: /usr/bin/pkg-config
-configure:13399: checking pkg-config is at least version 0.9.0
-configure:13402: result: yes
-configure:15087: checking whether byte ordering is bigendian
-configure:15102: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:10475: checking for ld used by g++
+configure:10542: result: /usr/bin/ld -m elf_x86_64
+configure:10549: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld
+configure:10564: result: yes
+configure:10619: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:11692: result: yes
+configure:11728: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
+configure:11731: $? = 0
+configure:12212: checking for g++ option to produce PIC
+configure:12219: result: -fPIC -DPIC
+configure:12227: checking if g++ PIC flag -fPIC -DPIC works
+configure:12245: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.cpp >&5
+configure:12249: $? = 0
+configure:12262: result: yes
+configure:12285: checking if g++ static flag -static works
+configure:12313: result: yes
+configure:12325: checking if g++ supports -c -o file.o
+configure:12346: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.cpp >&5
+configure:12350: $? = 0
+configure:12372: result: yes
+configure:12377: checking if g++ supports -c -o file.o
+configure:12424: result: yes
+configure:12454: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:12497: result: yes
+configure:12638: checking dynamic linker characteristics
+configure:13395: result: GNU/Linux ld.so
+configure:13460: checking how to hardcode library paths into programs
+configure:13485: result: immediate
+configure:12424: checking for ar
+configure:12442: found /usr/bin/ar
+configure:12454: result: /usr/bin/ar
+configure:12522: checking for ranlib
+configure:12540: found /usr/bin/ranlib
+configure:12552: result: /usr/bin/ranlib
+configure:12620: checking for strip
+configure:12638: found /usr/bin/strip
+configure:12650: result: /usr/bin/strip
+configure:12718: checking for gcov
+configure:12736: found /usr/bin/gcov
+configure:12748: result: /usr/bin/gcov
+configure:12772: checking for lcov
+configure:12805: result: no
+configure:12812: checking for java
+configure:12830: found /usr/bin/java
+configure:12842: result: /usr/bin/java
+configure:12852: checking for python
+configure:12885: result: no
+configure:12892: checking for genhtml
+configure:12925: result: no
+configure:12932: checking for git
+configure:12950: found /usr/bin/git
+configure:12962: result: /usr/bin/git
+configure:12972: checking for ccache
+configure:13005: result: no
+configure:13012: checking for xgettext
+configure:13030: found /usr/bin/xgettext
+configure:13042: result: /usr/bin/xgettext
+configure:13052: checking for hexdump
+configure:13070: found /usr/bin/hexdump
+configure:13082: result: /usr/bin/hexdump
+configure:13136: checking for readelf
+configure:13154: found /usr/bin/readelf
+configure:13166: result: /usr/bin/readelf
+configure:13234: checking for c++filt
+configure:13252: found /usr/bin/c++filt
+configure:13264: result: /usr/bin/c++filt
+configure:13341: checking for pkg-config
+configure:13359: found /usr/bin/pkg-config
+configure:13371: result: /usr/bin/pkg-config
+configure:13396: checking pkg-config is at least version 0.9.0
+configure:13399: result: yes
+configure:15084: checking whether byte ordering is bigendian
+configure:15099: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:22:9: error: expected unqualified-id before 'not' token
    22 |         not a universal capable compiler
       |         ^~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:15102: $? = 1
+configure:15099: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -677,16 +677,16 @@ configure: failed program was:
 | 	     #endif
 | 	     typedef int dummy;
 | 
-configure:15147: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:15147: $? = 0
-configure:15165: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:15144: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:15144: $? = 0
+configure:15162: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp: In function 'int main()':
 conftest.cpp:28:8: error: 'big' was not declared in this scope
    28 |    not big endian
       |        ^~~
 At global scope:
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:15165: $? = 1
+configure:15162: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -721,11 +721,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15293: result: no
-configure:15424: checking if compiler needs -Werror to reject unknown flags
-configure:15440: gcc -c -g -O2 -Werror -Wunknown-warning-option -Wsizeof-array-argument -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.c >&5
+configure:15290: result: no
+configure:15421: checking if compiler needs -Werror to reject unknown flags
+configure:15437: gcc -c -g -O2 -Werror -Wunknown-warning-option -Wsizeof-array-argument -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.c >&5
 gcc: error: unrecognized command line option '-Wunknown-warning-option'
-configure:15440: $? = 1
+configure:15437: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -755,12 +755,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15445: result: no
-configure:15511: checking for the pthreads library -lpthreads
-configure:15549: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lpthreads -lssl -lcrypto -ldl >&5
+configure:15442: result: no
+configure:15508: checking for the pthreads library -lpthreads
+configure:15546: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lpthreads -lssl -lcrypto -ldl >&5
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-configure:15549: $? = 1
+configure:15546: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -797,16 +797,16 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15558: result: no
-configure:15456: checking whether pthreads work without any flags
-configure:15549: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-/usr/bin/ld: /tmp/ccF6cusn.o: in function `main':
+configure:15555: result: no
+configure:15453: checking whether pthreads work without any flags
+configure:15546: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+/usr/bin/ld: /tmp/cccxJalB.o: in function `main':
 /home/mint/Work/longcoin/longcoin-src/conftest.c:28: undefined reference to `pthread_create'
 /usr/bin/ld: /home/mint/Work/longcoin/longcoin-src/conftest.c:29: undefined reference to `pthread_join'
 /usr/bin/ld: /home/mint/Work/longcoin/longcoin-src/conftest.c:31: undefined reference to `__pthread_register_cancel'
 /usr/bin/ld: /home/mint/Work/longcoin/longcoin-src/conftest.c:32: undefined reference to `__pthread_unregister_cancel'
 collect2: error: ld returned 1 exit status
-configure:15549: $? = 1
+configure:15546: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -843,11 +843,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15558: result: no
-configure:15461: checking whether pthreads work with -Kthread
-configure:15549: gcc -o conftest -g -O2 -Kthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+configure:15555: result: no
+configure:15458: checking whether pthreads work with -Kthread
+configure:15546: gcc -o conftest -g -O2 -Kthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
 gcc: error: unrecognized command line option '-Kthread'; did you mean '-pthread'?
-configure:15549: $? = 1
+configure:15546: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -884,11 +884,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15558: result: no
-configure:15461: checking whether pthreads work with -kthread
-configure:15549: gcc -o conftest -g -O2 -kthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+configure:15555: result: no
+configure:15458: checking whether pthreads work with -kthread
+configure:15546: gcc -o conftest -g -O2 -kthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
 gcc: error: unrecognized command line option '-kthread'; did you mean '-pthread'?
-configure:15549: $? = 1
+configure:15546: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -925,12 +925,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15558: result: no
-configure:15511: checking for the pthreads library -llthread
-configure:15549: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -llthread -lssl -lcrypto -ldl >&5
+configure:15555: result: no
+configure:15508: checking for the pthreads library -llthread
+configure:15546: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -llthread -lssl -lcrypto -ldl >&5
 /usr/bin/ld: cannot find -llthread
 collect2: error: ld returned 1 exit status
-configure:15549: $? = 1
+configure:15546: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -967,45 +967,45 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15558: result: no
-configure:15461: checking whether pthreads work with -pthread
-configure:15549: gcc -o conftest -g -O2 -pthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-configure:15549: $? = 0
-configure:15558: result: yes
-configure:15577: checking for joinable pthread attribute
-configure:15592: gcc -o conftest -g -O2 -pthread -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-configure:15592: $? = 0
-configure:15598: result: PTHREAD_CREATE_JOINABLE
-configure:15608: checking if more special flags are required for pthreads
-configure:15623: result: no
-configure:15629: checking for PTHREAD_PRIO_INHERIT
-configure:15646: gcc -o conftest -g -O2 -pthread -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-configure:15646: $? = 0
-configure:15655: result: yes
-configure:15765: checking for special C compiler options needed for large files
-configure:15810: result: no
-configure:15816: checking for _FILE_OFFSET_BITS value needed for large files
-configure:15841: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:15841: $? = 0
-configure:15873: result: no
-configure:15959: checking whether strerror_r is declared
-configure:15959: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:15959: $? = 0
-configure:15959: result: yes
-configure:15972: checking for strerror_r
-configure:15972: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-configure:15972: $? = 0
-configure:15972: result: yes
-configure:15981: checking whether strerror_r returns char *
-configure:16005: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16005: $? = 0
-configure:16043: result: yes
-configure:16064: checking whether the linker accepts -Wl,--large-address-aware
-configure:16083: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--large-address-aware conftest.cpp -lssl -lcrypto -ldl >&5
+configure:15555: result: no
+configure:15458: checking whether pthreads work with -pthread
+configure:15546: gcc -o conftest -g -O2 -pthread  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+configure:15546: $? = 0
+configure:15555: result: yes
+configure:15574: checking for joinable pthread attribute
+configure:15589: gcc -o conftest -g -O2 -pthread -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+configure:15589: $? = 0
+configure:15595: result: PTHREAD_CREATE_JOINABLE
+configure:15605: checking if more special flags are required for pthreads
+configure:15620: result: no
+configure:15626: checking for PTHREAD_PRIO_INHERIT
+configure:15643: gcc -o conftest -g -O2 -pthread -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
+configure:15643: $? = 0
+configure:15652: result: yes
+configure:15762: checking for special C compiler options needed for large files
+configure:15807: result: no
+configure:15813: checking for _FILE_OFFSET_BITS value needed for large files
+configure:15838: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:15838: $? = 0
+configure:15870: result: no
+configure:15956: checking whether strerror_r is declared
+configure:15956: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:15956: $? = 0
+configure:15956: result: yes
+configure:15969: checking for strerror_r
+configure:15969: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+configure:15969: $? = 0
+configure:15969: result: yes
+configure:15978: checking whether strerror_r returns char *
+configure:16002: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16002: $? = 0
+configure:16040: result: yes
+configure:16061: checking whether the linker accepts -Wl,--large-address-aware
+configure:16080: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--large-address-aware conftest.cpp -lssl -lcrypto -ldl >&5
 /usr/bin/ld: unrecognized option '--large-address-aware'
 /usr/bin/ld: use the --help option for usage information
 collect2: error: ld returned 1 exit status
-configure:16083: $? = 1
+configure:16080: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1040,57 +1040,57 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:16092: result: no
-configure:16104: checking for __attribute__((visibility))
-configure:16126: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-configure:16126: $? = 0
-configure:16139: result: yes
-configure:16155: checking for __attribute__((dllexport))
-configure:16176: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16089: result: no
+configure:16101: checking for __attribute__((visibility))
+configure:16123: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16123: $? = 0
+configure:16136: result: yes
+configure:16152: checking for __attribute__((dllexport))
+configure:16173: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
 conftest.cpp:29:62: warning: 'dllexport' attribute directive ignored [-Wattributes]
    29 |                     __attribute__((dllexport)) int foo( void ) { return 0; }
       |                                                              ^
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:16176: $? = 0
-configure:16189: result: no
-configure:16205: checking for __attribute__((dllimport))
-configure:16226: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16173: $? = 0
+configure:16186: result: no
+configure:16202: checking for __attribute__((dllimport))
+configure:16223: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
 conftest.cpp:29:62: warning: 'dllimport' attribute directive ignored [-Wattributes]
    29 |                     int foo( void ) __attribute__((dllimport));
       |                                                              ^
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:16226: $? = 0
-configure:16239: result: no
-configure:16339: checking for library containing clock_gettime
-configure:16370: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-configure:16370: $? = 0
-configure:16387: result: none required
-configure:16399: checking whether C++ compiler accepts -fPIC
-configure:16418: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fPIC -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16418: $? = 0
-configure:16426: result: yes
-configure:16437: checking whether C++ compiler accepts -Wstack-protector
-configure:16456: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -Wstack-protector -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16456: $? = 0
-configure:16464: result: yes
-configure:16472: checking whether C++ compiler accepts -fstack-protector-all
-configure:16491: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fstack-protector-all -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16491: $? = 0
-configure:16499: result: yes
-configure:16509: checking whether C++ preprocessor accepts -D_FORTIFY_SOURCE=2
-configure:16528: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS  -D_FORTIFY_SOURCE=2 conftest.cpp
-configure:16528: $? = 0
-configure:16536: result: yes
-configure:16540: checking whether C++ preprocessor accepts -U_FORTIFY_SOURCE
-configure:16559: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS  -U_FORTIFY_SOURCE conftest.cpp
-configure:16559: $? = 0
-configure:16567: result: yes
-configure:16584: checking whether the linker accepts -Wl,--dynamicbase
-configure:16603: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--dynamicbase conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16223: $? = 0
+configure:16236: result: no
+configure:16336: checking for library containing clock_gettime
+configure:16367: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16367: $? = 0
+configure:16384: result: none required
+configure:16396: checking whether C++ compiler accepts -fPIC
+configure:16415: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fPIC -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16415: $? = 0
+configure:16423: result: yes
+configure:16434: checking whether C++ compiler accepts -Wstack-protector
+configure:16453: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -Wstack-protector -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16453: $? = 0
+configure:16461: result: yes
+configure:16469: checking whether C++ compiler accepts -fstack-protector-all
+configure:16488: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fstack-protector-all -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16488: $? = 0
+configure:16496: result: yes
+configure:16506: checking whether C++ preprocessor accepts -D_FORTIFY_SOURCE=2
+configure:16525: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS  -D_FORTIFY_SOURCE=2 conftest.cpp
+configure:16525: $? = 0
+configure:16533: result: yes
+configure:16537: checking whether C++ preprocessor accepts -U_FORTIFY_SOURCE
+configure:16556: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS  -U_FORTIFY_SOURCE conftest.cpp
+configure:16556: $? = 0
+configure:16564: result: yes
+configure:16581: checking whether the linker accepts -Wl,--dynamicbase
+configure:16600: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--dynamicbase conftest.cpp -lssl -lcrypto -ldl >&5
 /usr/bin/ld: unrecognized option '--dynamicbase'
 /usr/bin/ld: use the --help option for usage information
 collect2: error: ld returned 1 exit status
-configure:16603: $? = 1
+configure:16600: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1126,13 +1126,13 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:16612: result: no
-configure:16620: checking whether the linker accepts -Wl,--nxcompat
-configure:16639: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--nxcompat conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16609: result: no
+configure:16617: checking whether the linker accepts -Wl,--nxcompat
+configure:16636: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,--nxcompat conftest.cpp -lssl -lcrypto -ldl >&5
 /usr/bin/ld: unrecognized option '--nxcompat'
 /usr/bin/ld: use the --help option for usage information
 collect2: error: ld returned 1 exit status
-configure:16639: $? = 1
+configure:16636: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1168,40 +1168,40 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:16648: result: no
-configure:16656: checking whether the linker accepts -Wl,-z,relro
-configure:16675: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,-z,relro conftest.cpp -lssl -lcrypto -ldl >&5
-configure:16675: $? = 0
-configure:16684: result: yes
-configure:16692: checking whether the linker accepts -Wl,-z,now
-configure:16711: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,-z,now conftest.cpp -lssl -lcrypto -ldl >&5
-configure:16711: $? = 0
-configure:16720: result: yes
-configure:16730: checking whether C++ compiler accepts -fPIE
-configure:16749: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fPIE -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16749: $? = 0
-configure:16757: result: yes
-configure:16765: checking whether the linker accepts -pie
-configure:16784: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -pie conftest.cpp -lssl -lcrypto -ldl >&5
-configure:16784: $? = 0
-configure:16793: result: yes
-configure:16892: checking endian.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking endian.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking for endian.h
-configure:16892: result: yes
-configure:16892: checking sys/endian.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16645: result: no
+configure:16653: checking whether the linker accepts -Wl,-z,relro
+configure:16672: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,-z,relro conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16672: $? = 0
+configure:16681: result: yes
+configure:16689: checking whether the linker accepts -Wl,-z,now
+configure:16708: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -Wl,-z,now conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16708: $? = 0
+configure:16717: result: yes
+configure:16727: checking whether C++ compiler accepts -fPIE
+configure:16746: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign  -fPIE -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16746: $? = 0
+configure:16754: result: yes
+configure:16762: checking whether the linker accepts -pie
+configure:16781: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/  -pie conftest.cpp -lssl -lcrypto -ldl >&5
+configure:16781: $? = 0
+configure:16790: result: yes
+configure:16889: checking endian.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking endian.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking for endian.h
+configure:16889: result: yes
+configure:16889: checking sys/endian.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:61:10: fatal error: sys/endian.h: No such file or directory
    61 | #include <sys/endian.h>
       |          ^~~~~~~~~~~~~~
 compilation terminated.
-configure:16892: $? = 1
+configure:16889: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1264,14 +1264,14 @@ configure: failed program was:
 | # include <unistd.h>
 | #endif
 | #include <sys/endian.h>
-configure:16892: result: no
-configure:16892: checking sys/endian.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: result: no
+configure:16889: checking sys/endian.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
 conftest.cpp:28:10: fatal error: sys/endian.h: No such file or directory
    28 | #include <sys/endian.h>
       |          ^~~~~~~~~~~~~~
 compilation terminated.
-configure:16892: $? = 1
+configure:16889: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1301,65 +1301,65 @@ configure: failed program was:
 | #define HAVE_ENDIAN_H 1
 | /* end confdefs.h.  */
 | #include <sys/endian.h>
-configure:16892: result: no
-configure:16892: checking for sys/endian.h
-configure:16892: result: no
-configure:16892: checking byteswap.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking byteswap.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking for byteswap.h
-configure:16892: result: yes
-configure:16892: checking stdio.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking stdio.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking for stdio.h
-configure:16892: result: yes
-configure:16892: checking for stdlib.h
-configure:16892: result: yes
-configure:16892: checking for unistd.h
-configure:16892: result: yes
-configure:16892: checking for strings.h
-configure:16892: result: yes
-configure:16892: checking for sys/types.h
-configure:16892: result: yes
-configure:16892: checking for sys/stat.h
-configure:16892: result: yes
-configure:16892: checking sys/select.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking sys/select.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking for sys/select.h
-configure:16892: result: yes
-configure:16892: checking sys/prctl.h usability
-configure:16892: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking sys/prctl.h presence
-configure:16892: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:16892: $? = 0
-configure:16892: result: yes
-configure:16892: checking for sys/prctl.h
-configure:16892: result: yes
-configure:16902: checking for library containing getaddrinfo_a
-configure:16933: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-/usr/bin/ld: /tmp/ccH9wweg.o: in function `main':
+configure:16889: result: no
+configure:16889: checking for sys/endian.h
+configure:16889: result: no
+configure:16889: checking byteswap.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking byteswap.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking for byteswap.h
+configure:16889: result: yes
+configure:16889: checking stdio.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking stdio.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking for stdio.h
+configure:16889: result: yes
+configure:16889: checking for stdlib.h
+configure:16889: result: yes
+configure:16889: checking for unistd.h
+configure:16889: result: yes
+configure:16889: checking for strings.h
+configure:16889: result: yes
+configure:16889: checking for sys/types.h
+configure:16889: result: yes
+configure:16889: checking for sys/stat.h
+configure:16889: result: yes
+configure:16889: checking sys/select.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking sys/select.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking for sys/select.h
+configure:16889: result: yes
+configure:16889: checking sys/prctl.h usability
+configure:16889: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking sys/prctl.h presence
+configure:16889: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:16889: $? = 0
+configure:16889: result: yes
+configure:16889: checking for sys/prctl.h
+configure:16889: result: yes
+configure:16899: checking for library containing getaddrinfo_a
+configure:16930: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
+/usr/bin/ld: /tmp/ccoYAT3n.o: in function `main':
 /home/mint/Work/longcoin/longcoin-src/conftest.cpp:48: undefined reference to `getaddrinfo_a'
 collect2: error: ld returned 1 exit status
-configure:16933: $? = 1
+configure:16930: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1412,98 +1412,98 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:16933: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl  -lssl -lcrypto -ldl >&5
-configure:16933: $? = 0
-configure:16950: result: -lanl
-configure:16960: checking for library containing inet_pton
-configure:16991: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl -lssl -lcrypto -ldl >&5
-configure:16991: $? = 0
-configure:17008: result: none required
-configure:17019: checking whether strnlen is declared
-configure:17019: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17019: $? = 0
-configure:17019: result: yes
-configure:17031: checking whether le16toh is declared
-configure:17031: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17031: $? = 0
-configure:17031: result: yes
-configure:17046: checking whether le32toh is declared
-configure:17046: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17046: $? = 0
-configure:17046: result: yes
-configure:17061: checking whether le64toh is declared
-configure:17061: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17061: $? = 0
-configure:17061: result: yes
-configure:17076: checking whether htole16 is declared
-configure:17076: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17076: $? = 0
-configure:17076: result: yes
-configure:17091: checking whether htole32 is declared
-configure:17091: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17091: $? = 0
-configure:17091: result: yes
-configure:17106: checking whether htole64 is declared
-configure:17106: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17106: $? = 0
-configure:17106: result: yes
-configure:17121: checking whether be16toh is declared
-configure:17121: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17121: $? = 0
-configure:17121: result: yes
-configure:17136: checking whether be32toh is declared
-configure:17136: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17136: $? = 0
-configure:17136: result: yes
-configure:17151: checking whether be64toh is declared
-configure:17151: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17151: $? = 0
-configure:17151: result: yes
-configure:17166: checking whether htobe16 is declared
-configure:17166: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17166: $? = 0
-configure:17166: result: yes
-configure:17181: checking whether htobe32 is declared
-configure:17181: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17181: $? = 0
-configure:17181: result: yes
-configure:17196: checking whether htobe64 is declared
-configure:17196: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17196: $? = 0
-configure:17196: result: yes
-configure:17213: checking whether bswap_16 is declared
-configure:17213: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17213: $? = 0
-configure:17213: result: yes
-configure:17226: checking whether bswap_32 is declared
-configure:17226: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17226: $? = 0
-configure:17226: result: yes
-configure:17239: checking whether bswap_64 is declared
-configure:17239: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17239: $? = 0
-configure:17239: result: yes
-configure:17254: checking for MSG_NOSIGNAL
-configure:17267: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:16930: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl  -lssl -lcrypto -ldl >&5
+configure:16930: $? = 0
+configure:16947: result: -lanl
+configure:16957: checking for library containing inet_pton
+configure:16988: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl -lssl -lcrypto -ldl >&5
+configure:16988: $? = 0
+configure:17005: result: none required
+configure:17016: checking whether strnlen is declared
+configure:17016: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17016: $? = 0
+configure:17016: result: yes
+configure:17028: checking whether le16toh is declared
+configure:17028: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17028: $? = 0
+configure:17028: result: yes
+configure:17043: checking whether le32toh is declared
+configure:17043: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17043: $? = 0
+configure:17043: result: yes
+configure:17058: checking whether le64toh is declared
+configure:17058: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17058: $? = 0
+configure:17058: result: yes
+configure:17073: checking whether htole16 is declared
+configure:17073: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17073: $? = 0
+configure:17073: result: yes
+configure:17088: checking whether htole32 is declared
+configure:17088: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17088: $? = 0
+configure:17088: result: yes
+configure:17103: checking whether htole64 is declared
+configure:17103: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17103: $? = 0
+configure:17103: result: yes
+configure:17118: checking whether be16toh is declared
+configure:17118: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17118: $? = 0
+configure:17118: result: yes
+configure:17133: checking whether be32toh is declared
+configure:17133: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17133: $? = 0
+configure:17133: result: yes
+configure:17148: checking whether be64toh is declared
+configure:17148: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17148: $? = 0
+configure:17148: result: yes
+configure:17163: checking whether htobe16 is declared
+configure:17163: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17163: $? = 0
+configure:17163: result: yes
+configure:17178: checking whether htobe32 is declared
+configure:17178: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17178: $? = 0
+configure:17178: result: yes
+configure:17193: checking whether htobe64 is declared
+configure:17193: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17193: $? = 0
+configure:17193: result: yes
+configure:17210: checking whether bswap_16 is declared
+configure:17210: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17210: $? = 0
+configure:17210: result: yes
+configure:17223: checking whether bswap_32 is declared
+configure:17223: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17223: $? = 0
+configure:17223: result: yes
+configure:17236: checking whether bswap_64 is declared
+configure:17236: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17236: $? = 0
+configure:17236: result: yes
+configure:17251: checking for MSG_NOSIGNAL
+configure:17264: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp: In function 'int main()':
 conftest.cpp:59:6: warning: unused variable 'f' [-Wunused-variable]
    59 |  int f = MSG_NOSIGNAL;
       |      ^
 At global scope:
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:17267: $? = 0
-configure:17268: result: yes
-configure:17279: checking for visibility attribute
-configure:17288: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl -lssl -lcrypto -ldl >&5
-configure:17288: $? = 0
-configure:17293: result: yes
-configure:17364: checking for Berkeley DB C++ headers
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17264: $? = 0
+configure:17265: result: yes
+configure:17276: checking for visibility attribute
+configure:17285: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lanl -lssl -lcrypto -ldl >&5
+configure:17285: $? = 0
+configure:17290: result: yes
+configure:17361: checking for Berkeley DB C++ headers
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: bdb4.8/db_cxx.h: No such file or directory
    58 |       #include <bdb4.8/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1575,12 +1575,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: libdb4.8/db_cxx.h: No such file or directory
    58 |       #include <libdb4.8/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1652,12 +1652,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: db4.8/db_cxx.h: No such file or directory
    58 |       #include <db4.8/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1729,12 +1729,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: bdb48/db_cxx.h: No such file or directory
    58 |       #include <bdb48/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1806,12 +1806,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: libdb48/db_cxx.h: No such file or directory
    58 |       #include <libdb48/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1883,12 +1883,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: db48/db_cxx.h: No such file or directory
    58 |       #include <db48/db_cxx.h>
       |                ^~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -1960,12 +1960,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: bdb4/db_cxx.h: No such file or directory
    58 |       #include <bdb4/db_cxx.h>
       |                ^~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2037,12 +2037,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: libdb4/db_cxx.h: No such file or directory
    58 |       #include <libdb4/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2114,12 +2114,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: db4/db_cxx.h: No such file or directory
    58 |       #include <db4/db_cxx.h>
       |                ^~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2191,12 +2191,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: bdb5/db_cxx.h: No such file or directory
    58 |       #include <bdb5/db_cxx.h>
       |                ^~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2268,12 +2268,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: libdb5/db_cxx.h: No such file or directory
    58 |       #include <libdb5/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2345,12 +2345,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: db5/db_cxx.h: No such file or directory
    58 |       #include <db5/db_cxx.h>
       |                ^~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2422,12 +2422,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: bdb/db_cxx.h: No such file or directory
    58 |       #include <bdb/db_cxx.h>
       |                ^~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2499,12 +2499,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: libdb/db_cxx.h: No such file or directory
    58 |       #include <libdb/db_cxx.h>
       |                ^~~~~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2576,12 +2576,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp:58:16: fatal error: db/db_cxx.h: No such file or directory
    58 |       #include <db/db_cxx.h>
       |                ^~~~~~~~~~~~~
 compilation terminated.
-configure:17395: $? = 1
+configure:17392: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2653,85 +2653,85 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:17395: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17395: $? = 0
-configure:17424: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17424: $? = 0
-configure:17467: result: default
-configure:17486: checking for main in -ldb_cxx-4.8
-configure:17505: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -ldb_cxx-4.8  -lanl -lssl -lcrypto -ldl >&5
-configure:17505: $? = 0
-configure:17515: result: yes
-configure:17536: checking miniupnpc/miniwget.h usability
-configure:17536: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking miniupnpc/miniwget.h presence
-configure:17536: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking for miniupnpc/miniwget.h
-configure:17536: result: yes
-configure:17541: checking for main in -lminiupnpc
-configure:17560: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lminiupnpc  -lanl -lssl -lcrypto -ldl >&5
-configure:17560: $? = 0
-configure:17569: result: yes
-configure:17536: checking miniupnpc/miniupnpc.h usability
-configure:17536: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking miniupnpc/miniupnpc.h presence
-configure:17536: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking for miniupnpc/miniupnpc.h
-configure:17536: result: yes
-configure:17541: checking for main in -lminiupnpc
-configure:17569: result: yes
-configure:17536: checking miniupnpc/upnpcommands.h usability
-configure:17536: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking miniupnpc/upnpcommands.h presence
-configure:17536: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking for miniupnpc/upnpcommands.h
-configure:17536: result: yes
-configure:17541: checking for main in -lminiupnpc
-configure:17569: result: yes
-configure:17536: checking miniupnpc/upnperrors.h usability
-configure:17536: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking miniupnpc/upnperrors.h presence
-configure:17536: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:17536: $? = 0
-configure:17536: result: yes
-configure:17536: checking for miniupnpc/upnperrors.h
-configure:17536: result: yes
-configure:17541: checking for main in -lminiupnpc
-configure:17569: result: yes
-configure:17679: checking for QT
-configure:17686: $PKG_CONFIG --exists --print-errors "$qt5_modules"
-configure:17689: $? = 0
-configure:17703: $PKG_CONFIG --exists --print-errors "$qt5_modules"
-configure:17706: $? = 0
-configure:17744: result: yes
-configure:17996: checking for QT_TEST
-configure:18003: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}Test"
-configure:18006: $? = 0
-configure:18020: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}Test"
-configure:18023: $? = 0
-configure:18061: result: yes
-configure:18068: checking for QT_DBUS
-configure:18075: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}DBus"
-configure:18078: $? = 0
-configure:18092: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}DBus"
-configure:18095: $? = 0
-configure:18133: result: yes
-configure:19069: checking for static Qt
-configure:19092: g++ -c -fPIC -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17392: $? = 0
+configure:17421: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17421: $? = 0
+configure:17464: result: default
+configure:17483: checking for main in -ldb_cxx-4.8
+configure:17502: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -ldb_cxx-4.8  -lanl -lssl -lcrypto -ldl >&5
+configure:17502: $? = 0
+configure:17512: result: yes
+configure:17533: checking miniupnpc/miniwget.h usability
+configure:17533: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking miniupnpc/miniwget.h presence
+configure:17533: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking for miniupnpc/miniwget.h
+configure:17533: result: yes
+configure:17538: checking for main in -lminiupnpc
+configure:17557: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lminiupnpc  -lanl -lssl -lcrypto -ldl >&5
+configure:17557: $? = 0
+configure:17566: result: yes
+configure:17533: checking miniupnpc/miniupnpc.h usability
+configure:17533: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking miniupnpc/miniupnpc.h presence
+configure:17533: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking for miniupnpc/miniupnpc.h
+configure:17533: result: yes
+configure:17538: checking for main in -lminiupnpc
+configure:17566: result: yes
+configure:17533: checking miniupnpc/upnpcommands.h usability
+configure:17533: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking miniupnpc/upnpcommands.h presence
+configure:17533: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking for miniupnpc/upnpcommands.h
+configure:17533: result: yes
+configure:17538: checking for main in -lminiupnpc
+configure:17566: result: yes
+configure:17533: checking miniupnpc/upnperrors.h usability
+configure:17533: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking miniupnpc/upnperrors.h presence
+configure:17533: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:17533: $? = 0
+configure:17533: result: yes
+configure:17533: checking for miniupnpc/upnperrors.h
+configure:17533: result: yes
+configure:17538: checking for main in -lminiupnpc
+configure:17566: result: yes
+configure:17676: checking for QT
+configure:17683: $PKG_CONFIG --exists --print-errors "$qt5_modules"
+configure:17686: $? = 0
+configure:17700: $PKG_CONFIG --exists --print-errors "$qt5_modules"
+configure:17703: $? = 0
+configure:17741: result: yes
+configure:17993: checking for QT_TEST
+configure:18000: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}Test"
+configure:18003: $? = 0
+configure:18017: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}Test"
+configure:18020: $? = 0
+configure:18058: result: yes
+configure:18065: checking for QT_DBUS
+configure:18072: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}DBus"
+configure:18075: $? = 0
+configure:18089: $PKG_CONFIG --exists --print-errors "${QT_LIB_PREFIX}DBus"
+configure:18092: $? = 0
+configure:18130: result: yes
+configure:19066: checking for static Qt
+configure:19089: g++ -c -fPIC -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 In file included from /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:43,
                  from /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore:10,
                  from conftest.cpp:61:
@@ -2748,7 +2748,7 @@ conftest.cpp:69:7: error: 'choke' was not declared in this scope
       |       ^~~~~
 At global scope:
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:19092: $? = 1
+configure:19089: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2824,16 +2824,16 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:19100: result: no
-configure:19819: checking whether -fPIE can be used with this Qt config
-configure:19840: g++ -c -fPIE -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:19097: result: no
+configure:19816: checking whether -fPIE can be used with this Qt config
+configure:19837: g++ -c -fPIE -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
 conftest.cpp: In function 'int main()':
 conftest.cpp:67:15: error: 'choke' was not declared in this scope
    67 |               choke;
       |               ^~~~~
 At global scope:
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:19840: $? = 1
+configure:19837: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "Bitcoin Core"
@@ -2907,50 +2907,50 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:19844: result: no
-configure:19909: checking for moc-qt5
-configure:19942: result: no
-configure:19909: checking for moc5
-configure:19942: result: no
-configure:19909: checking for moc
-configure:19927: found /usr/lib/x86_64-linux-gnu/qt5/bin/moc
-configure:19939: result: /usr/lib/x86_64-linux-gnu/qt5/bin/moc
-configure:20028: checking for uic-qt5
-configure:20061: result: no
-configure:20028: checking for uic5
-configure:20061: result: no
-configure:20028: checking for uic
-configure:20046: found /usr/lib/x86_64-linux-gnu/qt5/bin/uic
-configure:20058: result: /usr/lib/x86_64-linux-gnu/qt5/bin/uic
-configure:20147: checking for rcc-qt5
-configure:20180: result: no
-configure:20147: checking for rcc5
-configure:20180: result: no
-configure:20147: checking for rcc
-configure:20165: found /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
-configure:20177: result: /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
-configure:20266: checking for lrelease-qt5
-configure:20299: result: no
-configure:20266: checking for lrelease5
-configure:20299: result: no
-configure:20266: checking for lrelease
-configure:20284: found /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
-configure:20296: result: /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
-configure:20385: checking for lupdate-qt5
-configure:20418: result: no
-configure:20385: checking for lupdate5
-configure:20418: result: no
-configure:20385: checking for lupdate
-configure:20403: found /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
-configure:20415: result: /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
-configure:20600: checking whether to build Bitcoin Core GUI
-configure:20630: result: yes (Qt5)
-configure:20702: checking for boostlib >= 1.20.0
-configure:20787: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
-configure:20787: $? = 0
-configure:20789: result: yes
-configure:20973: checking whether the Boost::System library is available
-configure:20997: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
+configure:19841: result: no
+configure:19906: checking for moc-qt5
+configure:19939: result: no
+configure:19906: checking for moc5
+configure:19939: result: no
+configure:19906: checking for moc
+configure:19924: found /usr/lib/x86_64-linux-gnu/qt5/bin/moc
+configure:19936: result: /usr/lib/x86_64-linux-gnu/qt5/bin/moc
+configure:20025: checking for uic-qt5
+configure:20058: result: no
+configure:20025: checking for uic5
+configure:20058: result: no
+configure:20025: checking for uic
+configure:20043: found /usr/lib/x86_64-linux-gnu/qt5/bin/uic
+configure:20055: result: /usr/lib/x86_64-linux-gnu/qt5/bin/uic
+configure:20144: checking for rcc-qt5
+configure:20177: result: no
+configure:20144: checking for rcc5
+configure:20177: result: no
+configure:20144: checking for rcc
+configure:20162: found /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
+configure:20174: result: /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
+configure:20263: checking for lrelease-qt5
+configure:20296: result: no
+configure:20263: checking for lrelease5
+configure:20296: result: no
+configure:20263: checking for lrelease
+configure:20281: found /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
+configure:20293: result: /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
+configure:20382: checking for lupdate-qt5
+configure:20415: result: no
+configure:20382: checking for lupdate5
+configure:20415: result: no
+configure:20382: checking for lupdate
+configure:20400: found /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
+configure:20412: result: /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
+configure:20597: checking whether to build Bitcoin Core GUI
+configure:20627: result: yes (Qt5)
+configure:20699: checking for boostlib >= 1.20.0
+configure:20784: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
+configure:20784: $? = 0
+configure:20786: result: yes
+configure:20970: checking whether the Boost::System library is available
+configure:20994: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
 conftest.cpp: In function 'int main()':
 conftest.cpp:66:16: warning: statement is a reference, not call, to function 'boost::system::system_category' [-Waddress]
    66 | boost::system::system_category
@@ -2958,140 +2958,140 @@ conftest.cpp:66:16: warning: statement is a reference, not call, to function 'bo
 conftest.cpp:66:16: warning: statement has no effect [-Wunused-value]
 At global scope:
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:20997: $? = 0
-configure:21012: result: yes
-configure:21028: checking for exit in -lboost_system
-configure:21053: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_system  -lanl -lssl -lcrypto -ldl >&5
+configure:20994: $? = 0
+configure:21009: result: yes
+configure:21025: checking for exit in -lboost_system
+configure:21050: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_system  -lanl -lssl -lcrypto -ldl >&5
 conftest.cpp:70:6: warning: declaration of 'char exit()' conflicts with built-in declaration 'void exit(int)' [-Wbuiltin-declaration-mismatch]
    70 | char exit ();
       |      ^~~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:21053: $? = 0
-configure:21063: result: yes
-configure:21218: checking whether the Boost::Filesystem library is available
-configure:21242: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
-configure:21242: $? = 0
-configure:21256: result: yes
-configure:21268: checking for exit in -lboost_filesystem
-configure:21293: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_filesystem  -lanl -lssl -lcrypto -ldl -lboost_system >&5
+configure:21050: $? = 0
+configure:21060: result: yes
+configure:21215: checking whether the Boost::Filesystem library is available
+configure:21239: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
+configure:21239: $? = 0
+configure:21253: result: yes
+configure:21265: checking for exit in -lboost_filesystem
+configure:21290: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_filesystem  -lanl -lssl -lcrypto -ldl -lboost_system >&5
 conftest.cpp:71:6: warning: declaration of 'char exit()' conflicts with built-in declaration 'void exit(int)' [-Wbuiltin-declaration-mismatch]
    71 | char exit ();
       |      ^~~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:21293: $? = 0
-configure:21303: result: yes
-configure:21453: checking whether the Boost::Program_Options library is available
-configure:21477: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
-configure:21477: $? = 0
-configure:21491: result: yes
-configure:21503: checking for exit in -lboost_program_options
-configure:21528: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_program_options  -lanl -lssl -lcrypto -ldl >&5
+configure:21290: $? = 0
+configure:21300: result: yes
+configure:21450: checking whether the Boost::Program_Options library is available
+configure:21474: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
+configure:21474: $? = 0
+configure:21488: result: yes
+configure:21500: checking for exit in -lboost_program_options
+configure:21525: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_program_options  -lanl -lssl -lcrypto -ldl >&5
 conftest.cpp:72:6: warning: declaration of 'char exit()' conflicts with built-in declaration 'void exit(int)' [-Wbuiltin-declaration-mismatch]
    72 | char exit ();
       |      ^~~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:21528: $? = 0
-configure:21538: result: yes
-configure:21681: checking whether the Boost::Thread library is available
-configure:21713: g++ -c -pthread -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
-configure:21713: $? = 0
-configure:21728: result: yes
-configure:21758: checking for exit in -lboost_thread
-configure:21783: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_thread  -lanl -lssl -lcrypto -ldl >&5
+configure:21525: $? = 0
+configure:21535: result: yes
+configure:21678: checking whether the Boost::Thread library is available
+configure:21710: g++ -c -pthread -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include conftest.cpp >&5
+configure:21710: $? = 0
+configure:21725: result: yes
+configure:21755: checking for exit in -lboost_thread
+configure:21780: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_thread  -lanl -lssl -lcrypto -ldl >&5
 conftest.cpp:73:6: warning: declaration of 'char exit()' conflicts with built-in declaration 'void exit(int)' [-Wbuiltin-declaration-mismatch]
    73 | char exit ();
       |      ^~~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:21783: $? = 0
-configure:21793: result: yes
-configure:21953: checking whether the Boost::Chrono library is available
-configure:21977: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include conftest.cpp >&5
-configure:21977: $? = 0
-configure:21992: result: yes
-configure:22008: checking for exit in -lboost_chrono
-configure:22033: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_chrono  -lanl -lssl -lcrypto -ldl >&5
+configure:21780: $? = 0
+configure:21790: result: yes
+configure:21950: checking whether the Boost::Chrono library is available
+configure:21974: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include conftest.cpp >&5
+configure:21974: $? = 0
+configure:21989: result: yes
+configure:22005: checking for exit in -lboost_chrono
+configure:22030: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -L/usr/lib/x86_64-linux-gnu conftest.cpp -lboost_chrono  -lanl -lssl -lcrypto -ldl >&5
 conftest.cpp:74:6: warning: declaration of 'char exit()' conflicts with built-in declaration 'void exit(int)' [-Wbuiltin-declaration-mismatch]
    74 | char exit ();
       |      ^~~~
 cc1plus: warning: unrecognized command line option '-Wno-self-assign'
-configure:22033: $? = 0
-configure:22043: result: yes
-configure:22492: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono -lanl -lssl -lcrypto -ldl >&5
-configure:22492: $? = 0
-configure:22560: checking for SSL
-configure:22625: result: yes
-configure:22631: checking for CRYPTO
-configure:22696: result: yes
-configure:22705: checking for PROTOBUF
-configure:22712: $PKG_CONFIG --exists --print-errors "protobuf"
-configure:22715: $? = 0
-configure:22729: $PKG_CONFIG --exists --print-errors "protobuf"
-configure:22732: $? = 0
-configure:22792: result: yes
-configure:22807: checking for QR
-configure:22814: $PKG_CONFIG --exists --print-errors "libqrencode"
-configure:22817: $? = 0
-configure:22831: $PKG_CONFIG --exists --print-errors "libqrencode"
-configure:22834: $? = 0
-configure:22872: result: yes
-configure:22885: checking for EVENT
-configure:22892: $PKG_CONFIG --exists --print-errors "libevent"
-configure:22895: $? = 0
-configure:22909: $PKG_CONFIG --exists --print-errors "libevent"
-configure:22912: $? = 0
-configure:22950: result: yes
-configure:22957: checking for EVENT_PTHREADS
-configure:22964: $PKG_CONFIG --exists --print-errors "libevent_pthreads"
-configure:22967: $? = 0
-configure:22981: $PKG_CONFIG --exists --print-errors "libevent_pthreads"
-configure:22984: $? = 0
-configure:23022: result: yes
-configure:23032: checking for ZMQ
-configure:23039: $PKG_CONFIG --exists --print-errors "libzmq >= 4"
-configure:23042: $? = 0
-configure:23056: $PKG_CONFIG --exists --print-errors "libzmq >= 4"
-configure:23059: $? = 0
-configure:23107: result: yes
-configure:23494: checking openssl/ec.h usability
-configure:23494: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/openssl1.0/include/ -I/usr/local/openssl1.0/include/openssl/ -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
-configure:23494: $? = 0
-configure:23494: result: yes
-configure:23494: checking openssl/ec.h presence
-configure:23494: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
-configure:23494: $? = 0
-configure:23494: result: yes
-configure:23494: checking for openssl/ec.h
-configure:23494: result: yes
-configure:23561: checking for protoc
-configure:23579: found /usr/bin/protoc
-configure:23591: result: /usr/bin/protoc
-configure:23625: checking whether to build bitcoind
-configure:23635: result: yes
-configure:23638: checking whether to build utils (bitcoin-cli bitcoin-tx wallet-utility)
-configure:23648: result: yes
-configure:23651: checking whether to build libraries
-configure:23668: result: yes
-configure:23679: checking if ccache should be used
-configure:23692: result: no
-configure:23733: checking if wallet should be enabled
-configure:23736: result: yes
-configure:23749: checking whether to build with support for UPnP
-configure:23759: result: yes
-configure:23761: checking whether to build with UPnP enabled by default
-configure:23769: result: yes
-configure:23787: checking whether to build GUI with support for D-Bus
-configure:23794: result: yes
-configure:23797: checking whether to build GUI with support for QR codes
-configure:23807: result: yes
-configure:23824: checking whether to build test_bitcoin-qt
-configure:23831: result: no
-configure:23845: checking whether to build test_bitcoin
-configure:23852: result: no
-configure:23857: checking whether to reduce exports
-configure:23863: result: no
-configure:24163: checking that generated files are newer than configure
-configure:24169: result: done
-configure:24281: creating ./config.status
+configure:22030: $? = 0
+configure:22040: result: yes
+configure:22489: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -pthread -I/usr/include -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono -lanl -lssl -lcrypto -ldl >&5
+configure:22489: $? = 0
+configure:22557: checking for SSL
+configure:22622: result: yes
+configure:22628: checking for CRYPTO
+configure:22693: result: yes
+configure:22702: checking for PROTOBUF
+configure:22709: $PKG_CONFIG --exists --print-errors "protobuf"
+configure:22712: $? = 0
+configure:22726: $PKG_CONFIG --exists --print-errors "protobuf"
+configure:22729: $? = 0
+configure:22789: result: yes
+configure:22804: checking for QR
+configure:22811: $PKG_CONFIG --exists --print-errors "libqrencode"
+configure:22814: $? = 0
+configure:22828: $PKG_CONFIG --exists --print-errors "libqrencode"
+configure:22831: $? = 0
+configure:22869: result: yes
+configure:22882: checking for EVENT
+configure:22889: $PKG_CONFIG --exists --print-errors "libevent"
+configure:22892: $? = 0
+configure:22906: $PKG_CONFIG --exists --print-errors "libevent"
+configure:22909: $? = 0
+configure:22947: result: yes
+configure:22954: checking for EVENT_PTHREADS
+configure:22961: $PKG_CONFIG --exists --print-errors "libevent_pthreads"
+configure:22964: $? = 0
+configure:22978: $PKG_CONFIG --exists --print-errors "libevent_pthreads"
+configure:22981: $? = 0
+configure:23019: result: yes
+configure:23029: checking for ZMQ
+configure:23036: $PKG_CONFIG --exists --print-errors "libzmq >= 4"
+configure:23039: $? = 0
+configure:23053: $PKG_CONFIG --exists --print-errors "libzmq >= 4"
+configure:23056: $? = 0
+configure:23104: result: yes
+configure:23491: checking openssl/ec.h usability
+configure:23491: g++ -c -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/openssl1.0/include/ -I/usr/local/openssl1.0/include/openssl/ -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp >&5
+configure:23491: $? = 0
+configure:23491: result: yes
+configure:23491: checking openssl/ec.h presence
+configure:23491: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS conftest.cpp
+configure:23491: $? = 0
+configure:23491: result: yes
+configure:23491: checking for openssl/ec.h
+configure:23491: result: yes
+configure:23558: checking for protoc
+configure:23576: found /usr/bin/protoc
+configure:23588: result: /usr/bin/protoc
+configure:23622: checking whether to build bitcoind
+configure:23632: result: yes
+configure:23635: checking whether to build utils (bitcoin-cli bitcoin-tx wallet-utility)
+configure:23645: result: yes
+configure:23648: checking whether to build libraries
+configure:23665: result: yes
+configure:23676: checking if ccache should be used
+configure:23689: result: no
+configure:23730: checking if wallet should be enabled
+configure:23733: result: yes
+configure:23746: checking whether to build with support for UPnP
+configure:23756: result: yes
+configure:23758: checking whether to build with UPnP enabled by default
+configure:23766: result: yes
+configure:23784: checking whether to build GUI with support for D-Bus
+configure:23791: result: yes
+configure:23794: checking whether to build GUI with support for QR codes
+configure:23804: result: yes
+configure:23821: checking whether to build test_bitcoin-qt
+configure:23828: result: no
+configure:23842: checking whether to build test_bitcoin
+configure:23849: result: no
+configure:23854: checking whether to reduce exports
+configure:23860: result: no
+configure:24160: checking that generated files are newer than configure
+configure:24166: result: done
+configure:24278: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -3117,17 +3117,13 @@ config.status:1367: creating src/test/buildenv.py
 config.status:1367: creating qa/pull-tester/run-bitcoind-for-test.sh
 config.status:1367: creating qa/pull-tester/tests_config.py
 config.status:1367: creating src/config/bitcoin-config.h
-config.status:1548: src/config/bitcoin-config.h is unchanged
 config.status:1596: executing depfiles commands
-config.status:1673: cd src       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
-make: Nothing to be done for 'am--depfiles'.
-config.status:1678: $? = 0
 config.status:1596: executing libtool commands
-configure:26764: === configuring in src/secp256k1 (/home/mint/Work/longcoin/longcoin-src/src/secp256k1)
-configure:26827: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  'LDFLAGS=-L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/' 'LIBS=-lssl -lcrypto -ldl' 'CPPFLAGS=-I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768' 'SSL_LIBS=-L/usr/local/openssl1.0/lib/' 'SSL_CFLAGS=-I/usr/local/openssl1.0/include/' 'CRYPTO_LIBS=-L/usr/local/openssl1.0/lib/' 'CRYPTO_CFLAGS=-I/usr/local/openssl1.0/include/openssl/' '--enable-tests=no' '--disable-shared' '--enable-static' '--enable-module-ecdh' '--enable-experimental' '--disable-tests' '--disable-gui-tests' '--with-miniupnpc' '--enable-upnp-default' '--disable-bench' '--with-gui=qt5' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
-configure:26764: === configuring in src/univalue (/home/mint/Work/longcoin/longcoin-src/src/univalue)
-configure:26827: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  'LDFLAGS=-L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/' 'LIBS=-lssl -lcrypto -ldl' 'CPPFLAGS=-I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768' 'SSL_LIBS=-L/usr/local/openssl1.0/lib/' 'SSL_CFLAGS=-I/usr/local/openssl1.0/include/' 'CRYPTO_LIBS=-L/usr/local/openssl1.0/lib/' 'CRYPTO_CFLAGS=-I/usr/local/openssl1.0/include/openssl/' '--enable-tests=no' '--disable-shared' '--enable-static' '--enable-module-ecdh' '--enable-experimental' '--disable-tests' '--disable-gui-tests' '--with-miniupnpc' '--enable-upnp-default' '--disable-bench' '--with-gui=qt5' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
-configure:26846: result: Fixing libtool for -rpath problems.
+configure:26760: === configuring in src/secp256k1 (/home/mint/Work/longcoin/longcoin-src/src/secp256k1)
+configure:26823: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  'LDFLAGS=-L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/' 'LIBS=-lssl -lcrypto -ldl' 'CPPFLAGS=-I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768' 'SSL_LIBS=-L/usr/local/openssl1.0/lib/' 'SSL_CFLAGS=-I/usr/local/openssl1.0/include/' 'CRYPTO_LIBS=-L/usr/local/openssl1.0/lib/' 'CRYPTO_CFLAGS=-I/usr/local/openssl1.0/include/openssl/' '--enable-tests=no' '--disable-shared' '--enable-static' '--enable-module-ecdh' '--enable-experimental' '--disable-tests' '--disable-gui-tests' '--with-miniupnpc' '--enable-upnp-default' '--disable-bench' '--with-gui=qt5' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
+configure:26760: === configuring in src/univalue (/home/mint/Work/longcoin/longcoin-src/src/univalue)
+configure:26823: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  'LDFLAGS=-L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/' 'LIBS=-lssl -lcrypto -ldl' 'CPPFLAGS=-I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768' 'SSL_LIBS=-L/usr/local/openssl1.0/lib/' 'SSL_CFLAGS=-I/usr/local/openssl1.0/include/' 'CRYPTO_LIBS=-L/usr/local/openssl1.0/lib/' 'CRYPTO_CFLAGS=-I/usr/local/openssl1.0/include/openssl/' '--enable-tests=no' '--disable-shared' '--enable-static' '--enable-module-ecdh' '--enable-experimental' '--disable-tests' '--disable-gui-tests' '--with-miniupnpc' '--enable-upnp-default' '--disable-bench' '--with-gui=qt5' '--disable-shared' '--with-pic' '--with-bignum=no' '--enable-module-recovery' --cache-file=/dev/null --srcdir=.
+configure:26842: result: Fixing libtool for -rpath problems.
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -3412,7 +3408,7 @@ pkg_cv_ZMQ_LIBS=-lzmq
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing aclocal-1.16'
+ACLOCAL='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing aclocal-1.15'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -3424,7 +3420,7 @@ AM_V='$(V)'
 AR='/usr/bin/ar'
 AUTOCONF='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing autoconf'
 AUTOHEADER='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing automake-1.16'
+AUTOMAKE='${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing automake-1.15'
 AWK='gawk'
 BDB_CPPFLAGS=''
 BDB_LIBS='-ldb_cxx-4.8'

@@ -62,11 +62,8 @@ configure:2962: checking host system type
 configure:2975: result: x86_64-pc-linux-gnu
 configure:3016: checking how to print strings
 configure:3043: result: printf
-configure:3068: checking whether make supports the include directive
-configure:3083: make -f confmf.GNU && cat confinc.out
-this is the am__doit target
-configure:3086: $? = 0
-configure:3105: result: yes (GNU style)
+configure:3076: checking for style of include used by make
+configure:3104: result: GNU
 configure:3175: checking for gcc
 configure:3191: found /usr/bin/gcc
 configure:3202: result: gcc
@@ -184,9 +181,11 @@ configure:5552: result: ar
 configure:5589: checking for archiver @FILE support
 configure:5606: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
 configure:5606: $? = 0
-configure:5609: ar cr libconftest.a @conftest.lst >&5
+configure:5609: ar cru libconftest.a @conftest.lst >&5
+ar: `u' modifier ignored since `D' is the default (see `U')
 configure:5612: $? = 0
-configure:5617: ar cr libconftest.a @conftest.lst >&5
+configure:5617: ar cru libconftest.a @conftest.lst >&5
+ar: `u' modifier ignored since `D' is the default (see `U')
 ar: conftest.o: No such file or directory
 configure:5620: $? = 1
 configure:5619: result: @
@@ -199,33 +198,34 @@ configure:5803: result: ranlib
 configure:5905: checking command to parse /usr/bin/nm -B output from gcc object
 configure:6058: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
 configure:6061: $? = 0
-configure:6065: /usr/bin/nm -B conftest.o | sed -n -e 's/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' > conftest.nm
-configure:6131: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c conftstm.o >&5
-configure:6134: $? = 0
-configure:6172: result: ok
-configure:6219: checking for sysroot
-configure:6249: result: no
-configure:6256: checking for a working dd
-configure:6294: result: /usr/bin/dd
-configure:6298: checking how to truncate binary pipes
-configure:6313: result: /usr/bin/dd bs=4096 count=1
-configure:6449: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:6452: $? = 0
-configure:6642: checking for mt
-configure:6658: found /usr/bin/mt
-configure:6669: result: mt
-configure:6692: checking if mt is a manifest tool
-configure:6698: mt '-?'
-configure:6706: result: no
-configure:7383: checking how to run the C preprocessor
-configure:7414: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
-configure:7414: $? = 0
-configure:7428: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:6065: /usr/bin/nm -B conftest.o \| sed -n -e 's/^.*[ ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[ ][ ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | sed '/ __gnu_lto/d' \> conftest.nm
+configure:6068: $? = 0
+configure:6134: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c conftstm.o >&5
+configure:6137: $? = 0
+configure:6175: result: ok
+configure:6222: checking for sysroot
+configure:6252: result: no
+configure:6259: checking for a working dd
+configure:6297: result: /usr/bin/dd
+configure:6301: checking how to truncate binary pipes
+configure:6316: result: /usr/bin/dd bs=4096 count=1
+configure:6452: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:6455: $? = 0
+configure:6645: checking for mt
+configure:6661: found /usr/bin/mt
+configure:6672: result: mt
+configure:6695: checking if mt is a manifest tool
+configure:6701: mt '-?'
+configure:6709: result: no
+configure:7386: checking how to run the C preprocessor
+configure:7417: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:7417: $? = 0
+configure:7431: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:7428: $? = 1
+configure:7431: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "univalue"
@@ -238,15 +238,15 @@ configure: failed program was:
 | #define VERSION "1.0.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:7453: result: gcc -E
-configure:7473: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
-configure:7473: $? = 0
-configure:7487: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:7456: result: gcc -E
+configure:7476: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
+configure:7476: $? = 0
+configure:7490: gcc -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c
 conftest.c:11:10: fatal error: ac_nonexistent.h: No such file or directory
    11 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:7487: $? = 1
+configure:7490: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "univalue"
@@ -259,103 +259,103 @@ configure: failed program was:
 | #define VERSION "1.0.1"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:7516: checking for ANSI C header files
-configure:7536: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7536: $? = 0
-configure:7609: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lssl -lcrypto -ldl >&5
-configure:7609: $? = 0
-configure:7609: ./conftest
-configure:7609: $? = 0
-configure:7620: result: yes
-configure:7633: checking for sys/types.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for sys/stat.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for stdlib.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for string.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for memory.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for strings.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for inttypes.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for stdint.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7633: checking for unistd.h
-configure:7633: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7633: $? = 0
-configure:7633: result: yes
-configure:7647: checking for dlfcn.h
-configure:7647: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
-configure:7647: $? = 0
-configure:7647: result: yes
-configure:7903: checking for objdir
-configure:7918: result: .libs
-configure:8182: checking if gcc supports -fno-rtti -fno-exceptions
-configure:8200: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fno-rtti -fno-exceptions conftest.c >&5
+configure:7519: checking for ANSI C header files
+configure:7539: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7539: $? = 0
+configure:7612: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c -lssl -lcrypto -ldl >&5
+configure:7612: $? = 0
+configure:7612: ./conftest
+configure:7612: $? = 0
+configure:7623: result: yes
+configure:7636: checking for sys/types.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for sys/stat.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for stdlib.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for string.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for memory.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for strings.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for inttypes.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for stdint.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7636: checking for unistd.h
+configure:7636: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7636: $? = 0
+configure:7636: result: yes
+configure:7650: checking for dlfcn.h
+configure:7650: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.c >&5
+configure:7650: $? = 0
+configure:7650: result: yes
+configure:7906: checking for objdir
+configure:7921: result: .libs
+configure:8185: checking if gcc supports -fno-rtti -fno-exceptions
+configure:8203: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fno-rtti -fno-exceptions conftest.c >&5
 cc1: warning: command line option '-fno-rtti' is valid for C++/D/ObjC++ but not for C
-configure:8204: $? = 0
-configure:8217: result: no
-configure:8581: checking for gcc option to produce PIC
-configure:8588: result: -fPIC -DPIC
-configure:8596: checking if gcc PIC flag -fPIC -DPIC works
-configure:8614: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.c >&5
-configure:8618: $? = 0
-configure:8631: result: yes
-configure:8660: checking if gcc static flag -static works
-configure:8688: result: yes
-configure:8703: checking if gcc supports -c -o file.o
-configure:8724: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.c >&5
-configure:8728: $? = 0
-configure:8750: result: yes
-configure:8758: checking if gcc supports -c -o file.o
-configure:8805: result: yes
-configure:8838: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:10101: result: yes
-configure:10341: checking dynamic linker characteristics
-configure:10922: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -Wl,-rpath -Wl,/foo conftest.c -lssl -lcrypto -ldl >&5
-configure:10922: $? = 0
-configure:11171: result: GNU/Linux ld.so
-configure:11293: checking how to hardcode library paths into programs
-configure:11318: result: immediate
-configure:11866: checking whether stripping libraries is possible
-configure:11871: result: yes
-configure:11906: checking if libtool supports shared libraries
-configure:11908: result: yes
-configure:11911: checking whether to build shared libraries
-configure:11936: result: no
-configure:11939: checking whether to build static libraries
-configure:11943: result: yes
-configure:8814: checking for g++
-configure:8830: found /usr/bin/g++
-configure:8841: result: g++
-configure:8868: checking for C++ compiler version
-configure:8877: g++ --version >&5
+configure:8207: $? = 0
+configure:8220: result: no
+configure:8578: checking for gcc option to produce PIC
+configure:8585: result: -fPIC -DPIC
+configure:8593: checking if gcc PIC flag -fPIC -DPIC works
+configure:8611: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.c >&5
+configure:8615: $? = 0
+configure:8628: result: yes
+configure:8657: checking if gcc static flag -static works
+configure:8685: result: yes
+configure:8700: checking if gcc supports -c -o file.o
+configure:8721: gcc -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.c >&5
+configure:8725: $? = 0
+configure:8747: result: yes
+configure:8755: checking if gcc supports -c -o file.o
+configure:8802: result: yes
+configure:8835: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:10098: result: yes
+configure:10338: checking dynamic linker characteristics
+configure:10919: gcc -o conftest -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ -Wl,-rpath -Wl,/foo conftest.c -lssl -lcrypto -ldl >&5
+configure:10919: $? = 0
+configure:11168: result: GNU/Linux ld.so
+configure:11290: checking how to hardcode library paths into programs
+configure:11315: result: immediate
+configure:11863: checking whether stripping libraries is possible
+configure:11868: result: yes
+configure:11903: checking if libtool supports shared libraries
+configure:11905: result: yes
+configure:11908: checking whether to build shared libraries
+configure:11933: result: no
+configure:11936: checking whether to build static libraries
+configure:11940: result: yes
+configure:8811: checking for g++
+configure:8827: found /usr/bin/g++
+configure:8838: result: g++
+configure:8865: checking for C++ compiler version
+configure:8874: g++ --version >&5
 g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
 Copyright (C) 2019 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-configure:8888: $? = 0
-configure:8877: g++ -v >&5
+configure:8885: $? = 0
+configure:8874: g++ -v >&5
 Using built-in specs.
 COLLECT_GCC=g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
@@ -365,36 +365,36 @@ Target: x86_64-linux-gnu
 Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.3.0-17ubuntu1~20.04' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-HskZEa/gcc-9-9.3.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
 gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04) 
-configure:8888: $? = 0
-configure:8877: g++ -V >&5
+configure:8885: $? = 0
+configure:8874: g++ -V >&5
 g++: error: unrecognized command line option '-V'
 g++: fatal error: no input files
 compilation terminated.
-configure:8888: $? = 1
-configure:8877: g++ -qversion >&5
+configure:8885: $? = 1
+configure:8874: g++ -qversion >&5
 g++: error: unrecognized command line option '-qversion'; did you mean '--version'?
 g++: fatal error: no input files
 compilation terminated.
-configure:8888: $? = 1
-configure:8892: checking whether we are using the GNU C++ compiler
-configure:8911: g++ -c  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
-configure:8911: $? = 0
-configure:8920: result: yes
-configure:8929: checking whether g++ accepts -g
-configure:8949: g++ -c -g -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
-configure:8949: $? = 0
-configure:8990: result: yes
-configure:9015: checking dependency style of g++
-configure:9126: result: gcc3
-configure:9160: checking how to run the C++ preprocessor
-configure:9187: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
-configure:9187: $? = 0
-configure:9201: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:8885: $? = 1
+configure:8889: checking whether we are using the GNU C++ compiler
+configure:8908: g++ -c  -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
+configure:8908: $? = 0
+configure:8917: result: yes
+configure:8926: checking whether g++ accepts -g
+configure:8946: g++ -c -g -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
+configure:8946: $? = 0
+configure:8987: result: yes
+configure:9012: checking dependency style of g++
+configure:9123: result: gcc3
+configure:9157: checking how to run the C++ preprocessor
+configure:9184: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:9184: $? = 0
+configure:9198: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
 conftest.cpp:23:10: fatal error: ac_nonexistent.h: No such file or directory
    23 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:9201: $? = 1
+configure:9198: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "univalue"
@@ -419,15 +419,15 @@ configure: failed program was:
 | #define LT_OBJDIR ".libs/"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:9226: result: g++ -E
-configure:9246: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
-configure:9246: $? = 0
-configure:9260: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:9223: result: g++ -E
+configure:9243: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
+configure:9243: $? = 0
+configure:9257: g++ -E -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp
 conftest.cpp:23:10: fatal error: ac_nonexistent.h: No such file or directory
    23 | #include <ac_nonexistent.h>
       |          ^~~~~~~~~~~~~~~~~~
 compilation terminated.
-configure:9260: $? = 1
+configure:9257: $? = 1
 configure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "univalue"
@@ -452,37 +452,37 @@ configure: failed program was:
 | #define LT_OBJDIR ".libs/"
 | /* end confdefs.h.  */
 | #include <ac_nonexistent.h>
-configure:9422: checking for ld used by g++
-configure:9489: result: /usr/bin/ld -m elf_x86_64
-configure:9496: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld
-configure:9511: result: yes
-configure:9566: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:10639: result: yes
-configure:10675: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
-configure:10678: $? = 0
-configure:11159: checking for g++ option to produce PIC
-configure:11166: result: -fPIC -DPIC
-configure:11174: checking if g++ PIC flag -fPIC -DPIC works
-configure:11192: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.cpp >&5
-configure:11196: $? = 0
-configure:11209: result: yes
-configure:11232: checking if g++ static flag -static works
-configure:11260: result: yes
-configure:11272: checking if g++ supports -c -o file.o
-configure:11293: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.cpp >&5
-configure:11297: $? = 0
-configure:11319: result: yes
-configure:11324: checking if g++ supports -c -o file.o
-configure:11371: result: yes
-configure:11401: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
-configure:11444: result: yes
-configure:11585: checking dynamic linker characteristics
-configure:12342: result: GNU/Linux ld.so
-configure:12407: checking how to hardcode library paths into programs
-configure:12432: result: immediate
-configure:11423: checking that generated files are newer than configure
-configure:11429: result: done
-configure:11456: creating ./config.status
+configure:9419: checking for ld used by g++
+configure:9486: result: /usr/bin/ld -m elf_x86_64
+configure:9493: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld
+configure:9508: result: yes
+configure:9563: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:10636: result: yes
+configure:10672: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 conftest.cpp >&5
+configure:10675: $? = 0
+configure:11156: checking for g++ option to produce PIC
+configure:11163: result: -fPIC -DPIC
+configure:11171: checking if g++ PIC flag -fPIC -DPIC works
+configure:11189: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -fPIC -DPIC -DPIC conftest.cpp >&5
+configure:11193: $? = 0
+configure:11206: result: yes
+configure:11229: checking if g++ static flag -static works
+configure:11257: result: yes
+configure:11269: checking if g++ supports -c -o file.o
+configure:11290: g++ -c -g -O2 -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -o out/conftest2.o conftest.cpp >&5
+configure:11294: $? = 0
+configure:11316: result: yes
+configure:11321: checking if g++ supports -c -o file.o
+configure:11368: result: yes
+configure:11398: checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries
+configure:11441: result: yes
+configure:11582: checking dynamic linker characteristics
+configure:12339: result: GNU/Linux ld.so
+configure:12404: checking how to hardcode library paths into programs
+configure:12429: result: immediate
+configure:11420: checking that generated files are newer than configure
+configure:11426: result: done
+configure:11453: creating ./config.status
 
 ## ---------------------- ##
 ## Running config.status. ##
@@ -505,9 +505,6 @@ config.status:1150: creating pc/libunivalue-uninstalled.pc
 config.status:1150: creating univalue-config.h
 config.status:1331: univalue-config.h is unchanged
 config.status:1379: executing depfiles commands
-config.status:1456: cd .       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
-make: Nothing to be done for 'am--depfiles'.
-config.status:1461: $? = 0
 config.status:1379: executing libtool commands
 
 ## ---------------- ##
@@ -621,7 +618,7 @@ lt_cv_truncate_bin='/usr/bin/dd bs=4096 count=1'
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing aclocal-1.16'
+ACLOCAL='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing aclocal-1.15'
 AMDEPBACKSLASH='\'
 AMDEP_FALSE='#'
 AMDEP_TRUE=''
@@ -633,7 +630,7 @@ AM_V='$(V)'
 AR='ar'
 AUTOCONF='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing autoconf'
 AUTOHEADER='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing autoheader'
-AUTOMAKE='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing automake-1.16'
+AUTOMAKE='${SHELL} /home/mint/Work/longcoin/longcoin-src/src/univalue/build-aux/missing automake-1.15'
 AWK='gawk'
 BUILD_EXEEXT=''
 CC='gcc'
