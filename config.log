@@ -800,7 +800,7 @@ configure: failed program was:
 configure:15555: result: no
 configure:15453: checking whether pthreads work without any flags
 configure:15546: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-/usr/bin/ld: /tmp/cccxJalB.o: in function `main':
+/usr/bin/ld: /tmp/ccshYEww.o: in function `main':
 /home/mint/Work/longcoin/longcoin-src/conftest.c:28: undefined reference to `pthread_create'
 /usr/bin/ld: /home/mint/Work/longcoin/longcoin-src/conftest.c:29: undefined reference to `pthread_join'
 /usr/bin/ld: /home/mint/Work/longcoin/longcoin-src/conftest.c:31: undefined reference to `__pthread_register_cancel'
@@ -1356,7 +1356,7 @@ configure:16889: checking for sys/prctl.h
 configure:16889: result: yes
 configure:16899: checking for library containing getaddrinfo_a
 configure:16930: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-/usr/bin/ld: /tmp/ccoYAT3n.o: in function `main':
+/usr/bin/ld: /tmp/ccPC6tWj.o: in function `main':
 /home/mint/Work/longcoin/longcoin-src/conftest.cpp:48: undefined reference to `getaddrinfo_a'
 collect2: error: ld returned 1 exit status
 configure:16930: $? = 1
@@ -3117,6 +3117,7 @@ config.status:1367: creating src/test/buildenv.py
 config.status:1367: creating qa/pull-tester/run-bitcoind-for-test.sh
 config.status:1367: creating qa/pull-tester/tests_config.py
 config.status:1367: creating src/config/bitcoin-config.h
+config.status:1548: src/config/bitcoin-config.h is unchanged
 config.status:1596: executing depfiles commands
 config.status:1596: executing libtool commands
 configure:26760: === configuring in src/secp256k1 (/home/mint/Work/longcoin/longcoin-src/src/secp256k1)
