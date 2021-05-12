@@ -1,7 +1,8 @@
 Версия 0.7g:
 - Добавлена long-специфичная информация в команды листинга транзакций для возможности быстрой фильтрации транзакций по адресатам
-- Добавлена long-адаптация в команды listaccounts, setaccount, getaddressesbyaccount, dumppubkey для поддержки адресной книги
+- Добавлена long-адаптация в команды listaccounts, setaccount, getaddressesbyaccount, validateaddress, dumppubkey для поддержки адресной книги
     (storeaddress удалена как лишняя сущность)
+- Добавлен флаг принудительного отключения шифрования в команды sendhexdata и createrawdata (для каналов во владении)
 
 Версия 0.7f:
 

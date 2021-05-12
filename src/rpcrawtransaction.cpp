@@ -426,9 +426,9 @@ UniValue verifytxoutproof(const UniValue& params, bool fHelp)
 
 UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу vRPCConvertParams в rcpclient.cpp добавляются индексы не строковых параметров (для корректного парсинга в JSON)
 {   // как и createrawtransaction работает без wallet, поэтому все нужные данные в аргументах
-        if (fHelp || params.size() < 3 || params.size() > 3)
+        if (fHelp || params.size() < 3 || params.size() > 4)
         throw runtime_error(
-            "createrawdata \"from\" \"to\" \"hexstring\" \n"
+            "createrawdata \"from\" \"to\" \"hexstring\" ( open )\n"
             "\nLONG Specific: Preparing data for the \"data\" key in the createrawtransaction command.\n"
             "\nNote: Data is encrypted automatically if it is possible to get a Shared secret from the the command arguments.\n"
             "\nArguments:\n"
@@ -437,6 +437,7 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
             "2. \"to\"            (string, required) The bitcoin address or hex-encoded pubKey to send to.\n"
             "                                        ( the recipient pubKey is required for encryption ).\n"
             "3. \"hexstring\"     (string, required) The hex string of the raw data (\"48656c6c6f\" is \"Hello\" string)\n"
+            "4. open              (bool, optional, default=false) Forcibly disable encryption.\n"
             "\nResult:\n"
             "\"data\"      (string) The serialized, hex-encoded data for createrawtransaction command.\n"
             
@@ -456,6 +457,9 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
         
         string strFrom=params[0].get_str(); 
         string strTo=params[1].get_str();
+
+        bool fOpen = false;
+        if (params.size() > 3) fOpen = params[3].get_bool(); // Принудительное отключение шифрования
 
 
         // LONG BYTES (0c0f0e07) - version byte (00)
@@ -536,7 +540,7 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
         std::vector<unsigned char> vchDataBodyEncrypted;
         CScript dataBodypush;
 
-        if (!fEncrypt) { // NO ENCRYPTION
+        if (!fEncrypt || fOpen) { // NO ENCRYPTION
             
             dataNewTX.push_back(0xf3); // OP_ENCRYPTION
             dataNewTX.push_back(0x00); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01

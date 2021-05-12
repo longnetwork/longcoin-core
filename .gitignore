@@ -1,10 +1,15 @@
 
+./*.tgz
+
 src/**/*.a
 src/**/*.tar.gz
+src/**/*.tgz
 
 openssl-1.0.0s/**/*.a
 openssl-1.0.0s/**/*.tar.gz
+openssl-1.0.0s/**/*.tgz
 
 db-4.8.30.NC-src/**/*.a
 db-4.8.30.NC-src/**/*.tar.gz
+db-4.8.30.NC-src/**/*.tgz
 

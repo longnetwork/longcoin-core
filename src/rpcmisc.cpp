@@ -122,6 +122,15 @@ public:
             obj.push_back(Pair("pubkey", HexStr(vchPubKey)));
             obj.push_back(Pair("iscompressed", vchPubKey.IsCompressed()));
         }
+        else if(pwalletMain && pwalletMain->mapAddressBook.count(keyID) && !pwalletMain->mapAddressBook[keyID].pubkeyhex.empty()) {
+            // Могут быть чужие публичные ключи, сохраненные setaccount
+            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[keyID].pubkeyhex);
+            vchPubKey.Set(vch.begin(),vch.end());
+            
+            obj.push_back(Pair("pubkey", HexStr(vchPubKey)));
+            obj.push_back(Pair("iscompressed", vchPubKey.IsCompressed()));
+        }
+        
         return obj;
     }
 

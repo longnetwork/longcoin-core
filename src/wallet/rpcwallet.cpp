@@ -535,9 +535,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
         
-    if (fHelp || params.size() < 3 || params.size() > 4)
+    if (fHelp || params.size() < 3 || params.size() > 5)
         throw runtime_error(
-            "sendhexdata \"from\" \"to\" \"hexstring\" ( \"comment\" )\n"
+            "sendhexdata \"from\" \"to\" \"hexstring\" ( \"comment\" open )\n"
             "\nLONG Specific: Data transfer from address or account to address or pubKey.\n"
             "\nNote: Encryption is enabled automatically if the public key of the recipient is known.\n"
             "        setaccount command can be used to add to the address book public key of the recipient \n"   
@@ -547,12 +547,14 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             "3. \"hexstring\"     (string, required) The hex string of the raw data (\"48656c6c6f\" is \"Hello\" string)\n"
             "4. \"comment\"       (string, optional) A comment used to store what the transaction is for. \n"
             "                                This is not part of the transaction, just kept in your wallet.\n"
+            "5. open              (bool, optional, default=false) Forcibly disable encryption.\n"
             "\nResult:\n"
             "\"transactionid\"    (string) The transaction id.\n"
             "\nExamples:\n"
             + HelpExampleCli("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"48656c6c6f\"")
             + HelpExampleCli("sendhexdata", "\"PUBLIC\" \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\" \"48656c6c6f\" \"This is Hello string\"")
             + HelpExampleRpc("sendhexdata", "\"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\", \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\", \"48656c6c6f\"")
+            + HelpExampleRpc("sendhexdata", "\"PUBLIC\", \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\", \"48656c6c6f\", \"This is Hello string\"")
             + HelpExampleRpc("sendhexdata", "\"PUBLIC\", \"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\", \"48656c6c6f\", \"This is Hello string\"")
         );
 
@@ -567,6 +569,11 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     bool fToPubKey=false;
     string strFrom=params[0].get_str(); // Либо адресс либо аккаунт (fFromAccount==true)
     string strTo=params[1].get_str(); // Лиюо адрес либо pubKey (fToPubKey==true)
+
+
+    bool fOpen = false;
+    if (params.size() > 4) fOpen = params[4].get_bool(); // Принудительное отключение шифрования
+
 
     CBitcoinAddress addressFrom(strFrom);
     if (!addressFrom.IsValid()) {
@@ -671,7 +678,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     CScript dataBodypush;
 
 
-    if (!fEncrypt) { // пубкей получателя НЕ найден, тогда Shared Secret не из чего вычислять (шифрование отключено)
+    if (!fEncrypt || fOpen) { // пубкей получателя НЕ найден, тогда Shared Secret не из чего вычислять (шифрование отключено)
         // NO ENCRYPTION
         dataNewTX.push_back(0xf3); // OP_ENCRYPTION
         dataNewTX.push_back(0x00); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
@@ -1672,6 +1679,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
     bool fAllAccounts = (strAccount == string("*"));
     bool involvesWatchonly = wtx.IsFromMe(ISMINE_WATCH_ONLY);
 
+
     // Sent
     if ((!listSent.empty() || nFee != 0) && (fAllAccounts || strAccount == strSentAccount))
     {
@@ -1696,16 +1704,25 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
             if (wtx.vout.size()>s.vout && isLong(wtx.vout[s.vout].scriptPubKey)) { // Long-specific info
                 const CTxOut& txout=wtx.vout[s.vout];
 
+                unsigned int encryptionType=0; // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
+                getEncryptionLongData(txout.scriptPubKey, encryptionType);
+
+
+                CAddressBookData* fromAB=NULL;  // Чисто закешировать доступ к адресной книге
+                CAddressBookData* toAB=NULL;
+
                 // TO
                 std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
                 getLongToPubKey(txout.scriptPubKey, vchToPubKey);
                 if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
                     toPubKeyID=uint160(vchToPubKey);
                     if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
-                        if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
-                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
+                        
+                        if( pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty() ) {
+                            std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
                             toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
                         }
+                        
                     }
                 } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                     toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
@@ -1721,10 +1738,12 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 if (vchFromPubKey.size() == 20) {
                     fromPubKeyID=uint160(vchFromPubKey);
                     if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                         if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
-                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
+                        
+                         if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
+                            std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
                             fromPubKey.Set(vch.begin(),vch.end());
-                        }                   
+                        }
+                        
                     }
                 } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                     fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
@@ -1735,24 +1754,27 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                 string strTo; {                    
-                    /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
-                    if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                        //strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
-                        strTo = (*mi).second.name;
-                    */
-                    if(pwalletMain->mapAddressBook.count(addressTo.Get()) && !pwalletMain->mapAddressBook[addressTo.Get()].name.empty())
-                        strTo = pwalletMain->mapAddressBook[addressTo.Get()].name;
+
+                    if( toAB || ( pwalletMain->mapAddressBook.count(addressTo.Get()) && ! (toAB=&pwalletMain->mapAddressBook[addressTo.Get()])->name.empty() ) )
+                        strTo = toAB->name;
                     
                 }
                 string strFrom; {
-                   /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
-                    if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                        //strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
-                        strFrom = (*mi).second.name;
-                    */
-                    if(pwalletMain->mapAddressBook.count(addressFrom.Get()) && !pwalletMain->mapAddressBook[addressFrom.Get()].name.empty())
-                        strFrom = pwalletMain->mapAddressBook[addressFrom.Get()].name;
+
+                    if( fromAB || ( pwalletMain->mapAddressBook.count(addressFrom.Get()) && ! (fromAB=&pwalletMain->mapAddressBook[addressFrom.Get()])->name.empty() ) ) 
+                        strFrom = fromAB->name;
                 }
+
+               // Sent означает только списание комиссии, а сами отправитель и получатель в Long-данных может быть любой
+               // ISMINE_SPENDABLE отберет только адрес у которого есть приватный ключ, то есть полностью свой
+               bool decrypt=true;
+               if ( encryptionType == 1 ) {
+                    if( (IsMine(*pwalletMain, addressFrom.Get()) & ISMINE_SPENDABLE) && pwalletMain->HaveKey(fromPubKeyID) && toPubKey.IsFullyValid() )
+                        ; // Могу расшифровать fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
+                    else if(  pwalletMain->HaveKey(toPubKeyID) && fromPubKey.IsFullyValid() )
+                        ; // Могу расшифровать toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret);
+                    else decrypt=false; // Отлуп
+               }
                 
                 entry.push_back(Pair("from",strFrom));
                 entry.push_back(Pair("fromaddress",addressFrom.ToString()));
@@ -1760,6 +1782,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 entry.push_back(Pair("to",strTo));
                 entry.push_back(Pair("toaddress",addressTo.ToString()));
                 entry.push_back(Pair("topubkey",pubKeyHexTo));
+                entry.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
                 
             }
             /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
@@ -1807,16 +1830,24 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 if (wtx.vout.size()>r.vout && isLong(wtx.vout[r.vout].scriptPubKey)) { // Long-specific info
                     const CTxOut& txout=wtx.vout[r.vout];
 
+                    unsigned int encryptionType=0; // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
+                    getEncryptionLongData(txout.scriptPubKey, encryptionType);
+
+                    CAddressBookData* fromAB=NULL;  // Чисто закешировать доступ к адресной книге
+                    CAddressBookData* toAB=NULL;                    
+
                     // TO
                     std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
                     getLongToPubKey(txout.scriptPubKey, vchToPubKey);
                     if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
                         toPubKeyID=uint160(vchToPubKey);
                         if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
-                            if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
-                                std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
+                            
+                            if(pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty()) {
+                                std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
                                 toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
                             }
+                            
                         }
                     } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                         toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
@@ -1832,10 +1863,12 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     if (vchFromPubKey.size() == 20) {
                         fromPubKeyID=uint160(vchFromPubKey);
                         if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                             if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
-                                std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
+                            
+                             if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
+                                std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
                                 fromPubKey.Set(vch.begin(),vch.end());
-                            }                   
+                            }
+                            
                         }
                     } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                         fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
@@ -1846,22 +1879,26 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                     string strTo; {
-                        /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressTo.Get());
-                        if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                            //strTo = string((*mi).second.name); // на всякий случай через конструктор копирования
-                            strTo = (*mi).second.name;
-                        */
-                        if(pwalletMain->mapAddressBook.count(addressTo.Get()) && !pwalletMain->mapAddressBook[addressTo.Get()].name.empty())
-                            strTo = pwalletMain->mapAddressBook[addressTo.Get()].name;
+                        
+                        if(toAB || ( pwalletMain->mapAddressBook.count(addressTo.Get()) && ! (toAB=&pwalletMain->mapAddressBook[addressTo.Get()])->name.empty() ) )
+                            strTo = toAB->name;
+                            
                     }
                     string strFrom; {
-                       /*map<CTxDestination, CAddressBookData>::iterator mi = pwalletMain->mapAddressBook.find(addressFrom.Get());
-                        if (mi != pwalletMain->mapAddressBook.end() && !(*mi).second.name.empty())
-                            //strFrom = string((*mi).second.name); // на всякий случай через конструктор копирования
-                            strFrom = (*mi).second.name;
-                        */
-                        if(pwalletMain->mapAddressBook.count(addressFrom.Get()) && !pwalletMain->mapAddressBook[addressFrom.Get()].name.empty())
-                            strFrom = pwalletMain->mapAddressBook[addressFrom.Get()].name;
+                        
+                        if(fromAB || ( pwalletMain->mapAddressBook.count(addressFrom.Get()) && ! (fromAB=&pwalletMain->mapAddressBook[addressFrom.Get()])->name.empty() ) )
+                            strFrom = fromAB->name;
+                    }
+
+                    // Receive означает только что кошелек выловил транзу (и чужую с наблюдаемых адресов), а сами отправитель и получатель в Long-данных может быть любой
+                    // ISMINE_SPENDABLE отберет только адрес у которого есть приватный ключ, то есть полностью свой
+                   bool decrypt=true;
+                   if ( encryptionType == 1 ) {
+                        if( (IsMine(*pwalletMain, addressTo.Get()) & ISMINE_SPENDABLE) && pwalletMain->HaveKey(toPubKeyID) && fromPubKey.IsFullyValid() )
+                            ; // Могу расшифровать toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret);
+                        else if( pwalletMain->HaveKey(fromPubKeyID) && toPubKey.IsFullyValid() )
+                            ; // Могу расшифровать fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
+                        else decrypt=false;
                     }
                     
                     entry.push_back(Pair("from",strFrom));
@@ -1870,6 +1907,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     entry.push_back(Pair("to",strTo));
                     entry.push_back(Pair("toaddress",addressTo.ToString()));
                     entry.push_back(Pair("topubkey",pubKeyHexTo));
+                    entry.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
                     
                 }
                 /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
@@ -2321,7 +2359,8 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             "      \"topubkey\"    : \"pubKey\",         (string) The pubKey corresponding to 'toaddress' in HEX format.\n"
             "      \"vout\" : n,                         (numeric) The vout value\n"
             "      \"hexdata\" : \"hexstring\",          (string) The serialized, hex-encoded data (\"48656c6c6f\" is \"Hello\" string)\n"
-            "      \"encryption\" : 0/1                  (numeric) The hex-data transfer encryption status flag\n"
+            "      \"encryption\" : \"yes\"              (string) The hex-data transfer encryption status flag\n"
+            "      \"decryption\" : \"yes\"              (string) The hex-data transfer readability status flag\n"
             "    }\n"
             "    ,...\n"
             "  ],\n"
@@ -2472,11 +2511,11 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             std::vector<unsigned char> vchDecryptedDataBody;
 
             getBodyLongData(txout.scriptPubKey, vchDataBody);
+
+            bool decrypt=true;
             
             if ( encryptionType == 1 ) {
                 std::vector<unsigned char> vchSharedSecret;
-
-                bool decrypt=true;
 
                 if(fDebit) { // Списание from (send), filter отберет только адрес у которого есть приватный ключ, то есть полностью свой
                     if( (IsMine(*pwalletMain, addressFrom.Get()) & filter) && fromPrivKey.IsValid() && toPubKey.IsFullyValid() )
@@ -2541,7 +2580,8 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             obj.push_back(Pair("vout",index));
             
             obj.push_back(Pair("hexdata",HexStr(vchDataBody.begin(),vchDataBody.end())));
-            obj.push_back(Pair("encryption",(int)encryptionType));
+            obj.push_back(Pair("encryption", encryptionType==1 ? "yes" : "no"));
+            obj.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
 
             voutentry.push_back(obj);
         }

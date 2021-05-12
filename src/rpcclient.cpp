@@ -111,6 +111,9 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "getaddressdeltas", 0},
     { "getaddressutxos", 0},
     { "getaddressmempool", 0},
+
+    { "sendhexdata", 4},
+    { "createrawdata", 3},
 };
 
 class CRPCConvertTable
