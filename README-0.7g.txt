@@ -3,6 +3,7 @@
 - Добавлена long-адаптация в команды listaccounts, setaccount, getaddressesbyaccount, validateaddress, dumppubkey для поддержки адресной книги
     (storeaddress удалена как лишняя сущность)
 - Добавлен флаг принудительного отключения шифрования в команды sendhexdata и createrawdata (для каналов во владении)
+- Фикс univalue для корректной обработки utf8 строк
 
 Версия 0.7f:
 

@@ -5,6 +5,6 @@ includedir=${prefix}/include
 
 Name: libunivalue
 Description: libunivalue, C++ universal value object and JSON library
-Version: 1.0.1
+Version: 1.0.2
 Libs: -L${libdir} -lunivalue
 Cflags: -I${includedir}

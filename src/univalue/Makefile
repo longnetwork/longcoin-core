@@ -485,7 +485,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
 LIBUNIVALUE_AGE = 100
 LIBUNIVALUE_CURRENT = 100
-LIBUNIVALUE_REVISION = 1
+LIBUNIVALUE_REVISION = 2
 LIPO = 
 LN_S = ln -s
 LTLIBOBJS = 
@@ -502,17 +502,17 @@ OTOOL64 =
 PACKAGE = univalue
 PACKAGE_BUGREPORT = http://github.com/jgarzik/univalue/
 PACKAGE_NAME = univalue
-PACKAGE_STRING = univalue 1.0.1
+PACKAGE_STRING = univalue 1.0.2
 PACKAGE_TARNAME = univalue
 PACKAGE_URL = 
-PACKAGE_VERSION = 1.0.1
+PACKAGE_VERSION = 1.0.2
 PATH_SEPARATOR = :
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
 STRIP = strip
-VERSION = 1.0.1
+VERSION = 1.0.2
 abs_builddir = /home/mint/Work/longcoin/longcoin-src/src/univalue
 abs_srcdir = /home/mint/Work/longcoin/longcoin-src/src/univalue
 abs_top_builddir = /home/mint/Work/longcoin/longcoin-src/src/univalue
@@ -569,7 +569,7 @@ top_builddir = .
 top_srcdir = .
 ACLOCAL_AMFLAGS = -I build-aux/m4
 include_HEADERS = include/univalue.h
-noinst_HEADERS = lib/univalue_escapes.h
+noinst_HEADERS = lib/univalue_escapes.h lib/univalue_utffilter.h
 lib_LTLIBRARIES = libunivalue.la
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = pc/libunivalue.pc
@@ -621,6 +621,10 @@ TEST_FILES = \
 	$(TEST_DATA_DIR)/fail35.json \
 	$(TEST_DATA_DIR)/fail36.json \
 	$(TEST_DATA_DIR)/fail37.json \
+	$(TEST_DATA_DIR)/fail38.json \
+	$(TEST_DATA_DIR)/fail39.json \
+	$(TEST_DATA_DIR)/fail40.json \
+	$(TEST_DATA_DIR)/fail41.json \
 	$(TEST_DATA_DIR)/fail3.json \
 	$(TEST_DATA_DIR)/fail4.json \
 	$(TEST_DATA_DIR)/fail5.json \
@@ -631,7 +635,8 @@ TEST_FILES = \
 	$(TEST_DATA_DIR)/pass1.json \
 	$(TEST_DATA_DIR)/pass2.json \
 	$(TEST_DATA_DIR)/pass3.json \
-	$(TEST_DATA_DIR)/round1.json
+	$(TEST_DATA_DIR)/round1.json \
+	$(TEST_DATA_DIR)/round2.json
 
 EXTRA_DIST = $(TEST_FILES) $(GEN_SRCS)
 all: univalue-config.h

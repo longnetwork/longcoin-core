@@ -157,7 +157,7 @@ lib/libunivalue_la-univalue_read.lo: lib/univalue_read.cpp \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc /usr/include/c++/9/ostream \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/bits/istream.tcc \
- /usr/include/c++/9/bits/sstream.tcc
+ /usr/include/c++/9/bits/sstream.tcc lib/univalue_utffilter.h
 
 /usr/include/stdc-predef.h:
 
@@ -562,3 +562,5 @@ include/univalue.h:
 /usr/include/c++/9/bits/istream.tcc:
 
 /usr/include/c++/9/bits/sstream.tcc:
+
+lib/univalue_utffilter.h:
