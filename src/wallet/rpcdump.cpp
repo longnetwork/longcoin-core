@@ -134,7 +134,8 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
 
         // Don't throw error in case a key is already there
         if (pwalletMain->HaveKey(vchAddress))
-            return NullUniValue;
+            //return NullUniValue;
+            return CBitcoinAddress(vchAddress).ToString();
 
         pwalletMain->mapKeyMetadata[vchAddress].nCreateTime = 1;
 
@@ -149,7 +150,8 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
         }
     }
 
-    return NullUniValue;
+    //return NullUniValue;
+    return CBitcoinAddress(vchAddress).ToString();
 }
 
 void ImportAddress(const CBitcoinAddress& address, const string& strLabel, const string& pubKeyHex);
@@ -224,8 +226,9 @@ UniValue importaddress(const UniValue& params, bool fHelp)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
+
     CBitcoinAddress address(params[0].get_str());
-    if (address.IsValid()) {
+    if (address.IsValid()) { 
         if (fP2SH)
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot use the p2sh flag with an address - use a script instead");
         ImportAddress(address, strLabel, "");  // Адрес не содержит пукей (наоборот пукей дает адрес), но в случае если SetAddressBook найдет его то теперь пропишет
@@ -242,7 +245,8 @@ UniValue importaddress(const UniValue& params, bool fHelp)
         pwalletMain->ReacceptWalletTransactions();
     }
 
-    return NullUniValue;
+    if (address.IsValid()) return address.ToString();
+    else return NullUniValue;
 }
 
 UniValue importpubkey(const UniValue& params, bool fHelp)
@@ -304,7 +308,8 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
         pwalletMain->ReacceptWalletTransactions();
     }
 
-    return NullUniValue;
+    //return NullUniValue;
+    return CBitcoinAddress(pubKey.GetID()).ToString();
 }
 
 UniValue importwallet(const UniValue& params, bool fHelp)

@@ -616,7 +616,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
     // TO
     CKeyID toPubKeyID;
-    if (!addressTo.GetKeyID(toPubKeyID))
+    if (!addressTo.GetKeyID(toPubKeyID))    // FIXME p2sh адреса не пропускает (это хеш от скрипта и пукея нет)
         throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to key"); // Этого не может быть KeyID ( Это вроде тот же адрес только в виде числа RIPEMD-160 бит)
     CPubKey toPubKey;
     // ищем пубкей получателя
@@ -651,7 +651,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
     // FROM
     CKeyID fromPubKeyID;
-    if (!addressFrom.GetKeyID(fromPubKeyID))
+    if (!addressFrom.GetKeyID(fromPubKeyID))    // FIXME p2sh адреса не пропускает (это хеш от скрипта и пукея нет)
         throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key");    
     CPubKey fromPubKey;
     if (!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) // У своего адреса всегда есть публичный ключ
@@ -1444,7 +1444,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
     CScriptID innerID(inner);
     pwalletMain->AddCScript(inner);
 
-    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // FixMe: Этот адрес типа включает уже публичные ключи других адресов (но если у него есть пукей то SetAddressBook его пропишит теперь)
+    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // FixMe: Этот адрес типа включает уже публичные ключи других адресов (у него самого нету пукей по определению)
     return CBitcoinAddress(innerID).ToString();
 }
 
@@ -2389,6 +2389,10 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     // Служебка, Если receive то TO - я, FROM - Чужак; Если Send то FROM - я, TO - Чужак
     bool fDebit=false;
     entry.push_back(Pair("txid", hash.GetHex()));
+
+    #warning DEBUG gethexdata ISMINE_WATCH_ONLY
+    if(wtx.GetDebit(filter)!=wtx.GetDebit(filter|ISMINE_WATCH_ONLY))
+        printf("%s\n", hash.GetHex().c_str() );
 
     /*#warning DEBUG gethexdata
     printf("GetDebit = %lu\n", wtx.GetDebit(filter) );

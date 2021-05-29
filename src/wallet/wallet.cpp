@@ -971,7 +971,8 @@ bool CWallet::IsChange(const CTxOut& txout) const
     // a better way of identifying which outputs are 'the send' and which are
     // 'the change' will need to be implemented (maybe extend CWalletTx to remember
     // which output, if any, was change).
-    if (::IsMine(*this, txout.scriptPubKey))
+    
+    if (::IsMine(*this, txout.scriptPubKey) /*&& !isLong(txout.scriptPubKey)*/ ) // FIXME Чтобы данные не фильтровались в списке транз как здача
     {
         CTxDestination address;
         if (!ExtractDestination(txout.scriptPubKey, address))
@@ -1109,13 +1110,20 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
         // Only need to handle txouts if AT LEAST one of these is true:
         //   1) they debit from us (sent)
         //   2) the output is to us (received)
+        //   3) и еще случай наличия данных ( см. также CWallet::IsChange )
+
+
+        //#warning DEBUG
+        //printf("nDebit = %lu, isminetype = %i\n", nDebit,  fIsMine ); 
+
+        
         if (nDebit > 0)
         {
             // Don't report 'change' txouts
             if (pwallet->IsChange(txout))
                 continue;
         }
-        else if (!(fIsMine & filter))
+        else if (!(fIsMine & filter) && !isLong(txout.scriptPubKey)) // long данные залистит
             continue;
 
         // In either case, we need to get the destination address
@@ -1123,6 +1131,9 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
 
         if (!ExtractDestination(txout.scriptPubKey, address) && !txout.scriptPubKey.IsUnspendable())
         {
+           // #warning DEBUG
+           // printf("CWalletTx::GetAmounts: Unknown transaction type found, txid %s\n", this->GetHash().ToString() );
+            
             LogPrintf("CWalletTx::GetAmounts: Unknown transaction type found, txid %s\n",
                      this->GetHash().ToString());
             address = CNoDestination();
@@ -1135,7 +1146,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
             listSent.push_back(output);
 
         // If we are receiving the output, add it as a "received" entry
-        if (fIsMine & filter)
+        if ( (fIsMine & filter) || isLong(txout.scriptPubKey) ) // long данные залистит
             listReceived.push_back(output);
     }
 
