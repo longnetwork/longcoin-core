@@ -1116,6 +1116,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
         //#warning DEBUG
         //printf("nDebit = %lu, isminetype = %i\n", nDebit,  fIsMine ); 
 
+        bool islong=isLong(txout.scriptPubKey);
         
         if (nDebit > 0)
         {
@@ -1123,7 +1124,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
             if (pwallet->IsChange(txout))
                 continue;
         }
-        else if (!(fIsMine & filter) && !isLong(txout.scriptPubKey)) // long данные залистит
+        else if (!(fIsMine & filter) && ! (islong && filter&ISMINE_WATCH_ONLY) ) // long данные залистит
             continue;
 
         // In either case, we need to get the destination address
@@ -1142,11 +1143,14 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
         COutputEntry output = {address, txout.nValue, (int)i};
 
         // If we are debited by the transaction, add the output as a "sent" entry
-        if (nDebit > 0)
+        if (nDebit > 0) {
             listSent.push_back(output);
+            
+            //if(islong) return; // Чтобы не было дублирования vout и в send и в receive
+        }
 
         // If we are receiving the output, add it as a "received" entry
-        if ( (fIsMine & filter) || isLong(txout.scriptPubKey) ) // long данные залистит
+        if ( (fIsMine & filter) || (islong && filter&ISMINE_WATCH_ONLY) ) // long данные залистит
             listReceived.push_back(output);
     }
 

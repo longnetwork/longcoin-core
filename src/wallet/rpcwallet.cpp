@@ -2330,18 +2330,19 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
 }
 
 // getrawtransaction может работать без кошелька напрямую с бокчейном и там нужно txindex=1
-// gettransaction - работает с wallet (взял ее за основу, так как нужны ключи. потом проверить по getrawtransaction а что с чужими сообщениями нужна ли доп шифрация? )
+// gettransaction - работает с wallet (взял ее за основу, так как нужны ключи.
 UniValue gethexdata(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
     
-    if (fHelp || params.size() < 1 || params.size() > 1)
+    if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "gethexdata \"txid\" \n"
+            "gethexdata \"txid\" ( includeWatchonly )\n"
             "\nLONG Specific: Get decripting data transmitted with a transaction <txid> \n"
             "\nArguments:\n"
             "1. \"txid\"    (string, required) The transaction id\n"
+            "2. \"includeWatchonly\"    (bool, optional, default=false) Whether to include watched addresses in direction calculation\n"
             "\nResult:\n"
             "{\n"
             "  \"txid\" : \"transactionid\",       (string) The transaction id.\n"
@@ -2375,7 +2376,11 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     uint256 hash;
     hash.SetHex(params[0].get_str());
 
-    isminefilter filter = ISMINE_SPENDABLE; // | ISMINE_WATCH_ONLY; // - это для ипортированных ключей механизм наблюдения за счетами (вот почему для пукей отдельное поле.. чтобы не задействовать этот механизм) 
+    isminefilter filter = ISMINE_SPENDABLE;
+    if(params.size() > 1)
+        if(params[1].get_bool())
+            filter = filter | ISMINE_WATCH_ONLY; // - это для ипортированных ключей механизм наблюдения за счетами (вот почему для пукей отдельное поле.. чтобы не задействовать этот механизм) 
+
 
     UniValue entry(UniValue::VOBJ);
 
@@ -2389,10 +2394,6 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     // Служебка, Если receive то TO - я, FROM - Чужак; Если Send то FROM - я, TO - Чужак
     bool fDebit=false;
     entry.push_back(Pair("txid", hash.GetHex()));
-
-    #warning DEBUG gethexdata ISMINE_WATCH_ONLY
-    if(wtx.GetDebit(filter)!=wtx.GetDebit(filter|ISMINE_WATCH_ONLY))
-        printf("%s\n", hash.GetHex().c_str() );
 
     /*#warning DEBUG gethexdata
     printf("GetDebit = %lu\n", wtx.GetDebit(filter) );

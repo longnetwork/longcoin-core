@@ -112,6 +112,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "getaddressutxos", 0},
     { "getaddressmempool", 0},
 
+    { "gethexdata", 1 },
     { "sendhexdata", 4},
     { "createrawdata", 3},
 };
