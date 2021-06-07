@@ -51,7 +51,7 @@ static const bool DEFAULT_WHITELISTRELAY = true;
 static const bool DEFAULT_WHITELISTFORCERELAY = true;
 /** Default for -minrelaytxfee, minimum relay fee for transactions */
 /** По умолчанию для -minrelaytxfee, минимальная плата за транзакцию для транзакций */
-static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 1; //1000000; // FixMe: Тариф (в LONG / кБ), меньшие, чем это, считаются нулевым за ретрансляцию, майнинг и создание транзакций (типа равноприоритетные)
+static const unsigned int DEFAULT_MIN_RELAY_TX_FEE = 1; //1000000; // XXX Тариф (в LONG / кБ), меньшие, чем это, считаются нулевым за ретрансляцию, майнинг и создание транзакций (типа равноприоритетные)
 /** Default for -maxorphantx, maximum number of orphan transactions kept in memory */
 /** По умолчанию для -maxorphantx, максимальное количество сиротских транзакций, хранящихся в памяти */
 static const unsigned int DEFAULT_MAX_ORPHAN_TRANSACTIONS = 100;

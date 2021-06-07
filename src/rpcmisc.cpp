@@ -247,9 +247,14 @@ CScript _createmultisig_redeemScript(const UniValue& params)
                 throw runtime_error(
                     strprintf("%s does not refer to a key",ks));
             CPubKey vchPubKey;
-            if (!pwalletMain->GetPubKey(keyID, vchPubKey))
-                throw runtime_error(
-                    strprintf("no full public key for address %s",ks));
+            if (!pwalletMain->GetPubKey(keyID, vchPubKey)) { // еще нужно поискать в сохраненных пукеях
+
+                if(pwalletMain->mapAddressBook.count(keyID) && !pwalletMain->mapAddressBook[keyID].pubkeyhex.empty()) {
+                    std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[keyID].pubkeyhex);
+                        vchPubKey.Set(vch.begin(),vch.end());
+                }
+                else throw runtime_error( strprintf("no full public key for address %s",ks) );
+            }
             if (!vchPubKey.IsFullyValid())
                 throw runtime_error(" Invalid public key: "+ks);
             pubkeys[i] = vchPubKey;

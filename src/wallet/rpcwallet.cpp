@@ -261,11 +261,11 @@ UniValue setaccount(const UniValue& params, bool fHelp)
     
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
-            "setaccount \"addressID\" \"label\"\n"
+            "setaccount \"address\" \"label\"\n"
             "\nLONG Adaptation: Sets the account associated with the given address or public key.\n"
             "                   any address and foreign public key can be assigned an account label.\n"
             "\nArguments:\n"
-            "1. \"addressID\"       (string, required) The address or hex-encoded public key\n"
+            "1. \"address\"       (string, required) The address or hex-encoded public key\n"
             "2. \"label\"           (string, required, default=\"\") The label to assign the address to.\n"
             "\nResult:\n"
             "\"bitcoinaddress\"     (string) The bitcoin address associated with the public key\n"    
@@ -301,7 +301,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
             string strPubKeyHex;
             if (pwalletMain->mapAddressBook.count(address.Get()))
             {
-                // FIXME: Это какаято ебучая херь! при смене аккаунта генерить новый адрес на старом
+                // XXX Это какаято ебучая херь! при смене аккаунта генерить новый адрес на старом
                 // На аккаунте может быть много адресов, поэтому адекватность команды getaccountaddress обеспечивется чем, что
                 // она возвращает первый еще не использованый адрес или генерит новый и возвращает его если все уже использованы
                 // Поэтому здесь типа при перекидывании адреса на новый аккаунт форсится генерация адреса на старом аккаунте
@@ -582,8 +582,8 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             {
                 const CBitcoinAddress& address = item.first;
                 const string& strName = item.second.name;
-                if ( strName == strFrom && IsMine(*pwalletMain, address.Get()) ) { // Первый найденный свой адрес на аккаунте. FixMe: Новые адреса и не в конце и не в начале
-                                                                                   // FixMe: Проверка своего наверно быстрее по send, receive, но так надежней
+                if ( strName == strFrom && IsMine(*pwalletMain, address.Get()) ) { // Первый найденный свой адрес на аккаунте. Новые адреса и не в конце и не в начале
+                                                                                   // FIXME Проверка своего наверно быстрее по send, receive, но так надежней
                     addressFrom.Set(address.Get());
                     fFromAccount=true;
                     break;
@@ -613,47 +613,57 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
     // LONG BYTES (0c0f0e07) - version byte (00)
     std::vector<unsigned char> dataNewTX = ParseHex("0c0f0e0700");
+    
 
     // TO
-    CKeyID toPubKeyID;
-    if (!addressTo.GetKeyID(toPubKeyID))    // FIXME p2sh адреса не пропускает (это хеш от скрипта и пукея нет)
-        throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to key"); // Этого не может быть KeyID ( Это вроде тот же адрес только в виде числа RIPEMD-160 бит)
-    CPubKey toPubKey;
-    // ищем пубкей получателя
-    if (!fToPubKey && pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // Это поиск среди импортированых ключей
-        dataNewTX.push_back(0xf0); // OP_TO
-        dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
-        dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
-        fEncrypt=true;
-    } else if(!fToPubKey && pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) { // Это в адресной книге по тому доп полю .pubkeyhex
-        std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex); // Глянуть внутрь класса потом (юзают две формы поиска: вначале .count() и потом сразу доступ по ключю; и через итератор)
-        toPubKey.Set(vch.begin(),vch.end());
-        if (!toPubKey.IsFullyValid()) 
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "PubKey in AddressBook is not a valid public key");
-        
-        dataNewTX.push_back(0xf0); // OP_TO
-        dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
-        dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
-        fEncrypt=true;
-    } else if(fToPubKey) { // PubkKey дается в комманде и он уже проверен на валидность
-        std::vector<unsigned char> vch=ParseHex(strTo);
-        toPubKey.Set(vch.begin(),vch.end());
-        dataNewTX.push_back(0xf0); // OP_TO
-        dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
-        dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
-        fEncrypt=true;
-    } else { // пубкей получателя НЕ найден - шифрование отключено
-        dataNewTX.push_back(0xf0); // OP_TO
-        dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
-        dataNewTX.insert(dataNewTX.end(), toPubKeyID.begin(), toPubKeyID.end()); // тогда запихнем его ID по адрессу
-        fEncrypt=false;
-    } 
+    CKeyID toPubKeyID; CPubKey toPubKey;
+    if (addressTo.GetKeyID(toPubKeyID)) {
+        // ищем пубкей получателя
+        if (!fToPubKey && pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // Это поиск среди импортированых ключей
+            dataNewTX.push_back(0xf0); // OP_TO
+            dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
+            dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
+            fEncrypt=true;
+        } else if(!fToPubKey && pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) { // Это в адресной книге по тому доп полю .pubkeyhex
+            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex); // Глянуть внутрь класса потом (юзают две формы поиска: вначале .count() и потом сразу доступ по ключю; и через итератор)
+            toPubKey.Set(vch.begin(),vch.end());
+            if (!toPubKey.IsFullyValid()) 
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "PubKey in AddressBook is not a valid public key");
+            
+            dataNewTX.push_back(0xf0); // OP_TO
+            dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
+            dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
+            fEncrypt=true;
+        } else if(fToPubKey) { // PubkKey дается в комманде и он уже проверен на валидность
+            std::vector<unsigned char> vch=ParseHex(strTo);
+            toPubKey.Set(vch.begin(),vch.end());
+            dataNewTX.push_back(0xf0); // OP_TO
+            dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
+            dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
+            fEncrypt=true;
+        } else { // пубкей получателя НЕ найден - шифрование отключено
+            dataNewTX.push_back(0xf0); // OP_TO
+            dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
+            dataNewTX.insert(dataNewTX.end(), toPubKeyID.begin(), toPubKeyID.end()); // тогда запихнем его ID по адрессу
+            fEncrypt=false;
+        } 
+    } else { // p2sh адреса не имеют кукея (это хеш от скрипта и пукея нет)
+        if(!addressTo.IsScript()) throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to pubkey or script");
 
-    // FROM
-    CKeyID fromPubKeyID;
-    if (!addressFrom.GetKeyID(fromPubKeyID))    // FIXME p2sh адреса не пропускает (это хеш от скрипта и пукея нет)
+        // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
+        const CScriptID& hash = boost::get<CScriptID>( addressTo.Get() );
+        
+            dataNewTX.push_back(0xf0); // OP_TO
+            dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
+            dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
+            
+            fEncrypt=false; // toPubKey не понадобится
+    }
+    
+    // FROM - Отправитель обязан всегда запихивать свой pubkey, чтобы было куда шифровать ответ
+    CKeyID fromPubKeyID; CPubKey fromPubKey;
+    if (!addressFrom.GetKeyID(fromPubKeyID))
         throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key");    
-    CPubKey fromPubKey;
     if (!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) // У своего адреса всегда есть публичный ключ
         throw JSONRPCError(RPC_WALLET_ERROR, "PubKey for sender address is not known");
     CKey fromPrivKey;
@@ -737,7 +747,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     else strAccount=strFrom;
     
     CWalletTx wtx;
-    wtx.strFromAccount = strAccount;    // FixMe: Проверить отсылку с адреса без аккаунта (коррекция наверно будет проходить в CreateTransactions на аккаунт "")
+    wtx.strFromAccount = strAccount;
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["comment"] = params[3].get_str();
 
@@ -758,8 +768,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     }
     if (!pwalletMain->CommitTransaction(wtx, reservekey))
         throw JSONRPCError(RPC_WALLET_ERROR, "Error: The transaction was rejected! This might happen if some of the coins in your wallet were already spent, such as if you used a copy of wallet.dat and coins were spent in the copy but not marked as spent here.");
-    // FixMe: Там в QT в sendCoins еще пытаются добавить pubKeyHex в адрессную книгу (ну видимо адресата, чтобы в следующий раз было что для sharedSecret)
-    // но вроде пока он всегда пустой - возможно это надо возлагать на отдельную команду importpubkey, которая уже есть в rpc
+    // XXX Там в QT в sendCoins еще пытаются добавить pubKeyHex в адрессную книгу (ну видимо адресата, чтобы в следующий раз было что для sharedSecret)
+    // но в этом нет смысла так как теперь есть setaccount с возможносью сохранения публичных ключей
+
     return wtx.GetHash().GetHex(); 
 }
 
@@ -1239,40 +1250,6 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     CAmount nBalance = GetAccountBalance(strAccount, nMinDepth, ISMINE_SPENDABLE);
     if (nAmount > nBalance)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
-        
-    // Предвариельная коррекция с учетом того что здача возвращается на default аккаунт
-    // Херовый вариант прыгать от всего баланса - будем мутить в CreateTransaction от входов - там все теперь корректно, а это оставим для истории                            
-/*    if( strAccount != "default" ) { // Ага - делаем компансацию значений на аккаунте и збс
-        CAmount curBalance = pwalletMain->GetBalance();
-        CWalletDB walletdb(pwalletMain->strWalletFile);
-        if (!walletdb.TxnBegin())
-            throw JSONRPCError(RPC_DATABASE_ERROR, "database error");
-
-            int64_t nNow = GetAdjustedTime();
-
-            // Debit
-            CAccountingEntry debit;
-            debit.nOrderPos = pwalletMain->IncOrderPosNext(&walletdb);
-            debit.strAccount = "default"; // Это изначально захардкожено и мы хардкодим
-            debit.nCreditDebit = -(curBalance-nAmount); // + fee
-            debit.nTime = nNow;
-            debit.strOtherAccount = strAccount;
-            debit.strComment = "Account change correct";
-            pwalletMain->AddAccountingEntry(debit, walletdb);
-
-            // Credit
-            CAccountingEntry credit;
-            credit.nOrderPos = pwalletMain->IncOrderPosNext(&walletdb);
-            credit.strAccount = strAccount;
-            credit.nCreditDebit = +(curBalance-nAmount); // +fee
-            credit.nTime = nNow;
-            credit.strOtherAccount = "default";
-            credit.strComment = "Account change correct";
-            pwalletMain->AddAccountingEntry(credit, walletdb);
-
-            if (!walletdb.TxnCommit())
-                throw JSONRPCError(RPC_DATABASE_ERROR, "database error");
-    }  */
 
     SendMoney(address.Get(), nAmount, false, wtx);
 
@@ -1444,7 +1421,8 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
     CScriptID innerID(inner);
     pwalletMain->AddCScript(inner);
 
-    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // FixMe: Этот адрес типа включает уже публичные ключи других адресов (у него самого нету пукей по определению)
+    pwalletMain->SetAddressBook(innerID, strAccount, "", "send"); // XXX Этот адрес типа включает уже публичные ключи других адресов (у него самого нету пукей по определению)
+                                                                  // FIXME send или receive
     return CBitcoinAddress(innerID).ToString();
 }
 
@@ -1712,45 +1690,61 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 CAddressBookData* toAB=NULL;
 
                 // TO
-                std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
-                getLongToPubKey(txout.scriptPubKey, vchToPubKey);
+                std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; txnouttype toType; CBitcoinAddress addressTo;
+                getLongToPubKey(txout.scriptPubKey, vchToPubKey, toType);
                 if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
-                    toPubKeyID=uint160(vchToPubKey);
-                    if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
-                        
-                        if( pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty() ) {
-                            std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
-                            toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                    if(toType!=TX_SCRIPTHASH) {
+                        toPubKeyID=uint160(vchToPubKey);
+                        if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
+                            if( pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty() ) {
+                                std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
+                                toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                            }
                         }
-                        
+                        addressTo=CBitcoinAddress(toPubKeyID);
+                    }
+                    else {
+                        addressTo=CBitcoinAddress(CScriptID(uint160(vchToPubKey))); // поддержка адресов начинающихся на 3...
                     }
                 } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                     toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
                     toPubKeyID=toPubKey.GetID();                    // ID публичного ключа = адрес в бинарной форме RIPEMD-160
+
+                    addressTo=CBitcoinAddress(toPubKeyID);
                 }
+                // else - addressTo of zerro id
                                          
-                CBitcoinAddress addressTo(toPubKeyID);
+
                 string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
                  // FROM
-                std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; 
-                getLongFromPubKey(txout.scriptPubKey, vchFromPubKey);
+                std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; txnouttype fromType; CBitcoinAddress addressFrom;
+                getLongFromPubKey(txout.scriptPubKey, vchFromPubKey, fromType);
                 if (vchFromPubKey.size() == 20) {
-                    fromPubKeyID=uint160(vchFromPubKey);
-                    if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                        
-                         if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
-                            std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
-                            fromPubKey.Set(vch.begin(),vch.end());
+                    if(fromType!=TX_SCRIPTHASH) {
+                        fromPubKeyID=uint160(vchFromPubKey);
+                        if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
+                            
+                             if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
+                                std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
+                                fromPubKey.Set(vch.begin(),vch.end());
+                            }
+                            
                         }
-                        
+                        addressFrom=CBitcoinAddress(fromPubKeyID);
+                    }
+                    else {
+                        addressFrom=CBitcoinAddress(CScriptID(uint160(vchFromPubKey))); // поддержка адресов начинающихся на 3...
                     }
                 } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                     fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
                     fromPubKeyID=fromPubKey.GetID();
+
+                    addressFrom=CBitcoinAddress(fromPubKeyID);
                 }
+                // else - addressFrom of zerro id
                                           
-                CBitcoinAddress addressFrom(fromPubKeyID);
+
                 string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                 string strTo; {                    
@@ -1837,45 +1831,61 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     CAddressBookData* toAB=NULL;                    
 
                     // TO
-                    std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID;
-                    getLongToPubKey(txout.scriptPubKey, vchToPubKey);
+                    std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; txnouttype toType; CBitcoinAddress addressTo;
+                    getLongToPubKey(txout.scriptPubKey, vchToPubKey, toType);
                     if (vchToPubKey.size() == 20) { // ID адреса - нужно попытаться найти pubKey в адресной книге
-                        toPubKeyID=uint160(vchToPubKey);
-                        if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
-                            
-                            if(pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty()) {
-                                std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
-                                toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                        if(toType!=TX_SCRIPTHASH) {
+                            toPubKeyID=uint160(vchToPubKey);
+                            if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
+                                
+                                if(pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty()) {
+                                    std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
+                                    toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
+                                }
+                                
                             }
-                            
+                            addressTo=CBitcoinAddress(toPubKeyID);
+                        }
+                        else {
+                            addressTo=CBitcoinAddress(CScriptID(uint160(vchToPubKey))); // поддержка адресов начинающихся на 3...
                         }
                     } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                         toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
                         toPubKeyID=toPubKey.GetID();                    // ID публичного ключа = адрес в бинарной форме RIPEMD-160
+
+                        addressTo=CBitcoinAddress(toPubKeyID);
                     }
                                              
-                    CBitcoinAddress addressTo(toPubKeyID);
+
                     string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
                      // FROM
-                    std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; 
-                    getLongFromPubKey(txout.scriptPubKey, vchFromPubKey);
+                    std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; txnouttype fromType; CBitcoinAddress addressFrom;
+                    getLongFromPubKey(txout.scriptPubKey, vchFromPubKey, fromType);
                     if (vchFromPubKey.size() == 20) {
-                        fromPubKeyID=uint160(vchFromPubKey);
-                        if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                            
-                             if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
-                                std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
-                                fromPubKey.Set(vch.begin(),vch.end());
+                        if(fromType!=TX_SCRIPTHASH) {
+                            fromPubKeyID=uint160(vchFromPubKey);
+                            if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
+                                
+                                 if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
+                                    std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
+                                    fromPubKey.Set(vch.begin(),vch.end());
+                                }
+                                
                             }
-                            
+                            addressFrom=CBitcoinAddress(fromPubKeyID);
+                        }
+                        else {
+                            addressFrom=CBitcoinAddress(CScriptID(uint160(vchFromPubKey))); // поддержка адресов начинающихся на 3...
                         }
                     } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                         fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
                         fromPubKeyID=fromPubKey.GetID();
+
+                        addressFrom=CBitcoinAddress(fromPubKeyID);
                     }
                                               
-                    CBitcoinAddress addressFrom(fromPubKeyID);
+
                     string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                     string strTo; {
@@ -2144,7 +2154,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
                     mapAccountBalances[""] += r.amount;
         }
     } // Вроде цепляются балансы даже для label чужих адресов и при includeAll=false если была команда move c этими label
-      // FIXME: includeAll=true нужно только для выяснения всех меток чужих адресов
+      // XXX includeAll=true нужно только для выяснения всех меток чужих адресов
       
 
     const list<CAccountingEntry> & acentries = pwalletMain->laccentries;
@@ -2380,7 +2390,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     if(params.size() > 1)
         if(params[1].get_bool())
             filter = filter | ISMINE_WATCH_ONLY; // - это для ипортированных ключей механизм наблюдения за счетами (вот почему для пукей отдельное поле.. чтобы не задействовать этот механизм) 
-
+                                                 // FIXME includeWatchonly может влиять на тип receive или send
 
     UniValue entry(UniValue::VOBJ);
 
@@ -2412,7 +2422,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                                                       нужно поменять send на receive для дешифровки (слали на PUBLIC)
                                                       В общем при дешефровке условие смены направления данных:
                                                       - если по списанию send а адрес from чужой то смена направления дешифровки;
-                                                      - если нет списания (receive) а адрес to чужой то смена направления дешифровки; ( FIXME: протестить и подумать над ISMINE_WATCH_ONLY )
+                                                      - если нет списания (receive) а адрес to чужой то смена направления дешифровки; ( FIXME подумать над ISMINE_WATCH_ONLY )
                                                    */
         fDebit=true;
     }
@@ -2456,52 +2466,62 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                         
             UniValue obj(UniValue::VOBJ);
             // TO
-            std::vector<unsigned char> vchToPubKey;
-            CPubKey toPubKey;
-            CKeyID  toPubKeyID;
-            CKey    toPrivKey;
-            getLongToPubKey(txout.scriptPubKey, vchToPubKey); // false если нет данных
-            if (vchToPubKey.size() == 20) {                   // Это если небыло у отправителя бубличного ключа получателя, то он засунул в TO просто ID адресса 
-                toPubKeyID=uint160(vchToPubKey);
-                if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) {    // Но если данные шли нам, то мы то можем из своего кошеля взять публичный ключ по ID своего адресса
-                    // предпримем попытку еще найти ключь в адресной книге в том доп поле, если это наша транзакция и мы слали полагаясь на него (хотя сюда тогда не зайдет код)
-                    if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
-                        std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
-                        toPubKey.Set(vch.begin(),vch.end());
+            std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; CKey toPrivKey; txnouttype toType; CBitcoinAddress addressTo;
+            getLongToPubKey(txout.scriptPubKey, vchToPubKey, toType); // false если нет данных
+            if (vchToPubKey.size() == 20) {                   // Это если небыло у отправителя бубличного ключа получателя, то он засунул в TO просто ID адресса
+                if(toType!=TX_SCRIPTHASH) {
+                    toPubKeyID=uint160(vchToPubKey);
+                    if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) {    // Но если данные шли нам, то мы то можем из своего кошеля взять публичный ключ по ID своего адресса
+                        // предпримем попытку еще найти ключь в адресной книге в том доп поле, если это наша транзакция и мы слали полагаясь на него (хотя сюда тогда не зайдет код)
+                        if(pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) {
+                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex);
+                            toPubKey.Set(vch.begin(),vch.end());
+                        }
                     }
+                    addressTo=CBitcoinAddress(toPubKeyID); // Адреса по строке и по ID должны быть идентичны
+                }
+                else {
+                    addressTo=CBitcoinAddress(CScriptID(uint160(vchToPubKey))); // поддержка адресов начинающихся на 3...
                 }
             } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
                 toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
                 toPubKeyID=toPubKey.GetID();                    // ID публичного ключа жоско зависит от адреса ( это и есть адрес в бинарной форме RIPEMD-160)
+
+                addressTo=CBitcoinAddress(toPubKeyID);
             }
-            if (pwalletMain->HaveKey(toPubKeyID)) {
-                pwalletMain->GetKey(toPubKeyID, toPrivKey);       // Мы приемная сторона - наш шаредсекрет скачет от toPrivKey
-            }                            
-            CBitcoinAddress addressTo(toPubKeyID);                // Адреса по строке и по ID должны быть идентичны
+            
+            if (pwalletMain->HaveKey(toPubKeyID)) pwalletMain->GetKey(toPubKeyID, toPrivKey);       // Мы приемная сторона - наш шаредсекрет скачет от toPrivKey
+                                        
+
             string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
              // FROM
-            std::vector<unsigned char> vchFromPubKey;
-            CPubKey fromPubKey;  // CPubKey fromPubKey(fromPubKey);
-            CKeyID  fromPubKeyID; //CKeyID  fromPubKeyID = fromCPubKey.GetID();
-            CKey    fromPrivKey;
-            getLongFromPubKey(txout.scriptPubKey, vchFromPubKey);
+            std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; CKey fromPrivKey; txnouttype fromType; CBitcoinAddress addressFrom;
+            getLongFromPubKey(txout.scriptPubKey, vchFromPubKey, fromType);
             if (vchFromPubKey.size() == 20) {
-                fromPubKeyID=uint160(vchFromPubKey);
-                if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                     if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
-                        std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
-                        fromPubKey.Set(vch.begin(),vch.end());
-                    }                   
+                if(fromType!=TX_SCRIPTHASH) {
+                    fromPubKeyID=uint160(vchFromPubKey);
+                    if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
+                         if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
+                            std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
+                            fromPubKey.Set(vch.begin(),vch.end());
+                        }                   
+                    }
+                    addressFrom=CBitcoinAddress(fromPubKeyID); // Адреса по строке и по ID должны быть идентичны
+                }
+                else {
+                    addressFrom=CBitcoinAddress(CScriptID(uint160(vchFromPubKey))); // поддержка адресов начинающихся на 3...
                 }
             } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
                 fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
                 fromPubKeyID=fromPubKey.GetID(); // В С++ по умолчанию - побитовое копирование объекта
+
+                addressFrom=CBitcoinAddress(fromPubKeyID);
             }
-            if (pwalletMain->HaveKey(fromPubKeyID)) {
-                pwalletMain->GetKey(fromPubKeyID, fromPrivKey);
-            }                            
-            CBitcoinAddress addressFrom(fromPubKeyID);             // Адреса по строке и по ID должны быть идентичны
+
+            if (pwalletMain->HaveKey(fromPubKeyID)) pwalletMain->GetKey(fromPubKeyID, fromPrivKey);
+
+            
             string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());   // Если отправитель засунул только свой адрес и здесь нет его публичного ключа, то данные не зашифрованы
 
             // DATA Type 

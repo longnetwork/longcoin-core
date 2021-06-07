@@ -86,6 +86,8 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
             "2. \"label\"            (string, optional, default=\"\") An optional label\n"
             "3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions\n"
             "\nNote: This call can take minutes to complete if rescan is true.\n"
+            "\nResult:\n"
+            "\"bitcoinaddress\"     (string) The bitcoin address associated with the private key\n"
             "\nExamples:\n"
             "\nDump a private key\n"
             + HelpExampleCli("dumpprivkey", "\"myaddress\"") +
@@ -168,7 +170,7 @@ void ImportScript(const CScript& script, const string& strLabel, bool isRedeemSc
     if (isRedeemScript) {
         if (!pwalletMain->HaveCScript(script) && !pwalletMain->AddCScript(script))
             throw JSONRPCError(RPC_WALLET_ERROR, "Error adding p2sh redeemScript to wallet");
-        ImportAddress(CBitcoinAddress(CScriptID(script)), strLabel, ""); // Fixme: pubKeyHex
+        ImportAddress(CBitcoinAddress(CScriptID(script)), strLabel, ""); // FIXME pubKeyHex
     }
 }
 
@@ -197,6 +199,8 @@ UniValue importaddress(const UniValue& params, bool fHelp)
             "4. p2sh                 (boolean, optional, default=false) Add the P2SH version of the script as well\n"
             "\nNote: This call can take minutes to complete if rescan is true.\n"
             "If you have the full public key, you should call importpublickey instead of this.\n"
+            "\nResult:\n"
+            "\"bitcoinaddress\"     (string) The associated bitcoin address\n"
             "\nExamples:\n"
             "\nImport a script with rescan\n"
             + HelpExampleCli("importaddress", "\"myscript\"") +
@@ -227,14 +231,18 @@ UniValue importaddress(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
 
-    CBitcoinAddress address(params[0].get_str());
+    CBitcoinAddress address(params[0].get_str()); CScript script;
     if (address.IsValid()) { 
         if (fP2SH)
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot use the p2sh flag with an address - use a script instead");
         ImportAddress(address, strLabel, "");  // Адрес не содержит пукей (наоборот пукей дает адрес), но в случае если SetAddressBook найдет его то теперь пропишет
     } else if (IsHex(params[0].get_str())) {
         std::vector<unsigned char> data(ParseHex(params[0].get_str()));
-        ImportScript(CScript(data.begin(), data.end()), strLabel, fP2SH);
+
+        script=CScript(data.begin(), data.end());
+        
+        ImportScript(script, strLabel, fP2SH);
+        
     } else {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Bitcoin address or script");
     }
@@ -245,8 +253,9 @@ UniValue importaddress(const UniValue& params, bool fHelp)
         pwalletMain->ReacceptWalletTransactions();
     }
 
+    //return NullUniValue;
     if (address.IsValid()) return address.ToString();
-    else return NullUniValue;
+    else return CBitcoinAddress(CScriptID(script)).ToString();
 }
 
 UniValue importpubkey(const UniValue& params, bool fHelp)
@@ -264,6 +273,8 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
             "3. rescan               (boolean, optional, default=true) Rescan the wallet for transactions\n"
             "\nNote: This call can take minutes to complete if rescan is true.\n"
             "\nExamples:\n"
+            "\nResult:\n"
+            "\"bitcoinaddress\"     (string) The bitcoin address associated with the public key\n"
             "\nImport a public key with rescan\n"
             + HelpExampleCli("importpubkey", "\"pubkey\"") +
             "\nImport using a label and without rescan\n"
@@ -297,10 +308,8 @@ UniValue importpubkey(const UniValue& params, bool fHelp)
 
     ImportAddress(CBitcoinAddress(pubKey.GetID()), strLabel, params[0].get_str());
     ImportScript(GetScriptForRawPubKey(pubKey), strLabel, false);
-        // FixMe: добавит пукей через SetAddressBook НО! в категорию received!!
+        // FIXME добавит пукей через SetAddressBook НО! в категорию received!!
         // Для категории "send" - отдельная ветка в setaccount ! (импортированные ключи в наблюдение попадают и кошелек сканит их транзакции все время)
-        // FixMe: Публичные ключи из QT-ГУИ не обнаруживются средствами wallet.cpp без просмотра поля .pubkeyhex
-        // Тогда как импортированные ( + ImportScript) обнаруживаются
 
     if (fRescan)
     {

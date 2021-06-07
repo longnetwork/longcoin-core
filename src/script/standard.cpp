@@ -173,6 +173,13 @@ bool getLongToPubKey(const CScript& scriptPubKey, std::vector<unsigned char>& pu
                     offset = offset +20;
                     type = TX_PUBKEYHASH;
                     return true;
+				} else if (pushedReturnData[+offset] == 0xfc) { // OP_SCRIPTHASH
+                    offset = offset +1;
+					std::vector<unsigned char> hashBytes(pushedReturnData.begin() +offset, pushedReturnData.begin() +offset +20);
+					pubKey = hashBytes;
+                    offset = offset +20;
+                    type = TX_SCRIPTHASH;
+                    return true;
 				}
 			}
 			
@@ -202,7 +209,7 @@ bool getLongFromPubKey(const CScript& scriptPubKey, std::vector<unsigned char>& 
                     offset = offset +1 +33;
 				} else if (pushedReturnData[+offset ] == 0xff) { // OP_PUBKEY
 					offset = offset +1 +65;
-				} else if (pushedReturnData[+offset ] == 0xfd) { // OP_PUBKEYHASH
+				} else if (pushedReturnData[+offset ] == 0xfd || pushedReturnData[+offset ] == 0xfc) { // OP_PUBKEYHASH | OP_SCRIPTHASH
 					offset = offset +1 +20;
 				}
 			}
@@ -229,7 +236,15 @@ bool getLongFromPubKey(const CScript& scriptPubKey, std::vector<unsigned char>& 
                     offset = offset +20;
                     type = TX_PUBKEYHASH;
                     return true;
+				} else if (pushedReturnData[+offset] == 0xfc) { // OP_SCRIPTHASH
+                    offset = offset +1;
+					std::vector<unsigned char> hashBytes(pushedReturnData.begin() +offset, pushedReturnData.begin() +offset +20);
+					pubKey = hashBytes;
+                    offset = offset +20;
+                    type = TX_SCRIPTHASH;
+                    return true;
 				}
+                
 			}
 		}
 	}
@@ -261,7 +276,7 @@ bool getOffsetLongData(const CScript& scriptPubKey, unsigned int& offset)
 						offset = offset +1 +33;
 					} else if (pushedReturnData[offset] == 0xff) { // OP_PUBKEY
 						offset = offset +1 +65;
-					} else if (pushedReturnData[+offset ] == 0xfd) { // OP_PUBKEYHASH
+					} else if (pushedReturnData[+offset ] == 0xfd || pushedReturnData[+offset ] == 0xfc) { // OP_PUBKEYHASH || OP_SCRIPTHASH
                         offset = offset +1 +20;
                     }
 				}
@@ -271,7 +286,7 @@ bool getOffsetLongData(const CScript& scriptPubKey, unsigned int& offset)
 						offset = offset +1 +33;
 					} else if (pushedReturnData[offset] == 0xff) { // OP_PUBKEY
 						offset = offset +1 +65;
-					} else if (pushedReturnData[+offset ] == 0xfd) { // OP_PUBKEYHASH
+					} else if (pushedReturnData[+offset ] == 0xfd || pushedReturnData[+offset ] == 0xfc) { // OP_PUBKEYHASH || OP_SCRIPTHASH
                         offset = offset +1 +20;
                     }
 				}
@@ -438,11 +453,12 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
 	// До тех пор, пока скрипт проходит тест IsUnspendable (), и все, кроме первого байта, проходят тест IsPushOnly (), нам все равно, что именно находится в скрипте.
     if (scriptPubKey.size() >= 1 && scriptPubKey[0] == OP_RETURN && scriptPubKey.IsPushOnly(scriptPubKey.begin()+1)) {
 		
-		if (isLong(scriptPubKey)) {
-			vector<unsigned char> toPubKey;
-			if (getLongToPubKey(scriptPubKey, toPubKey, typeRet))  {
-				vSolutionsRet.push_back(toPubKey);
-		        return true;
+		if (isLong(scriptPubKey)) { // FIXME отследить как при TX_NULL_DATA не помечаются транзы как unspent (UTXO) и сделать по аналогии для LONG-данных
+			vector<unsigned char> vchToPubKey;
+			if (getLongToPubKey(scriptPubKey, vchToPubKey, typeRet))  {
+				vSolutionsRet.push_back(vchToPubKey);   // vchToPubKey - это вектор байт (коть пукей хоть id-uint160 адресов)
+		        return true;                            // FIXME транза с данными и с адресом p2sh идет как TX_SCRIPTHASH даже если адрес multisig (TX_MULTISIG)
+                                                        //   то есть выход с данными это либо TX_PUBKEYHASH либо TX_SCRIPTHASH
 			}
 
 		}
@@ -505,7 +521,7 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
                     break;
                 vSolutionsRet.push_back(vch1);
             }
-            else if (opcode2 == OP_PUBKEYHASH)
+            else if (opcode2 == OP_PUBKEYHASH || opcode2 == OP_SCRIPTHASH)
             {
                 if (vch1.size() != sizeof(uint160))
                     break;

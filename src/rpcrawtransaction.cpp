@@ -481,13 +481,23 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
         }
         else { // Шифрование НЕ возможно
             CKeyID toPubKeyID;
-            if (!addressTo.GetKeyID(toPubKeyID)) throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to key"); // Гавно с адресом
+            if (addressTo.GetKeyID(toPubKeyID)) {
+                dataNewTX.push_back(0xf0); // OP_TO
+                dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
+                dataNewTX.insert(dataNewTX.end(), toPubKeyID.begin(), toPubKeyID.end()); // пихаем ID Адреса, если нет его публичного ключа
+            }
+            else {
+                if(!addressTo.IsScript()) throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to pubkey or script");
 
-            dataNewTX.push_back(0xf0); // OP_TO
-            dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
-            dataNewTX.insert(dataNewTX.end(), toPubKeyID.begin(), toPubKeyID.end()); // пихаем ID Адреса, если нет его публичного ключа
+                // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
+                const CScriptID& hash = boost::get<CScriptID>( addressTo.Get() );
+                
+                    dataNewTX.push_back(0xf0); // OP_TO
+                    dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
+                    dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
+            }
         
-            fEncrypt=false; // Шифрование невозможно
+            fEncrypt=false; // Шифрование невозможно и toPubKey не понадобится
         }
 
         //// FROM    
@@ -519,14 +529,24 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
             }
             else { // Только адрес отправителя есть.
                 CKeyID fromPubKeyID;
-                if (!addressFrom.GetKeyID(fromPubKeyID)) throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key"); // Гавно с адресом
+                if (addressFrom.GetKeyID(fromPubKeyID)) {
+                    dataNewTX.push_back(0xf1); // OP_FROM
+                    dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
+                    dataNewTX.insert(dataNewTX.end(), fromPubKeyID.begin(), fromPubKeyID.end());
+                }   
+                else {
+                    if(!addressFrom.IsScript()) throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key or script"); // Гавно с адресом
 
-                dataNewTX.push_back(0xf1); // OP_FROM
-                dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
-                dataNewTX.insert(dataNewTX.end(), fromPubKeyID.begin(), fromPubKeyID.end());
+                    // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
+                    const CScriptID& hash = boost::get<CScriptID>( addressFrom.Get() );
+                    
+                        dataNewTX.push_back(0xf1); // OP_FROM
+                        dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
+                        dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
+                }
             }    
 
-            fEncrypt=false; // Хуй вам а не шифрование
+            fEncrypt=false; // Хуй вам а не шифрование  fromPrivKey не понадобится
         }
 
 
@@ -581,7 +601,7 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
         dataNewTX.insert(dataNewTX.end(), dataBodypush.begin(), dataBodypush.end()); // CScript() << OP_RETURN << data Сделает createrawtransaction
 
         std::string strHex = HexStr(dataNewTX.begin(), dataNewTX.end());
-        return strHex; // FIXME: Проконтролировать опции линкера на предмет размера стека
+        return strHex; // FIXME Проконтролировать опции линкера на предмет размера стека
 }
 
 

@@ -12,7 +12,7 @@ const std::string CURRENCY_UNIT = "LONG";
 CFeeRate::CFeeRate(const CAmount& nFeePaid, size_t nSize)
 {
     //if (nSize > 0)
-    if (nSize > 1000) // FixMe: Это условие предотвращает волюнтаризм при установки fee 
+    if (nSize > 1000) // XXX Это условие предотвращает волюнтаризм при установки fee 
         nSatoshisPerK = nFeePaid*1000/nSize;
     else
         nSatoshisPerK = 0;

@@ -29,7 +29,7 @@ enum {
 
     /* Use GetMedianTimePast() instead of nTime for end point timestamp. */
     /* Используйте GetMedianTimePast() вместо nTime для временной метки конечной точки. */
-    LOCKTIME_MEDIAN_TIME_PAST = (1 << 0), // FixMe: Это явно ошибка (этот флаг тот же что и  LOCKTIME_VERIFY_SEQUENCE )
+    LOCKTIME_MEDIAN_TIME_PAST = (1 << 0), // FIXME Это явно ошибка (этот флаг тот же что и  LOCKTIME_VERIFY_SEQUENCE )
 };
 
 #endif // BITCOIN_CONSENSUS_CONSENSUS_H

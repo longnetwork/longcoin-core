@@ -20,7 +20,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return nProofOfWorkLimit;
 
     // Only change once per difficulty adjustment interval
-    // FixMe: Нужно по времени простоя динамически сокращать DifficultyAdjustmentInterval и пропускать в это условие (но подумать как зделать чтобы не было error incorrect proof of work)
+    // FIXME Нужно по времени простоя динамически сокращать DifficultyAdjustmentInterval и пропускать в это условие (но подумать как зделать чтобы не было error incorrect proof of work)
     if ((pindexLast->nHeight+1) % params.DifficultyAdjustmentInterval(pindexLast->nHeight) != 0)
     { 
         if (params.fPowAllowMinDifficultyBlocks)
@@ -132,7 +132,7 @@ int64_t GetBlockProofEquivalentTime(const CBlockIndex& to, const CBlockIndex& fr
         r = from.nChainWork - to.nChainWork;
         sign = -1;
     }
-    r = r * arith_uint256(params.PowTargetSpacing(-1)) / GetBlockProof(tip); // FixMe -1 - юзаются последние параметры консенсуса
+    r = r * arith_uint256(params.PowTargetSpacing(-1)) / GetBlockProof(tip); // FIXME -1 - юзаются последние параметры консенсуса
     if (r.bits() > 63) {
         return sign * std::numeric_limits<int64_t>::max();
     }

@@ -128,7 +128,7 @@ UniValue ValueFromAmount(const CAmount& amount)
 /*    return UniValue(UniValue::VNUM,
             strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder)); */
 
-	// FixMe: без зяпятой внешний софт не хочет работать (например пул NOMP). 
+	// FIXME без зяпятой внешний софт не хочет работать (например пул NOMP). 
     // Ошибка усичения дает на пуле среднестатистически 0.5 лонга с каждого блока (см. также ParseFixedPoint)
     return UniValue(UniValue::VNUM,
             strprintf("%s%d.%01d", sign ? "-" : "", quotient, remainder));

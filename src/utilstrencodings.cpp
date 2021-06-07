@@ -575,11 +575,11 @@ static inline bool ProcessMantissaDigit(char ch, int64_t &mantissa, int &mantiss
 
 bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out)
 {
-    long double res=atof(val.c_str()); // FixMe: Нужно убедится что работа идет именно с long double с дохрена цифр в мантиссе
+    long double res=atof(val.c_str()); // FIXME Нужно убедится что работа идет именно с long double с дохрена цифр в мантиссе
 
     if(!isfinite(res)) return false;
     if(isnan(res)) return false;
-    res*=pow(10,decimals);			  // FixMe: Нужно убедится что резульат степени точняковый
+    res*=pow(10,decimals);			  // FIXME Нужно убедится что резульат степени точняковый
     if(!isfinite(res)) return false;
     if(isnan(res)) return false;
     res+=0.0; // Усечение (округление это +=0.5)

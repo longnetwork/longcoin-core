@@ -150,7 +150,7 @@ consensus.nHeight2 = 115000-1;
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        // FixMe: Вобщем пока для совместимости со старыми нодами их адреса проверяю по захардкоженным адресам (должны быть захаркожены в chainparamseeds.h)
+        // FIXME Вобщем пока для совместимости со старыми нодами их адреса проверяю по захардкоженным адресам (должны быть захаркожены в chainparamseeds.h)
         // А слово LONG кодируется так 0x4C 0x4F 0x4E 0x47 - нужно зачекать а не входит ли это в блок чейн ??
         pchMessageStart[0] = 0xf9;
         pchMessageStart[1] = 0xbe;

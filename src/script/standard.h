@@ -28,7 +28,7 @@ public:
     CScriptID(const uint160& in) : uint160(in) {}
 };
 // (+1 for OP_RETURN, +3 for the pushdata opcodes, +5 for long Bytes, +4 to/from + 66 for 2x pubkey, +2 datatype, +2 encryption type, + 256 bytes for body )
-// ( 1 +3 +5 +4 +66 +2 +2 +3 +256 = 342   FixMe: Константа MAX_OP_RETURN_RELAY юзается только в src/test и помоем там проверка не пройдет
+// ( 1 +3 +5 +4 +66 +2 +2 +3 +256 = 342   FIXME Константа MAX_OP_RETURN_RELAY юзается только в src/test и помоем там проверка не пройдет
 static const unsigned int MAX_OP_RETURN_RELAY = 64*1024*4/3+1; //65535; //344; //! bytes (+1 for OP_RETURN, +2 for the pushdata opcodes) //! байты (+1 для OP_RETURN, +2 для кодов операций pushdata)
 extern bool fAcceptDatacarrier;
 extern unsigned nMaxDatacarrierBytes;

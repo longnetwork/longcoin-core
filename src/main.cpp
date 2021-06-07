@@ -431,7 +431,7 @@ void UpdateBlockAvailability(NodeId nodeid, const uint256 &hash) {
 // Requires cs_main
 bool CanDirectFetch(const Consensus::Params &consensusParams)
 {
-    return chainActive.Tip()->GetBlockTime() > GetAdjustedTime() - consensusParams.PowTargetSpacing(-1) * 20; // FixMe
+    return chainActive.Tip()->GetBlockTime() > GetAdjustedTime() - consensusParams.PowTargetSpacing(-1) * 20; // FIXME
 }
 
 // Requires cs_main
@@ -1222,7 +1222,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState &state, const C
             dFreeCount += nSize;
         }
 
-		if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ) // FixMe: наверно можно уменьшить до 100 (при 1 за килобайт цена макс транзакции около 100 LONG)
+		if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ) // FIXME наверно можно уменьшить до 100 (при 1 за килобайт цена макс транзакции около 100 LONG)
         if (fRejectAbsurdFee && nFees > ::minRelayTxFee.GetFee(nSize) * 100 /*10000*/ ) // тогда 100*100 = награда
             return state.Invalid(false,
                 REJECT_HIGHFEE, "absurdly-high-fee",
@@ -5255,7 +5255,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
             }
             // If pruning, don't inv blocks unless we have on disk and are likely to still have
             // for some reasonable time window (1 hour) that block relay might require.
-            const int nPrunedBlocksLikelyToHave = MIN_BLOCKS_TO_KEEP - 3600 / chainparams.GetConsensus().PowTargetSpacing(-1); // FixMe
+            const int nPrunedBlocksLikelyToHave = MIN_BLOCKS_TO_KEEP - 3600 / chainparams.GetConsensus().PowTargetSpacing(-1); // FIXME
             if (fPruneMode && (!(pindex->nStatus & BLOCK_HAVE_DATA) || pindex->nHeight <= chainActive.Tip()->nHeight - nPrunedBlocksLikelyToHave))
             {
                 LogPrint("net", " getblocks stopping, pruned or too old block at %d %s\n", pindex->nHeight, pindex->GetBlockHash().ToString());
@@ -6266,7 +6266,7 @@ bool SendMessages(CNode* pto)
         if (!pto->fDisconnect && state.vBlocksInFlight.size() > 0) {
             QueuedBlock &queuedBlock = state.vBlocksInFlight.front();
             int nOtherPeersWithValidatedDownloads = nPeersWithValidatedDownloads - (state.nBlocksInFlightValidHeaders > 0);
-            if (nNow > state.nDownloadingSince + consensusParams.PowTargetSpacing(-1) /*FixMe*/ * (BLOCK_DOWNLOAD_TIMEOUT_BASE + BLOCK_DOWNLOAD_TIMEOUT_PER_PEER * nOtherPeersWithValidatedDownloads)) {
+            if (nNow > state.nDownloadingSince + consensusParams.PowTargetSpacing(-1) /*FIXME*/ * (BLOCK_DOWNLOAD_TIMEOUT_BASE + BLOCK_DOWNLOAD_TIMEOUT_PER_PEER * nOtherPeersWithValidatedDownloads)) {
                 LogPrintf("Timeout downloading block %s from peer=%d, disconnecting\n", queuedBlock.hash.ToString(), pto->id);
                 pto->fDisconnect = true;
             }

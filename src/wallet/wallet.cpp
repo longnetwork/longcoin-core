@@ -1124,7 +1124,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
             if (pwallet->IsChange(txout))
                 continue;
         }
-        else if (!(fIsMine & filter) && ! (islong && filter&ISMINE_WATCH_ONLY) ) // long данные залистит
+        else if (!(fIsMine & filter) /*&& ! (islong && filter&ISMINE_WATCH_ONLY)*/ ) // FIXME long данные залистит в выходе даже не watched
             continue;
 
         // In either case, we need to get the destination address
@@ -1150,7 +1150,7 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
         }
 
         // If we are receiving the output, add it as a "received" entry
-        if ( (fIsMine & filter) || (islong && filter&ISMINE_WATCH_ONLY) ) // long данные залистит
+        if ( (fIsMine & filter) /*|| (islong && filter&ISMINE_WATCH_ONLY)*/ ) // FIXME long данные залистит в выходе даже не watched
             listReceived.push_back(output);
     }
 
@@ -1541,7 +1541,7 @@ void CWallet::ResendWalletTransactions(int64_t nBestBlockTime)
     if (GetTime() < nNextResend || !fBroadcastTransactions)
         return;
     bool fFirst = (nNextResend == 0);
-    nNextResend = GetTime() + GetRand(10 * 60); // FixMe GetRand(30 * 60);
+    nNextResend = GetTime() + GetRand(10 * 60); // FIXME GetRand(30 * 60);
     if (fFirst)
         return;
 
@@ -1552,7 +1552,7 @@ void CWallet::ResendWalletTransactions(int64_t nBestBlockTime)
 
     // Rebroadcast unconfirmed txes older than 5 minutes before the last
     // block was found:
-    std::vector<uint256> relayed = ResendWalletTransactionsBefore(nBestBlockTime-1*60); // FixMe ResendWalletTransactionsBefore(nBestBlockTime-5*60);
+    std::vector<uint256> relayed = ResendWalletTransactionsBefore(nBestBlockTime-1*60); // FIXME ResendWalletTransactionsBefore(nBestBlockTime-5*60);
     if (!relayed.empty())
         LogPrintf("%s: rebroadcast %u unconfirmed transactions\n", __func__, relayed.size());
 }
@@ -2123,55 +2123,6 @@ bool CWallet::CreateTransaction(const vector<CRecipient>& vecSend, CWalletTx& wt
                         ret = reservekey.GetReservedKey(vchPubKey);
                         assert(ret); // should never fail, as we just unlocked
                         scriptChange = GetScriptForDestination(vchPubKey.GetID());
-
-                        
-
-//                        Все после обработки сдачи как положено, эти хард-код-мутки стали не нужны!
-//                        scriptChange = GetScriptForDestination(vchDefaultKey.GetID()); // FixMe: Так здача идет на дефаулт адресс (вообще это палевно когда на один адрес все транзакции здачю возвращают)
-//
-//                        // и так в кошельке будет еще одна транзакция для здачи на default
-//                        // нам нужно упредить отрицательный баланс аккаунта если послыка шлас с аккаунта
-//                        // FixMe: Ваще потом поискать почему так работает. в litecoin вроде не так.
-//                       
-//                        if( nFeeRet>0 /*&& wtxNew.strFromAccount != ""*/ && wtxNew.strFromAccount != "default" ) // "" - это помоему в string зразу при инициализации (null нет)
-//                        {   // FixMe: nFeeRet>0 while 2 раза прокручивается, а нам нужен последний
-//                            
-//                                CWalletDB walletdb(strWalletFile);
-//                                if (!walletdb.TxnBegin()) {
-//                                      strFailReason = _("database error");
-//                                      return false;
-//                                }
-//
-//                                   int64_t nNow = GetAdjustedTime();
-//                                    
-//                                    //fprintf("nNow=%li \n",nNow);
-//
-//                                    // Debit
-//                                    CAccountingEntry debit;
-//                                    debit.nOrderPos = IncOrderPosNext(&walletdb);
-//                                    debit.strAccount = "default"; // FixMe: Это изначально захардкожено и мы хардкодим
-//                                    debit.nCreditDebit = -nChange;
-//                                    debit.nTime = nNow;
-//                                    debit.strOtherAccount = wtxNew.strFromAccount;
-//                                    debit.strComment = "Account change correct";
-//                                    AddAccountingEntry(debit, walletdb);
-//
-//                                    // Credit
-//                                    CAccountingEntry credit;
-//                                    credit.nOrderPos = IncOrderPosNext(&walletdb);
-//                                    credit.strAccount = wtxNew.strFromAccount;
-//                                    credit.nCreditDebit = +nChange;
-//                                    credit.nTime = nNow;
-//                                    credit.strOtherAccount = "default";
-//                                    credit.strComment = "Account change correct";
-//                                    AddAccountingEntry(credit, walletdb);
-//
-//                                if (!walletdb.TxnCommit()) {
-//                                    strFailReason = _("database error");
-//                                    return false;
-//                                }
-//                         }
-
                     }
 
                     CTxOut newTxOut(nChange, scriptChange);
@@ -2476,10 +2427,10 @@ bool CWallet::SetAddressBook(const CTxDestination& address, const string& strNam
             if (GetPubKey(payToPubKeyID, payToPubKey)) { // публичный ключ получателя в кошельке есть
                 string payToPubKeyHex = HexStr(payToPubKey.begin(), payToPubKey.end());
                 
-                mapAddressBook[address].pubkeyhex = payToPubKeyHex; // FixMe: Вроде типа кеширования в объекте в памяти (так как на свой адрес GetPubKey вроде и так даст пукей)
+                mapAddressBook[address].pubkeyhex = payToPubKeyHex; // FIXME Вроде типа кеширования в объекте в памяти (так как на свой адрес GetPubKey вроде и так даст пукей)
                                                                    
 
-                fWritePubKey=true;  // FixMe: Если проходит GetPubKey то он априори известен (для своих адресов) и вроде доп. сохранять его в базе кошелька нет смысла
+                fWritePubKey=true;  // XXX Если проходит GetPubKey то он априори известен (для своих адресов) и вроде доп. сохранять его в базе кошелька нет смысла
                                     // Но для Watch-адресов он-же не известен - поэтому сохраняем! (все равно для левых пукей вроде GetPubKey не должно прокатить)
 
             }
