@@ -112,7 +112,7 @@ bool IsStandardTx(const CTransaction& tx, std::string& reason)
     }
 
     // only one OP_RETURN txout is permitted
-    if (nDataOut > 1) {
+    if (nDataOut > 2) { // FIXME второй для сигнатур подписи сообщений (чтобы удостоверить например адрес from в сырых транзакциях). Но там НЕ TX_NULL_DATA
         reason = "multi-op-return";
         return false;
     }
@@ -136,8 +136,8 @@ bool AreInputsStandard(const CTransaction& tx, const CCoinsViewCache& mapInputs)
         if (!Solver(prevScript, whichType, vSolutions))
             return false;
 
-        if (whichType == TX_SCRIPTHASH)
-        {
+        if (whichType == TX_SCRIPTHASH) // FIXME long-data на p2sh адреса сюда попадают после Solver но EvalScript на OP_RETURN сразу вернет false
+        {                               // хотя... OP_RETURN на выходе а не на фходе и на входе быть не могут (unspentable)
             std::vector<std::vector<unsigned char> > stack;
             // convert the scriptSig into a stack, so we can inspect the redeemScript
             if (!EvalScript(stack, tx.vin[i].scriptSig, SCRIPT_VERIFY_NONE, BaseSignatureChecker(), 0))

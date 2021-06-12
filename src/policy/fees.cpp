@@ -372,6 +372,7 @@ void CBlockPolicyEstimator::processTransaction(const CTxMemPoolEntry& entry, boo
 
     // Fees are stored and reported as BTC-per-kb:
     CFeeRate feeRate(entry.GetFee(), entry.GetTxSize());
+        
 
     // Want the priority of the tx at confirmation. However we don't know
     // what that will be and its too hard to continue updating it

@@ -1110,7 +1110,9 @@ void CWalletTx::GetAmounts(list<COutputEntry>& listReceived,
         // Only need to handle txouts if AT LEAST one of these is true:
         //   1) they debit from us (sent)
         //   2) the output is to us (received)
-        //   3) и еще случай наличия данных ( см. также CWallet::IsChange )
+        //   3) и еще случай наличия данных 
+        //      на импорированых watchonly адреса листятся флагом includeWatchOnly
+        //      ( см. также CWallet::IsChange )
 
 
         //#warning DEBUG

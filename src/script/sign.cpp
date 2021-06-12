@@ -82,8 +82,9 @@ static bool SignStep(const BaseSignatureCreator& creator, const CScript& scriptP
         return Sign1(keyID, creator, scriptPubKey, scriptSigRet);
     case TX_PUBKEYHASH:
         keyID = CKeyID(uint160(vSolutions[0]));
-        if (!Sign1(keyID, creator, scriptPubKey, scriptSigRet))
+        if (!Sign1(keyID, creator, scriptPubKey, scriptSigRet)) {            
             return false;
+        }
         else
         {
             CPubKey vch;
@@ -92,7 +93,9 @@ static bool SignStep(const BaseSignatureCreator& creator, const CScript& scriptP
         }
         return true;
     case TX_SCRIPTHASH:
+    {
         return creator.KeyStore().GetCScript(uint160(vSolutions[0]), scriptSigRet);
+    }
 
     case TX_MULTISIG:
         scriptSigRet << OP_0; // workaround CHECKMULTISIG bug
@@ -108,7 +111,7 @@ bool ProduceSignature(const BaseSignatureCreator& creator, const CScript& fromPu
         return false;
 
     if (whichType == TX_SCRIPTHASH)
-    {
+    {        
         // Solver returns the subscript that need to be evaluated;
         // the final scriptSig is the signatures from that
         // and then the serialized subscript:
@@ -229,6 +232,7 @@ static CScript CombineSignatures(const CScript& scriptPubKey, const BaseSignatur
             return PushAll(sigs2);
         return PushAll(sigs1);
     case TX_SCRIPTHASH:
+    {        
         if (sigs1.empty() || sigs1.back().empty())
             return PushAll(sigs2);
         else if (sigs2.empty() || sigs2.back().empty())
@@ -248,6 +252,7 @@ static CScript CombineSignatures(const CScript& scriptPubKey, const BaseSignatur
             result << spk;
             return result;
         }
+    }
     case TX_MULTISIG:
         return CombineMultisig(scriptPubKey, checker, vSolutions, sigs1, sigs2);
     }

@@ -37,10 +37,11 @@ isminetype IsMine(const CKeyStore &keystore, const CTxDestination& dest)
 
 isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
 {
+    
     vector<valtype> vSolutions;
     txnouttype whichType;
     if (!Solver(scriptPubKey, whichType, vSolutions)) {
-        if (keystore.HaveWatchOnly(scriptPubKey))
+        if (keystore.HaveWatchOnly(scriptPubKey))  // TODO (см. также ExtractPubKey) Long данные начинаются c OP_RETURN в scriptPubKey саразу
             return ISMINE_WATCH_UNSOLVABLE;
         return ISMINE_NO;
     }
@@ -55,20 +56,46 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         keyID = CPubKey(vSolutions[0]).GetID();
         if (keystore.HaveKey(keyID))
             return ISMINE_SPENDABLE;
+        else {
+            if (isLong(scriptPubKey)) { // Нужно ловить кошельком OP_RETURN на импорированые публичные ключи
+                CScript subscript;
+                subscript=GetScriptForRawPubKey(CPubKey(vSolutions[0]));
+                if (keystore.HaveWatchOnly(subscript)) {
+                     return ISMINE_WATCH_UNSOLVABLE; // FIXME ISMINE_WATCH_UNSOLVABLE vs ISMINE_WATCH_SOLVABLE
+                }
+            }
+        }
         break;
     case TX_PUBKEYHASH:
         keyID = CKeyID(uint160(vSolutions[0]));
-        if (keystore.HaveKey(keyID))
+        if (keystore.HaveKey(keyID)) 
             return ISMINE_SPENDABLE;
+        else {
+            if (isLong(scriptPubKey)) { // Нужно ловить кошельком OP_RETURN на импорированые адреса
+                CScript subscript;
+                subscript=GetScriptForDestination(keyID);
+                if (keystore.HaveWatchOnly(subscript)) {
+                     return ISMINE_WATCH_UNSOLVABLE; // FIXME ISMINE_WATCH_UNSOLVABLE vs ISMINE_WATCH_SOLVABLE
+                }
+            }
+        }
         break;
     case TX_SCRIPTHASH:
     {
         CScriptID scriptID = CScriptID(uint160(vSolutions[0]));
         CScript subscript;
-        if (keystore.GetCScript(scriptID, subscript)) {
+        if (keystore.GetCScript(scriptID, subscript)) {            
             isminetype ret = IsMine(keystore, subscript);
             if (ret == ISMINE_SPENDABLE)
                 return ret;
+        }
+        else {
+            if (isLong(scriptPubKey)) { // Нужно ловить кошельком OP_RETURN на импорированые адреса
+                subscript=GetScriptForDestination(scriptID);
+                if (keystore.HaveWatchOnly(subscript)) {
+                     return ISMINE_WATCH_UNSOLVABLE; // FIXME ISMINE_WATCH_UNSOLVABLE vs ISMINE_WATCH_SOLVABLE
+                }
+            }
         }
         break;
     }
@@ -91,5 +118,6 @@ isminetype IsMine(const CKeyStore &keystore, const CScript& scriptPubKey)
         CScript scriptSig;
         return ProduceSignature(DummySignatureCreator(&keystore), scriptPubKey, scriptSig) ? ISMINE_WATCH_SOLVABLE : ISMINE_WATCH_UNSOLVABLE;
     }
+    
     return ISMINE_NO;
 }

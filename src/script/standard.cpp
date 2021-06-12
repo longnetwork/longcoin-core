@@ -432,18 +432,6 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
 
     vSolutionsRet.clear();
 
-    // Shortcut for pay-to-script-hash, which are more constrained than the other types:
-    // it is always OP_HASH160 20 [20 byte hash] OP_EQUAL
-	// Ярлык для хэша «pay-to-script-hash», который более ограничен, чем другие типы:
-	// он всегда OP_HASH160 20 [20-байтовый хеш] OP_EQUAL
-    if (scriptPubKey.IsPayToScriptHash())
-    {
-        typeRet = TX_SCRIPTHASH;
-        vector<unsigned char> hashBytes(scriptPubKey.begin()+2, scriptPubKey.begin()+22);
-        vSolutionsRet.push_back(hashBytes);
-        return true;
-    }
-
     // Provably prunable, data-carrying output
 	// Продуманный, вывод данных
     //
@@ -465,6 +453,23 @@ bool Solver(const CScript& scriptPubKey, txnouttype& typeRet, vector<vector<unsi
         typeRet = TX_NULL_DATA;
 		return true;
     }
+
+
+
+
+    // Shortcut for pay-to-script-hash, which are more constrained than the other types:
+    // it is always OP_HASH160 20 [20 byte hash] OP_EQUAL
+	// Ярлык для хэша «pay-to-script-hash», который более ограничен, чем другие типы:
+	// он всегда OP_HASH160 20 [20-байтовый хеш] OP_EQUAL
+    if (scriptPubKey.IsPayToScriptHash())
+    {        
+        typeRet = TX_SCRIPTHASH;
+        vector<unsigned char> hashBytes(scriptPubKey.begin()+2, scriptPubKey.begin()+22);
+        vSolutionsRet.push_back(hashBytes);
+        return true;
+    }
+
+
 
     // Scan templates
     const CScript& script1 = scriptPubKey;
