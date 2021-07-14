@@ -79,8 +79,8 @@ void ThreadSendAlert()
     //  Higher numbers mean higher priority
     alert.nPriority     = 5000;
     alert.strComment    = "";
-    //alert.strStatusBar  = "URGENT: Upgrade required: see longnetwork.github.io";
-    alert.strStatusBar  = "URGENT: CRYPTON Гибнееееет!!!";
+    alert.strStatusBar  = "URGENT: Upgrade required: see longnetwork.github.io";
+    //alert.strStatusBar  = "URGENT: CRYPTON Гибнееееет!!!";
 
     // Set specific client version/versions here. If setSubVer is empty, no filtering on subver is done:
     alert.setSubVer.insert(std::string("/Satoshi:0.12.1(LONGCORE)/"));

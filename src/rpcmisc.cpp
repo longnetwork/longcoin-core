@@ -164,7 +164,7 @@ UniValue validateaddress(const UniValue& params, bool fHelp)
             "validateaddress \"bitcoinaddress\"\n"
             "\nReturn information about the given bitcoin address.\n"
             "\nArguments:\n"
-            "1. \"bitcoinaddress\"     (string, required) The bitcoin address to validate\n"
+            "1. \"bitcoinaddress\"     (string, required) The bitcoin address or hex-encoded pubKey to validate\n"
             "\nResult:\n"
             "{\n"
             "  \"isvalid\" : true|false,       (boolean) If the address is valid or not. If not, this is the only property returned.\n"
@@ -188,8 +188,20 @@ UniValue validateaddress(const UniValue& params, bool fHelp)
     LOCK(cs_main);
 #endif
 
+
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
+
+    if(!isValid) { // Пробуем получить из pubkey на входе
+        std::vector<unsigned char> vch=ParseHex(params[0].get_str());
+        CPubKey pubKey(vch.begin(), vch.end());
+        if (pubKey.IsFullyValid()) {
+            address.Set(pubKey.GetID());
+            isValid = address.IsValid();
+        }
+        
+    }
+    
 
     UniValue ret(UniValue::VOBJ);
     ret.push_back(Pair("isvalid", isValid));

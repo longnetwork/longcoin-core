@@ -682,7 +682,8 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
     vector<string> addrList = sendTo.getKeys();
     BOOST_FOREACH(const string& name_, addrList) {
 
-        if (name_ == "data") { // createrawtransaction работает без wallet и необходимые данные должны подготавливаться из вне их их может быть несколько штук как и адресов получения
+        //if (name_ == "data") { // createrawtransaction работает без wallet и необходимые данные должны подготавливаться из вне их их может быть несколько штук как и адресов получения
+        if (name_.rfind("data", 0) == 0) {
             std::vector<unsigned char> data = ParseHexV(sendTo[name_].getValStr(),"Data"); // "Data" - это только для сообщения об ошибке
 
             //CTxOut out(0, CScript() << OP_RETURN << << << data);

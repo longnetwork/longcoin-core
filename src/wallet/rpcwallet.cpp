@@ -625,12 +625,12 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     CKeyID toPubKeyID; CPubKey toPubKey;
     if (addressTo.GetKeyID(toPubKeyID)) {
         // ищем пубкей получателя
-        if (!fOpen && !fToPubKey && pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // Это поиск среди импортированых ключей
+        if ( /*!fOpen &&*/ !fToPubKey && pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // Это поиск среди импортированых ключей
             dataNewTX.push_back(0xf0); // OP_TO
             dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
             dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
             fEncrypt=true;
-        } else if(!fOpen && !fToPubKey && pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) { // Это в адресной книге по тому доп полю .pubkeyhex
+        } else if( /*!fOpen &&*/ !fToPubKey && pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) { // Это в адресной книге по тому доп полю .pubkeyhex
             std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex); // Глянуть внутрь класса потом (юзают две формы поиска: вначале .count() и потом сразу доступ по ключю; и через итератор)
             toPubKey.Set(vch.begin(),vch.end());
             if (!toPubKey.IsFullyValid()) 
@@ -640,7 +640,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
             dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
             fEncrypt=true;
-        } else if(!fOpen && fToPubKey) { // PubkKey дается в комманде и он уже проверен на валидность
+        } else if(/*!fOpen &&*/ fToPubKey) { // PubkKey дается в комманде и он уже проверен на валидность
             std::vector<unsigned char> vch=ParseHex(strTo);
             toPubKey.Set(vch.begin(),vch.end());
             dataNewTX.push_back(0xf0); // OP_TO
