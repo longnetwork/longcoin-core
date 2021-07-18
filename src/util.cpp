@@ -553,9 +553,8 @@ boost::filesystem::path GetConfigFile()
        pathConfigFile=BITCOIN_CONF_FILENAME; // по умолчанию в текущей дерриктории
        if (!pathDataDir.empty())
             pathConfigFile = GetDataDir(false) / pathConfigFile;
-       else if(!boost::filesystem::exists(pathConfigFile)) { // Если в текущей нет - то последний шанс найти конфиг в системной директории
+       else if(!boost::filesystem::exists(pathConfigFile)) // Если в текущей нет - то последний шанс найти конфиг в системной директории
             pathConfigFile = GetDefaultDataDir() / pathConfigFile;
-       }
     }
 
 

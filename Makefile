@@ -88,7 +88,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+host_triplet = x86_64-w64-mingw32
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/build-aux/m4/ax_boost_base.m4 \
@@ -272,27 +272,27 @@ distcleancheck_listfiles = find . -type f -print
 ACLOCAL = ${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/ar
+AR = /usr/bin/x86_64-w64-mingw32-ar
 AUTOCONF = ${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing autoheader
 AUTOMAKE = ${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing automake-1.16
 AWK = gawk
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BOOST_CHRONO_LIB = -lboost_chrono
-BOOST_CPPFLAGS = -pthread -I/usr/include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem
-BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
-BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
-BOOST_SYSTEM_LIB = -lboost_system
-BOOST_THREAD_LIB = -lboost_thread
+BOOST_CHRONO_LIB = -lboost_chrono-mt-s
+BOOST_CPPFLAGS = -mthreads -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
+BOOST_LDFLAGS = -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib
+BOOST_LIBS = -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
+BOOST_SYSTEM_LIB = -lboost_system-mt-s
+BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
 BOOST_UNIT_TEST_FRAMEWORK_LIB = 
 BREW = 
-CC = gcc
-CCACHE = 
+CC = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/native/bin/ccache x86_64-w64-mingw32-gcc
+CCACHE = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/native/bin/ccache
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -pipe -O2 
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 0
@@ -300,19 +300,19 @@ CLIENT_VERSION_MINOR = 12
 CLIENT_VERSION_REVISION = 1
 COMPARISON_TOOL_REORG_TESTS = 0
 COPYRIGHT_YEAR = 2018
-CPP = gcc -E
-CPPFILT = /usr/bin/c++filt
-CPPFLAGS = -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
-CRYPTO_CFLAGS = -I/usr/local/openssl1.0/include/openssl/
-CRYPTO_LIBS = -L/usr/local/openssl1.0/lib/
-CXX = g++
-CXXCPP = g++ -E
+CPP = x86_64-w64-mingw32-gcc -E
+CPPFILT = /usr/bin/x86_64-w64-mingw32-c++filt
+CPPFLAGS = -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64
+CRYPTO_CFLAGS = 
+CRYPTO_LIBS = -lcrypto
+CXX = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/native/bin/ccache x86_64-w64-mingw32-g++
+CXXCPP = x86_64-w64-mingw32-g++ -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign
+CXXFLAGS = -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = false
+DLLTOOL = x86_64-w64-mingw32-dlltool
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
@@ -321,19 +321,19 @@ ECHO_T =
 EGREP = /usr/bin/grep -E
 EVENT_CFLAGS = 
 EVENT_LIBS = -levent
-EVENT_PTHREADS_CFLAGS = -pthread
-EVENT_PTHREADS_LIBS = -levent_pthreads -levent
-EXEEXT = 
+EVENT_PTHREADS_CFLAGS = 
+EVENT_PTHREADS_LIBS = 
+EXEEXT = .exe
 EXTENDED_RPC_TESTS = 
 FGREP = /usr/bin/grep -F
-GCOV = /usr/bin/gcov
+GCOV = /usr/bin/x86_64-w64-mingw32-gcov
 GENHTML = 
 GENISOIMAGE = 
 GIT = /usr/bin/git
 GREP = /usr/bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
-HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now -pie
+HARDENED_LDFLAGS =  -Wl,--dynamicbase -Wl,--nxcompat
 HEXDUMP = /usr/bin/hexdump
 INSTALL = /usr/bin/install -c
 INSTALLNAMETOOL = 
@@ -342,39 +342,39 @@ INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JAVA = /usr/bin/java
-JAVA_COMPARISON_TOOL = 
+JAVA_COMPARISON_TOOL = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/native/share/BitcoindComparisonTool_jar/BitcoindComparisonTool.jar
 LCOV = 
-LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/
+LD = /usr/bin/x86_64-w64-mingw32-ld
+LDFLAGS = -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/
 LEVELDB_CPPFLAGS = 
-LEVELDB_TARGET_FLAGS = 
+LEVELDB_TARGET_FLAGS = TARGET_OS=OS_WINDOWS_CROSSCOMPILE
 LIBLEVELDB = 
 LIBMEMENV = 
 LIBOBJS = 
-LIBS = -lanl -lssl -lcrypto -ldl
+LIBS = -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_APP_LDFLAGS = 
+LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = /usr/lib/x86_64-linux-gnu/qt5/bin/lrelease
+LRELEASE = 
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = /usr/lib/x86_64-linux-gnu/qt5/bin/lupdate
+LUPDATE = 
 MAINT = 
 MAKEINFO = ${SHELL} /home/mint/Work/longcoin/longcoin-src/build-aux/missing makeinfo
-MAKENSIS = 
+MAKENSIS = none
 MANIFEST_TOOL = :
-MINIUPNPC_CPPFLAGS = 
+MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /usr/bin/mkdir -p
-MOC = /usr/lib/x86_64-linux-gnu/qt5/bin/moc
+MOC = 
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = /usr/bin/nm -B
+NM = x86_64-w64-mingw32-nm
 NMEDIT = 
-OBJCXX = g++
+OBJCXX = x86_64-w64-mingw32-g++
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = objdump
+OBJDUMP = x86_64-w64-mingw32-objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -386,71 +386,71 @@ PACKAGE_TARNAME = bitcoin
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.12.1
 PATH_SEPARATOR = :
-PIC_FLAGS = -fPIC
-PIE_FLAGS = -fPIE
-PKG_CONFIG = /usr/bin/pkg-config
-PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
+PIC_FLAGS = 
+PIE_FLAGS = 
+PKG_CONFIG = /usr/bin/pkg-config --static
+PKG_CONFIG_LIBDIR = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib/pkgconfig
+PKG_CONFIG_PATH = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/share/pkgconfig
 PORT = 
-PROTOBUF_CFLAGS = -pthread
-PROTOBUF_LIBS = -lprotobuf -pthread
-PROTOC = /usr/bin/protoc
-PTHREAD_CC = gcc
+PROTOBUF_CFLAGS = 
+PROTOBUF_LIBS = 
+PROTOC = 
+PTHREAD_CC = x86_64-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = 
 QR_CFLAGS = 
-QR_LIBS = -lqrencode
+QR_LIBS = 
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
 QTPRINT_LIBS = 
 QTXCBQPA_CFLAGS = 
 QTXCBQPA_LIBS = 
-QT_CFLAGS = -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_DBUS_CFLAGS = -DQT_DBUS_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_DBUS_INCLUDES = -DQT_DBUS_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_DBUS_LIBS = -lQt5DBus -lQt5Core
-QT_INCLUDES = -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_CFLAGS = 
+QT_DBUS_CFLAGS = 
+QT_DBUS_INCLUDES = 
+QT_DBUS_LIBS = 
+QT_INCLUDES = 
 QT_LDFLAGS = 
-QT_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
-QT_PIE_FLAGS = -fPIC
-QT_SELECT = qt5
-QT_TEST_CFLAGS = -DQT_TESTLIB_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_TEST_INCLUDES = -DQT_TESTLIB_LIB -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_TEST_LIBS = -lQt5Test -lQt5Core
-QT_TRANSLATION_DIR = 
-RANLIB = /usr/bin/ranlib
-RCC = /usr/lib/x86_64-linux-gnu/qt5/bin/rcc
-READELF = /usr/bin/readelf
+QT_LIBS = 
+QT_PIE_FLAGS = 
+QT_SELECT = qt
+QT_TEST_CFLAGS = 
+QT_TEST_INCLUDES = 
+QT_TEST_LIBS = 
+QT_TRANSLATION_DIR = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/translations
+RANLIB = /usr/bin/x86_64-w64-mingw32-ranlib
+RCC = 
+READELF = /usr/bin/x86_64-w64-mingw32-readelf
 RELDFLAGS = 
 SED = /usr/bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-SSL_CFLAGS = -I/usr/local/openssl1.0/include/
-SSL_LIBS = -L/usr/local/openssl1.0/lib/
-STRIP = /usr/bin/strip
+SSL_CFLAGS = 
+SSL_LIBS = -lssl
+STRIP = /usr/bin/x86_64-w64-mingw32-strip
 TESTDEFS = 
-UIC = /usr/lib/x86_64-linux-gnu/qt5/bin/uic
+UIC = 
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 0.12.1
-WINDOWS_BITS = 
-WINDRES = 
+WINDOWS_BITS = 64
+WINDRES = /usr/bin/x86_64-w64-mingw32-windres
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
 XGETTEXT = /usr/bin/xgettext
-ZMQ_CFLAGS = -isystem /usr/include/mit-krb5 -I/usr/include/pgm-5.2
-ZMQ_LIBS = -lzmq
+ZMQ_CFLAGS = 
+ZMQ_LIBS = 
 abs_builddir = /home/mint/Work/longcoin/longcoin-src
 abs_srcdir = /home/mint/Work/longcoin/longcoin-src
 abs_top_builddir = /home/mint/Work/longcoin/longcoin-src
 abs_top_srcdir = /home/mint/Work/longcoin/longcoin-src
-ac_ct_AR = ar
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_AR = 
+ac_ct_CC = 
+ac_ct_CXX = 
 ac_ct_DUMPBIN = 
-ac_ct_OBJCXX = g++
+ac_ct_OBJCXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -469,11 +469,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
-host_alias = 
+host = x86_64-w64-mingw32
+host_alias = x86_64-w64-mingw32
 host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = pc
+host_os = mingw32
+host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -486,7 +486,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -933,7 +933,7 @@ distuninstallcheck:
 	        fi ; \
 	        $(distuninstallcheck_listfiles) ; \
 	        exit 1; } >&2
-check-local:
+#check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) check-local
 check: check-recursive
@@ -1145,7 +1145,7 @@ deploydir: $(APP_DIST_EXTRAS)
 
 #appbundle: $(OSX_APP_BUILT)
 #deploy: $(OSX_DMG)
-#deploy: $(BITCOIN_WIN_INSTALLER)
+deploy: $(BITCOIN_WIN_INSTALLER)
 
 $(BITCOIN_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
@@ -1218,9 +1218,9 @@ $(WALLET_UTILITY_BIN): FORCE
 
 #cov: test_bitcoin.coverage/.dirstamp total.coverage/.dirstamp
 
-#check-local:
-#	$(MKDIR_P) qa/tmp
-#	@qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
+check-local:
+	$(MKDIR_P) qa/tmp
+	@qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 

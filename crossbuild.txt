@@ -18,6 +18,8 @@ native-build: ( update alternatives to linux g++ ,  remove LDFLAGS of db4.8 libs
 crosss-build: (upadate alternatives to mingw g++)
     
 crosss build Windows 64-bit: (upadate alternatives to x86_64-w64-mingw32 g++,   remove LDFLAGS of db4.8 libs to use the default installed on the system)
+
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
     cd depends
     make HOST=x86_64-w64-mingw32 -j4
     cd ..
@@ -27,6 +29,8 @@ crosss build Windows 64-bit: (upadate alternatives to x86_64-w64-mingw32 g++,   
 
 
 crosss build Windows 32-bit: (upadate alternatives to i686-w64-mingw32 g++,  remove LDFLAGS of db4.8 libs to use the default installed on the system))
+
+    PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
     cd depends
     make HOST=i686-w64-mingw32 -j4
     cd ..

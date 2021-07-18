@@ -211,8 +211,8 @@ extern "C" {
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/home/mint/workspace/longcoin/bitcoin/depends/x86_64-w64-mingw32/lib/engines"
-#define OPENSSLDIR "/home/mint/workspace/longcoin/bitcoin/depends/x86_64-w64-mingw32/etc/openssl"
+#define ENGINESDIR "/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib/engines"
+#define OPENSSLDIR "/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/etc/openssl"
 #endif
 #endif
 
