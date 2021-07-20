@@ -1101,12 +1101,12 @@ configure: failed program was:
 configure:15558: result: no
 configure:15456: checking whether pthreads work without any flags
 configure:15549: x86_64-w64-mingw32-gcc -o conftest.exe -pipe -O2    -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/ conftest.c  -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd  >&5
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x1b): undefined reference to `pthread_create'
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x27): undefined reference to `pthread_join'
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x31): undefined reference to `pthread_attr_init'
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x4b): undefined reference to `pthread_getclean'
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x5b): undefined reference to `pthread_getclean'
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccL9N3Nk.o:conftest.c:(.text.startup+0x6b): undefined reference to `pthread_getclean'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x1b): undefined reference to `pthread_create'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x27): undefined reference to `pthread_join'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x31): undefined reference to `pthread_attr_init'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x4b): undefined reference to `pthread_getclean'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x5b): undefined reference to `pthread_getclean'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccXLXQad.o:conftest.c:(.text.startup+0x6b): undefined reference to `pthread_getclean'
 collect2: error: ld returned 1 exit status
 configure:15549: $? = 1
 configure: failed program was:
@@ -1540,7 +1540,7 @@ configure: failed program was:
 configure:15959: result: no
 configure:15972: checking for strerror_r
 configure:15972: x86_64-w64-mingw32-g++ -o conftest.exe -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/ conftest.cpp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd  >&5
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/cckHi3mV.o:conftest.cpp:(.text.startup+0xa): undefined reference to `strerror_r'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccCP8UzP.o:conftest.cpp:(.text.startup+0xa): undefined reference to `strerror_r'
 collect2: error: ld returned 1 exit status
 configure:15972: $? = 1
 configure: failed program was:
@@ -1699,7 +1699,7 @@ configure:16226: $? = 0
 configure:16239: result: yes
 configure:16339: checking for library containing clock_gettime
 configure:16370: x86_64-w64-mingw32-g++ -o conftest.exe -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/ conftest.cpp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd  >&5
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccrMrGgx.o:conftest.cpp:(.text.startup+0xa): undefined reference to `clock_gettime'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/cccbkzyr.o:conftest.cpp:(.text.startup+0xa): undefined reference to `clock_gettime'
 collect2: error: ld returned 1 exit status
 configure:16370: $? = 1
 configure: failed program was:
@@ -2760,7 +2760,7 @@ configure:16892: checking for sys/prctl.h
 configure:16892: result: no
 configure:16902: checking for library containing getaddrinfo_a
 configure:16933: x86_64-w64-mingw32-g++ -o conftest.exe -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/ conftest.cpp -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd  >&5
-/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccA2Al50.o:conftest.cpp:(.text.startup+0xa): undefined reference to `getaddrinfo_a'
+/usr/bin/x86_64-w64-mingw32-ld: /tmp/ccv3SE5S.o:conftest.cpp:(.text.startup+0xa): undefined reference to `getaddrinfo_a'
 collect2: error: ld returned 1 exit status
 configure:16933: $? = 1
 configure: failed program was:
@@ -5790,106 +5790,6 @@ configure:21053: $? = 0
 configure:21063: result: yes
 configure:21218: checking whether the Boost::Filesystem library is available
 configure:21242: x86_64-w64-mingw32-g++ -c -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include conftest.cpp >&5
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:28,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp:396:33: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  396 |     explicit shared_count( std::auto_ptr<Y> & r ): pi_( new sp_counted_impl_p<Y>( r.get() ) )
-      |                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:249:65: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  249 | template< class T, class R > struct sp_enable_if_auto_ptr< std::auto_ptr< T >, R >
-      |                                                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:448:31: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  448 |     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
-      |                               ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:461:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  461 |     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
-      |                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:538:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  538 |     shared_ptr & operator=( std::auto_ptr<Y> & r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:547:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  547 |     shared_ptr & operator=( std::auto_ptr<Y> && r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:29,
-                 from conftest.cpp:77:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp: In member function 'boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(std::auto_ptr<_Up>&&)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:549:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  549 |         this_type( static_cast< std::auto_ptr<Y> && >( r ) ).swap( *this );
-      |                                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/locale_conv.h:41,
-                 from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/locale:43,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path_traits.hpp:29,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/filesystem/path.hpp:25,
-                 from conftest.cpp:77:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
 configure:21242: $? = 0
 configure:21256: result: yes
 configure:21268: checking for exit in -lboost_filesystem-mt-s
@@ -5901,148 +5801,6 @@ configure:21293: $? = 0
 configure:21303: result: yes
 configure:21453: checking whether the Boost::Program_Options library is available
 configure:21477: x86_64-w64-mingw32-g++ -c -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include conftest.cpp >&5
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:28,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp:396:33: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  396 |     explicit shared_count( std::auto_ptr<Y> & r ): pi_( new sp_counted_impl_p<Y>( r.get() ) )
-      |                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:249:65: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  249 | template< class T, class R > struct sp_enable_if_auto_ptr< std::auto_ptr< T >, R >
-      |                                                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:448:31: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  448 |     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
-      |                               ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:461:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  461 |     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
-      |                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:538:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  538 |     shared_ptr & operator=( std::auto_ptr<Y> & r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:547:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  547 |     shared_ptr & operator=( std::auto_ptr<Y> && r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp: In member function 'boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(std::auto_ptr<_Up>&&)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:549:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  549 |         this_type( static_cast< std::auto_ptr<Y> && >( r ) ).swap( *this );
-      |                                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp:16,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/maybe_include.hpp:18,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function1.hpp:11,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/value_semantic.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options/options_description.hpp:13,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/program_options.hpp:15,
-                 from conftest.cpp:78:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
 configure:21477: $? = 0
 configure:21491: result: yes
 configure:21503: checking for exit in -lboost_program_options-mt-s
@@ -6054,188 +5812,6 @@ configure:21528: $? = 0
 configure:21538: result: yes
 configure:21681: checking whether the Boost::Thread library is available
 configure:21713: x86_64-w64-mingw32-g++ -c -mthreads -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include conftest.cpp >&5
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:28,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp:396:33: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  396 |     explicit shared_count( std::auto_ptr<Y> & r ): pi_( new sp_counted_impl_p<Y>( r.get() ) )
-      |                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:249:65: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  249 | template< class T, class R > struct sp_enable_if_auto_ptr< std::auto_ptr< T >, R >
-      |                                                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:448:31: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  448 |     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
-      |                               ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:461:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  461 |     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
-      |                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:538:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  538 |     shared_ptr & operator=( std::auto_ptr<Y> & r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:547:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  547 |     shared_ptr & operator=( std::auto_ptr<Y> && r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp: In member function 'boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(std::auto_ptr<_Up>&&)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:549:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  549 |         this_type( static_cast< std::auto_ptr<Y> && >( r ) ).swap( *this );
-      |                                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:13,
-                 from conftest.cpp:79:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/thread_group.hpp: In member function 'boost::thread* boost::thread_group::create_thread(F)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/thread_group.hpp:78:18: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-   78 |             std::auto_ptr<thread> new_thread(new thread(threadfunc));
-      |                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:79:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
 configure:21713: $? = 0
 configure:21728: result: yes
 configure:21758: checking for exit in -lboost_thread_win32-mt-s
@@ -6257,188 +5833,6 @@ conftest.cpp:88:6: warning: declaration of 'char exit()' conflicts with built-in
 configure:22033: $? = 0
 configure:22043: result: yes
 configure:22492: x86_64-w64-mingw32-g++ -o conftest.exe -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -mthreads -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -L/usr/local/db4.8/lib/ conftest.cpp -L/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd  >&5
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:28,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/shared_count.hpp:396:33: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  396 |     explicit shared_count( std::auto_ptr<Y> & r ): pi_( new sp_counted_impl_p<Y>( r.get() ) )
-      |                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:249:65: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  249 | template< class T, class R > struct sp_enable_if_auto_ptr< std::auto_ptr< T >, R >
-      |                                                                 ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:448:31: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  448 |     explicit shared_ptr( std::auto_ptr<Y> & r ): px(r.get()), pn()
-      |                               ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:461:22: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  461 |     shared_ptr( std::auto_ptr<Y> && r ): px(r.get()), pn()
-      |                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:538:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  538 |     shared_ptr & operator=( std::auto_ptr<Y> & r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:547:34: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  547 |     shared_ptr & operator=( std::auto_ptr<Y> && r )
-      |                                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp: In member function 'boost::shared_ptr<T>& boost::shared_ptr<T>::operator=(std::auto_ptr<_Up>&&)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:549:38: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-  549 |         this_type( static_cast< std::auto_ptr<Y> && >( r ) ).swap( *this );
-      |                                      ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
-In file included from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:13,
-                 from conftest.cpp:82:
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/thread_group.hpp: In member function 'boost::thread* boost::thread_group::create_thread(F)':
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/thread_group.hpp:78:18: warning: 'template<class> class std::auto_ptr' is deprecated [-Wdeprecated-declarations]
-   78 |             std::auto_ptr<thread> new_thread(new thread(threadfunc));
-      |                  ^~~~~~~~
-In file included from /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:80,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/config/no_tr1/memory.hpp:21,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/shared_ptr.hpp:23,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/shared_ptr.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp:17,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:9,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:10,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_only.hpp:15,
-                 from /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread.hpp:12,
-                 from conftest.cpp:82:
-/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/unique_ptr.h:53:28: note: declared here
-   53 |   template<typename> class auto_ptr;
-      |                            ^~~~~~~~
 configure:22492: $? = 0
 configure:23123: checking openssl/crypto.h usability
 configure:23123: x86_64-w64-mingw32-g++ -c -pipe -O2 --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -I/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/ -I/usr/local/db4.8/include/ -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 conftest.cpp >&5
@@ -6959,7 +6353,6 @@ config.status:1393: creating src/test/buildenv.py
 config.status:1393: creating qa/pull-tester/run-bitcoind-for-test.sh
 config.status:1393: creating qa/pull-tester/tests_config.py
 config.status:1393: creating src/config/bitcoin-config.h
-config.status:1574: src/config/bitcoin-config.h is unchanged
 config.status:1622: executing depfiles commands
 config.status:1699: cd src       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
 make: Nothing to be done for 'am--depfiles'.

@@ -907,7 +907,6 @@ on mint-pc
 config.status:1151: creating Makefile
 config.status:1151: creating libsecp256k1.pc
 config.status:1151: creating src/libsecp256k1-config.h
-config.status:1332: src/libsecp256k1-config.h is unchanged
 config.status:1380: executing depfiles commands
 config.status:1457: cd .       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
 make: Nothing to be done for 'am--depfiles'.

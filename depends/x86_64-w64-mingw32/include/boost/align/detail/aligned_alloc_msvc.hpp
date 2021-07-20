@@ -1,6 +1,6 @@
 /*
 (c) 2014 Glen Joseph Fernandes
-glenjofe at gmail dot com
+<glenjofe -at- gmail.com>
 
 Distributed under the Boost Software
 License, Version 1.0.
@@ -9,10 +9,8 @@ http://boost.org/LICENSE_1_0.txt
 #ifndef BOOST_ALIGN_DETAIL_ALIGNED_ALLOC_MSVC_HPP
 #define BOOST_ALIGN_DETAIL_ALIGNED_ALLOC_MSVC_HPP
 
-#include <boost/assert.hpp>
-#include <boost/config.hpp>
 #include <boost/align/detail/is_alignment.hpp>
-#include <cstddef>
+#include <boost/assert.hpp>
 #include <malloc.h>
 
 namespace boost {
@@ -30,7 +28,7 @@ inline void aligned_free(void* ptr) BOOST_NOEXCEPT
     ::_aligned_free(ptr);
 }
 
-} /* :alignment */
-} /* :boost */
+} /* .alignment */
+} /* .boost */
 
 #endif

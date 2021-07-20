@@ -281,13 +281,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/common.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/sfinae.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_array.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/config.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_def.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/template_arity_spec.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_constant.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_undef.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/yes_no_type.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_void.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_same.hpp \
@@ -305,24 +299,12 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_params.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_trailing_params.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_reference.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_def.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_undef.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_traits.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/iterator.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/detail/msvc_has_iterator_workaround.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/const_iterator.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_const.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/cv_traits_impl.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_const.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/ice.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_or.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_and.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_not.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_eq.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/begin.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/rend.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/reverse_iterator.hpp \
@@ -332,10 +314,13 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_integral.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_enum.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/intrinsics.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/config.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/version.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_cv.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_promotion.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/make_signed.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/conditional.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_signed.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_const.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_volatile.hpp \
@@ -347,20 +332,19 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_class.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_convertible.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_arithmetic.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_float.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_floating_point.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_abstract.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_lvalue_reference.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_reference.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_rvalue_reference.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_function.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/false_result.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_function_ptr_helper.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/declval.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/declval.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_fundamental.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pointer.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_pointer.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_plus_assign.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_minus.hpp \
@@ -369,6 +353,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_adaptor.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_categories.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_def.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/placeholders.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/arg_fwd.hpp \
@@ -382,6 +367,9 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/interoperable.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/facade_iterator_category.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/indirect_traits.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/enable_if.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/addressof.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/addressof.hpp \
@@ -422,6 +410,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/foreach_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered_set.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_set.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/set.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_set_fwd.hpp \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/bits/stl_raw_storage_iter.h \
@@ -440,6 +429,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/functional/hash/hash_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/equivalent.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/extract_key.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/table.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/buckets.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/util.hpp \
@@ -450,9 +440,9 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/move.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/config_begin.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/utility.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/workaround.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/utility_core.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/core.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/workaround.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/config_end.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/meta_utils.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/meta_utils_core.hpp \
@@ -461,7 +451,10 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/assert.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/iterator.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/iterator_traits.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/std_ns_begin.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/std_ns_end.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/algorithm.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/algo/move.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/no_exceptions_support.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/no_exceptions_support.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/seq/size.hpp \
@@ -469,10 +462,17 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/swap.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/swap.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/allocate.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/dec.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_binary_params.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/repeat_from_to.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/aligned_storage.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/alignment_of.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/type_with_alignment.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_constructible.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_assignable.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_assign.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_assignable.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_assign.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/tuple/tuple.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ref.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/ref.hpp \
@@ -483,33 +483,8 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/function_traits.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/swap.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/limits.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/pointer_to_other.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/aligned_storage.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/aligned_storage.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/alignment_of.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/size_t_trait_def.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t_fwd.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/size_t_trait_undef.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/type_with_alignment.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/for_each_i.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/for.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/detail/for.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/to_list.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/size.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/transform.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/append.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_constructible.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_constructor.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_copy.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_copy.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_assignable.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_assign.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_assign.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_assign.hpp \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/cmath \
  /usr/share/mingw-w64/include/math.h \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/extract_key.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/unique.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/throw_exception.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/exception/exception.hpp \
@@ -536,6 +511,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered_map.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_map.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_map_fwd.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/map.hpp \
  sync.h threadsafety.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/condition_variable.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/platform.hpp \
@@ -642,6 +618,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/tbmintrin.h \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/mwaitxintrin.h \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/clzerointrin.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/winapi/config.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/time_clock.hpp \
@@ -664,18 +641,20 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/bad_weak_ptr.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_has_sync.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/sp_typeinfo.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/typeinfo.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/core/demangle.hpp \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/cxxabi.h \
  /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h \
+ /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/atomic \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_convertible.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_pool.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_sync.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/yield_k.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/language.h \
@@ -779,6 +758,16 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/os/vms.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other/endian.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86/versions.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86_amd.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86_amd/versions.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/arm.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/arm/versions.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/ppc.h \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/ppc/versions.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/operator_bool.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/date_time/microsec_time_clock.hpp \
@@ -837,6 +826,8 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/ratio.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/config.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/abs.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/sign.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/gcd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/largest_int.hpp \
@@ -846,11 +837,13 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/ratio_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/overflow_helpers.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/common_type.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_floating_point.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_extent.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/mp_defer.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/detail/is_evenly_divisible_by.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/time_point.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/detail/system.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/version.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/clock_string.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/interlocked_read.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/cv_status.hpp \
@@ -864,10 +857,6 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/ceil.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lock_types.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/move.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/conditional.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_extent.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/delete.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lock_options.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lockable_traits.hpp \
@@ -875,6 +864,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/lockable_wrapper.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/locks.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lock_algorithms.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/shared_lock_guard.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/recursive_mutex.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/recursive_mutex.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/basic_recursive_mutex.hpp \
@@ -1259,6 +1249,14 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/detail/prologue.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_base.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/integer.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/stl_type_index.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/type_index_facade.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_copy.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_copy_constructible.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_constructible.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_destructible.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_default_constructible.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_destructor.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/composite_traits.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_union.hpp \
@@ -1275,6 +1273,8 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function/function_template.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/connection.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/detail/auto_buffer.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_copy.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_assign.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_constructor.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/detail/null_output_iterator.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/function_output_iterator.hpp \
@@ -1294,6 +1294,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/apply_visitor.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/apply_visitor_unary.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/generic_result_type.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/declval.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/has_result_type.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/apply_visitor_binary.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/apply_visitor_delayed.hpp \
@@ -1304,9 +1305,6 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/substitute_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/variant.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/stl_type_index.hpp \
- /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/type_index_facade.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/backup_holder.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/enable_recursive_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/forced_return.hpp \
@@ -1342,6 +1340,7 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/cast_storage.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/hash_variant.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/static_visitor.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/aligned_storage.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/blank.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/templated_streams.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_stateless.hpp \
@@ -1351,6 +1350,8 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/front.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/front_impl.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/max_element.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t_fwd.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/sizeof.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/variant_io.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/trackable.hpp \
@@ -1368,6 +1369,12 @@ libbitcoin_server_a-txmempool.o: txmempool.cpp txmempool.h \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/none_t.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/compare_pointees.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/optional_fwd.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_config.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_factory_support.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_aligned_storage.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_reference_spec.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_relops.hpp \
+ /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_swap.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/detail/slot_call_iterator.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/optional_last_value.hpp \
  /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/mutex.hpp \
@@ -1980,19 +1987,7 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_array.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/config.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_def.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/template_arity_spec.hpp:
-
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_constant.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/bool_trait_undef.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/yes_no_type.hpp:
 
@@ -2028,10 +2023,6 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_reference.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_def.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/type_trait_undef.hpp:
-
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_traits.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/iterator.hpp:
@@ -2042,27 +2033,7 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_const.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/cv_traits_impl.hpp:
-
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_const.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/ice.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_or.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_and.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_not.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/ice_eq.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/range/begin.hpp:
 
@@ -2082,13 +2053,19 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/intrinsics.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/config.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/version.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_cv.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/integral_promotion.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_volatile.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/make_signed.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/conditional.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_signed.hpp:
 
@@ -2112,7 +2089,7 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_arithmetic.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_float.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_floating_point.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_abstract.hpp:
 
@@ -2122,23 +2099,21 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/add_rvalue_reference.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_function.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_reference.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/false_result.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_rvalue_reference.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_function.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_function_ptr_helper.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/declval.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/declval.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_fundamental.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_pointer.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_pointer.hpp:
 
@@ -2155,6 +2130,8 @@ memusage.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/iterator_categories.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/config_def.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/identity.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/placeholders.hpp:
 
@@ -2181,6 +2158,12 @@ memusage.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/facade_iterator_category.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/indirect_traits.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_function_pointer.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/is_mem_fun_pointer_impl.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_member_pointer.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/iterator/detail/enable_if.hpp:
 
@@ -2262,6 +2245,8 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_set.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/set.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_set_fwd.hpp:
 
 /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/memory:
@@ -2298,6 +2283,8 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/equivalent.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/extract_key.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/table.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/buckets.hpp:
@@ -2318,11 +2305,11 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/utility.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/workaround.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/utility_core.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/core.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/workaround.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/config_end.hpp:
 
@@ -2340,7 +2327,13 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/iterator_traits.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/std_ns_begin.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/detail/std_ns_end.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/algorithm.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/move/algo/move.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/no_exceptions_support.hpp:
 
@@ -2356,13 +2349,27 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/allocate.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/dec.hpp:
-
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/enum_binary_params.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/repeat_from_to.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/aligned_storage.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/alignment_of.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/type_with_alignment.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_constructible.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_assignable.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_assign.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_assignable.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_assign.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/tuple/tuple.hpp:
 
@@ -2384,59 +2391,9 @@ memusage.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/limits.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/pointer_to_other.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/aligned_storage.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/aligned_storage.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/alignment_of.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/size_t_trait_def.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t_fwd.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/size_t_trait_undef.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/type_with_alignment.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/for_each_i.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/for.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/repetition/detail/for.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/to_list.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/tuple/size.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/transform.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/preprocessor/list/append.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_constructible.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_constructor.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_copy.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_copy.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_nothrow_move_assignable.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_move_assign.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_assign.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_assign.hpp:
-
 /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/cmath:
 
 /usr/share/mingw-w64/include/math.h:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/extract_key.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/unique.hpp:
 
@@ -2489,6 +2446,8 @@ memusage.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_map.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/unordered_map_fwd.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/unordered/detail/map.hpp:
 
 sync.h:
 
@@ -2704,6 +2663,8 @@ threadsafety.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/clzerointrin.h:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/winapi/config.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/win32/thread_data.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/thread_time.hpp:
@@ -2748,7 +2709,7 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_has_sync.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_gcc_x86.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_base_std_atomic.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/sp_typeinfo.hpp:
 
@@ -2760,7 +2721,11 @@ threadsafety.h:
 
 /usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h:
 
+/usr/lib/gcc/x86_64-w64-mingw32/9.3-win32/include/c++/atomic:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/sp_convertible.hpp:
 
@@ -2770,7 +2735,7 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_sync.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/spinlock_std_atomic.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/yield_k.hpp:
 
@@ -2978,6 +2943,26 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/other/endian.h:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86/versions.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86_amd.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/x86_amd/versions.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/arm.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/arm/versions.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/ppc.h:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/hardware/simd/ppc/versions.h:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/predef/version.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/smart_ptr/detail/operator_bool.hpp:
@@ -3094,6 +3079,10 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/abs.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/integral_c_fwd.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/sign.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/ratio/detail/mpl/gcd.hpp:
@@ -3112,15 +3101,19 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/common_type.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_floating_point.hpp:
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_extent.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/detail/mp_defer.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/detail/is_evenly_divisible_by.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/time_point.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/detail/system.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/version.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/chrono/clock_string.hpp:
 
@@ -3148,14 +3141,6 @@ threadsafety.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/move.hpp:
 
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/decay.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_bounds.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/conditional.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/remove_extent.hpp:
-
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/detail/delete.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lock_options.hpp:
@@ -3169,6 +3154,8 @@ threadsafety.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/locks.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/lock_algorithms.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/shared_lock_guard.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/thread/recursive_mutex.hpp:
 
@@ -3972,6 +3959,22 @@ support/cleanse.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/integer.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/stl_type_index.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/type_index_facade.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_copy.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_copy_constructible.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_constructible.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_destructible.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/is_default_constructible.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_destructor.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/composite_traits.hpp:
@@ -4003,6 +4006,10 @@ support/cleanse.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/connection.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/detail/auto_buffer.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_nothrow_copy.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_assign.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_traits/has_trivial_constructor.hpp:
 
@@ -4042,6 +4049,8 @@ support/cleanse.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/generic_result_type.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/declval.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/has_result_type.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/apply_visitor_binary.hpp:
@@ -4061,12 +4070,6 @@ support/cleanse.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/substitute_fwd.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/variant.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/stl_type_index.hpp:
-
-/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/type_index/type_index_facade.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/detail/backup_holder.hpp:
 
@@ -4138,6 +4141,8 @@ support/cleanse.h:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/variant/static_visitor.hpp:
 
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/aligned_storage.hpp:
+
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/blank.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/detail/templated_streams.hpp:
@@ -4155,6 +4160,10 @@ support/cleanse.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/aux_/front_impl.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/max_element.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/size_t_fwd.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/mpl/sizeof.hpp:
 
@@ -4189,6 +4198,18 @@ support/cleanse.h:
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/utility/compare_pointees.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/optional_fwd.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_config.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_factory_support.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_aligned_storage.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_reference_spec.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_relops.hpp:
+
+/home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/optional/detail/optional_swap.hpp:
 
 /home/mint/Work/longcoin/longcoin-src/depends/x86_64-w64-mingw32/include/boost/signals2/detail/slot_call_iterator.hpp:
 

@@ -3,7 +3,7 @@
 (c) 2015 LRI UMR 8623 CNRS/University Paris Sud XI
 
 (c) 2015 Glen Joseph Fernandes
-glenjofe at gmail dot com
+<glenjofe -at- gmail.com>
 
 Distributed under the Boost Software
 License, Version 1.0.
@@ -12,6 +12,6 @@ http://boost.org/LICENSE_1_0.txt
 #ifndef BOOST_ALIGN_DETAIL_ASSUME_ALIGNED_HPP
 #define BOOST_ALIGN_DETAIL_ASSUME_ALIGNED_HPP
 
-#define BOOST_ALIGN_ASSUME_ALIGNED(ptr, alignment)
+#define BOOST_ALIGN_ASSUME_ALIGNED(p, n)
 
 #endif

@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2014 Vladimir Batov.
+// Copyright (c) 2009-2016 Vladimir Batov.
 // Use, modification and distribution are subject to the Boost Software License,
 // Version 1.0. See http://www.boost.org/LICENSE_1_0.txt.
 
@@ -11,6 +11,7 @@
 #   pragma warning(disable: 4996)
 #   pragma warning(disable: 4180) // qualifier applied to function type has no meaning
 #   pragma warning(disable: 4100) // unreferenced formal parameter
+#   pragma warning(disable: 4146) // unary minus operator applied to unsigned type
 
 #if _MSC_VER < 1900 /* MSVC-14 defines real snprintf()... just about time! */
 #   define snprintf _snprintf

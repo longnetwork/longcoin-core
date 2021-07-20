@@ -1606,8 +1606,9 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
         RegisterValidationInterface(pwalletMain);
 
         CBlockIndex *pindexRescan = chainActive.Tip();
-        if (GetBoolArg("-rescan", false))
-            pindexRescan = chainActive.Genesis();
+        if (GetBoolArg("-rescan", false)) {
+            pindexRescan = chainActive.Genesis();            
+        }
         else
         {
             CWalletDB walletdb(strWalletFile);
@@ -1635,7 +1636,19 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             uiInterface.InitMessage(_("Rescanning..."));
             LogPrintf("Rescanning last %i blocks (from block %i)...\n", chainActive.Height() - pindexRescan->nHeight, pindexRescan->nHeight);
             nStart = GetTimeMillis();
-            pwalletMain->ScanForWalletTransactions(pindexRescan, true);
+
+            //#warning DEBUG -rescan
+            //    printf("pindexRescan=%lu \n",pindexRescan->nHeight);
+            //    if(chainActive.Tip()) printf("chainActive.Height=%lu \n",chainActive.Height());
+
+            {
+                LOCK2(cs_main, pwalletMain->cs_wallet);
+                
+                if(pindexRescan == chainActive.Genesis()) pwalletMain->nTimeFirstKey = 1; // опция -rescan форсит рескан с самого начала (как importprivkey)
+                
+                pwalletMain->ScanForWalletTransactions(pindexRescan, true);
+            }
+            
             LogPrintf(" rescan      %15dms\n", GetTimeMillis() - nStart);
             pwalletMain->SetBestChain(chainActive.GetLocator());
             nWalletDBUpdated++;
