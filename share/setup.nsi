@@ -1,4 +1,4 @@
-Name "Bitcoin Core (64-bit)"
+Name "Bitcoin Core (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://bitcoincore.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/mnt/hostWork/longcoin/longcoin-src/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/mnt/hostWork/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/mnt/hostWork/longcoin/longcoin-src/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,13 +22,13 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Bitcoin Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\bitcoin-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/mint/Work/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/mnt/hostWork/longcoin/longcoin-src/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "64" == "64"
+!if "" == "64"
 !include x64.nsh
 !endif
 
@@ -48,8 +48,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/mint/Work/longcoin/longcoin-src/bitcoin-${VERSION}-win64-setup.exe
-!if "64" == "64"
+OutFile /mnt/hostWork/longcoin/longcoin-src/bitcoin-${VERSION}-win-setup.exe
+!if "" == "64"
 InstallDir $PROGRAMFILES64\Bitcoin
 !else
 InstallDir $PROGRAMFILES\Bitcoin
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/mint/Work/longcoin/longcoin-src/release/bitcoin-qt.exe
-    File /oname=COPYING.txt /home/mint/Work/longcoin/longcoin-src/COPYING
-    File /oname=readme.txt /home/mint/Work/longcoin/longcoin-src/doc/README_windows.txt
+    File /mnt/hostWork/longcoin/longcoin-src/release/bitcoin-qt.exe
+    File /oname=COPYING.txt /mnt/hostWork/longcoin/longcoin-src/COPYING
+    File /oname=readme.txt /mnt/hostWork/longcoin/longcoin-src/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/mint/Work/longcoin/longcoin-src/release/bitcoind.exe
-    File /home/mint/Work/longcoin/longcoin-src/release/bitcoin-cli.exe
+    File /mnt/hostWork/longcoin/longcoin-src/release/bitcoind.exe
+    File /mnt/hostWork/longcoin/longcoin-src/release/bitcoin-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /home/mint/Work/longcoin/longcoin-src/doc\*.*
+    File /r /mnt/hostWork/longcoin/longcoin-src/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
@@ -160,7 +160,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "64" == "64"
+!if "" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64
