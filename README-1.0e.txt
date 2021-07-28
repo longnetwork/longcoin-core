@@ -1,6 +1,7 @@
-Версия 1.0d:
+Версия 1.0e:
  - Фикс bit-version warning 
  (установка consensus.nRuleChangeActivationThreshold и consensus.nMinerConfirmationWindow в правильные расчетные значения)
+ - Фикс вычисления хешрейта
 
 Версия 1.0c:
  - Установка тега релиза

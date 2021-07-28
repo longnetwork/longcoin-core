@@ -90,7 +90,9 @@ UniValue getnetworkhashps(const UniValue& params, bool fHelp)
        );
 
     LOCK(cs_main);
-    return GetNetworkHashPS(params.size() > 0 ? params[0].get_int() : 120, params.size() > 1 ? params[1].get_int() : -1);
+
+    // FIXME захардкожено 15 блоков по умолчанию для расчета хешьрейта
+    return GetNetworkHashPS(params.size() > 0 ? params[0].get_int() : 15 /*120*/ , params.size() > 1 ? params[1].get_int() : -1);
 }
 
 UniValue getgenerate(const UniValue& params, bool fHelp)

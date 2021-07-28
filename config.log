@@ -796,7 +796,7 @@ configure: failed program was:
 configure:20000: result: no
 configure:19898: checking whether pthreads work without any flags
 configure:19991: gcc -o conftest -g -O2   -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.c  -lssl -lcrypto -ldl >&5
-/tmp/cckhRnTU.o: In function `main':
+/tmp/ccX6YmC8.o: In function `main':
 /mnt/hostWork/longcoin/longcoin-src/conftest.c:28: undefined reference to `pthread_create'
 /mnt/hostWork/longcoin/longcoin-src/conftest.c:29: undefined reference to `pthread_join'
 /mnt/hostWork/longcoin/longcoin-src/conftest.c:31: undefined reference to `__pthread_register_cancel'
@@ -1352,7 +1352,7 @@ configure:21334: checking for sys/prctl.h
 configure:21334: result: yes
 configure:21344: checking for library containing getaddrinfo_a
 configure:21375: g++ -o conftest -g -O2 -Wall -Wextra -Wformat -Wformat-security -Wno-unused-parameter -Wno-self-assign -I/usr/local/db4.8/include/ -I/usr/local/openssl1.0/include/ --param ggc-min-expand=1 --param ggc-min-heapsize=32768 -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -L/usr/local/db4.8/lib/ -L/usr/local/openssl1.0/lib/ conftest.cpp -lssl -lcrypto -ldl >&5
-/tmp/ccg8QKIG.o: In function `main':
+/tmp/ccaDKTWH.o: In function `main':
 /mnt/hostWork/longcoin/longcoin-src/conftest.cpp:48: undefined reference to `getaddrinfo_a'
 collect2: error: ld returned 1 exit status
 configure:21375: $? = 1
