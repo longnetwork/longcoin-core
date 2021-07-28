@@ -444,7 +444,7 @@ AR = ar
 AUTOCONF = ${SHELL} /mnt/hostWork/longcoin/longcoin-src/src/univalue/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/hostWork/longcoin/longcoin-src/src/univalue/build-aux/missing autoheader
 AUTOMAKE = ${SHELL} /mnt/hostWork/longcoin/longcoin-src/src/univalue/build-aux/missing automake-1.15
-AWK = mawk
+AWK = gawk
 BUILD_EXEEXT = 
 CC = gcc
 CCDEPMODE = depmode=gcc3

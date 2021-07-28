@@ -133,8 +133,8 @@ consensus.nHeight2 = 115000-1;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 50; //741; //684; // 1916 95% of 2016
-        consensus.nMinerConfirmationWindow = 80; //780; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 28; //50; //741; //684; // 1916 95% of 2016
+        consensus.nMinerConfirmationWindow = 30; //80; //780; //720; // 2016 nPowTargetTimespan / nPowTargetSpacing
         
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1558007865; // January 1, 2008

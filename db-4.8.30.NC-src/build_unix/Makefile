@@ -29,7 +29,7 @@ LN=	ln
 MKDIR=	mkdir
 RANLIB=	ranlib
 RM=	rm -f
-SHELL=	/usr/bin/sh
+SHELL=	/bin/sh
 STRIP=	strip
 
 ##################################################
