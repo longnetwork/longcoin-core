@@ -1,3 +1,7 @@
+Версия 1.0f:
+ - В long-java добавленая случайная генерация пароля RPC если он установлен в значение по умолчанию
+ - В long-java добавленая проверка подписи аккредитованного контента со скриптами (мини игры и прочее)
+
 Версия 1.0e:
  - Фикс bit-version warning 
  (установка consensus.nRuleChangeActivationThreshold и consensus.nMinerConfirmationWindow в правильные расчетные значения)
