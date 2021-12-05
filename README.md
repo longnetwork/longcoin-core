@@ -1,4 +1,6 @@
-![#f03c15]Уважаемые WhiteBit! Батя сердится! Говорит либо отдайте коины юзерам и делистните монету, либо кончайте морозится и врубайте торги!`#f03c15`
+```diff
+- Уважаемые WhiteBit! Батя сердится! Говорит либо отдайте коины юзерам и делистните монету, либо кончайте морозится и врубайте торги!
+```
 
 # LONG NETWORK Core — Cryptographic decentralized network on an open source blockchain (based on bitcoin-core-0.12.1)
 
