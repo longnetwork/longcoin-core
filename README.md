@@ -1,3 +1,5 @@
+![#f03c15]Уважаемые WhiteBit! Батя сердится! Говорит либо отдайте коины юзерам и делистните монету, либо кончайте морозится и врубайте торги!`#f03c15`
+
 # LONG NETWORK Core — Cryptographic decentralized network on an open source blockchain (based on bitcoin-core-0.12.1)
 
 LONG NETWORK works on the principle of encryption of all outgoing messages. All messages automatically fall into a single blockchain,
