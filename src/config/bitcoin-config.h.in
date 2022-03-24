@@ -168,14 +168,8 @@
 /* Define to 1 if you have the `gdi32' library (-lgdi32). */
 #undef HAVE_LIBGDI32
 
-/* Define to 1 if you have the `imm32' library (-limm32). */
-#undef HAVE_LIBIMM32
-
 /* Define to 1 if you have the `iphlpapi' library (-liphlpapi). */
 #undef HAVE_LIBIPHLPAPI
-
-/* Define to 1 if you have the `jpeg ' library (-ljpeg ). */
-#undef HAVE_LIBJPEG_
 
 /* Define to 1 if you have the `kernel32' library (-lkernel32). */
 #undef HAVE_LIBKERNEL32
@@ -191,9 +185,6 @@
 
 /* Define to 1 if you have the `oleaut32' library (-loleaut32). */
 #undef HAVE_LIBOLEAUT32
-
-/* Define to 1 if you have the `png ' library (-lpng ). */
-#undef HAVE_LIBPNG_
 
 /* Define to 1 if you have the `rpcrt4' library (-lrpcrt4). */
 #undef HAVE_LIBRPCRT4
@@ -224,9 +215,6 @@
 
 /* Define to 1 if you have the `ws2_32' library (-lws2_32). */
 #undef HAVE_LIBWS2_32
-
-/* Define to 1 if you have the `z ' library (-lz ). */
-#undef HAVE_LIBZ_
 
 /* Define to 1 if you have the <memory.h> header file. */
 #undef HAVE_MEMORY_H
@@ -321,18 +309,6 @@
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
 #undef PTHREAD_CREATE_JOINABLE
-
-/* Define this symbol if the qt platform is cocoa */
-#undef QT_QPA_PLATFORM_COCOA
-
-/* Define this symbol if the qt platform is windows */
-#undef QT_QPA_PLATFORM_WINDOWS
-
-/* Define this symbol if the qt platform is xcb */
-#undef QT_QPA_PLATFORM_XCB
-
-/* Define this symbol if qt plugins are static */
-#undef QT_STATICPLUGIN
 
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS

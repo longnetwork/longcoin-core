@@ -1,8 +1,3 @@
-```diff
-- Уважаемые WhiteBit! Батя сердится! Говорит либо отдайте коины юзерам и делистните монету, 
-  либо кончайте морозится и врубайте торги!
-```
-
 # LONG NETWORK Core — Cryptographic decentralized network on an open source blockchain (based on bitcoin-core-0.12.1)
 
 LONG NETWORK works on the principle of encryption of all outgoing messages. All messages automatically fall into a single blockchain,
@@ -36,10 +31,13 @@ https://longnetwork.github.io/
 Build Process
 ===========================================================================================================================================
 
-* For Build see bash script https://github.com/longnetwork/LONGNETWORK/blob/master/build.sh
-and also a video tutorial https://youtu.be/H5FkmPRJiEo
-* For specific steps for cross-building see https://github.com/longnetwork/LONGNETWORK/blob/master/crossbuild.txt
-(customized cross-build tools are included in the repository!)
+* For Build see bash script https://github.com/longnetwork/longcoin-core/blob/master/build.sh
+* For specific steps for cross-building see https://github.com/longnetwork/longcoin-core/blob/master/crossbuild.txt
+(customized cross-build tools are included in the repository!)  
+**Pre-build 64-bit binaries (core + GUI Wallet):**
+[Windows](https://drive.google.com/uc?export=download&id=1hEJbh_h8cc-b0a9PNjPMoiucILmfjWkV) | 
+[Ubuntu 20.04](https://drive.google.com/uc?export=download&id=1fW4qE-30swUrB3pWo2Ee5svbmQJEjEgb) | 
+[Ubuntu 18.04](https://drive.google.com/uc?export=download&id=1P4K6tRB-RtR56zK_Vj_pjse9llFK_l09)
 
 Startup Notes
 ===========================================================================================================================================
@@ -49,7 +47,6 @@ The longcoin-daemon and GUI-wallet by default looks for the `longcoin.conf` conf
 then specify the full paths at startup: 
 ```bash
 longcoind -conf=<path to longcoin.conf> -datadir=<path to data dir>
-longcoin-qt -conf=<path to longcoin.conf> -datadir=<path to data dir>
 ```
 The data directory can also be specified in the configuration file with the full path or relative to the current launch directory:
 ```bash
@@ -57,7 +54,7 @@ datadir=<path to data dir>
 ```
 (see debug.log after start for configuration and data directory search paths)
 
-The current recommended configuration is here: https://github.com/longnetwork/LONGNETWORK/blob/master/contrib/longcoinX.XX-lin/longcoin.conf
+The current recommended configuration is here: https://github.com/longnetwork/longcoin-core/blob/master/contrib/debian/portable/longcoin.conf
 
 ## Attention!
 For mining-pools, exchanges, explorers and other network services using longcoin, you can disable the creation of a PUBLIC account when you first start the wallet:
@@ -70,9 +67,16 @@ longcoin-cli importprivkey KwSXQL9F9ohW6TmZYWiNmx3z9Bz8x6vbZ6rVvWAPHS4wtcwSoo8W 
 ```
 Core API
 ===========================================================================================================================================
-https://github.com/longnetwork/LONGNETWORK/blob/master/coreAPI.md
+https://github.com/longnetwork/longcoin-core/blob/master/coreAPI.md
 
-## Donat  https://longnetwork.github.io/donat.html
+### A donation to develop an autonomous lightweight core for mobile platforms:
+**LONG**: `1jAiYKH7yv7TWdumPNdgh6cZhuxbtGh43`  
+**ETH**: `0x6e04282bb56Dd116d40785ebc3f336b4649A5bCb`  
+**BNB**: `0x6e04282bb56Dd116d40785ebc3f336b4649A5bCb`  
+**DOGE**: `DEBQKxDukNTToE3YvbVMFRkHBxTnUrUrTP`  
+**LTC**: `LafMXhkxUp3GG1TM47GFRkmHmSGLDeCvzg`  
+**BTC**: `19tAZLiVBPNVaGoxq8BTrwDqp3a41zG65b`  
+
 
 
 

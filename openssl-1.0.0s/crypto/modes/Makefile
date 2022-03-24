@@ -76,9 +76,3 @@ clean:
 	rm -f *.o */*.o *.obj lib tags core .pure .nfs* *.old *.bak fluff
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
-
-cbc128.o: cbc128.c modes.h
-cfb128.o: cfb128.c modes.h
-ctr128.o: ctr128.c modes.h
-cts128.o: cts128.c modes.h
-ofb128.o: modes.h ofb128.c
