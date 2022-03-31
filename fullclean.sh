@@ -1,6 +1,19 @@
 #!/bin/bash
 
 
+cd openssl-1.0.0s/
+make clean
+make clean-shared
+make libclean
+make dclean
+cd ../
+
+cd db-4.8.30.NC-src/build_unix/
+make clean
+make distclean
+cd ../../
+
+
 make clean
 make distclean-hdr
 make mostlyclean-libtool

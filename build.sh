@@ -55,7 +55,7 @@ make -j4
 
 sudo make install
 
-#sudo checkinstall --pkgname=longcoin --pkgversion=0.12.1.0-from-sources --default --requires="build-essential,libtool,autotools-dev,automake,pkg-config,libevent-dev,bsdmainutils,libboost-system-dev,libboost-filesystem-dev,libboost-chrono-dev,libboost-program-options-dev,libboost-test-dev,libboost-thread-dev,libminiupnpc-dev,libzmq3-dev,libqt5gui5,libqt5core5a,libqt5dbus5,qttools5-dev,qttools5-dev-tools,libprotobuf-dev,protobuf-compiler,libqrencode-dev,python3"
+#sudo checkinstall --pkgname=longcoin --pkgversion=0.12.1.0-from-sources --default --requires="build-essential,libtool,autotools-dev,automake,pkg-config,libevent-dev,bsdmainutils,libboost-system-dev,libboost-filesystem-dev,libboost-chrono-dev,libboost-program-options-dev,libboost-test-dev,libboost-thread-dev,libminiupnpc-dev,libzmq3-dev,libprotobuf-dev,protobuf-compiler,python3"
 
 echo "Copy to a convenient place contrib/debian/portable and run longcoind from this directory!"
 echo "It's portable LONG core. For details of startup core see README.md Startup Notes"
