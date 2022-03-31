@@ -35,9 +35,9 @@ Build Process
 * For specific steps for cross-building see https://github.com/longnetwork/longcoin-core/blob/master/crossbuild.txt
 (customized cross-build tools are included in the repository!)  
 **Pre-build 64-bit binaries (core + GUI Wallet):**
-[Windows](https://drive.google.com/uc?export=download&id=1hEJbh_h8cc-b0a9PNjPMoiucILmfjWkV) | 
-[Ubuntu 20.04](https://drive.google.com/uc?export=download&id=1fW4qE-30swUrB3pWo2Ee5svbmQJEjEgb) | 
-[Ubuntu 18.04](https://drive.google.com/uc?export=download&id=1P4K6tRB-RtR56zK_Vj_pjse9llFK_l09)
+[Windows](https://drive.google.com/uc?export=download&id=1Bsqhq0uy_BiYEVVpy8Jpu9G37kc4E_ub) | 
+[Ubuntu 20.04](https://drive.google.com/uc?export=download&id=1xFQTR9JNHZdRIYrH_nXXza2Raw8VCHBu) | 
+[Ubuntu 18.04](https://drive.google.com/uc?export=download&id=1uXKX6JYScQOLe9D6o9TLSAfk4Xqln7JP)
 
 Startup Notes
 ===========================================================================================================================================
