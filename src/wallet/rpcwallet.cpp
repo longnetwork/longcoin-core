@@ -110,7 +110,7 @@ UniValue getnewaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getnewaddress ( \"account\" )\n"
@@ -191,7 +191,7 @@ UniValue getaccountaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccountaddress \"account\"\n"
@@ -223,7 +223,7 @@ UniValue getrawchangeaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "getrawchangeaddress\n"
@@ -258,7 +258,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "setaccount \"address\" \"label\"\n"
@@ -268,7 +268,7 @@ UniValue setaccount(const UniValue& params, bool fHelp)
             "1. \"address\"       (string, required) The address or hex-encoded public key\n"
             "2. \"label\"           (string, required, default=\"\") The label to assign the address to.\n"
             "\nResult:\n"
-            "\"bitcoinaddress\"     (string) The bitcoin address associated with the public key\n"    
+            "\"bitcoinaddress\"     (string) The bitcoin address associated with the public key\n"
             "\nExamples:\n"
             + HelpExampleCli("setaccount", "\"1D1ZrZNe3JUo7ZycKEYQQiQAWd9y54F4XZ\" \"tabby\"")
             + HelpExampleCli("setaccount", "\"035f1d832f96ecfc92e7894daab869ea22b066db66e16dd3369081c8953582dc94\"")
@@ -309,13 +309,13 @@ UniValue setaccount(const UniValue& params, bool fHelp)
                 // все лишними адресами и не мешает работать getaccountaddress штатно всеравно!
                 // Кроме того есть еще getnewaddress - Оставляем setaccount как корректор адресной книги и все.
                 // Это еще дает возможность различит удаленные метки как не содержащие адреса вообще.
-                
+
                 string strOldAccount = pwalletMain->mapAddressBook[address.Get()].name;
                 //if (address == GetAccountAddress(strOldAccount)) GetAccountAddress(strOldAccount, true);
                 // Замещает перекинутый адрес с другого аккаунта новым адресом (а для того-же генерится новый)
 
                 if(strOldAccount!=strAccount) { // operator!=
-                    
+
                      CWalletDB walletdb(pwalletMain->strWalletFile);
 
                      CAccount acc; // Изначально Пустой не валидный pubKey
@@ -332,11 +332,11 @@ UniValue setaccount(const UniValue& params, bool fHelp)
                                                                     // (см. логику генерации нового адреса в GetAccountAddress)
                      }
                 }
-                
+
                 strPubKeyHex = pwalletMain->mapAddressBook[address.Get()].pubkeyhex; // Если окажется пустой, то (хотя не должен, так как команды генерации адресов его прописывают)
-                                                                                     // но если окажется пустой то теперь SetAddressBook его найдет по адресу и пропишит                
+                                                                                     // но если окажется пустой то теперь SetAddressBook его найдет по адресу и пропишит
             }
-            
+
             pwalletMain->SetAddressBook(address.Get(), strAccount, strPubKeyHex, "receive");
 
         }
@@ -344,11 +344,11 @@ UniValue setaccount(const UniValue& params, bool fHelp)
             pwalletMain->SetAddressBook(address.Get(), strAccount, "", "send"); // Пукей пустой
         }
 
-        
+
         return address.ToString();
     }
     else { // Если параметр это пукей то берем от него адресс
-        
+
         std::vector<unsigned char> vch(ParseHex(strID));
         CPubKey pubKey(vch.begin(), vch.end());
         if (!pubKey.IsFullyValid())
@@ -374,7 +374,7 @@ UniValue getaccount(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaccount \"bitcoinaddress\"\n"
@@ -406,7 +406,7 @@ UniValue getaddressesbyaccount(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "getaddressesbyaccount \"account\"\n"
@@ -474,7 +474,7 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 2 || params.size() > 5)
         throw runtime_error(
             "sendtoaddress \"bitcoinaddress\" amount ( \"comment\" \"comment-to\" subtractfeefromamount )\n"
@@ -531,16 +531,16 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
 
 UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vRPCConvertParams в rcpclient.cpp добавляются индексы не строковых параметров (для корректного парсинга в JSON)
 {
-    
+
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-        
+
     if (fHelp || params.size() < 3 || params.size() > 5)
         throw runtime_error(
             "sendhexdata \"from\" \"to\" \"hexstring\" ( \"comment\" open )\n"
             "\nLONG Specific: Data transfer from address or account to address or pubKey.\n"
             "\nNote: Encryption is enabled automatically if the public key of the recipient is known.\n"
-            "        setaccount command can be used to add to the address book public key of the recipient \n"   
+            "        setaccount command can be used to add to the address book public key of the recipient \n"
             "\nArguments:\n"
             "1. \"from\"          (string, required) The account or bitcoin address to send from.\n"
             "2. \"to\"            (string, required) The bitcoin address or hex-encoded pubKey to send to.\n"
@@ -611,7 +611,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             fToPubKey=true;
     }
 
-    bool fEncrypt = false; // Решим дальше      
+    bool fEncrypt = false; // Решим дальше
 
 //    if (!pwalletMain->IsLocked())
 //        pwalletMain->TopUpKeyPool();
@@ -619,7 +619,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
     // LONG BYTES (0c0f0e07) - version byte (00)
     std::vector<unsigned char> dataNewTX = ParseHex("0c0f0e0700");
-    
+
 
     // TO
     CKeyID toPubKeyID; CPubKey toPubKey;
@@ -633,9 +633,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
         } else if( /*!fOpen &&*/ !fToPubKey && pwalletMain->mapAddressBook.count(toPubKeyID) && !pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex.empty()) { // Это в адресной книге по тому доп полю .pubkeyhex
             std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[toPubKeyID].pubkeyhex); // Глянуть внутрь класса потом (юзают две формы поиска: вначале .count() и потом сразу доступ по ключю; и через итератор)
             toPubKey.Set(vch.begin(),vch.end());
-            if (!toPubKey.IsFullyValid()) 
+            if (!toPubKey.IsFullyValid())
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "PubKey in AddressBook is not a valid public key");
-            
+
             dataNewTX.push_back(0xf0); // OP_TO
             dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
             dataNewTX.insert(dataNewTX.end(), toPubKey.begin(), toPubKey.end());
@@ -652,30 +652,30 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
             dataNewTX.insert(dataNewTX.end(), toPubKeyID.begin(), toPubKeyID.end()); // тогда запихнем его ID по адрессу
             fEncrypt=false;
-        } 
+        }
     } else { // p2sh адреса не имеют кукея (это хеш от скрипта и пукея нет)
         if(!addressTo.IsScript()) throw JSONRPCError(RPC_TYPE_ERROR, "Destination Address does not refer to pubkey or script");
 
         // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
         const CScriptID& hash = boost::get<CScriptID>( addressTo.Get() );
-        
+
             dataNewTX.push_back(0xf0); // OP_TO
             dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
             dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
-            
+
             fEncrypt=false; // toPubKey не понадобится
     }
-    
+
     // FROM - Отправитель обязан всегда запихивать свой pubkey, чтобы было куда шифровать ответ
     CKeyID fromPubKeyID; CPubKey fromPubKey;
     if (!addressFrom.GetKeyID(fromPubKeyID))
-        throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key");    
+        throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key");
     if (!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) // У своего адреса всегда есть публичный ключ
         throw JSONRPCError(RPC_WALLET_ERROR, "PubKey for sender address is not known");
     CKey fromPrivKey;
     if (!pwalletMain->GetKey(fromPubKeyID, fromPrivKey)) // У своего адреса всегда есть приватный ключ
         throw JSONRPCError(RPC_WALLET_ERROR, "Sender Private key not available");
-        
+
     dataNewTX.push_back(0xf1); // OP_FROM
     dataNewTX.push_back(0xfe); // OP_PUBKEYCOMP ? 33b : 65b - OP_PUBKEY 0xff
     dataNewTX.insert(dataNewTX.end(), fromPubKey.begin(), fromPubKey.end());
@@ -698,23 +698,23 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
         // NO ENCRYPTION
         dataNewTX.push_back(0xf3); // OP_ENCRYPTION
         dataNewTX.push_back(0x00); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
-        
+
         dataBodypush = CScript() << vchDataBody;
     }
     else { // Можно шифровать, так как все ключи есть для SharedSecret
         // ENCRYPTION
         dataNewTX.push_back(0xf3); // OP_ENCRYPTION
         dataNewTX.push_back(0x01); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
-        
+
         // Шифрование передаваемых данных
         std::vector<unsigned char> vchSharedSecret;
         fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
         // vchSharedSecret
         // vchDataBody
         { // Шифрование  aes_256_cbc на Shared Secret
-            // Shared Secret - общий секретный ключ ECDH 
+            // Shared Secret - общий секретный ключ ECDH
             CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end()); // std::vector<unsigned char> -> CKeyingMaterial
-            
+
             // chIV - вектор инициализации
             std::vector<unsigned char> chNuller;
             chNuller.resize(32, 0);
@@ -723,9 +723,9 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             CCrypter crypter;
 
             // Установка ключа шифрования
-            if(!crypter.SetKey(ckmSecret, chIV)) 
+            if(!crypter.SetKey(ckmSecret, chIV))
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot set SharedSecret");
-            
+
             // ШИфрование
             CKeyingMaterial ckmText(vchDataBody.begin(), vchDataBody.end());  // шифруемый текст. std::vector<unsigned char> -> CKeyingMaterial
             if (!crypter.Encrypt(ckmText, vchDataBodyEncrypted)) // CKeyingMaterial, std::vector<unsigned char>
@@ -736,7 +736,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
 
     // Добавление данных в транзакцию
     std::vector<CRecipient> vecSend;
-      
+
     dataNewTX.insert(dataNewTX.end(), dataBodypush.begin(), dataBodypush.end());
     CScript scriptData = CScript() << OP_RETURN << dataNewTX;
 
@@ -751,7 +751,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
             strAccount = (*mi).second.name;
     }
     else strAccount=strFrom;
-    
+
     CWalletTx wtx;
     wtx.strFromAccount = strAccount;
     if (params.size() > 3 && !params[3].isNull() && !params[3].get_str().empty())
@@ -777,7 +777,7 @@ UniValue sendhexdata(const UniValue& params, bool fHelp) // в таблицу vR
     // XXX Там в QT в sendCoins еще пытаются добавить pubKeyHex в адрессную книгу (ну видимо адресата, чтобы в следующий раз было что для sharedSecret)
     // но в этом нет смысла так как теперь есть setaccount с возможносью сохранения публичных ключей
 
-    return wtx.GetHash().GetHex(); 
+    return wtx.GetHash().GetHex();
 }
 
 
@@ -785,7 +785,7 @@ UniValue listaddressgroupings(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp)
         throw runtime_error(
             "listaddressgroupings\n"
@@ -836,7 +836,7 @@ UniValue signmessage(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 2)
         throw runtime_error(
             "signmessage \"bitcoinaddress\" \"message\"\n"
@@ -892,7 +892,7 @@ UniValue getreceivedbyaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "getreceivedbyaddress \"bitcoinaddress\" ( minconf )\n"
@@ -950,7 +950,7 @@ UniValue getreceivedbyaccount(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "getreceivedbyaccount \"account\" ( minconf )\n"
@@ -1039,7 +1039,7 @@ UniValue getbalance(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 3)
         throw runtime_error(
             "getbalance ( \"account\" minconf includeWatchonly )\n"
@@ -1114,7 +1114,7 @@ UniValue getunconfirmedbalance(const UniValue &params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 0)
         throw runtime_error(
                 "getunconfirmedbalance\n"
@@ -1130,7 +1130,7 @@ UniValue movecmd(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 3 || params.size() > 5)
         throw runtime_error(
             "move \"fromaccount\" \"toaccount\" amount ( minconf \"comment\" )\n"
@@ -1203,7 +1203,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 3 || params.size() > 6)
         throw runtime_error(
             "sendfrom \"fromaccount\" \"tobitcoinaddress\" amount ( minconf \"comment\" \"comment-to\" )\n"
@@ -1267,7 +1267,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
 {   // Захардкодил мультиадресную транзакцию через одноадресные, которые рабочие - отхаркодил - теперь все ОК)
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 2 || params.size() > 5)
         throw runtime_error(
             "sendmany \"fromaccount\" {\"address\":amount,...} ( minconf \"comment\" [\"address\",...] )\n"
@@ -1361,7 +1361,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
 
     // Send
-//for(int i=0; i<vecSend.size(); i++) {    
+//for(int i=0; i<vecSend.size(); i++) {
     CReserveKey keyChange(pwalletMain);
     CAmount nFeeRequired = 0;
     int nChangePosRet = -1;
@@ -1374,7 +1374,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
     if (!pwalletMain->CommitTransaction(wtx, keyChange))
         throw JSONRPCError(RPC_WALLET_ERROR, "Transaction commit failed");
 
-    //vecWtx.at(i).GetHash().GetHex();    
+    //vecWtx.at(i).GetHash().GetHex();
 //}
 
     return wtx.GetHash().GetHex(); //return true;
@@ -1387,7 +1387,7 @@ UniValue addmultisigaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 2 || params.size() > 3)
     {
         string msg = "addmultisigaddress nrequired [\"key\",...] ( \"account\" )\n"
@@ -1571,7 +1571,7 @@ UniValue listreceivedbyaddress(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 3)
         throw runtime_error(
             "listreceivedbyaddress ( minconf includeempty includeWatchonly)\n"
@@ -1609,7 +1609,7 @@ UniValue listreceivedbyaccount(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 3)
         throw runtime_error(
             "listreceivedbyaccount ( minconf includeempty includeWatchonly)\n"
@@ -1652,7 +1652,7 @@ static void MaybePushAddress(UniValue & entry, const CTxDestination &dest)
 void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDepth, bool fLong, UniValue& ret, const isminefilter& filter)
 {
     // Вызывается везде после LOCK2(cs_main, pwalletMain->cs_wallet);
-    
+
     CAmount nFee;
     string strSentAccount;
     list<COutputEntry> listReceived;
@@ -1719,7 +1719,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     addressTo=CBitcoinAddress(toPubKeyID);
                 }
                 // else - addressTo of zerro id
-                                         
+
 
                 string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
@@ -1730,12 +1730,12 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     if(fromType!=TX_SCRIPTHASH) {
                         fromPubKeyID=uint160(vchFromPubKey);
                         if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                            
+
                              if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
                                 std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
                                 fromPubKey.Set(vch.begin(),vch.end());
                             }
-                            
+
                         }
                         addressFrom=CBitcoinAddress(fromPubKeyID);
                     }
@@ -1749,19 +1749,19 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     addressFrom=CBitcoinAddress(fromPubKeyID);
                 }
                 // else - addressFrom of zerro id
-                                          
+
 
                 string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
-                string strTo; {                    
+                string strTo; {
 
                     if( toAB || ( pwalletMain->mapAddressBook.count(addressTo.Get()) && ! (toAB=&pwalletMain->mapAddressBook[addressTo.Get()])->name.empty() ) )
                         strTo = toAB->name;
-                    
+
                 }
                 string strFrom; {
 
-                    if( fromAB || ( pwalletMain->mapAddressBook.count(addressFrom.Get()) && ! (fromAB=&pwalletMain->mapAddressBook[addressFrom.Get()])->name.empty() ) ) 
+                    if( fromAB || ( pwalletMain->mapAddressBook.count(addressFrom.Get()) && ! (fromAB=&pwalletMain->mapAddressBook[addressFrom.Get()])->name.empty() ) )
                         strFrom = fromAB->name;
                 }
 
@@ -1775,7 +1775,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                         ; // Могу расшифровать toPrivKey.ComputSharedSecret(fromPubKey, vchSharedSecret);
                     else decrypt=false; // Отлуп
                }
-                
+
                 entry.push_back(Pair("from",strFrom));
                 entry.push_back(Pair("fromaddress",addressFrom.ToString()));
                 entry.push_back(Pair("frompubkey",pubKeyHexFrom));
@@ -1783,10 +1783,10 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                 entry.push_back(Pair("toaddress",addressTo.ToString()));
                 entry.push_back(Pair("topubkey",pubKeyHexTo));
                 entry.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
-                
+
             }
             /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
-            
+
             ret.push_back(entry);
         }
     }
@@ -1834,7 +1834,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     getEncryptionLongData(txout.scriptPubKey, encryptionType);
 
                     CAddressBookData* fromAB=NULL;  // Чисто закешировать доступ к адресной книге
-                    CAddressBookData* toAB=NULL;                    
+                    CAddressBookData* toAB=NULL;
 
                     // TO
                     std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; txnouttype toType; CBitcoinAddress addressTo;
@@ -1843,12 +1843,12 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                         if(toType!=TX_SCRIPTHASH) {
                             toPubKeyID=uint160(vchToPubKey);
                             if(!pwalletMain->GetPubKey(toPubKeyID, toPubKey)) { // pubKey Для своего адреса
-                                
+
                                 if(pwalletMain->mapAddressBook.count(toPubKeyID) && ! (toAB=&pwalletMain->mapAddressBook[toPubKeyID])->pubkeyhex.empty()) {
                                     std::vector<unsigned char> vch=ParseHex(toAB->pubkeyhex);
                                     toPubKey.Set(vch.begin(),vch.end());        // pubKey для чужого адреса если сохраняли
                                 }
-                                
+
                             }
                             addressTo=CBitcoinAddress(toPubKeyID);
                         }
@@ -1861,7 +1861,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
 
                         addressTo=CBitcoinAddress(toPubKeyID);
                     }
-                                             
+
 
                     string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
@@ -1872,12 +1872,12 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                         if(fromType!=TX_SCRIPTHASH) {
                             fromPubKeyID=uint160(vchFromPubKey);
                             if(!pwalletMain->GetPubKey(fromPubKeyID, fromPubKey)) {
-                                
+
                                  if(pwalletMain->mapAddressBook.count(fromPubKeyID) && ! (fromAB=&pwalletMain->mapAddressBook[fromPubKeyID])->pubkeyhex.empty()) {
                                     std::vector<unsigned char> vch=ParseHex(fromAB->pubkeyhex);
                                     fromPubKey.Set(vch.begin(),vch.end());
                                 }
-                                
+
                             }
                             addressFrom=CBitcoinAddress(fromPubKeyID);
                         }
@@ -1890,18 +1890,18 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
 
                         addressFrom=CBitcoinAddress(fromPubKeyID);
                     }
-                                              
+
 
                     string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());
 
                     string strTo; {
-                        
+
                         if(toAB || ( pwalletMain->mapAddressBook.count(addressTo.Get()) && ! (toAB=&pwalletMain->mapAddressBook[addressTo.Get()])->name.empty() ) )
                             strTo = toAB->name;
-                            
+
                     }
                     string strFrom; {
-                        
+
                         if(fromAB || ( pwalletMain->mapAddressBook.count(addressFrom.Get()) && ! (fromAB=&pwalletMain->mapAddressBook[addressFrom.Get()])->name.empty() ) )
                             strFrom = fromAB->name;
                     }
@@ -1916,7 +1916,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                             ; // Могу расшифровать fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
                         else decrypt=false;
                     }
-                    
+
                     entry.push_back(Pair("from",strFrom));
                     entry.push_back(Pair("fromaddress",addressFrom.ToString()));
                     entry.push_back(Pair("frompubkey",pubKeyHexFrom));
@@ -1924,7 +1924,7 @@ void ListTransactions(const CWalletTx& wtx, const string& strAccount, int nMinDe
                     entry.push_back(Pair("toaddress",addressTo.ToString()));
                     entry.push_back(Pair("topubkey",pubKeyHexTo));
                     entry.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
-                    
+
                 }
                 /////////////////////////// FIXME: Также доступ к mapAddressBook не оптимальный - все поиски повторяются при каждой итерации ////////////////////
 
@@ -1955,7 +1955,7 @@ UniValue listtransactions(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 4)
         throw runtime_error(
             "listtransactions ( \"account\" count from includeWatchonly)\n"
@@ -2081,7 +2081,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 2)
         throw runtime_error(
             "listaccounts ( minconf includeLevel)\n"
@@ -2109,15 +2109,15 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
     int nMinDepth = 1;
-    
+
     if (params.size() > 0)
         nMinDepth = params[0].get_int();
     isminefilter includeWatchonly = ISMINE_SPENDABLE;
 
     bool includeAll=false;
-    
+
     if(params.size() > 1) {
-        
+
         if (params[1].isBool()) {
             if(params[1].get_bool())
                 includeWatchonly = includeWatchonly | ISMINE_WATCH_ONLY;
@@ -2128,7 +2128,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
             if (params[1].get_int() > 1)
                 includeAll=true;
         }
-            
+
     }
 
     map<string, CAmount> mapAccountBalances;
@@ -2161,7 +2161,7 @@ UniValue listaccounts(const UniValue& params, bool fHelp)
         }
     } // Вроде цепляются балансы даже для label чужих адресов и при includeAll=false если была команда move c этими label
       // XXX includeAll=true нужно только для выяснения всех меток чужих адресов
-      
+
 
     const list<CAccountingEntry> & acentries = pwalletMain->laccentries;
     BOOST_FOREACH(const CAccountingEntry& entry, acentries)
@@ -2178,7 +2178,7 @@ UniValue listsinceblock(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp)
         throw runtime_error(
             "listsinceblock ( \"blockhash\" target-confirmations includeWatchonly)\n"
@@ -2270,7 +2270,7 @@ UniValue gettransaction(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "gettransaction \"txid\" ( includeWatchonly )\n"
@@ -2351,7 +2351,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "gethexdata \"txid\" ( includeWatchonly )\n"
@@ -2395,16 +2395,16 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
     isminefilter filter = ISMINE_SPENDABLE;
     if(params.size() > 1)
         if(params[1].get_bool())
-            filter = filter | ISMINE_WATCH_ONLY; // - это для ипортированных ключей механизм наблюдения за счетами (вот почему для пукей отдельное поле.. чтобы не задействовать этот механизм) 
+            filter = filter | ISMINE_WATCH_ONLY; // - это для ипортированных ключей механизм наблюдения за счетами (вот почему для пукей отдельное поле.. чтобы не задействовать этот механизм)
                                                  // FIXME includeWatchonly может влиять на тип receive или send
 
     UniValue entry(UniValue::VOBJ);
 
     EnsureWalletIsUnlocked();
-    
+
     if (!pwalletMain->mapWallet.count(hash))
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid or non-wallet transaction id");
-        
+
     const CWalletTx& wtx = pwalletMain->mapWallet[hash]; // вся инфа в wtx есть
 
     // Служебка, Если receive то TO - я, FROM - Чужак; Если Send то FROM - я, TO - Чужак
@@ -2420,7 +2420,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             isminetype mine = pwalletMain->IsMine(txin);
             printf(" pwalletMain->IsMine(txin) = %i\n", mine & filter );
     }*/
-    
+
     if(wtx.GetDebit(filter)>0) // так в wtx.GetAmounts() проверяют направление транзакции == wtx.IsFromMe()
     {
         entry.push_back(Pair("category", "send")); // Это означает только списание комиссии, а сами отправитель и получатель в полях может быть любой
@@ -2429,6 +2429,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                                                       В общем при дешефровке условие смены направления данных:
                                                       - если по списанию send а адрес from чужой то смена направления дешифровки;
                                                       - если нет списания (receive) а адрес to чужой то смена направления дешифровки; ( FIXME подумать над ISMINE_WATCH_ONLY )
+                                                      TODO: Наверно лучше менять направление по bool результату crypter.Decrypt() !!!
                                                    */
         fDebit=true;
     }
@@ -2446,7 +2447,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
         else
         {
             entry.push_back(Pair("category", "receive"));
-        }        
+        }
     }
 
     entry.push_back(Pair("abandoned", wtx.isAbandoned()));
@@ -2469,7 +2470,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 //        printf("in BOOST_FOREACH... \n");
 
         if (isLong(txout.scriptPubKey)) { // магиккод транзакции с данными (вообще подумать потом не может ли он случано возникнуть в других тразакциях??)
-                        
+
             UniValue obj(UniValue::VOBJ);
             // TO
             std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; CKey toPrivKey; txnouttype toType; CBitcoinAddress addressTo;
@@ -2495,9 +2496,9 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 
                 addressTo=CBitcoinAddress(toPubKeyID);
             }
-            
+
             if (pwalletMain->HaveKey(toPubKeyID)) pwalletMain->GetKey(toPubKeyID, toPrivKey);       // Мы приемная сторона - наш шаредсекрет скачет от toPrivKey
-                                        
+
 
             string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
 
@@ -2511,7 +2512,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                          if(pwalletMain->mapAddressBook.count(fromPubKeyID) && !pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex.empty()) {
                             std::vector<unsigned char> vch=ParseHex(pwalletMain->mapAddressBook[fromPubKeyID].pubkeyhex);
                             fromPubKey.Set(vch.begin(),vch.end());
-                        }                   
+                        }
                     }
                     addressFrom=CBitcoinAddress(fromPubKeyID); // Адреса по строке и по ID должны быть идентичны
                 }
@@ -2527,10 +2528,10 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
 
             if (pwalletMain->HaveKey(fromPubKeyID)) pwalletMain->GetKey(fromPubKeyID, fromPrivKey);
 
-            
+
             string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end());   // Если отправитель засунул только свой адрес и здесь нет его публичного ключа, то данные не зашифрованы
 
-            // DATA Type 
+            // DATA Type
             unsigned int dataType; // OP_DATA_TYPE_TEXT | 000   | 0x00 | Тип данных - текст
             getTypeLongData(txout.scriptPubKey, dataType);
             // ENCRYPTION Type
@@ -2544,7 +2545,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             getBodyLongData(txout.scriptPubKey, vchDataBody);
 
             bool decrypt=true;
-            
+
             if ( encryptionType == 1 ) {
                 std::vector<unsigned char> vchSharedSecret;
 
@@ -2566,7 +2567,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                 if(decrypt)
                 { // Шифрование aes_256_cbc на Shared Secret
                     CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end()); // std::vector<unsigned char> -> CKeyingMaterial
-                    
+
                     // chIV - вектор инициализации
                     std::vector<unsigned char> chNuller;
                     chNuller.resize(32, 0);
@@ -2580,7 +2581,7 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
                     CKeyingMaterial ckmPlaintext;
                     crypter.Decrypt(vchDataBody, *((CKeyingMaterial*)&ckmPlaintext));
                     vchDecryptedDataBody.insert(vchDecryptedDataBody.end(), ckmPlaintext.begin(), ckmPlaintext.end());
-                
+
                     vchDataBody=vchDecryptedDataBody; // В случае всяких херей, проверку которых игнорю, расчитываю на пустые строки (хотя зря)
                 }
             }
@@ -2609,19 +2610,19 @@ UniValue gethexdata(const UniValue& params, bool fHelp)
             obj.push_back(Pair("topubkey",pubKeyHexTo));
 
             obj.push_back(Pair("vout",index));
-            
+
             obj.push_back(Pair("hexdata",HexStr(vchDataBody.begin(),vchDataBody.end())));
             obj.push_back(Pair("encryption", encryptionType==1 ? "yes" : "no"));
-            obj.push_back(Pair("decryption", decrypt           ? "yes" : "no"));
+            obj.push_back(Pair("decryption", decrypt           ? "yes" : "no")); // Это фактически флаг что данные readable
 
             voutentry.push_back(obj);
         }
-        
+
         index++;
     }
 
     entry.push_back(Pair("details", voutentry));
-    
+
     return entry;
 }
 
@@ -2665,7 +2666,7 @@ UniValue backupwallet(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "backupwallet \"destination\"\n"
@@ -2691,7 +2692,7 @@ UniValue keypoolrefill(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "keypoolrefill ( newsize )\n"
@@ -2735,7 +2736,7 @@ UniValue walletpassphrase(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (pwalletMain->IsCrypted() && (fHelp || params.size() != 2))
         throw runtime_error(
             "walletpassphrase \"passphrase\" timeout\n"
@@ -2795,7 +2796,7 @@ UniValue walletpassphrasechange(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (pwalletMain->IsCrypted() && (fHelp || params.size() != 2))
         throw runtime_error(
             "walletpassphrasechange \"oldpassphrase\" \"newpassphrase\"\n"
@@ -2841,7 +2842,7 @@ UniValue walletlock(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (pwalletMain->IsCrypted() && (fHelp || params.size() != 0))
         throw runtime_error(
             "walletlock\n"
@@ -2880,7 +2881,7 @@ UniValue encryptwallet(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (!pwalletMain->IsCrypted() && (fHelp || params.size() != 1))
         throw runtime_error(
             "encryptwallet \"passphrase\"\n"
@@ -2937,7 +2938,7 @@ UniValue lockunspent(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 2)
         throw runtime_error(
             "lockunspent unlock [{\"txid\":\"txid\",\"vout\":n},...]\n"
@@ -3021,7 +3022,7 @@ UniValue listlockunspent(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 0)
         throw runtime_error(
             "listlockunspent\n"
@@ -3070,7 +3071,7 @@ UniValue settxfee(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() < 1 || params.size() > 1)
         throw runtime_error(
             "settxfee amount\n"
@@ -3097,7 +3098,7 @@ UniValue getwalletinfo(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "getwalletinfo\n"
@@ -3139,7 +3140,7 @@ UniValue resendwallettransactions(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() != 0)
         throw runtime_error(
             "resendwallettransactions\n"
@@ -3164,7 +3165,7 @@ UniValue listunspent(const UniValue& params, bool fHelp)
 {
     if (!EnsureWalletIsAvailable(fHelp))
         return NullUniValue;
-    
+
     if (fHelp || params.size() > 3)
         throw runtime_error(
             "listunspent ( minconf maxconf  [\"address\",...] )\n"

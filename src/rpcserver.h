@@ -279,7 +279,7 @@ extern UniValue getspentinfo(const UniValue& params, bool fHelp);
 extern UniValue sendhexdata(const UniValue& params, bool fHelp);
 extern UniValue gethexdata(const UniValue& params, bool fHelp);
 extern UniValue createrawdata(const UniValue& params, bool fHelp);
-
+extern UniValue decodedata(const UniValue& params, bool fHelp);
 
 bool StartRPC();
 void InterruptRPC();

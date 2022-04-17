@@ -440,13 +440,13 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
             "4. open              (bool, optional, default=false) Forcibly disable encryption.\n"
             "\nResult:\n"
             "\"data\"      (string) The serialized, hex-encoded data for createrawtransaction command.\n"
-            
+
             "\nExamples:\n"
             + HelpExampleCli("createrawdata", "\"KwSXQL9F9ohW6TmZYWiNmx3z9Bz8x6vbZ6rVvWAPHS4wtcwSoo8W\" \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\" \"48656c6c6f\"")
             + HelpExampleRpc("createrawdata", "\"KwSXQL9F9ohW6TmZYWiNmx3z9Bz8x6vbZ6rVvWAPHS4wtcwSoo8W\", \"1GztQxGTKdEFhctBhR38wR8skjqkd4Cqt8\", \"48656c6c6f\"")
         );
 
-        LOCK(cs_main);
+        LOCK(cs_main); // FIXME это возможно лишнее если здесь нет обращений к базе транзакций а тупо одни вычисления
         RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VSTR)(UniValue::VSTR),true);
         if (params[0].isNull() || params[1].isNull())
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, arguments 1 and 2 must be non-null");
@@ -454,8 +454,8 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
 
         CKey fromPrivKey; CPubKey toPubKey; // Ключи для шифрования
         bool fEncrypt = true;              // Флаг шифрования
-        
-        string strFrom=params[0].get_str(); 
+
+        string strFrom=params[0].get_str();
         string strTo=params[1].get_str();
 
         bool fOpen = false;
@@ -491,18 +491,18 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
 
                 // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
                 const CScriptID& hash = boost::get<CScriptID>( addressTo.Get() );
-                
+
                     dataNewTX.push_back(0xf0); // OP_TO
                     dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
                     dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
             }
-        
+
             fEncrypt=false; // Шифрование невозможно и toPubKey не понадобится
         }
 
-        //// FROM    
+        //// FROM
         CBitcoinSecret vchSecret;
-        
+
         if (vchSecret.SetString(strFrom)) { // Подали полноценный приватный ключ
             fromPrivKey = vchSecret.GetKey(); // Побитовое копирование
             if (!fromPrivKey.IsValid()) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Private key outside allowed range");
@@ -533,52 +533,52 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
                     dataNewTX.push_back(0xf1); // OP_FROM
                     dataNewTX.push_back(0xfd); // OP_PUBKEYHASH
                     dataNewTX.insert(dataNewTX.end(), fromPubKeyID.begin(), fromPubKeyID.end());
-                }   
+                }
                 else {
                     if(!addressFrom.IsScript()) throw JSONRPCError(RPC_TYPE_ERROR, "Sender Address does not refer to key or script"); // Гавно с адресом
 
                     // Физически ID адреса и Скрипта (адреса начинающегося на 3) одно и тоже (uint160)
                     const CScriptID& hash = boost::get<CScriptID>( addressFrom.Get() );
-                    
+
                         dataNewTX.push_back(0xf1); // OP_FROM
                         dataNewTX.push_back(0xfc); // OP_SCRIPTHASH
                         dataNewTX.insert(dataNewTX.end(), hash.begin(), hash.end());
                 }
-            }    
+            }
 
             fEncrypt=false; // Хуй вам а не шифрование  fromPrivKey не понадобится
         }
 
 
         //// dataBody
-        
+
         // DATA_TYPE
         dataNewTX.push_back(0xf2); // OP_DATA_TYPE
         dataNewTX.push_back(0x00); // OP_DATA_TYPE_TEXT | 000   | 0x00
-        
+
         std::vector<unsigned char> vchDataBody(ParseHex(params[2].get_str()));
         std::vector<unsigned char> vchDataBodyEncrypted;
         CScript dataBodypush;
 
         if (!fEncrypt || fOpen) { // NO ENCRYPTION
-            
+
             dataNewTX.push_back(0xf3); // OP_ENCRYPTION
             dataNewTX.push_back(0x00); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
-            
+
             dataBodypush = CScript() << vchDataBody;
         }
         else { // ENCRYPTION
             dataNewTX.push_back(0xf3); // OP_ENCRYPTION
             dataNewTX.push_back(0x01); // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
-            
+
             // Шифрование передаваемых данных
             std::vector<unsigned char> vchSharedSecret;
             fromPrivKey.ComputSharedSecret(toPubKey, vchSharedSecret);
             // vchSharedSecret
             // vchDataBody
-            { // Шифрование  aes_256_cbc на Shared Secret. Shared Secret - общий секретный ключ ECDH 
+            { // Шифрование  aes_256_cbc на Shared Secret. Shared Secret - общий секретный ключ ECDH
                 CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end()); // std::vector<unsigned char> -> CKeyingMaterial
-                
+
                 // chIV - вектор инициализации
                 std::vector<unsigned char> chNuller;
                 chNuller.resize(32, 0);
@@ -587,9 +587,9 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
                 CCrypter crypter;
 
                 // Установка ключа шифрования
-                if(!crypter.SetKey(ckmSecret, chIV)) 
+                if(!crypter.SetKey(ckmSecret, chIV))
                     throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Cannot set SharedSecret");
-                
+
                 // ШИфрование
                 CKeyingMaterial ckmText(vchDataBody.begin(), vchDataBody.end());  // шифруемый текст. std::vector<unsigned char> -> CKeyingMaterial
                 if (!crypter.Encrypt(ckmText, vchDataBodyEncrypted)) // CKeyingMaterial, std::vector<unsigned char>
@@ -597,7 +597,7 @@ UniValue createrawdata(const UniValue& params, bool fHelp) // в таблицу 
             }
             dataBodypush = CScript() << vchDataBodyEncrypted;
         }
-    
+
         dataNewTX.insert(dataNewTX.end(), dataBodypush.begin(), dataBodypush.end()); // CScript() << OP_RETURN << data Сделает createrawtransaction
 
         std::string strHex = HexStr(dataNewTX.begin(), dataNewTX.end());
@@ -687,8 +687,8 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
             std::vector<unsigned char> data = ParseHexV(sendTo[name_].getValStr(),"Data"); // "Data" - это только для сообщения об ошибке
 
             //CTxOut out(0, CScript() << OP_RETURN << << << data);
-			CTxOut out(0, CScript() << OP_RETURN << data);
-            
+            CTxOut out(0, CScript() << OP_RETURN << data);
+
             rawTx.vout.push_back(out);
         } else {
             CBitcoinAddress address(name_);
@@ -814,6 +814,143 @@ UniValue decodescript(const UniValue& params, bool fHelp)
     ScriptPubKeyToJSON(script, r, false);
 
     r.push_back(Pair("p2sh", CBitcoinAddress(CScriptID(script)).ToString()));
+    return r;
+}
+
+UniValue decodedata(const UniValue& params, bool fHelp)
+{
+    if (fHelp || params.size() < 1 || params.size() > 2)
+        throw runtime_error(
+            "decodedata \"hex\" ( privatekey )\n"
+            "\nLONG Specific: decripting hex data in OP_RETURN script\n"
+            "\nArguments:\n"
+            "1. \"hex\"         (string) the hex encoded OP_RETURN script\n"
+            "2. \"privatekey\"  (string, optional) A base58-encoded private keys for decription\n"
+            "\nResult:\n"
+            "    {\n"
+            "      \"fromaddress\" : \"bitcoinaddress\", (string) The bitcoin address involved in the script\n"
+            "      \"frompubkey\"  : \"pubKey\",         (string) The pubKey corresponding to 'fromaddress' in HEX format.\n"
+            "      \"toaddress\"   : \"bitcoinaddress\", (string) The bitcoin address involved in the script\n"
+            "      \"topubkey\"    : \"pubKey\",         (string) The pubKey corresponding to 'toaddress' in HEX format.\n"
+            "      \"hexdata\"     : \"hexstring\",      (string) The serialized, hex-encoded data (\"48656c6c6f\" is \"Hello\" string)\n"
+            "      \"encryption\" : \"yes\"              (string) The hex-data transfer encryption status flag\n"
+            "      \"decryption\" : \"yes\"              (string) The hex-data transfer readability status flag\n"
+            "    }\n"
+            "\nExamples:\n"
+            + HelpExampleCli("decodedata", "\"hexstring\"")
+            + HelpExampleRpc("decodedata", "\"hexstring\"")
+        );
+
+    RPCTypeCheck(params, boost::assign::list_of(UniValue::VSTR)(UniValue::VSTR));
+
+
+    bool fDecrypt=false;
+    CKey privKey; CBitcoinSecret vchSecret;
+
+    if(params.size()>1) {
+         if (vchSecret.SetString(params[1].get_str())) { // На входе приватный ключ
+             privKey = vchSecret.GetKey();     // Побитовое копирование
+             if (!privKey.IsValid()) throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Private key outside allowed range");
+
+             fDecrypt=true; // Дешифровка возможна, если потребуется
+         }
+         else throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid private key encoding");
+    }
+
+    UniValue r(UniValue::VOBJ);
+    CScript script;
+    if (params[0].get_str().size() > 0){
+        vector<unsigned char> scriptData(ParseHexV(params[0], "argument"));
+        script = CScript(scriptData.begin(), scriptData.end());
+    } else {
+        // Empty scripts are valid
+    }
+
+
+    if(isLong(script)) { // Да это данные - будем извлекать и пытаться расшифровать
+
+        // TO
+        std::vector<unsigned char> vchToPubKey; CPubKey toPubKey; CKeyID  toPubKeyID; txnouttype toType; CBitcoinAddress addressTo;
+        getLongToPubKey(script, vchToPubKey, toType); // false если нет данных
+        if (vchToPubKey.size() == 20) {               // Это если небыло у отправителя бубличного ключа получателя, то он засунул в TO просто ID адресса
+            toPubKeyID=uint160(vchToPubKey);
+            if(toType!=TX_SCRIPTHASH) addressTo=CBitcoinAddress(toPubKeyID); // Адреса по строке и по ID должны быть идентичны
+            else addressTo=CBitcoinAddress(CScriptID(toPubKeyID)); // поддержка адресов начинающихся на 3...
+        } else if (vchToPubKey.size() == 33 || vchToPubKey.size() == 65) {
+            toPubKey.Set(vchToPubKey.begin(), vchToPubKey.end());
+            toPubKeyID=toPubKey.GetID();                    // ID публичного ключа жоско зависит от адреса ( это и есть адрес в бинарной форме RIPEMD-160)
+            addressTo=CBitcoinAddress(toPubKeyID);
+        }
+        string pubKeyHexTo = HexStr(toPubKey.begin(), toPubKey.end());
+
+        // FROM
+        std::vector<unsigned char> vchFromPubKey; CPubKey fromPubKey; CKeyID  fromPubKeyID; txnouttype fromType; CBitcoinAddress addressFrom;
+        getLongFromPubKey(script, vchFromPubKey, fromType);
+        if (vchFromPubKey.size() == 20) {
+            fromPubKeyID=uint160(vchFromPubKey);
+            if(fromType!=TX_SCRIPTHASH) addressFrom=CBitcoinAddress(fromPubKeyID); // Адреса по строке и по ID должны быть идентичны
+            else addressFrom=CBitcoinAddress(CScriptID(fromPubKeyID)); // поддержка адресов начинающихся на 3...
+        } else if (vchFromPubKey.size() == 33 || vchFromPubKey.size() == 65) {
+            fromPubKey.Set(vchFromPubKey.begin(), vchFromPubKey.end());
+            fromPubKeyID=fromPubKey.GetID(); // В С++ по умолчанию - побитовое копирование объекта
+            addressFrom=CBitcoinAddress(fromPubKeyID);
+        }
+        string pubKeyHexFrom = HexStr(fromPubKey.begin(), fromPubKey.end()); // Если отправитель засунул только свой адрес и здесь нет его публичного ключа, то данные не зашифрованы
+
+        // DATA Type
+        unsigned int dataType; // OP_DATA_TYPE_TEXT | 000   | 0x00 | Тип данных - текст
+        getTypeLongData(script, dataType);
+        // ENCRYPTION Type
+        unsigned int encryptionType=0; // OP_ENCRYPTION_NO | 000   | 0x00 ; OP_ENCRYPTION_YES | 001   | 0x01
+        getEncryptionLongData(script, encryptionType);
+
+        // DATA
+        std::vector<unsigned char> vchDataBody;
+        std::vector<unsigned char> vchDecryptedDataBody;
+
+        getBodyLongData(script, vchDataBody);
+
+        bool decrypt=false;
+
+        if ( encryptionType == 1 && fDecrypt) { // Случай когда можем расшифровать, раз подан приватный ключь
+
+            // Нормальный случай, когда from шифрует на публичный ключь to, и to должен расшифровать своим приватником
+            // Обратный случай также возможен (делаем все варианты до успеха)
+
+            if(fromPubKey.IsFullyValid()) {
+                std::vector<unsigned char> vchSharedSecret;
+                privKey.ComputSharedSecret(fromPubKey, vchSharedSecret);
+
+                CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end());
+                std::vector<unsigned char> chNuller; chNuller.resize(32, 0); const std::vector<unsigned char> chIV = chNuller;
+                CCrypter crypter; crypter.SetKey(ckmSecret, chIV); CKeyingMaterial ckmPlaintext;
+                decrypt=crypter.Decrypt(vchDataBody, *((CKeyingMaterial*)&ckmPlaintext));
+                if(decrypt) vchDecryptedDataBody.insert(vchDecryptedDataBody.end(), ckmPlaintext.begin(), ckmPlaintext.end());
+            }
+
+            if(!decrypt && toPubKey.IsFullyValid()) { // Пробуем обратный случай
+                std::vector<unsigned char> vchSharedSecret;
+                privKey.ComputSharedSecret(toPubKey, vchSharedSecret);
+
+                CKeyingMaterial ckmSecret(vchSharedSecret.begin(), vchSharedSecret.end());
+                std::vector<unsigned char> chNuller; chNuller.resize(32, 0); const std::vector<unsigned char> chIV = chNuller;
+                CCrypter crypter; crypter.SetKey(ckmSecret, chIV); CKeyingMaterial ckmPlaintext;
+                decrypt=crypter.Decrypt(vchDataBody, *((CKeyingMaterial*)&ckmPlaintext));
+                if(decrypt) vchDecryptedDataBody.insert(vchDecryptedDataBody.end(), ckmPlaintext.begin(), ckmPlaintext.end());
+            }
+
+            if(decrypt) vchDataBody=vchDecryptedDataBody; // Замена на расшифрованные данные
+        }
+
+        r.push_back(Pair("fromaddress",addressFrom.ToString()));
+        r.push_back(Pair("frompubkey",pubKeyHexFrom));
+        r.push_back(Pair("toaddress",addressTo.ToString()));
+        r.push_back(Pair("topubkey",pubKeyHexTo));
+        r.push_back(Pair("hexdata",HexStr(vchDataBody.begin(),vchDataBody.end())));
+        r.push_back(Pair("encryption", encryptionType==1 ? "yes" : "no"));
+        r.push_back(Pair("decryption", (decrypt || encryptionType==0) ? "yes" : "no")); // Данные readable
+    }
+
     return r;
 }
 

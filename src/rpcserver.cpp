@@ -110,7 +110,7 @@ CAmount AmountFromValue(const UniValue& value)
 {
     if (!value.isNum() && !value.isStr())
         throw JSONRPCError(RPC_TYPE_ERROR, "Amount is not a number or string");
-    CAmount amount;   
+    CAmount amount;
     if (!ParseFixedPoint(value.getValStr(), 1, &amount))
         throw JSONRPCError(RPC_TYPE_ERROR, "Invalid amount");
     if (!MoneyRange(amount/10))
@@ -124,11 +124,11 @@ UniValue ValueFromAmount(const CAmount& amount)
     int64_t n_abs = (sign ? -amount : amount);
     int64_t quotient = n_abs / COIN;
     int64_t remainder = n_abs % COIN;
-    
+
 /*    return UniValue(UniValue::VNUM,
             strprintf("%s%d.%08d", sign ? "-" : "", quotient, remainder)); */
 
-	// FIXME без зяпятой внешний софт не хочет работать (например пул NOMP). 
+    // FIXME без зяпятой внешний софт не хочет работать (например пул NOMP).
     // Ошибка усичения дает на пуле среднестатистически 0.5 лонга с каждого блока (см. также ParseFixedPoint)
     return UniValue(UniValue::VNUM,
             strprintf("%s%d.%01d", sign ? "-" : "", quotient, remainder));
@@ -320,10 +320,13 @@ static const CRPCCommand vRPCCommands[] =
 
     /* Raw transactions */
     { "rawtransactions",    "createrawdata",          &createrawdata,          true  }, //LONG Specific
-    
+
     { "rawtransactions",    "createrawtransaction",   &createrawtransaction,   true  },
     { "rawtransactions",    "decoderawtransaction",   &decoderawtransaction,   true  },
     { "rawtransactions",    "decodescript",           &decodescript,           true  },
+
+    { "rawtransactions",    "decodedata",             &decodedata,             true  }, //LONG Specific
+
     { "rawtransactions",    "getrawtransaction",      &getrawtransaction,      true  },
     { "rawtransactions",    "sendrawtransaction",     &sendrawtransaction,     false },
     { "rawtransactions",    "signrawtransaction",     &signrawtransaction,     false }, /* uses wallet if enabled */
@@ -360,7 +363,7 @@ static const CRPCCommand vRPCCommands[] =
     { "wallet",             "addmultisigaddress",     &addmultisigaddress,     true  },
     { "wallet",             "backupwallet",           &backupwallet,           true  },
     { "wallet",             "dumpprivkey",            &dumpprivkey,            true  },
-	{ "wallet",             "dumppubkey",             &dumppubkey,             true  },
+    { "wallet",             "dumppubkey",             &dumppubkey,             true  },
     { "wallet",             "dumpwallet",             &dumpwallet,             true  },
     { "wallet",             "encryptwallet",          &encryptwallet,          true  },
     { "wallet",             "getaccountaddress",      &getaccountaddress,      true  },
@@ -399,7 +402,7 @@ static const CRPCCommand vRPCCommands[] =
     { "wallet",             "walletlock",             &walletlock,             true  },
     { "wallet",             "walletpassphrasechange", &walletpassphrasechange, true  },
     { "wallet",             "walletpassphrase",       &walletpassphrase,       true  },
-    
+
     { "wallet",             "sendhexdata",            &sendhexdata,            false }, //LONG Specific
     { "wallet",             "gethexdata",             &gethexdata,             false }, //LONG Specific
 #endif // ENABLE_WALLET

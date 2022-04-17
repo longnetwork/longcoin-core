@@ -1,3 +1,6 @@
+Версия 1.1b:
+ - Добавлена long-специфичная команда decodedata чтобы понимать OP_RETURN в raw-transactions
+
 Версия 1.1a:
  - Из ядра выпилен qt-клиент (использовать longcoin-java)
 
